@@ -41,7 +41,8 @@
       "webcorr_name": "IdUSer",
       "webcorr_rol": "Rol",
       "webcorr_sector": "Sector",
-      "webcorr_username": "UserName"
+      "webcorr_username": "UserName",
+      "webcorr_newcolumn": "New Column"
     },
     "PreferredName": "Gebruikersrollen",
     "Type": "NativeCDSDataSourceInfo"
