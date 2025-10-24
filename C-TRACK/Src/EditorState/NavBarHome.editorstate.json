@@ -129,7 +129,7 @@
       "MetaDataIDKey": "",
       "Name": "btnDashboard",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 11,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2685,7 +2685,7 @@
       "MetaDataIDKey": "",
       "Name": "ImgRoles",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 10,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
