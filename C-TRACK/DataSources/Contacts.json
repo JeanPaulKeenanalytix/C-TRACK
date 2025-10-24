@@ -1,0 +1,126 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "webcorr_contacts",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "webcorr_contact",
+    "MaxGetRowsCount": 2000,
+    "Name": "Contacts",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number",
+      "webcorr_address": "Address",
+      "webcorr_city": "City",
+      "webcorr_Company": "Company",
+      "webcorr_contact_AsyncOperations": "System Jobs",
+      "webcorr_contact_BulkDeleteFailures": "Bulk Delete Failures",
+      "webcorr_contact_DuplicateBaseRecord": "Duplicate Records (webcorr_contact_DuplicateBaseRecord)",
+      "webcorr_contact_DuplicateMatchingRecord": "Duplicate Records (webcorr_contact_DuplicateMatchingRecord)",
+      "webcorr_contact_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "webcorr_contact_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "webcorr_contact_ProcessSession": "Process Sessions",
+      "webcorr_contact_SyncErrors": "Sync Errors",
+      "webcorr_contactid": "Contact",
+      "webcorr_contactperson": "ContactPerson",
+      "webcorr_country": "Country",
+      "webcorr_email": "Email",
+      "webcorr_idcontact": "IdContact",
+      "webcorr_name": "Name",
+      "webcorr_phone": "Phone",
+      "webcorr_postcode": "Postcode"
+    },
+    "PreferredName": "Contacts",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Contacts (Views)",
+    "Name": "_webcorr_contact_views",
+    "RelatedEntityName": "Contacts",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "06d96544-bc36-463b-93f6-62e08188b9aa": "Active Contacts",
+      "21899783-13f6-4fe1-b1c2-37218aa55d3c": "Contact Associated View",
+      "5f9a4f63-5aa6-421e-820d-a1b235d5968e": "Contact Advanced Find View",
+      "9f85e342-983f-4929-9dab-074e5cf69fe9": "Inactive Contacts",
+      "d71c5fda-f63b-4708-9391-3ce20e828056": "Contact Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Choices ContactPerson",
+    "Name": "webcorr_choicescontactperson",
+    "OptionSetInfoNameMapping": {
+      "172640000": "Contact",
+      "172640001": "Person"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "webcorr_contactperson",
+        "OptionSetReferenceEntityName": "Contacts"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "webcorr_contactperson",
+    "RelatedEntityName": "Contacts",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Contacts)",
+    "Name": "webcorr_contact_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Contacts"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Contacts",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Contacts)",
+    "Name": "webcorr_contact_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Contacts"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Contacts",
+    "Type": "OptionSetInfo"
+  }
+]

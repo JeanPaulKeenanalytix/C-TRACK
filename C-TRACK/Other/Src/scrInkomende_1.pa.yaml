@@ -1,0 +1,3974 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  scrInkomende_1:
+    Properties:
+      OnHidden: |-
+        =Set(varSelectCom, false);
+
+        Set(varAddCompany3, false);
+        Set(varAddPerson, false);
+        Set(varAddcontact2, false);
+        Set(
+            varOrigen,
+            true
+        );
+        Set(
+            varAddCompanyInk,
+            false
+        );
+        Set(
+            varErrorEmailPer,
+            false
+        );
+        Set(
+            varErrorNamePer,
+            false
+        );
+        Set(
+            varErrorAddressPer,
+            false
+        );
+        Set(
+            varAddPerson,
+            false
+        );
+        Set(
+            VarPeBe,
+            false
+        );
+        Set(
+            varErrorCInk,
+            false
+        );
+        Set(
+            varErrorCOInk,
+            false
+        );
+        Set(
+            varErrorDateInk,
+            false
+        );
+        Set(
+            varErrorVerInk,
+            false
+        );
+        Set(
+            varAddCompany,
+            false
+        );
+        Set(
+            varAddCompany1,
+            false
+        );
+        Set(
+            varAddCompany3,
+            false
+        );
+        Set(
+            varAddCompany4,
+            false
+        );
+        Set(
+            varAddcontact,
+            false
+        );
+        Set(
+            varAddcontact1,
+            false
+        );
+        Set(
+            varAddcontact2,
+            false
+        );
+        Set(
+            varAddContact3,
+            false
+        );
+        Set(
+            varAddContact4,
+            false
+        );
+        // Inkomende
+        Reset(txtType_5);
+        Reset(cbbCCIntern_33);
+        Reset(txtGeregistreerd_5);
+        Reset(cbbVerzender_11);
+        Reset(dateVerzondenOp_6);
+        Reset(txtReferentie_5);
+        Reset(cbbCCIntern_34);
+        Reset(cbbCCIntern_32);
+        Reset(txtSleutelwoorden_9);
+        Reset(txtBeschrijving_5);
+        Reset(Attachments_Bijlage_2);
+        Reset(TextInputCanvas1_4);
+        //Uitgaande
+        Reset(txtType_1);
+        Reset(txtGeregistreerd_1);
+        Reset(cbbOntvanger_1);
+        Reset(dateVerzondenOp_1);
+        Reset(txtReferentie_1);
+        Reset(txtReferentie_9);
+        Reset(txtReferentie_8);
+        Reset(txtSleutelwoorden_1);
+        Reset(txtBeschrijving_1);
+        Reset(Attachments_Bijlage1_1)
+    Children:
+      - Container4_9:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(249, 250, 251, 1)
+            Height: =Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            Width: =Parent.Width
+          Children:
+            - comHeader_2:
+                Control: CanvasComponent
+                ComponentName: comHeader
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =90
+                  Width: =1366
+            - Container8:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  LayoutDirection: =LayoutDirection.Vertical
+                Children:
+                  - Container17:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =80
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutGap: =25
+                        PaddingLeft: =50
+                        PaddingTop: =25
+                      Children:
+                        - lblStukId_5:
+                            Control: Label@2.5.1
+                            Properties:
+                              Color: =RGBA(114, 114, 114, 1)
+                              FontWeight: =FontWeight.Semibold
+                              Height: =32
+                              Text: ="Stuk ID"
+                              Width: =130
+                              X: =350
+                              Y: =160
+                        - txtStukID_7:
+                            Control: Classic/TextInput@2.3.2
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderThickness: =0
+                              Default: ="To be determined"
+                              DisplayMode: =DisplayMode.View
+                              Fill: =RGBA(0, 0, 0, 0)
+                              FontWeight: =FontWeight.Bold
+                              Height: =31
+                              Size: =12
+                              Width: =164
+                              X: =146
+                              Y: =lblStukId_5.Y
+                        - lblType_5:
+                            Control: Label@2.5.1
+                            Properties:
+                              Color: =RGBA(114, 114, 114, 1)
+                              FontWeight: =FontWeight.Semibold
+                              Height: =32
+                              Text: ="Type"
+                              Width: =100
+                              X: =319
+                              Y: =lblStukId_5.Y
+                        - txtType_5:
+                            Control: Classic/TextInput@2.3.2
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderThickness: =0
+                              Default: ="Inkomende"
+                              DisplayMode: =DisplayMode.View
+                              Fill: =RGBA(0, 0, 0, 0)
+                              FontWeight: =FontWeight.Bold
+                              Height: =31
+                              Size: =12
+                              Width: =164
+                              X: =406
+                              Y: =lblStukId_5.Y
+                        - lblGeregistreerd_5:
+                            Control: Label@2.5.1
+                            Properties:
+                              Color: =RGBA(114, 114, 114, 1)
+                              FontWeight: =FontWeight.Semibold
+                              Height: =32
+                              Text: ="Geregistreerd op"
+                              Width: =155
+                              X: =591
+                              Y: =lblStukId_5.Y
+                        - txtGeregistreerd_5:
+                            Control: Classic/TextInput@2.3.2
+                            Properties:
+                              Align: =Align.Right
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderThickness: =0
+                              Default: =Today()
+                              DisplayMode: =DisplayMode.View
+                              Fill: =RGBA(0, 0, 0, 0)
+                              FontWeight: =FontWeight.Bold
+                              Height: =31
+                              Size: =12
+                              Width: =157
+                              X: =774
+                              Y: =lblStukId_5.Y
+                  - Container17_1:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =55
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutGap: =25
+                        PaddingLeft: =50
+                      Children:
+                        - lblVerzender_66:
+                            Control: Label@2.5.1
+                            Properties:
+                              Color: =RGBA(114, 114, 114, 1)
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              Text: ="Verzender"
+                              Width: =140
+                              X: =13
+                              Y: =220
+                        - ConCompanyName_4:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              BorderColor: =If(varErrorVerInk, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                              BorderThickness: =If(varErrorVerInk, 2,0.1)
+                              DropShadow: =DropShadow.Semibold
+                              FillPortions: =0
+                              Height: =30
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Visible: =varActive
+                              Width: =260
+                              X: =159
+                              Y: =220
+                            Children:
+                              - cbbVerzender_11:
+                                  Control: ComboBox@0.0.51
+                                  Properties:
+                                    Appearance: ='ComboboxCanvas.Appearance'.FilledLighter
+                                    DefaultSelectedItems: =If(varIntern, Filter(VerzenderUitgaandeCorresponder, CompanyName = "WEB Aruba NV"), Blank())
+                                    DisplayMode: =If(varIntern, DisplayMode.View, DisplayMode.Edit)
+                                    Height: =ConCompanyName_4.Height
+                                    InputTextPlaceholder: ="Zoek"
+                                    Items: |+
+                                      =If(varIntern = false, Filter(VerzenderUitgaandeCorresponder, CompanyName <> "WEB Aruba NV"), VerzenderUitgaandeCorresponder)
+
+
+                                    OnChange: =Set(varErrorVerInk, false)
+                                    Visible: =If(varIntern,true,false)
+                                    Width: =ConCompanyName_4.Width
+                                  Children:
+                                    - CompanyName1_9:
+                                        Control: ComboBoxDataField@1.5.0
+                                        Variant: textualColumn
+                                        IsLocked: true
+                                        Properties:
+                                          FieldDisplayName: ="CompanyName"
+                                          FieldName: ="webcorr_companyname"
+                                          FieldType: ="s"
+                                          Order: =1
+                                    - IdCorresponder3_4:
+                                        Control: ComboBoxDataField@1.5.0
+                                        Variant: textualColumn
+                                        IsLocked: true
+                                        Properties:
+                                          FieldDisplayName: ="IdCorresponder"
+                                          FieldName: ="webcorr_name"
+                                          FieldType: ="s"
+                                          Order: =2
+                              - TextInputCanvas1_4:
+                                  Control: TextInput@0.0.54
+                                  Properties:
+                                    DisplayMode: =If(IsBlank(TextInputCanvas1_4.Value), DisplayMode.Disabled, DisplayMode.View)
+                                    Value: =If(varAdd, Gallery2_9.Selected.CompanyName, "")
+                                    Visible: =If(varCom,true,false)
+                                    Width: =280
+                        - Icon2_30:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              Color: =RGBA(0, 0, 0, 1)
+                              DisplayMode: =If(varActive, If(IsBlank(cbbVerzender_11.Selected.CompanyName), DisplayMode.Edit,DisplayMode.Edit), DisplayMode.Disabled)
+                              Height: =34
+                              Icon: =Icon.Add
+                              OnSelect: |-
+                                =Set(varAddCompany3, true);
+                                Set(varEmail, true)
+                              Visible: =If(varIntern,false,true)
+                              Width: =25
+                              X: =413
+                              Y: =220
+                        - lblVerzender_152:
+                            Control: Label@2.5.1
+                            Properties:
+                              Color: =RGBA(114, 114, 114, 1)
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              Text: ="Contact"
+                              Visible: =If(varActive,true,false)
+                              Width: =140
+                              X: =495
+                              Y: =220
+                        - ConContact_6:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              BorderColor: =If(varErrorCInk, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                              BorderThickness: =If(varErrorCInk, 2,0.1)
+                              DropShadow: =DropShadow.Semibold
+                              Fill: =RGBA(255, 255, 255, 1)
+                              FillPortions: =0
+                              Height: =30
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =260
+                              X: =If(varActive, 999, 496)
+                              Y: =220
+                            Children:
+                              - cbbVerzender_14:
+                                  Control: ComboBox@0.0.51
+                                  Properties:
+                                    DisplayMode: |-
+                                      =If(varActive, If(IsBlank(TextInputCanvas1_4.Value),
+                                      DisplayMode.View,
+                                      DisplayMode.Edit), DisplayMode.Edit)
+                                    Height: =ConContact_6.Height
+                                    InputTextPlaceholder: ="Zoek"
+                                    Items: =If(varActive, Filter(Contacts, Company.CompanyName = TextInputCanvas1_4.Value), Filter(Contacts, ContactPerson = 'Choices ContactPerson'.Person))
+                                    OnChange: =Set(varErrorCInk, false)
+                                    Width: =ConContact_6.Width
+                                  Children:
+                                    - Name4_10:
+                                        Control: ComboBoxDataField@1.5.0
+                                        Variant: textualColumn
+                                        IsLocked: true
+                                        Properties:
+                                          FieldDisplayName: ="Name"
+                                          FieldName: ="webcorr_name"
+                                          FieldType: ="s"
+                                          Order: =1
+                                    - IdContact2_10:
+                                        Control: ComboBoxDataField@1.5.0
+                                        Variant: textualColumn
+                                        IsLocked: true
+                                        Properties:
+                                          FieldDisplayName: ="IdContact"
+                                          FieldName: ="webcorr_idcontact"
+                                          FieldType: ="s"
+                                          Order: =2
+                              - cbbCCIntern_32:
+                                  Control: ComboBox@0.0.51
+                                  Properties:
+                                    BasePaletteColor: =RGBA(255, 255, 255, 1)
+                                    Height: =ConContact_6.Height
+                                    InputTextPlaceholder: ="Zoek"
+                                    Items: =ColAllInOne
+                                    MultiValueDelimiter: ="; "
+                                    OnChange: =Set(varErrorCInk, false)
+                                    SelectMultiple: =true
+                                    Visible: |-
+                                      =If(cbbVerzender_11.Selected.CompanyName = "WEB Aruba NV",
+                                      true, false)
+                                    Width: =ConContact_6.Width
+                                  Children:
+                                    - value5_3:
+                                        Control: ComboBoxDataField@1.5.0
+                                        Variant: textualColumn
+                                        IsLocked: true
+                                        Properties:
+                                          FieldDisplayName: ="value"
+                                          FieldName: ="value"
+                                          FieldType: ="s"
+                                          Order: =1
+                        - Icon2_31:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              Color: =RGBA(0, 0, 0, 1)
+                              DisplayMode: |-
+                                =If(varActive, If( IsBlank(TextInputCanvas1_4.Value),
+                                DisplayMode.View,
+                                DisplayMode.Edit,DisplayMode.Edit))
+                              Height: =34
+                              Icon: =Icon.Add
+                              OnSelect: |-
+                                =If(varActive,  Set(varAddcontact2, true),Set(varAddPerson, true));
+                                Set(varEmail, true);
+                                Set(varInvalidEmail, Blank())
+                              Visible: |-
+                                =If(cbbVerzender_11.Selected.CompanyName = "WEB Aruba NV",
+                                false, true)
+                              Width: =25
+                              X: |
+                                =If(varActive,1256,750)
+                              Y: =220
+                        - TxtErrorContactInk_243:
+                            Control: Text@0.0.51
+                            Properties:
+                              Align: ='TextCanvas.Align'.End
+                              FontColor: =RGBA(255, 0, 0, 1)
+                              FontItalic: =true
+                              Height: =26
+                              Size: =10
+                              Text: ="Verplicht veld"
+                              Visible: =varErrorVerInk
+                              X: =343
+                              Y: =30
+                        - TxtErrorContactInk_244:
+                            Control: Text@0.0.51
+                            Properties:
+                              Align: ='TextCanvas.Align'.End
+                              FontColor: =RGBA(255, 0, 0, 1)
+                              FontItalic: =true
+                              Height: =26
+                              Size: =10
+                              Text: ="Verplicht veld"
+                              Visible: =varErrorCInk
+                              X: =If(varActive, 1182,680)
+                              Y: =30
+                        - lblCCIntern_11:
+                            Control: Label@2.5.1
+                            Properties:
+                              Color: =RGBA(114, 114, 114, 1)
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              Text: ="Ontvanger"
+                              Width: =100
+                              X: =13
+                              Y: =60
+                        - ConSender_3:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              BorderColor: =RGBA(79, 90, 94, 1)
+                              BorderThickness: =0.1
+                              DropShadow: =DropShadow.Semibold
+                              FillPortions: =0
+                              Height: =30
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =260
+                              X: =159
+                              Y: =60
+                            Children:
+                              - cbbCCIntern_33:
+                                  Control: ComboBox@0.0.51
+                                  Properties:
+                                    DefaultSelectedItems: =LookUp(VerzenderUitgaandeCorresponder, CompanyName = "WEB Aruba NV")
+                                    DisplayMode: =If(varIntern, DisplayMode.View, DisplayMode.View)
+                                    Height: =ConSender_3.Height
+                                    InputTextPlaceholder: ="Zoek"
+                                    Items: =VerzenderUitgaandeCorresponder
+                                    MultiValueDelimiter: ="; "
+                                    OnChange: =
+                                    SelectMultiple: =true
+                                    Width: =ConSender_3.Width
+                                  Children:
+                                    - CompanyName2_3:
+                                        Control: ComboBoxDataField@1.5.0
+                                        Variant: textualColumn
+                                        IsLocked: true
+                                        Properties:
+                                          FieldDisplayName: ="CompanyName"
+                                          FieldName: ="webcorr_companyname"
+                                          FieldType: ="s"
+                                          Order: =1
+                                    - IdCorresponder5_3:
+                                        Control: ComboBoxDataField@1.5.0
+                                        Variant: textualColumn
+                                        IsLocked: true
+                                        Properties:
+                                          FieldDisplayName: ="IdCorresponder"
+                                          FieldName: ="webcorr_name"
+                                          FieldType: ="s"
+                                          Order: =2
+                  - Container17_5:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =55
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutGap: =25
+                        PaddingLeft: =50
+                      Children:
+                        - lblVerzender_155:
+                            Control: Label@2.5.1
+                            Properties:
+                              Color: =RGBA(114, 114, 114, 1)
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              Text: ="Contact"
+                              Width: =140
+                              X: =495
+                              Y: =60
+                        - ConContact_7:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              BorderColor: =If(varErrorCOInk, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                              BorderThickness: =If(varErrorCOInk, 2,0.1)
+                              DropShadow: =DropShadow.Semibold
+                              FillPortions: =0
+                              Height: =30
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =260
+                              X: =167
+                              Y: =60
+                            Children:
+                              - cbbVerzender_15:
+                                  Control: ComboBox@0.0.51
+                                  Properties:
+                                    DisplayMode: |-
+                                      =If(IsBlank(cbbVerzender_11.Selected.CompanyName),
+                                      DisplayMode.View,
+                                      DisplayMode.Edit)
+                                    Height: =ConContact_7.Height
+                                    InputTextPlaceholder: ="Zoek"
+                                    Items: =Filter(Contacts, Company.IdCorresponder = cbbVerzender_11.Selected.IdCorresponder)
+                                    Width: =ConContact_7.Width
+                                  Children:
+                                    - Name4_11:
+                                        Control: ComboBoxDataField@1.5.0
+                                        Variant: textualColumn
+                                        IsLocked: true
+                                        Properties:
+                                          FieldDisplayName: ="Name"
+                                          FieldName: ="webcorr_name"
+                                          FieldType: ="s"
+                                          Order: =1
+                                    - IdContact2_11:
+                                        Control: ComboBoxDataField@1.5.0
+                                        Variant: textualColumn
+                                        IsLocked: true
+                                        Properties:
+                                          FieldDisplayName: ="IdContact"
+                                          FieldName: ="webcorr_idcontact"
+                                          FieldType: ="s"
+                                          Order: =2
+                              - cbbCCIntern_34:
+                                  Control: ComboBox@0.0.51
+                                  Properties:
+                                    BasePaletteColor: =RGBA(255, 255, 255, 1)
+                                    Height: =ConContact_7.Height
+                                    InputTextPlaceholder: ="Zoek"
+                                    Items: =ColAllInOne
+                                    MultiValueDelimiter: ="; "
+                                    OnChange: =Set(varErrorCOInk, false)
+                                    SelectMultiple: =true
+                                    Width: =ConContact_7.Width
+                                  Children:
+                                    - value6_3:
+                                        Control: ComboBoxDataField@1.5.0
+                                        Variant: textualColumn
+                                        IsLocked: true
+                                        Properties:
+                                          FieldDisplayName: ="value"
+                                          FieldName: ="value"
+                                          FieldType: ="s"
+                                          Order: =1
+                        - lblVerzondenOp_6:
+                            Control: Label@2.5.1
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              Color: =RGBA(114, 114, 114, 1)
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              Text: ="Verzonden op"
+                              Width: =140
+                              X: =13
+                              Y: =340
+                        - ConDate_3:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =If(varErrorDateInk, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                              BorderThickness: =If(varErrorDateInk, 2,0.1)
+                              DropShadow: =DropShadow.Semibold
+                              FillPortions: =0
+                              Height: =30
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =260
+                              X: =159
+                              Y: =340
+                            Children:
+                              - dateVerzondenOp_7:
+                                  Control: Classic/DatePicker@2.6.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderThickness: =0
+                                    Color: =RGBA(53, 61, 63, 1)
+                                    DefaultDate: =
+                                    Fill: =RGBA(245, 245, 245, 1)
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =30
+                                    IconBackground: =RGBA(16, 188,224, 1)
+                                    IconFill: =RGBA(255, 255, 255, 1)
+                                    InputTextPlaceholder: ="Selecteer een datum"
+                                    OnChange: =Set(varErrorDateInk, false)
+                                    PaddingBottom: =0
+                                    Size: =10.5
+                                    Width: =260
+                        - lblReferentie_6:
+                            Control: Label@2.5.1
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              Color: =RGBA(114, 114, 114, 1)
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              Text: ="Referentie"
+                              Width: =100
+                              X: =495
+                              Y: =340
+                        - ConReference_3:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(79, 90, 94, 1)
+                              BorderThickness: =0.1
+                              DropShadow: =DropShadow.Semibold
+                              FillPortions: =0
+                              Height: =30
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =260
+                              X: =662
+                              Y: =340
+                            Children:
+                              - txtReferentie_6:
+                                  Control: TextInput@0.0.54
+                                  Properties:
+                                    Align: =Align.Left
+                                    Height: =ConReference_3.Height
+                                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                                    Required: =true
+                                    Value: =
+                                    Width: =ConReference_3.Width
+                        - TxtErrorContactInk_247:
+                            Control: Text@0.0.51
+                            Properties:
+                              Align: ='TextCanvas.Align'.End
+                              AlignInContainer: =AlignInContainer.Start
+                              FontColor: =RGBA(255, 0, 0, 1)
+                              FontItalic: =true
+                              Height: =26
+                              Size: =10
+                              Text: ="Verplicht veld"
+                              Visible: =varErrorDateInk
+                              X: =343
+                              Y: =30
+                  - Container17_2:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =55
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutGap: =25
+                        PaddingLeft: =50
+                      Children:
+                        - TxtErrorContactInk_246:
+                            Control: Text@0.0.51
+                            Properties:
+                              Align: ='TextCanvas.Align'.End
+                              AlignInContainer: =AlignInContainer.Start
+                              FontColor: =RGBA(255, 0, 0, 1)
+                              FontItalic: =true
+                              Height: =26
+                              Size: =10
+                              Text: ="Verplicht veld"
+                              Visible: =varErrorDateInk
+                              X: =343
+                              Y: =30
+                        - lblSleutelwoorden_9:
+                            Control: Label@2.5.1
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              Color: =RGBA(114, 114, 114, 1)
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              Text: ="Sleutelwoorden"
+                              Width: =140
+                              X: =13
+                              Y: =60
+                        - ConKeywords_6:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(79, 90, 94, 1)
+                              BorderThickness: =0.1
+                              DropShadow: =DropShadow.Semibold
+                              FillPortions: =0
+                              Height: =30
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =260
+                              X: =159
+                              Y: =60
+                            Children:
+                              - txtSleutelwoorden_9:
+                                  Control: TextInput@0.0.54
+                                  Properties:
+                                    Align: =Align.Left
+                                    Height: =ConKeywords_6.Height
+                                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                                    Required: =true
+                                    Width: =ConKeywords_6.Width
+                        - lblSleutelwoorden_10:
+                            Control: Label@2.5.1
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              Color: =RGBA(114, 114, 114, 1)
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              Text: ="Archiefnummer"
+                              Width: =140
+                              X: =495
+                              Y: =60
+                        - ConKeywords_7:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(79, 90, 94, 1)
+                              BorderThickness: =0.1
+                              DropShadow: =DropShadow.Semibold
+                              FillPortions: =0
+                              Height: =30
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =260
+                              X: =662
+                              Y: =60
+                            Children:
+                              - txtSleutelwoorden_10:
+                                  Control: TextInput@0.0.54
+                                  Properties:
+                                    Align: =Align.Left
+                                    Height: =ConKeywords_7.Height
+                                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                                    OnChange: =
+                                    Placeholder: =
+                                    Required: =true
+                                    Value: =
+                                    Width: =ConKeywords_7.Width
+                  - Container17_3:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =135
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutGap: =25
+                        PaddingLeft: =50
+                        PaddingRight: =40
+                      Children:
+                        - lblBeschrijving_5:
+                            Control: Label@2.5.1
+                            Properties:
+                              Color: =RGBA(114, 114, 114, 1)
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              Text: ="Beschrijving"
+                              Width: =140
+                              X: =350
+                              Y: =460
+                        - ConDescription_2:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(79, 90, 94, 1)
+                              BorderThickness: =0.1
+                              DropShadow: =DropShadow.Semibold
+                              Height: =110
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =783
+                              X: =146
+                              Y: =460
+                            Children:
+                              - txtBeschrijving_5:
+                                  Control: TextInput@0.0.54
+                                  Properties:
+                                    Align: =Align.Left
+                                    Height: =ConDescription_2.Height
+                                    Mode: ='TextInputCanvas.Mode'.Multiline
+                                    Required: =true
+                                    Width: =ConDescription_2.Width
+                  - Container17_4:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =120
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutGap: =25
+                        PaddingLeft: =50
+                        PaddingRight: =40
+                      Children:
+                        - lblBijlage(n)_5:
+                            Control: Label@2.5.1
+                            Properties:
+                              Color: =RGBA(114, 114, 114, 1)
+                              FontWeight: =FontWeight.Semibold
+                              Height: =32
+                              Text: ="Bijlage(n)"
+                              Width: =140
+                              X: =350
+                              Y: =590
+                        - Attachments_Bijlage_2:
+                            Control: Attachments@2.3.0
+                            Properties:
+                              AddAttachmentText: ="Bestand uploaden"
+                              BorderColor: =RGBA(139, 154, 159, 1)
+                              BorderThickness: =0.5
+                              Color: =RGBA(114, 114, 114, 1)
+                              DisplayMode: =
+                              DropTargetBorderThickness: =1
+                              Fill: =RGBA(0, 0, 0, 0)
+                              Height: =112
+                              ItemColor: =RGBA(255, 255, 255, 1)
+                              MaxAttachmentSize: =60
+                              MaxAttachments: =5
+                              MaxAttachmentsText: ="Het maximum aantal bestanden is bereikt."
+                              NoAttachmentsText: ="Er is niets bijgevoegd."
+                              OnAddFile: =UpdateContext({hasAttachment:!IsBlank(Attachments_Bijlage_2.Attachments)})
+                              OnRemoveFile: =UpdateContext({hasAttachment:IsBlank(Attachments_Bijlage_2.Attachments)})
+                              PaddingBottom: =5
+                              PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              PressedColor: =RGBA(255, 255, 255, 1)
+                              Tooltip: =
+                              Width: =413
+                              X: =146
+                              Y: =590
+      - TextCanvas4_9:
+          Control: Text@0.0.51
+          Properties:
+            Text: =
+            X: =40
+            Y: =40
+      - CtnAddContInk_3:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            Fill: =RGBA(106, 122, 127, 0.2)
+            Height: =681
+            Visible: =varAddcontact2
+            Width: =1067
+            X: =299
+            Y: =87
+          Children:
+            - CtnAddCompanyContact_16:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  DropShadow: =DropShadow.Bold
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =246
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                  Width: =805
+                  X: =141
+                  Y: =54
+                Children:
+                  - ImgWeb_15:
+                      Control: Image@2.2.3
+                      Properties:
+                        Height: =56
+                        Image: =web
+                        TabIndex: =true
+                        Width: =93
+                  - LblTitleApp_15:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Right
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Italic: =true
+                        OnSelect: =Set(ModalInkomende, false)
+                        Size: =9
+                        TabIndex: =true
+                        Text: ="C-Track"
+                        Width: =62
+                        X: =738
+                  - LblTitleContact_14:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        OnSelect: =Set(ModalInkomende, false)
+                        TabIndex: =true
+                        Text: ="Contactgegevens"
+                        Width: =500
+                        X: =137
+                        Y: =13
+                  - RtgCompany_15:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(106, 122, 127, 1)
+                        BorderThickness: =1
+                        Fill: =RGBA(16, 188, 224, 1)
+                        Height: =1
+                        TabIndex: =true
+                        Width: =802
+                        Y: =56
+                  - lblVerzender_47:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(255, 0, 0, 1)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =30
+                        Size: =14
+                        Text: ="*"
+                        Width: =30
+                        X: =25
+                        Y: =69
+                  - LblNameContact_14:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Naam"
+                        Width: =126
+                        X: =37
+                        Y: =74
+                  - CtnNameContact_14:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: =If(varErrorNameCon, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                        BorderThickness: =If(varErrorNameCon, 2,0)
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =171
+                        Y: =74
+                      Children:
+                        - txtNameContact_12:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              FontColor: =RGBA(0, 0, 0, 1)
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: |-
+                                =Set(varBlank, true);
+                                Set(varErrorNameCon, false);
+                                Set(varExCo, If(CountRows(Filter( Filter(Contacts, Company.CompanyName = TextInputCanvas1_4.Value),Name = txtNameContact_12.Value))=0,true,false))
+                              Required: =true
+                              Width: =250
+                  - LblEmailContact_14:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Email"
+                        Width: =100
+                        X: =440
+                        Y: =74
+                  - CtnEmailContact_14:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: |+
+                          =If(!IsBlank(txtEmailContact_12.Value),If(!varInvalidEmail,RGBA(255,0,0,1),RGBA(0,0,0,0)),RGBA(0,0,0,0))
+                        BorderThickness: |-
+                          = If(!IsBlank(txtEmailContact_12.Value),If(
+                                  varInvalidEmail,0,2),0)
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =515
+                        Y: =74
+                      Children:
+                        - txtEmailContact_12:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: |+
+                                =If(IsMatch(Self.Value,Match.Email),UpdateContext({varInvalidEmail:true}),UpdateContext({varInvalidEmail:false }));
+                                Set(varBlank4, true);
+                              Required: =true
+                              Width: =250
+                  - TextCanvas4_10:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Justify
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        Size: =13
+                        Text: =If(IsBlank(txtNameContact_12.Value),"", If(varExCo, "","Er is al een persoon geregistreerd met die naam"))
+                        VerticalAlign: =VerticalAlign.Middle
+                        Width: =275
+                        X: =42
+                        Y: =100
+                  - TxtErrorContactInk_107:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        FontItalic: =true
+                        Height: =26
+                        Size: =10
+                        Text: ="Verplicht veld"
+                        Visible: =varErrorNameCom
+                        X: =320
+                        Y: =100
+                  - TxtErrorContactInk_108:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        FontItalic: =true
+                        Height: =26
+                        Size: =10
+                        Text: ="Verplicht veld"
+                        Visible: =varErrorNameCon
+                        X: =324
+                        Y: =100
+                  - TxtErrorContactInk_109:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        FontItalic: =true
+                        Height: =26
+                        Size: =10
+                        Text: ="Verplicht veld"
+                        Visible: =varErrorAddressCom
+                        X: =664
+                        Y: =100
+                  - TxtErrorContactInk_110:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        FontItalic: =true
+                        Height: =26
+                        Size: =10
+                        Text: ="Verplicht veld"
+                        Visible: =false
+                        X: =668
+                        Y: =100
+                  - TxtErrorContactInk_111:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        FontItalic: =true
+                        Height: =26
+                        Size: =10
+                        Text: |-
+                          =If(
+                              !IsBlank(txtEmailContact_12.Value),
+                              If(
+                                  !varInvalidEmail,
+                                  "Ongeldig E-mail",
+                                  " "
+                              ),
+                              ""
+                          )
+                        X: =669
+                        Y: =100
+                  - ButtonCanvas3_8:
+                      Control: Button@0.0.45
+                      Properties:
+                        Appearance: ='ButtonCanvas.Appearance'.Subtle
+                        FontSize: =13
+                        FontWeight: =FontWeight.Normal
+                        Height: =23
+                        OnSelect: =
+                        Text: ="Zie bedrijf"
+                        Visible: =If(IsBlank(txtNameContact_12.Value), false, If(varExCo,false,true))
+                        Width: =90
+                        X: =TextCanvas4_10.X+TextCanvas4_10.Width+10
+                        Y: =105
+                  - LblPhoneContact_20:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Telefoon"
+                        Width: =126
+                        X: =37
+                        Y: =134
+                  - CtnPhoneContact_20:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: |-
+                          =
+                           If(!IsBlank(txtPhoneContact_12.Value),If(
+                                  !ValidInput,RGBA(255,0,0,1),RGBA(0,0,0,0)),RGBA(0,0,0,0))
+                        BorderThickness: |-
+                          = If(!IsBlank(txtPhoneContact_12.Value),If(
+                                  ValidInput,0,2),0)
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =171
+                        Y: =134
+                      Children:
+                        - txtPhoneContact_12:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: |-
+                                =Set(varBlank1, true);
+                                If(
+                                    IsNumeric(txtPhoneContact_12.Value) ,
+                                    UpdateContext({ ValidInput: true }),
+                                    UpdateContext({ ValidInput: false })
+                                );
+                              Required: =true
+                              Width: =250
+                  - TxtErrorContactInk_112:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        FontItalic: =true
+                        Height: =26
+                        Size: =10
+                        Text: ="Verplicht veld"
+                        Visible: =varErrorCityCom
+                        X: =320
+                        Y: =160
+                  - TextCanvas4_16:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        Height: =20
+                        Size: =10
+                        Text: |-
+                          =If(
+                              !IsBlank(txtPhoneContact_12.Value),
+                              If(
+                                  !ValidInput,
+                                  "Vul een nummer in. Géén tekst",
+                                  " "
+                              ),
+                              ""
+                          )
+                        Weight: ='TextCanvas.Weight'.Regular
+                        Width: =150
+                        X: =270
+                        Y: =165
+                  - BtnCancel_16:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(16, 188, 224, 1)
+                        Color: =RGBA(214, 221, 224, 1)
+                        DisabledColor: =RGBA(180, 214, 250, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 1)
+                        Fill: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =35
+                        HoverBorderColor: =RGBA(60, 60, 70, 1)
+                        HoverColor: =RGBA(60, 60, 70, 1)
+                        HoverFill: =RGBA(16, 188, 224, 1)
+                        OnSelect: |
+                          =Set(
+                              varAddcontact2,
+                              false
+                          );
+                          Set(
+                              varErrorNameCon,
+                              false
+                          );
+                          Set(
+                              varErrorEmailCom,
+                              false
+                          );
+                          Set(
+                              varInvalidEmail,
+                              false
+                          );
+                          Set(
+                              varBlank,
+                              false
+                          );
+                          Set(
+                              varBlank1,
+                              false
+                          );
+                          Set(
+                              varBlank2,
+                              false
+                          );
+                          Set(
+                              varBlank4,
+                              false
+                          );
+                          Set(
+                              varEmail,
+                              false
+                          );
+                          Reset(txtNameContact_12);
+                          Reset(txtPhoneContact_12);
+                          Reset(txtEmailContact_12);
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        TabIndex: =true
+                        Text: ="Annuleren"
+                        Width: =100
+                        X: =37
+                        Y: =190
+                  - BtnConfirm_15:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(60, 60, 70, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(180, 214, 250, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 1)
+                        DisplayMode: =If(varExCo,DisplayMode.Edit, DisplayMode.View)
+                        Fill: =RGBA(16, 188, 224, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =35
+                        HoverBorderColor: =RGBA(16, 188, 224, 1)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(60, 60, 70, 1)
+                        OnSelect: "=If(\n    If(\n        IsBlank(txtEmailContact_12.Value),\n        true,\n        varInvalidEmail\n    ) && !IsBlank(txtNameContact_12.Value) && If(\n        IsBlank(txtPhoneContact_12.Value),\n        true,\n        ValidInput\n    ),\n    Patch(\n        Contacts,\n        Defaults(Contacts),\n        {\n            Name: txtNameContact_12.Value,\n            Phone: txtPhoneContact_12.Value,\n            Email: txtEmailContact_12.Value,\n            Address: cbbVerzender_11.Selected.Adress,\n            City: cbbVerzender_11.Selected.City,\n            Country: cbbVerzender_11.Selected.Country,\n            Postcode: cbbVerzender_11.Selected.ZIP,\n            Company: LookUp(\n                VerzenderUitgaandeCorresponder,\n                IdCorresponder = cbbVerzender_11.Selected.IdCorresponder\n            ),\n            ContactPerson: 'Choices ContactPerson'.Contact\n        }\n    );\n    Notify(\n        \"Contact succesvol gemaakt\",\n        NotificationType.Success\n    );\n    Set(\n        varAddcontact2,\n        false\n    );\n    Set(\n        varBlank,\n        false\n    );\n    Set(\n        varBlank1,\n        false\n    );\n    Set(\n        varBlank2,\n        false\n    );\n    Set(\n        varBlank4,\n        false\n    );\n    Reset(txtNameContact_12);\n    Reset(txtPhoneContact_12);\n    Reset(txtEmailContact_12);\n    ,\n    Notify(\n        \"Er zijn verplichte of onjuiste velden\",\n        NotificationType.Error\n    );\n    Set(\n        varAddCompany,\n        true\n    );    \n    If(\n        IsBlank(txtNameContact_12.Value),\n        Set(\n            varErrorNameCon,\n            true\n        ),\n        Set(\n            varErrorNameCon,\n            false\n        )\n    );\n    \n);\n"
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        TabIndex: =true
+                        Text: ="Bevestig"
+                        Width: =100
+                        X: =665
+                        Y: =190
+            - CtnAddCompanyContact_26:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  DropShadow: =DropShadow.Bold
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =124
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                  Visible: =If(varExCo,true,false)
+                  Width: =386
+                  X: =338
+                  Y: =115
+                Children:
+                  - cbbVerzender_10:
+                      Control: ComboBox@0.0.51
+                      Properties:
+                        DisplayMode: |-
+                          =If(varActive, If(IsBlank(TextInputCanvas1_4.Value),
+                          DisplayMode.View,
+                          DisplayMode.Edit), DisplayMode.Edit)
+                        Height: =ConContact_6.Height
+                        InputTextPlaceholder: ="Zoek"
+                        Items: = Filter(Filter(Contacts, Company.CompanyName = TextInputCanvas1_4.Value), Name = txtNameContact_12.Value)
+                        OnChange: =Set(varErrorCInk, false)
+                        Width: =ConContact_6.Width
+                        X: =72
+                        Y: =51
+                      Children:
+                        - Name4_9:
+                            Control: ComboBoxDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Name"
+                              FieldName: ="webcorr_name"
+                              FieldType: ="s"
+                              Order: =1
+                        - IdContact2_9:
+                            Control: ComboBoxDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="IdContact"
+                              FieldName: ="webcorr_idcontact"
+                              FieldType: ="s"
+                              Order: =2
+      - CtnAddPersonInk_7:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            Fill: =RGBA(106, 122, 127, 0.2)
+            Height: =681
+            Visible: =varAddPerson
+            Width: =1067
+            X: =299
+            Y: =87
+          Children:
+            - CtnAddCompanyContact_40:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  DropShadow: =DropShadow.Bold
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =374
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                  Width: =805
+                  X: =141
+                  Y: =54
+                Children:
+                  - ImgWeb_29:
+                      Control: Image@2.2.3
+                      Properties:
+                        Height: =56
+                        Image: =web
+                        TabIndex: =true
+                        Width: =93
+                  - LblTitleApp_29:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Right
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Italic: =true
+                        OnSelect: =Set(ModalInkomende, false)
+                        Size: =9
+                        TabIndex: =true
+                        Text: ="C-Track"
+                        Width: =62
+                        X: =738
+                  - LblTitleCompany_29:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =44
+                        OnSelect: =Set(ModalInkomende, false)
+                        Size: =14
+                        TabIndex: =true
+                        Text: ="Persoongegevens"
+                        Width: =500
+                        X: =132
+                        Y: =12
+                  - RtgCompany_29:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(106, 122, 127, 1)
+                        BorderThickness: =1
+                        Fill: =RGBA(16, 188, 224, 1)
+                        Height: =1
+                        TabIndex: =true
+                        Width: =802
+                        Y: =56
+                  - lblVerzender_117:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(255, 0, 0, 1)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =30
+                        Size: =14
+                        Text: ="*"
+                        Width: =30
+                        X: =21
+                        Y: =70
+                  - LblNameCompany_29:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Naam"
+                        Width: =126
+                        X: =32
+                        Y: =70
+                  - CtnNameCompany_29:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: =If(varErrorNamePer, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                        BorderThickness: =If(varErrorNamePer, 2,0)
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =136
+                        Y: =70
+                      Children:
+                        - txtNameCompany_29:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              FontColor: =RGBA(0, 0, 0, 1)
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: |-
+                                =Set(varBlank, true);
+                                Set(varErrorNamePer, false);
+                                Set(varEx, If(CountRows(Filter(Contacts,Name = txtNameCompany_29.Value))=0,true,false))
+                              Required: =true
+                              Width: =250
+                  - LblAddressCompany_29:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Email"
+                        Width: =100
+                        X: =415
+                        Y: =70
+                  - CtnAddressCompany_29:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: |-
+                          =If(
+                              !IsBlank(txtAddressCompany_29.Value),
+                              If(
+                                  !varInvalidEmail,
+                          RGBA(255,0,0,1),RGBA(0,0,0,0)),RGBA(0,0,0,0))
+                        BorderThickness: |-
+                          =If(
+                              !IsBlank(txtAddressCompany_29.Value),
+                              If(
+                                  varInvalidEmail, 0,2),0)
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =510
+                        Y: =70
+                      Children:
+                        - txtAddressCompany_29:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: |+
+                                =If(IsMatch(Self.Value,Match.Email),UpdateContext({varInvalidEmail:true}),UpdateContext({varInvalidEmail:false }));
+                              Required: =true
+                              Width: =250
+                  - TxtErrorContactInk_186:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        FontItalic: =true
+                        Height: =26
+                        Size: =10
+                        Text: |-
+                          =
+                          If(
+                              !IsBlank(txtAddressCompany_29.Value),
+                              If(
+                                  !varInvalidEmail,
+                                  "Ongeldig E-mail",
+                                  " "
+                              ),
+                              ""
+                          )
+                        X: =660
+                        Y: =95
+                  - TextCanvas4_50:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Justify
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        Size: =13
+                        Text: =If(IsBlank(txtNameCompany_29.Value),"", If(varEx, "","Er is al een persoon geregistreerd met die naam"))
+                        VerticalAlign: =VerticalAlign.Middle
+                        Width: =275
+                        X: =42
+                        Y: =100
+                  - TxtErrorContactInk_187:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        FontItalic: =true
+                        Height: =26
+                        Size: =10
+                        Text: ="Verplicht veld"
+                        Visible: =varErrorNamePer
+                        Width: =100
+                        X: =285
+                        Y: =100
+                  - TxtErrorContactInk_188:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        FontItalic: =true
+                        Height: =26
+                        Size: =10
+                        Text: ="Verplicht veld"
+                        Visible: =varErrorNameCom
+                        X: =320
+                        Y: =100
+                  - TxtErrorContactInk_189:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        FontItalic: =true
+                        Height: =26
+                        Size: =10
+                        Text: ="Verplicht veld"
+                        Visible: =false
+                        X: =664
+                        Y: =100
+                  - lblVerzender_118:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(255, 0, 0, 1)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =30
+                        Size: =14
+                        Text: ="*"
+                        Width: =30
+                        X: =21
+                        Y: =130
+                  - LblCityCompany_29:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Adres"
+                        Width: =126
+                        X: =32
+                        Y: =130
+                  - CtnCityCompany_29:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: =If(varErrorAddressPer, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                        BorderThickness: =If(varErrorAddressPer, 2,0)
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =136
+                        Y: =130
+                      Children:
+                        - txtCityCompany_29:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: |-
+                                =Set(varBlank1, true);
+                                Set(varErrorAddressPer, false)
+                              Required: =true
+                              Width: =250
+                  - LblCountryCompany_29:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Postcode"
+                        Width: =100
+                        X: =415
+                        Y: =130
+                  - CtnCountryCompany_29:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =510
+                        Y: =130
+                      Children:
+                        - txtCountryCompany_29:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: =Set(varBlank2, true)
+                              Required: =true
+                              Width: =250
+                  - TxtErrorContactInk_190:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        FontItalic: =true
+                        Height: =26
+                        Size: =10
+                        Text: ="Verplicht veld"
+                        Visible: =varErrorAddressPer
+                        Width: =100
+                        X: =285
+                        Y: =160
+                  - LblPhoneCompany_29:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Stad"
+                        Width: =126
+                        X: =32
+                        Y: =190
+                  - CtnPhoneCompany_29:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =136
+                        Y: =190
+                      Children:
+                        - txtPhoneCompany_29:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: |+
+                                =Set(varBlank2, true);
+                              Required: =true
+                              Width: =250
+                  - LblZIPCodeCompany_41:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Land"
+                        Width: =110
+                        X: =415
+                        Y: =190
+                  - CtnZIPCodeCompany_29:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =510
+                        Y: =190
+                      Children:
+                        - txtZIPCodeCompany_29:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: =Set(varBlank1, true)
+                              Required: =true
+                              Value: ="Aruba"
+                              Width: =250
+                  - LblPhoneContact_32:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Telefoon"
+                        Width: =126
+                        X: =32
+                        Y: =250
+                  - CtnPhoneContact_54:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: |-
+                          =If(
+                              !IsBlank(txtPhoneContact_37.Value),
+                              If(
+                                  !ValidInput,RGBA(255,0,0,1),RGBA(0,0,0,0)),RGBA(0,0,0,0))
+                        BorderThickness: |-
+                          =If(
+                              !IsBlank(txtPhoneContact_37.Value),
+                              If(
+                                  ValidInput,0,2),0)
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =136
+                        Y: =250
+                      Children:
+                        - txtPhoneContact_37:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: |-
+                                =Set(varBlank1, true);
+                                If(
+                                    IsNumeric(txtPhoneContact_37.Value) ,
+                                    UpdateContext({ ValidInput: true }),
+                                    UpdateContext({ ValidInput: false })
+                                );
+                              Required: =true
+                              Width: =250
+                  - LblZIPCodeCompany_42:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Bedrijf"
+                        Width: =110
+                        X: =415
+                        Y: =250
+                  - CtnPhoneContact_55:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =220
+                        X: =510
+                        Y: =250
+                      Children:
+                        - ComboboxCanvas1_11:
+                            Control: ComboBox@0.0.51
+                            Properties:
+                              DisplayMode: =If(IsBlank(txtNameCompany_29.Value),DisplayMode.Edit,If(varEx,DisplayMode.Edit,DisplayMode.View))
+                              Height: =30
+                              Items: =Sort(Filter(VerzenderUitgaandeCorresponder, CompanyName <> "WEB Aruba NV"),CompanyName,SortOrder.Ascending)
+                              Width: =220
+                            Children:
+                              - CompanyName6_11:
+                                  Control: ComboBoxDataField@1.5.0
+                                  Variant: textualColumn
+                                  IsLocked: true
+                                  Properties:
+                                    FieldDisplayName: ="CompanyName"
+                                    FieldName: ="webcorr_companyname"
+                                    FieldType: ="s"
+                                    Order: =1
+                  - Icon2_29:
+                      Control: Classic/Icon@2.5.0
+                      Properties:
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisplayMode: =If(IsBlank(txtNameCompany_29.Value),DisplayMode.Edit,If(varEx,DisplayMode.Edit,DisplayMode.View))
+                        Height: =30
+                        Icon: =Icon.Add
+                        OnSelect: |-
+                          =Set(varAddCompany3, true);
+                          Set(varActive, true);
+                          Set(varCom, true)
+                        Width: =25
+                        X: =735
+                        Y: =250
+                  - TextCanvas4_51:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        Height: =20
+                        Size: =10
+                        Text: |-
+                          =If(
+                              !IsBlank(txtPhoneContact_37.Value),
+                              If(
+                                  !ValidInput,
+                                  "Vul een nummer in. Géén tekst",
+                                  " "
+                              ),
+                              ""
+                          )
+                        Weight: ='TextCanvas.Weight'.Regular
+                        Width: =150
+                        X: =235
+                        Y: =282
+                  - BtnCancel_31:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(16, 188, 224, 1)
+                        Color: =RGBA(214, 221, 224, 1)
+                        DisabledColor: =RGBA(180, 214, 250, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 1)
+                        Fill: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =35
+                        HoverBorderColor: =RGBA(60, 60, 70, 1)
+                        HoverColor: =RGBA(60, 60, 70, 1)
+                        HoverFill: =RGBA(16, 188, 224, 1)
+                        OnSelect: |
+                          =Set(
+                              varAddPerson,
+                              false
+                          );
+                          Set(varEx,false);
+                          Set(
+                              varErrorAddressPer,
+                              false
+                          );
+                          Set(
+                              varErrorNamePer,
+                              false
+                          );
+                          Set(
+                              varErrorNamePer,
+                              false
+                          );
+                          Set(
+                              varErrorEmailPer,
+                              false
+                          );
+                          Set(
+                              varInvalidEmailPer,
+                              false
+                          );
+                          Set(
+                              varErrorAddressPer,
+                              false
+                          );
+                          Set(
+                              varBlank,
+                              false
+                          );
+                          Set(
+                              varBlank1,
+                              false
+                          );
+                          Set(
+                              varBlank2,
+                              false
+                          );
+                          Set(
+                              varBlank4,
+                              false
+                          );
+                          Set(
+                              varEmail,
+                              false
+                          );
+                          Reset(txtZIPCodeCompany_29);
+                          Reset(txtPhoneCompany_29);
+                          Reset(txtCountryCompany_29);
+                          Reset(txtAddressCompany_29);
+                          Reset(txtCityCompany_29);
+                          Reset(txtPhoneContact_37);
+                          Reset(txtNameCompany_29);
+                          Reset(ComboboxCanvas1_11)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        TabIndex: =true
+                        Text: ="Annuleren"
+                        Width: =100
+                        X: =32
+                        Y: =311
+                  - BtnConfirm_29:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(60, 60, 70, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(180, 214, 250, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 1)
+                        DisplayMode: =If(IsBlank(txtNameCompany_29.Value),DisplayMode.Edit,If(varEx,DisplayMode.Edit,DisplayMode.View))
+                        Fill: =RGBA(16, 188, 224, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =35
+                        HoverBorderColor: =RGBA(16, 188, 224, 1)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(60, 60, 70, 1)
+                        OnSelect: "=If(\n    !IsBlank(txtNameCompany_29.Value) && If(\n        IsBlank(txtAddressCompany_29.Value),\n        true,\n        varInvalidEmail\n    ) && !IsBlank(txtCityCompany_29.Value) && If(\n        IsBlank(txtPhoneContact_37.Value),\n        true,\n        ValidInput\n    ),\n    Patch(\n        Contacts,\n        Defaults(Contacts),\n        {\n            Name: txtNameCompany_29.Value,\n            Phone: txtPhoneContact_37.Value,\n            Address: txtCityCompany_29.Value,\n            Email: txtAddressCompany_29.Value,\n            Postcode: txtCountryCompany_29.Value,\n            City: txtPhoneCompany_29.Value,\n            Country: txtZIPCodeCompany_29.Value,\n            Company: LookUp(\n                VerzenderUitgaandeCorresponder,\n                IdCorresponder = ComboboxCanvas1_11.Selected.IdCorresponder\n            ),\n            ContactPerson: If(\n                IsBlank(ComboboxCanvas1_11.Selected.CompanyName),\n                'Choices ContactPerson'.Person,\n                'Choices ContactPerson'.Contact\n            )\n        }\n    );\n    Notify(\n        \"Contact succesvol gemaakt\",\n        NotificationType.Success\n    );\n    If(\n        !IsBlank(ComboboxCanvas1_11.Selected.CompanyName),\n        Set(\n            varActive,\n            true\n        ),\n        Set(\n            varActive,\n            false\n        )\n    );\n    Set(\n        varAddPerson,\n        false\n    );\n    Set(\n        varBlank,\n        false\n    );\n    Set(\n        varBlank1,\n        false\n    );\n    Set(\n        varBlank2,\n        false\n    );\n    Set(\n        varBlank4,\n        false\n    );\n    Reset(txtZIPCodeCompany_29);\n    Reset(txtPhoneCompany_29);\n    Reset(txtCountryCompany_29);\n    Reset(txtAddressCompany_29);\n    Reset(txtCityCompany_29);\n    Reset(txtPhoneContact_37);\n    Reset(txtNameCompany_29);\n    Reset(ComboboxCanvas1_11);\n    ,\n    Notify(\n        \"Er zijn verplichte of onjuiste velden\",\n        NotificationType.Error\n    );\n    Set(\n        varAddPerson,\n        true\n    );\n    If(\n        IsBlank(txtNameCompany_29.Value),\n        Set(\n            varErrorNamePer,\n            true\n        ),\n        Set(\n            varErrorNamePer,\n            false\n        )\n    );\n    If(\n        IsBlank(txtCityCompany_29.Value),\n        Set(\n            varErrorAddressPer,\n            true\n        ),\n        Set(\n            varErrorAddressPer,\n            false\n        )\n    );\n    \n);\n"
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        TabIndex: =true
+                        Text: ="Bevestig"
+                        Width: =100
+                        X: =660
+                        Y: =311
+      - CtnAddCompanyInk_4:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            Fill: =RGBA(106, 122, 127, 0.2)
+            Height: =681
+            Visible: =varAddCompany3
+            Width: =1067
+            X: =299
+            Y: =87
+          Children:
+            - CtnAddCompanyContact_41:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  DropShadow: =DropShadow.Bold
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =497
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                  Width: =805
+                  X: =141
+                  Y: =54
+                Children:
+                  - ImgWeb_38:
+                      Control: Image@2.2.3
+                      Properties:
+                        Height: =56
+                        Image: =web
+                        TabIndex: =true
+                        Width: =93
+                  - LblTitleApp_38:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Right
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Italic: =true
+                        OnSelect: =Set(ModalInkomende, false)
+                        Size: =9
+                        TabIndex: =true
+                        Text: ="C-Track"
+                        Width: =62
+                        X: =738
+                  - LblTitleCompany_30:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =44
+                        OnSelect: =Set(ModalInkomende, false)
+                        Size: =14
+                        TabIndex: =true
+                        Text: ="Bedrijfgegevens"
+                        Width: =500
+                        X: =132
+                        Y: =12
+                  - RtgCompany_38:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(106, 122, 127, 1)
+                        BorderThickness: =1
+                        Fill: =RGBA(16, 188, 224, 1)
+                        Height: =1
+                        TabIndex: =true
+                        Width: =802
+                        Y: =56
+                  - lblVerzender_124:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(255, 0, 0, 1)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =30
+                        Size: =14
+                        Text: ="*"
+                        Width: =30
+                        X: =21
+                        Y: =70
+                  - LblNameCompany_30:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Bedrijfsnaam"
+                        Width: =126
+                        X: =32
+                        Y: =70
+                  - CtnNameCompany_30:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: =If(varErrorNameCom, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                        BorderThickness: =If(varErrorNameCom, 2,0)
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =150
+                        Y: =70
+                      Children:
+                        - txtNameCompany_30:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              FontColor: =RGBA(0, 0, 0, 1)
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: |-
+                                =Set(varBlank, true);
+                                Set(varErrorNameCom, false);
+                                Set(varEx, If(CountRows(Filter( VerzenderUitgaandeCorresponder,CompanyName = txtNameCompany_30.Value))=0,true,false))
+                              Required: =true
+                              Value: = ""
+                              Width: =250
+                  - lblVerzender_125:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(255, 0, 0, 1)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =30
+                        Size: =14
+                        Text: ="*"
+                        Width: =30
+                        X: =410
+                        Y: =70
+                  - LblAddressCompany_30:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Adres"
+                        Width: =100
+                        X: =420
+                        Y: =70
+                  - CtnAddressCompany_30:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: =If(varErrorAddressCom, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                        BorderThickness: =If(varErrorAddressCom, 2,0)
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =525
+                        Y: =70
+                      Children:
+                        - txtAddressCompany_30:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: |+
+                                =Set(varBlank4, true);
+                                Set(varErrorAddressCom, false)
+                              Required: =true
+                              Value: =If(varAddPerson, txtCityCompany_29.Value, "")
+                              Width: =250
+                  - TextCanvas4_52:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Justify
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        Size: =13
+                        Text: =If(IsBlank(txtNameCompany_30.Value),"", If(varEx, "","Een bedrijf een een soortgelijk naam bestaat al"))
+                        VerticalAlign: =VerticalAlign.Middle
+                        Width: =275
+                        X: =38
+                        Y: =98
+                  - TxtErrorContactInk_237:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        FontItalic: =true
+                        Height: =26
+                        Size: =10
+                        Text: ="Verplicht veld"
+                        Visible: =varErrorNameCom
+                        X: =300
+                        Y: =100
+                  - TxtErrorContactInk_238:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        FontItalic: =true
+                        Height: =26
+                        Size: =10
+                        Text: ="Verplicht veld"
+                        Visible: =varErrorAddressCom
+                        X: =680
+                        Y: =100
+                  - ButtonCanvas3_9:
+                      Control: Button@0.0.45
+                      Properties:
+                        Appearance: ='ButtonCanvas.Appearance'.Subtle
+                        FontSize: =13
+                        FontWeight: =FontWeight.Normal
+                        Height: =23
+                        OnSelect: |-
+                          =Set(varSelectCom, true);
+                          Set(varAdd, true)
+                        Text: ="Zie bedrijf"
+                        Visible: =If(IsBlank(txtNameCompany_30.Value), false, If(varEx,false,true))
+                        Width: =90
+                        X: =TextCanvas4_52.X+TextCanvas4_52.Width
+                        Y: =103
+                  - lblVerzender_126:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(255, 0, 0, 1)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =30
+                        Size: =14
+                        Text: ="*"
+                        Width: =30
+                        X: =21
+                        Y: =130
+                  - LblCityCompany_30:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Stad"
+                        Width: =126
+                        X: =32
+                        Y: =130
+                  - CtnCityCompany_30:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: =If(varErrorCityCom, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                        BorderThickness: =If(varErrorCityCom, 2,0)
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =150
+                        Y: =130
+                      Children:
+                        - txtCityCompany_30:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: |-
+                                =Set(varBlank1, true);
+                                Set(varErrorCityCom, false)
+                              Required: =true
+                              Value: =If(varAddPerson, txtPhoneCompany_29.Value, "")
+                              Width: =250
+                  - LblCountryCompany_30:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Land"
+                        Width: =100
+                        X: =420
+                        Y: =130
+                  - CtnCountryCompany_30:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =525
+                        Y: =130
+                      Children:
+                        - txtCountryCompany_30:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: =Set(varBlank2, true)
+                              Required: =true
+                              Value: =If(varAddPerson, txtZIPCodeCompany_29.Value, "")
+                              Width: =250
+                  - TxtErrorContactInk_239:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        FontItalic: =true
+                        Height: =26
+                        Size: =10
+                        Text: ="Verplicht veld"
+                        Visible: =varErrorCityCom
+                        X: =300
+                        Y: =160
+                  - LblPhoneCompany_30:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Telefoon"
+                        Width: =126
+                        X: =32
+                        Y: =190
+                  - CtnPhoneCompany_30:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: =If(!IsBlank(txtPhoneCompany_30.Value),If(!ValidInput,RGBA(255,0,0,1),RGBA(0,0,0,0)),RGBA(0,0,0,0))
+                        BorderThickness: |-
+                          = If(!IsBlank(txtPhoneCompany_30.Value),If(
+                                  ValidInput,0,2),0)
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =150
+                        Y: =190
+                      Children:
+                        - txtPhoneCompany_30:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: |-
+                                =Set(varBlank2, true);
+                                If(
+                                    IsNumeric(txtPhoneCompany_30.Value) ,
+                                    UpdateContext({ ValidInput: true }),
+                                    UpdateContext({ ValidInput: false })
+                                );
+                              Required: =true
+                              Value: =
+                              Width: =250
+                  - LblZIPCodeCompany_13:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Postcode"
+                        Width: =110
+                        X: =420
+                        Y: =190
+                  - CtnZIPCodeCompany_30:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =525
+                        Y: =190
+                      Children:
+                        - txtZIPCodeCompany_30:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: =
+                              Required: =true
+                              Value: =If(varAddPerson,txtCountryCompany_29.Value, "")
+                              Width: =250
+                  - TextCanvas4_53:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        Height: =20
+                        Size: =10
+                        Text: |-
+                          =If(
+                              !IsBlank(txtPhoneCompany_30.Value),
+                              If(
+                                  !ValidInput,
+                                  "Vul een nummer in. Géén tekst",
+                                  " "
+                              ),
+                              ""
+                          )
+                        Weight: ='TextCanvas.Weight'.Regular
+                        Width: =150
+                        X: =250
+                        Y: =220
+                  - RtgContact_21:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(106, 122, 127, 1)
+                        Fill: =RGBA(139, 154, 159, 1)
+                        Height: =1
+                        TabIndex: =true
+                        Width: =802
+                        Y: =248
+                  - LblTitleContact_30:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        OnSelect: =Set(ModalInkomende, false)
+                        TabIndex: =true
+                        Text: ="Contactgegevens"
+                        Width: =500
+                        X: =132
+                        Y: =250
+                  - lblVerzender_151:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(255, 0, 0, 1)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =30
+                        Size: =14
+                        Text: ="*"
+                        Width: =30
+                        X: =21
+                        Y: =294
+                  - LblNameContact_31:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Naam"
+                        Width: =126
+                        X: =32
+                        Y: =294
+                  - CtnNameContact_30:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: =If(varErrorNameCon, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                        BorderThickness: =If(varErrorNameCon, 2,0)
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =150
+                        Y: =294
+                      Children:
+                        - txtNameContact_28:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              FontColor: =RGBA(0, 0, 0, 1)
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: |-
+                                =Set(varBlank, true);
+                                Set(varErrorNameCon, false)
+                              Required: =true
+                              Value: =If(varAddPerson, txtNameCompany_29.Value, "")
+                              Width: =250
+                  - LblEmailContact_30:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Email"
+                        Width: =100
+                        X: =420
+                        Y: =294
+                  - CtnEmailContact_30:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: |-
+                          =
+                          If(!IsBlank(txtEmailContact_28.Value),If(!varInvalidEmail,RGBA(255,0,0,1),RGBA(0,0,0,0)),RGBA(0,0,0,0))
+                        BorderThickness: |-
+                          = If(!IsBlank(txtEmailContact_28.Value),If(
+                                  varInvalidEmail,0,2),0)
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =525
+                        Y: =294
+                      Children:
+                        - txtEmailContact_28:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: |+
+                                =If(IsMatch(Self.Value,Match.Email),UpdateContext({varInvalidEmail:true}),UpdateContext({varInvalidEmail:false }));Set(varBlank4, true );
+                                //Set(varInvalidEmail, false);
+                                //Set(varErrorEmailCom, false)
+                              Required: =true
+                              Value: =If(varAddPerson, txtAddressCompany_29.Value, "")
+                              Width: =250
+                  - TxtErrorContactInk_240:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        FontItalic: =true
+                        Height: =26
+                        Size: =10
+                        Text: ="Verplicht veld"
+                        Visible: =varErrorNameCon
+                        X: =300
+                        Y: =325
+                  - TxtErrorContactInk_241:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        FontItalic: =true
+                        Height: =26
+                        Size: =10
+                        Text: ="Verplicht veld"
+                        Visible: =false
+                        X: =660
+                        Y: =325
+                  - TxtErrorContactInk_242:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        FontItalic: =true
+                        Height: =26
+                        Size: =10
+                        Text: |-
+                          =
+                          If(
+                              !IsBlank(txtEmailContact_28.Value),
+                              If(
+                                  !varInvalidEmail,
+                                  "Ongeldig E-mail",
+                                  " "
+                              ),
+                              ""
+                          )
+                        X: =680
+                        Y: =325
+                  - LblPhoneContact_43:
+                      Control: Label@2.5.1
+                      Properties:
+                        Color: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =30
+                        Size: =11
+                        TabIndex: =true
+                        Text: ="Telefoon"
+                        Width: =126
+                        X: =32
+                        Y: =354
+                  - CtnPhoneContact_56:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: |-
+                          = If(
+                              !IsBlank(txtPhoneContact_38.Value),
+                              If(
+                                  !ValidInput1,RGBA(255, 0, 0, 1), RGBA(0,0, 0, 0)),RGBA(0, 0, 0, 0))
+                        BorderThickness: |-
+                          =  If(
+                              !IsBlank(txtPhoneContact_38.Value),If(
+                                  ValidInput1,0,2),0)
+                        DropShadow: =DropShadow.Regular
+                        Height: =30
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =250
+                        X: =150
+                        Y: =354
+                      Children:
+                        - txtPhoneContact_38:
+                            Control: TextInput@0.0.54
+                            Properties:
+                              Align: =Align.Left
+                              Height: =30
+                              Mode: ='TextInputCanvas.Mode'.SingleLine
+                              OnChange: |-
+                                =Set(varBlank1, true);
+                                If(
+                                    IsNumeric(txtPhoneContact_38.Value) ,
+                                    UpdateContext({ ValidInput1: true }),
+                                    UpdateContext({ ValidInput1: false })
+                                );
+                              Required: =true
+                              Value: =If(varAddPerson, txtPhoneContact_37.Value, "")
+                              Width: =250
+                  - TextCanvas4_54:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.End
+                        FontColor: =RGBA(255, 0, 0, 1)
+                        Height: =20
+                        Size: =10
+                        Text: |-
+                          =If(
+                              !IsBlank(txtPhoneContact_38.Value),
+                              If(
+                                  !ValidInput1,
+                                  "Vul een nummer in. Géén tekst",
+                                  " "
+                              ),
+                              ""
+                          )
+                        Weight: ='TextCanvas.Weight'.Regular
+                        Width: =150
+                        X: =250
+                        Y: =385
+                  - BtnCancel_40:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(16, 188, 224, 1)
+                        Color: =RGBA(214, 221, 224, 1)
+                        DisabledColor: =RGBA(180, 214, 250, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 1)
+                        Fill: =RGBA(60, 60, 70, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =35
+                        HoverBorderColor: =RGBA(60, 60, 70, 1)
+                        HoverColor: =RGBA(60, 60, 70, 1)
+                        HoverFill: =RGBA(16, 188, 224, 1)
+                        OnSelect: |
+                          =Set(
+                             varAddCompany3,
+                              false
+                          );
+                          If(varAddPerson, Set(varCom,false);Set(varActive, false), Set(varActive, true);
+                          Set(varCom, true));
+                          Set(varEx, true);
+                          Set(
+                              varErrorAddressCom,
+                              false
+                          );
+                          Set(
+                              varErrorNameCom,
+                              false
+                          );
+                          Set(
+                              varErrorNameCon,
+                              false
+                          );
+                          Set(
+                              varErrorEmailCom,
+                              false
+                          );
+                          Set(
+                              varInvalidEmail,
+                              false
+                          );
+                          Set(
+                              varErrorCityCom,
+                              false
+                          );
+                          Set(
+                              varBlank,
+                              false
+                          );
+                          Set(
+                              varBlank1,
+                              false
+                          );
+                          Set(
+                              varBlank2,
+                              false
+                          );
+                          Set(
+                              varBlank4,
+                              false
+                          );
+                          Set(
+                              varEmail,
+                              false
+                          );
+                          Reset(txtNameCompany_30);
+                          Reset(txtAddressCompany_30);
+                          Reset(txtCityCompany_30);
+                          Reset(txtCountryCompany_30);
+                          Reset(txtZIPCodeCompany_30);
+                          Reset(txtPhoneCompany_30);
+                          Reset(txtNameContact_28);
+                          Reset(txtPhoneContact_38);
+                          Reset(txtEmailContact_28);
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        TabIndex: =true
+                        Text: ="Annuleren"
+                        Width: =100
+                        X: =32
+                        Y: =428
+                  - BtnConfirm_38:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(60, 60, 70, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(180, 214, 250, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 1)
+                        DisplayMode: =If(varEx, DisplayMode.Edit, DisplayMode.View)
+                        Fill: =RGBA(16, 188, 224, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =35
+                        HoverBorderColor: =RGBA(16, 188, 224, 1)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(60, 60, 70, 1)
+                        OnSelect: "=If(\n    !IsBlank(txtNameCompany_30.Value) && !IsBlank(txtAddressCompany_30.Value) && !IsBlank(txtCityCompany_30.Value) && !IsBlank(txtNameContact_28.Value) && If(\n        IsBlank(txtEmailContact_28.Value),\n        true,\n        varInvalidEmail\n    ) && If(\n        IsBlank(txtPhoneCompany_30.Value),\n        true,\n        ValidInput\n    ) && If(\n        IsBlank(txtPhoneContact_38.Value),\n        true,\n        ValidInput1\n    ),\n    Set(\n        varCompanyID,\n        Patch(\n            VerzenderUitgaandeCorresponder,\n            Defaults(VerzenderUitgaandeCorresponder),\n            {\n                CompanyName: txtNameCompany_30.Value,\n                Adress: txtAddressCompany_30.Value,\n                City: txtCityCompany_30.Value,\n                Country: txtCountryCompany_30.Value,\n                ZIP: txtZIPCodeCompany_30.Value,\n                Phone: txtPhoneCompany_30.Value\n            }\n        ).IdCorresponder\n    );\n    Notify(\n        \"Bedrijf succesvol gemaakt\",\n        NotificationType.Success\n    );\n    Patch(\n        Contacts,\n        Defaults(Contacts),\n        {\n            Name: txtNameContact_28.Value,\n            Phone: txtPhoneContact_38.Value,\n            Address: txtAddressCompany_30.Value,\n            Email: txtEmailContact_28.Value,\n            City: txtCityCompany_30.Value,\n            Country: txtCountryCompany_30.Value,\n            Postcode: txtZIPCodeCompany_30.Value,\n            Company: LookUp(\n                VerzenderUitgaandeCorresponder,\n                IdCorresponder = varCompanyID\n            ),\n            ContactPerson: 'Choices ContactPerson'.Contact\n        }\n    );\n    Notify(\n        \"Contact succesvol gemaakt\",\n        NotificationType.Success\n    );\n    Set(\n        varAddCompany3,\n        false\n    );\n    Set(\n        varAddPerson,\n        false\n    );\n    Set(\n        varBlank,\n        false\n    );\n    Set(\n        varBlank1,\n        false\n    );\n    Set(\n        varBlank2,\n        false\n    );\n    Set(\n        varBlank4,\n        false\n    );\n    Reset(txtNameCompany_30);\n    Reset(txtAddressCompany_30);\n    Reset(txtCityCompany_30);\n    Reset(txtCountryCompany_30);\n    Reset(txtZIPCodeCompany_30);\n    Reset(txtPhoneCompany_30);\n    Reset(txtNameContact_28);\n    Reset(txtPhoneContact_38);\n    Reset(txtEmailContact_28);\n    ,\n    Notify(\n        \"Er zijn verplichte of onjuiste velden\",\n        NotificationType.Error\n    );\n    Set(\n        varAddCompany,\n        true\n    );\n    If(\n        IsBlank(txtNameCompany_30.Value),\n        Set(\n            varErrorNameCom,\n            true\n        ),\n        Set(\n            varErrorNamecom,\n            false\n        )\n    );\n    If(\n        IsBlank(txtAddressCompany_30.Value),\n        Set(\n            varErrorAddressCom,\n            true\n        ),\n        Set(\n            varErrorAddressCom,\n            false\n        )\n    );\n    If(\n        IsBlank(txtCityCompany_30.Value),\n        Set(\n            varErrorCityCom,\n            true\n        ),\n        Set(\n            varErrorCityCom,\n            false\n        )\n    );\n    If(\n        IsBlank(txtNameContact_28.Value),\n        Set(\n            varErrorNameCon,\n            true\n        ),\n        Set(\n            varErrorNameCon,\n            false\n        )\n    );\n    \n);\n"
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =10
+                        TabIndex: =true
+                        Text: ="Bevestig"
+                        Width: =100
+                        X: =660
+                        Y: =428
+      - CtnSelectCompanyInk_2:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            Fill: =RGBA(106, 122, 127, 0.2)
+            Height: =681
+            Visible: =varSelectCom
+            Width: =1067
+            X: =299
+            Y: =87
+          Children:
+            - CtnAddCompanyContact_42:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  DropShadow: =DropShadow.Bold
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =374
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                  Visible: =varSelectCom
+                  Width: =650
+                  X: =222
+                  Y: =117
+                Children:
+                  - Label3_40:
+                      Control: Label@2.5.1
+                      Properties:
+                        FontWeight: =FontWeight.Semibold
+                        Height: =30
+                        Size: =12
+                        Text: ="Bedrijfsnaam"
+                        Visible: |+
+                          =true
+                        Width: =120
+                        X: =15
+                        Y: =5
+                  - Label3_41:
+                      Control: Label@2.5.1
+                      Properties:
+                        FontWeight: =FontWeight.Semibold
+                        Height: =30
+                        Size: =12
+                        Text: ="Adres"
+                        Visible: |+
+                          =true
+                        Width: =165
+                        X: =278
+                        Y: =5
+                  - Label3_42:
+                      Control: Label@2.5.1
+                      Properties:
+                        FontWeight: =FontWeight.Semibold
+                        Height: =30
+                        Size: =12
+                        Text: ="City"
+                        Visible: |+
+                          =true
+                        Width: =144
+                        X: =506
+                        Y: =5
+                  - Rectangle1_20:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Fill: =RGBA(0, 0, 0, 1)
+                        Height: =1
+                        Width: =650
+                        Y: =40
+                  - Gallery2_9:
+                      Control: Gallery@2.15.0
+                      Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
+                      Properties:
+                        Height: =287
+                        Items: |
+                          =Sort(
+                              Filter(
+                                  VerzenderUitgaandeCorresponder,
+                                  !(CompanyName = "WEB Aruba NV") && (IsBlank(txtNameCompany_30.Value) || txtNameCompany_30.Value in CompanyName)
+                              ),
+                              CompanyName,
+                              SortOrder.Ascending
+                          )
+                        OnSelect: =
+                        ShowScrollbar: =false
+                        TemplateSize: =33
+                        Visible: |+
+                          =true
+                        Width: =CtnAddCompanyContact_42.Width-30
+                        X: =15
+                        Y: =45
+                      Children:
+                        - Container2_25:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              Height: =31
+                              LayoutDirection: =LayoutDirection.Vertical
+                              Width: =Gallery2_9.Width-5
+                        - Rectangle4_5:
+                            Control: Rectangle@2.3.0
+                            Properties:
+                              Fill: =RGBA(0, 0, 0, 0)
+                              Height: =31
+                              HoverFill: =RGBA(90,90,90,0.3)
+                              OnSelect: |-
+                                =Gallery2_9.Selected.CompanyName;
+                                Set(varSelectCom, false);
+                                Set(varAddCompany3,false);
+                                Set(varAddPerson, false);
+                                Set(varEx, false);
+                                Reset(txtNameCompany_30);
+                                Reset(txtAddressCompany_30);
+                                Reset(txtCityCompany_30);
+                                Reset(txtCountryCompany_30);
+                                Reset(txtZIPCodeCompany_30);
+                                Reset(txtPhoneCompany_30);
+                                Reset(txtNameContact_28);
+                                Reset(txtPhoneContact_38);
+                                Reset(txtEmailContact_28);
+                              Width: =Gallery2_9.Width-5
+                        - Title6_27:
+                            Control: Label@2.5.1
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Color: =RGBA(50, 49, 48, 1)
+                              FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                              Height: =25
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =9
+                              Text: =ThisItem.CompanyName
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =223
+                              X: =10
+                              Y: =6
+                        - Title6_28:
+                            Control: Label@2.5.1
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Color: =RGBA(50, 49, 48, 1)
+                              FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                              Height: =25
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =9
+                              Text: =ThisItem.Adress
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =210
+                              X: =269
+                              Y: =6
+                        - Title6_29:
+                            Control: Label@2.5.1
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 1)
+                              Color: =RGBA(50, 49, 48, 1)
+                              FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                              Height: =25
+                              OnSelect: =Select(Parent)
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =9
+                              Text: =ThisItem.City
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =146
+                              X: =474
+                              Y: =6
+                  - ButtonCanvas2_6:
+                      Control: Button@0.0.45
+                      Properties:
+                        BasePaletteColor: =RGBA(249, 83, 109, 1)
+                        FontSize: =12
+                        Height: =25
+                        OnSelect: =Set(varSelectCom, false );Set(varAdd, false );Reset(Gallery2_9)
+                        Text: ="Terug"
+                        Width: =80
+                        X: =15
+                        Y: =340
+                  - ButtonCanvas2_7:
+                      Control: Button@0.0.45
+                      Properties:
+                        BasePaletteColor: =RGBA(8, 222, 8, 1)
+                        FontSize: =12
+                        Height: =25
+                        OnSelect: |-
+                          =Set(varEx,true);
+                          Set(varSelectCom, false);
+                        Text: ="Ga verder"
+                        Visible: =If(varAddCompany3,true,false)
+                        Width: =80
+                        X: =550
+                        Y: =340
+      - Container2_26:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            DropShadow: =DropShadow.Bold
+            Fill: =RGBA(16, 188, 224, 1)
+            Height: =60
+            Visible: =false
+            Width: =1066
+            X: =300
+            Y: =87
+      - lblDetails_6:
+          Control: Label@2.5.1
+          Properties:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Size: =16
+            Text: ="Details"
+            X: =350
+            Y: =97
+      - Image3_19:
+          Control: Image@2.2.3
+          Properties:
+            Height: =40
+            Image: ='hombre (1)'
+            OnSelect: =Set(VarPeBe, true);
+            Visible: =If(varActive, false, true)
+            Width: =46
+            X: =1131
+            Y: =97
+      - Image3_20:
+          Control: Image@2.2.3
+          Properties:
+            DisplayMode: =If(varIntern,DisplayMode.View, DisplayMode.Edit)
+            Height: =40
+            Image: =edificio
+            OnSelect: =Set(VarPeBe, true);
+            Visible: =If(varActive, true,false)
+            Width: =46
+            X: =1131
+            Y: =97
+      - Button3_6:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderThickness: =0
+            Color: =RGBA(40, 134, 222, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(0, 132, 181, 1), -20%)
+            OnSelect: |-
+              =Set(varOrigen, true);
+              Set(varErrorCInk, false);
+              Set(varErrorCOInk, false);
+              Set(varErrorDateInk, false);
+              Set(varErrorVerInk, false);
+              Reset(txtType_5);
+              Reset(cbbCCIntern_33);
+              Reset(txtGeregistreerd_5);
+              Reset(cbbVerzender_11);
+              Reset(dateVerzondenOp_6);
+              Reset(txtReferentie_5);
+              Reset(cbbCCIntern_34);
+              Reset(cbbCCIntern_32);
+              Reset(txtSleutelwoorden_9);
+              Reset(txtBeschrijving_5);
+              Reset(Attachments_Bijlage_2);
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: =30
+            RadiusTopRight: =30
+            Size: =12
+            Text: =If(varIntern,"Intern","Extern")
+            Width: =100
+            X: =1181
+            Y: =97
+      - ButtonCanvas3_10:
+          Control: Button@0.0.45
+          Properties:
+            Appearance: ='ButtonCanvas.Appearance'.Primary
+            FontWeight: =FontWeight.Normal
+            Height: =23
+            OnSelect: |-
+              =Set(varSelectCom, true);
+              Set(varAdd, true)
+            Text: ="Klik hier om bedrijf te selecteren"
+            Visible: =If(varCom,true,false)
+            Width: =250
+            X: =496
+            Y: =196
+      - Button1_8:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Align: =Align.Left
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(3, 186, 255, 1), -10%)
+            OnSelect: =Launch(varBibliInk)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =13
+            Text: ="Bibliotheek"
+            Width: =259
+            X: =41
+            Y: =290
+      - TxtErrorContactInk_245:
+          Control: Text@0.0.51
+          Properties:
+            Align: ='TextCanvas.Align'.End
+            FontColor: =RGBA(255, 0, 0, 1)
+            FontItalic: =true
+            Height: =26
+            Size: =10
+            Text: ="Verplicht veld"
+            Visible: =varErrorCOInk
+            X: =1182
+            Y: =310
+      - btnOpslaan_7:
+          Control: Button@0.0.45
+          Properties:
+            Appearance: ='ButtonCanvas.Appearance'.Primary
+            Height: =40
+            OnSelect: |-
+              =If(
+                  !IsBlank(dateVerzondenOp_6.SelectedDate) && If(
+                      varActive,
+                      If(
+                          varIntern,
+                          !IsBlank(cbbVerzender_11.Selected.CompanyName),
+                          !IsBlank(TextInputCanvas1_4.Value)
+                      ),
+                      !IsBlank(cbbVerzender_14.Selected.Name)
+                  ) && If(
+                      cbbVerzender_11.Selected.CompanyName = "WEB Aruba NV",
+                      !IsBlank(cbbCCIntern_32.Selected.value),
+                      !IsBlank(cbbVerzender_14.Selected.Name)
+                  ) && !IsBlank(cbbCCIntern_33.SelectedItems) && !IsBlank(cbbCCIntern_34.Selected.value),
+                  Patch(
+                      Correspondences,
+                      Defaults(Correspondences),
+                      {
+                          Type: txtType_5.Text,
+                          'Geregistreerd op': txtGeregistreerd_5.Text,
+                          Verzender: If(
+                              varActive,
+                              If(
+                                  varIntern,
+                                  cbbVerzender_11.Selected.CompanyName,
+                                  TextInputCanvas1_4.Value
+                              ),
+                              ""
+                          ),
+                          Contact: If(
+                              cbbVerzender_11.Selected.CompanyName = "WEB Aruba NV",
+                              Concat(
+                                  cbbCCIntern_32.SelectedItems,
+                                  value,
+                                  ";"
+                              ),
+                              cbbVerzender_14.Selected.Name
+                          ),
+                          'Verzonden op': dateVerzondenOp_6.SelectedDate,
+                          Kenmerk: txtReferentie_5.Value,
+                          ContactOntvanger: Concat(
+                              cbbCCIntern_34.SelectedItems,
+                              value,
+                              ";"
+                          ),
+                          Sleutelwoorden: txtSleutelwoorden_9.Value,
+                          Afdeling: TxtAfdelingInk_3.Value,
+                          Beschrijving: txtBeschrijving_5.Value,
+                          Archiefnummer: txtSleutelwoorden_10.Value,
+                          maand: Month(txtGeregistreerd_5.Text),
+                          jaar: Year(txtGeregistreerd_5.Text),
+                          Group: UserGroups,
+                          Origin: If(
+                              varIntern,
+                              OriginCorrChoices.Intern,
+                              OriginCorrChoices.Extern
+                          ),
+                          Ontvanger: Concat(
+                              cbbCCIntern_33.SelectedItems,
+                              CompanyName,
+                              ";"
+                          ),
+                          Addressee: If(
+                              varActive,
+                              'Choice Addressee '.Company,
+                              'Choice Addressee '.Person
+                          ),
+                          'Bijlage(n)': If(
+                              hasAttachment,
+                              "Ja",
+                              "Nee"
+                          )
+                      }
+                  );
+                  ForAll(
+                      Attachments_Bijlage_2.Attachments As Attachment,
+                      AddnewdocumentinTracMail.Run(
+                          {
+                              name: Attachment.Name,
+                              contentBytes: Attachment.Value
+                          },
+                          Attachment.Name,
+                          If(
+                              varIntern,
+                              OriginCorrChoices.Intern,
+                              OriginCorrChoices.Extern
+                          ),
+                          Text(
+                              dateVerzondenOp_6.SelectedDate,
+                              "yyyy-mm-dd"
+                          ),
+                          If(
+                              varActive,
+                              If(
+                                  varIntern,
+                                  cbbVerzender_11.Selected.CompanyName,
+                                  TextInputCanvas1_4.Value
+                              ),
+                              ""
+                          ),
+                          "Inkomende",
+                          First(
+                              FirstN(
+                                  Sort(
+                                      Correspondences,
+                                      ID,
+                                      SortOrder.Descending
+                                  ),
+                                  1
+                              )
+                          ).ID,
+                          If(
+                              cbbVerzender_11.Selected.CompanyName = "WEB Aruba NV",
+                              Concat(
+                                  cbbCCIntern_32.SelectedItems,
+                                  value,
+                                  ";"
+                              ),
+                              cbbVerzender_14.Selected.Name
+                          ),
+                          Concat(
+                              cbbCCIntern_33.SelectedItems,
+                              CompanyName,
+                              ";"
+                          ),
+                          Concat(
+                              cbbCCIntern_34.SelectedItems,
+                              value,
+                              ";"
+                          ),
+                          txtReferentie_5.Value,
+                          txtSleutelwoorden_9.Value,
+                          txtBeschrijving_5.Value
+                      );
+                  );
+                  Set(
+                      varAdd,
+                      false
+                  );
+                  Notify(
+                      "Het inkomende correspondentie item is aangemaakt",
+                      NotificationType.Success
+                  );
+                  Navigate(
+                      scrInkomendeOverzicht,
+                      ScreenTransition.Fade
+                  );
+                  Reset(cbbCCIntern_33);
+                  Reset(txtType_5);
+                  Reset(txtGeregistreerd_5);
+                  Reset(cbbVerzender_11);
+                  Reset(dateVerzondenOp_6);
+                  Reset(txtReferentie_5);
+                  Reset(cbbCCIntern_32);
+                  Reset(txtSleutelwoorden_9);
+                  Reset(cbbCCIntern_34);
+                  Reset(txtBeschrijving_5);
+                  Reset(cbbCCIntern_32);
+                  Reset(Attachments_Bijlage_2);
+                  Reset(txtSleutelwoorden_10);
+                  ,
+                  Notify(
+                      "Controleer de velden Verzender, Ontvanger en Verzonden op",
+                      NotificationType.Error
+                  );
+                  If(
+                      IsBlank(dateVerzondenOp_6.SelectedDate),
+                      Set(
+                          varErrorDateInk,
+                          true
+                      ),
+                      Set(
+                          varErrorDateInk,
+                          false
+                      )
+                  );
+                  If(
+                      IsBlank(cbbCCIntern_34.Selected.value),
+                      Set(
+                          varErrorCOInk,
+                          true
+                      ),
+                      Set(
+                          varErrorCOInk,
+                          false
+                      )
+                  );
+                  If(
+                      varIntern,
+                      If(
+                          IsBlank(cbbVerzender_11.Selected.CompanyName),
+                          Set(
+                              varErrorVerInk,
+                              true
+                          ),
+                          Set(
+                              varErrorVerInk,
+                              false
+                          )
+                      ),
+                      Set(
+                          varErrorVerInk,
+                          false
+                      )
+                  );
+                  If(
+                      cbbVerzender_11.Selected.CompanyName = "WEB Aruba NV",
+                      If(
+                          IsBlank(cbbCCIntern_32.Selected.value),
+                          Set(
+                              varErrorCInk,
+                              true
+                          ),
+                          Set(
+                              varErrorCInk,
+                              false
+                          )
+                      ),
+                      If(
+                          IsBlank(cbbVerzender_14.Selected.Name),
+                          Set(
+                              varErrorCInk,
+                              true
+                          ),
+                          Set(
+                              varErrorCInk,
+                              false
+                          )
+                      )
+                  )
+              )
+            Text: ="Opslaan"
+            Width: =130
+            X: =1151
+            Y: =662
+      - TxtAfdelingInk_3:
+          Control: TextInput@0.0.54
+          Properties:
+            Align: =Align.Left
+            Height: =ConKeywords_6.Height
+            Mode: ='TextInputCanvas.Mode'.SingleLine
+            Required: =true
+            Value: |-
+              =If(
+                  LookUp(
+                      'Environment Variable Definitions',
+                      'Schema Name' = "webcorr_DepDiv"
+                  ).'Default Value' = "department",
+                  varDepUser.department,
+                  varDepUser.extension_9248c21cebcd4d3f8000280dbb93800b_division
+              )
+            Visible: =false
+            Width: =ConKeywords_6.Width
+            X: =591
+            Y: =682
+      - Rectangle1_48:
+          Control: Rectangle@2.3.0
+          Group: grpOrigin_3
+          Properties:
+            Fill: =RGBA(0, 0, 0, 0.3)
+            Height: =86
+            Visible: =false
+            Width: =137
+            X: =1177
+            Y: =662
+      - Button2_52:
+          Control: Classic/Button@2.2.0
+          Group: grpOrigin_3
+          Properties:
+            BorderColor: =Self.Fill
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =35
+            HoverBorderColor: =Self.Fill
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(255, 255, 255, 1)
+            OnSelect: =
+            PressedFill: =Self.Fill
+            Text: =""
+            Visible: =false
+            Width: =90
+            X: =1242
+            Y: =697
+      - Image1_33:
+          Control: Image@2.2.3
+          Group: grpOrigin_3
+          Properties:
+            Height: =11
+            Image: =web
+            Visible: =false
+            Width: =12
+            X: =1256
+            Y: =697
+      - Label1_104:
+          Control: Label@2.5.1
+          Group: grpOrigin_3
+          Properties:
+            Align: =Align.Center
+            Color: =RGBA(60, 60, 70, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =6
+            OnSelect: =Set(ModalInkomende, false)
+            Size: =15
+            Text: ="Type correspondentie"
+            Visible: =false
+            Width: =15
+            X: =1253
+            Y: =700
+      - Label1_106:
+          Control: Label@2.5.1
+          Group: grpOrigin_3
+          Properties:
+            Align: =Align.Right
+            Color: =RGBA(60, 60, 70, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =6
+            OnSelect: =Set(ModalInkomende, false)
+            Size: =10
+            Text: ="C-Track"
+            Visible: =false
+            Width: =25
+            X: =1313
+            Y: =703
+      - RtgItemsAllC_56:
+          Control: Rectangle@2.3.0
+          Group: grpOrigin_3
+          Properties:
+            BorderColor: =RGBA(106, 122, 127, 1)
+            BorderThickness: =2
+            Fill: =RGBA(16, 188, 224, 1)
+            Height: =0
+            Visible: =false
+            Width: =90
+            X: =1242
+            Y: =708
+      - Button4_84:
+          Control: Classic/Button@2.2.0
+          Group: grpOrigin_3
+          Properties:
+            BorderColor: =RGBA(60, 60, 70, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(180, 214, 250, 1)
+            DisabledFill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(16, 188, 224, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =10
+            HoverBorderColor: =RGBA(16, 188, 224, 1)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(60, 60, 70, 1)
+            OnSelect: |-
+              =Set(varIntern,false);
+              Set(VarPeBe, true);
+              Set(varOrigen, false);
+              Reset(cbbVerzender_11)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =12
+            Text: ="Extern"
+            Visible: =false
+            Width: =26
+            X: =1307
+            Y: =712
+      - Button4_86:
+          Control: Classic/Button@2.2.0
+          Group: grpOrigin_3
+          Properties:
+            BorderColor: =RGBA(16, 188, 224, 1)
+            Color: =RGBA(214, 221, 224, 1)
+            DisabledColor: =RGBA(180, 214, 250, 1)
+            DisabledFill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(60, 60, 70, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =10
+            HoverBorderColor: =RGBA(60, 60, 70, 1)
+            HoverColor: =RGBA(60, 60, 70, 1)
+            HoverFill: =RGBA(16, 188, 224, 1)
+            OnSelect: |-
+              =Set(varOrigen, false);
+              Set(varActive,true);
+              Set(varIntern, true);
+              Set(varCom, false);
+              Set(varAdd, false );
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =12
+            Text: ="Intern"
+            Visible: =false
+            Width: =26
+            X: =1264
+            Y: =713
+      - Container18:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(0, 0, 0, 0.3)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            Visible: =false
+            Width: =Parent.Width
+          Children:
+            - Container19:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutGap: =5
+                  PaddingTop: =10
+                Children:
+                  - Container20:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Start
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =30
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        PaddingRight: =15
+                      Children:
+                        - Label1_107:
+                            Control: Label@2.5.1
+                            Properties:
+                              Color: =RGBA(60, 60, 70, 1)
+                              FillPortions: =1
+                              FontWeight: =FontWeight.Bold
+                              Height: =30
+                              OnSelect: =Set(ModalInkomende, false)
+                              PaddingLeft: =20
+                              Size: =12
+                              Text: ="Type correspondentie"
+                              Width: =700
+                              X: =485
+                              Y: =224
+                        - ButtonCanvas5:
+                            Control: Button@0.0.45
+                            Properties:
+                              Appearance: ='ButtonCanvas.Appearance'.Subtle
+                              Height: =30
+                              Icon: ="Dismiss"
+                              Layout: ='ButtonCanvas.Layout'.IconOnly
+                              Width: =30
+                  - Rectangle3:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        Fill: =RGBA(214, 221, 224, 1)
+                        Height: =1
+                  - Container21:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =50
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                        PaddingBottom: =2
+                        PaddingLeft: =20
+                        PaddingRight: =20
+                        PaddingTop: =2
+                      Children:
+                        - Container4_13:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              Fill: =RGBA(51, 51, 51, 1)
+                              FillPortions: =0
+                              Height: |
+                                =Parent.Height
+                              LayoutMinHeight: =28
+                              Width: =460
+                            Children:
+                              - ButtonCanvas1_19:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    Align: =Align.Left
+                                    Appearance: ='ButtonCanvas.Appearance'.Subtle
+                                    FontColor: =RGBA(255, 255, 255, 1)
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =Container4_13.Height
+                                    Icon: =
+                                    OnSelect: |
+                                      =Set(varMenu, 1);
+                                    Text: ="Begin"
+                                    VerticalAlign: =VerticalAlign.Top
+                                    Width: =Parent.Width
+                              - Image3_26:
+                                  Control: Image@2.2.3
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Height: =Parent.Height-13
+                                    Image: =If(varMenu = 1,'house-black-silhouette-without-door (1)', 'house-black-silhouette-without-door')
+                                    OnSelect: =Set(varMenu, 1)
+                                    Width: =15
+                                    X: =5
+                                    Y: =5
+                              - TextCanvas9:
+                                  Control: Text@0.0.51
+                                  Properties:
+                                    Align: ='TextCanvas.Align'.Start
+                                    FontColor: =RGBA(255, 255, 255, 1)
+                                    PaddingLeft: =10
+                                    VerticalAlign: =VerticalAlign.Bottom
+                                    Width: =Parent.Width
+                                    Y: =14
+      - Container24_1:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(0, 0, 0, 0.3)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            PaddingBottom: =150
+            Visible: =varMoInkIE
+            Width: =Parent.Width
+          Children:
+            - Container25_1:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  RadiusBottomLeft: =10
+                  RadiusBottomRight: =10
+                  RadiusTopLeft: =10
+                  RadiusTopRight: =10
+                Children:
+                  - TextCanvas12_1:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        Height: =35
+                        PaddingLeft: =3
+                        Size: =16
+                        Text: ="Selecteer het type contactpersoon."
+                        VerticalAlign: =VerticalAlign.Middle
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =Parent.Width
+                        Y: =20
+                  - TextCanvas12_2:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        FontColor: =RGBA(106, 122, 127, 1)
+                        Height: =35
+                        PaddingLeft: =3
+                        Size: =12
+                        Text: ="Kies de categorie die jouw contact het beste beschrijft."
+                        VerticalAlign: =VerticalAlign.Middle
+                        Weight: ='TextCanvas.Weight'.Regular
+                        Width: =Parent.Width
+                        Y: =39
+                  - Container4_22:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: =RGBA(214, 221, 224, 1)
+                        BorderThickness: =0.5
+                        DropShadow: =DropShadow.None
+                        Height: =80
+                        Width: =200
+                        X: =40
+                        Y: =80
+                      Children:
+                        - ButtonCanvas1_37:
+                            Control: Button@0.0.45
+                            Properties:
+                              Align: =Align.Center
+                              Appearance: ='ButtonCanvas.Appearance'.Subtle
+                              FontColor: =RGBA(53, 61, 63, 1)
+                              FontWeight: =FontWeight.Bold
+                              Height: =80
+                              Icon: =
+                              OnSelect: |-
+                                =Set(varOrigen, false);
+                                Set(varActive,true);
+                                Set(varMoInkIE, false);
+                                Set(varIntern, true);
+                                Set(varCom, false);
+                                Set(varAdd, false );
+                              Text: ="Intern"
+                              VerticalAlign: =VerticalAlign.Middle
+                              Width: =Parent.Width
+                        - TextCanvas12_3:
+                            Control: Text@0.0.51
+                            Properties:
+                              Align: ='TextCanvas.Align'.Center
+                              FontColor: =RGBA(106, 122, 127, 1)
+                              Height: =20
+                              PaddingLeft: =3
+                              Size: =11
+                              Text: ="Bedrijfspersoneel."
+                              VerticalAlign: =VerticalAlign.Middle
+                              Weight: ='TextCanvas.Weight'.Regular
+                              Width: =104
+                              X: =48
+                              Y: =48
+                        - Image3_35:
+                            Control: Image@2.2.3
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Height: =27
+                              Image: =Picture1empresa
+                              OnSelect: =Set(varMenu, 1)
+                              Width: =27
+                              X: =86
+                              Y: =3
+                  - Container4_23:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: =RGBA(214, 221, 224, 1)
+                        BorderThickness: =0.5
+                        DropShadow: =DropShadow.None
+                        Height: =80
+                        Width: =200
+                        X: =265
+                        Y: =80
+                      Children:
+                        - ButtonCanvas1_38:
+                            Control: Button@0.0.45
+                            Properties:
+                              Align: =Align.Center
+                              Appearance: ='ButtonCanvas.Appearance'.Subtle
+                              FontColor: = RGBA(2,115, 203, 1)
+                              FontWeight: =FontWeight.Bold
+                              Height: =80
+                              Icon: =
+                              OnSelect: |-
+                                =Set(varCPInk, true);
+                                Set(varMoInkIE, false);
+                                Set(varIntern,false);
+                                Set(VarPeBe, true);
+                                Set(varOrigen, false);
+                                Reset(cbbVerzender)
+                              Text: ="Extern"
+                              VerticalAlign: =VerticalAlign.Middle
+                              Width: =Parent.Width
+                        - TextCanvas12_4:
+                            Control: Text@0.0.51
+                            Properties:
+                              Align: ='TextCanvas.Align'.Center
+                              FontColor: =RGBA(106, 122, 127, 1)
+                              Height: =20
+                              PaddingLeft: =3
+                              Size: =11
+                              Text: ="Klanten en leveranciers."
+                              VerticalAlign: =VerticalAlign.Middle
+                              Weight: ='TextCanvas.Weight'.Regular
+                              Width: =125
+                              X: =37
+                              Y: =48
+                        - Image3_36:
+                            Control: Image@2.2.3
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Height: =27
+                              Image: =combipc
+                              OnSelect: =Set(varMenu, 1)
+                              Width: =27
+                              X: =86
+                              Y: =3
+      - Container24_2:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(0, 0, 0, 0.3)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            PaddingBottom: =150
+            Visible: =varCPInk
+            Width: =Parent.Width
+          Children:
+            - Container25_2:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  RadiusBottomLeft: =10
+                  RadiusBottomRight: =10
+                  RadiusTopLeft: =10
+                  RadiusTopRight: =10
+                Children:
+                  - TextCanvas12_5:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        Height: =35
+                        PaddingLeft: =3
+                        Size: =16
+                        Text: ="Persoon of bedrijf?"
+                        VerticalAlign: =VerticalAlign.Middle
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =Parent.Width
+                        Y: =20
+                  - TextCanvas12_6:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        FontColor: =RGBA(106, 122, 127, 1)
+                        Height: =35
+                        PaddingLeft: =3
+                        Size: =12
+                        Text: ="Selecteer het type externe contactpersoon dat je wilt toevoegen."
+                        VerticalAlign: =VerticalAlign.Middle
+                        Weight: ='TextCanvas.Weight'.Regular
+                        Width: =Parent.Width
+                        Y: =39
+                  - Container4_24:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: =RGBA(214, 221, 224, 1)
+                        BorderThickness: =0.5
+                        DropShadow: =DropShadow.None
+                        Height: =80
+                        Width: =200
+                        X: =40
+                        Y: =80
+                      Children:
+                        - ButtonCanvas1_39:
+                            Control: Button@0.0.45
+                            Properties:
+                              Align: =Align.Center
+                              Appearance: ='ButtonCanvas.Appearance'.Subtle
+                              FontColor: =RGBA(53, 61, 63, 1)
+                              FontWeight: =FontWeight.Bold
+                              Height: =80
+                              Icon: =
+                              OnSelect: |-
+                                =Set(VarPeBe, false);
+                                Set(varCPInk, false);
+                                Set(varActive, false);
+                                Set(varCom,false);
+                                Reset(Gallery2_7);
+                                Set(varAdd, false )
+                              Text: ="Persoon"
+                              VerticalAlign: =VerticalAlign.Middle
+                              Width: =Parent.Width
+                        - TextCanvas12_7:
+                            Control: Text@0.0.51
+                            Properties:
+                              Align: ='TextCanvas.Align'.Center
+                              FontColor: =RGBA(106, 122, 127, 1)
+                              Height: =20
+                              PaddingLeft: =3
+                              Size: =11
+                              Text: ="Individuele of zelfstandige klant."
+                              VerticalAlign: =VerticalAlign.Middle
+                              Weight: ='TextCanvas.Weight'.Regular
+                              Width: =170
+                              X: =15
+                              Y: =48
+                        - Image3_37:
+                            Control: Image@2.2.3
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Height: =27
+                              Image: =persona
+                              OnSelect: =Set(varMenu, 1)
+                              Width: =27
+                              X: =86
+                              Y: =3
+                  - Container4_25:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        BorderColor: =RGBA(214, 221, 224, 1)
+                        BorderThickness: =0.5
+                        DropShadow: =DropShadow.None
+                        Height: =80
+                        Width: =200
+                        X: =265
+                        Y: =80
+                      Children:
+                        - ButtonCanvas1_40:
+                            Control: Button@0.0.45
+                            Properties:
+                              Align: =Align.Center
+                              Appearance: ='ButtonCanvas.Appearance'.Subtle
+                              FontColor: = RGBA(2,115, 203, 1)
+                              FontWeight: =FontWeight.Bold
+                              Height: =80
+                              Icon: =
+                              OnSelect: |-
+                                =Set(varCPInk, false);
+                                Set(VarPeBe, false);
+                                Set(varActive, true);
+                                Set(varCom, true)
+                              Text: ="Bedrijf"
+                              VerticalAlign: =VerticalAlign.Middle
+                              Width: =Parent.Width
+                        - TextCanvas12_8:
+                            Control: Text@0.0.51
+                            Properties:
+                              Align: ='TextCanvas.Align'.Center
+                              FontColor: =RGBA(106, 122, 127, 1)
+                              Height: =20
+                              PaddingLeft: =3
+                              Size: =11
+                              Text: ="Organisatie, corporatie of bedrijf."
+                              VerticalAlign: =VerticalAlign.Middle
+                              Weight: ='TextCanvas.Weight'.Regular
+                              Width: =180
+                              X: =10
+                              Y: =48
+                        - Image3_38:
+                            Control: Image@2.2.3
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Height: =27
+                              Image: =Picture1empresa
+                              OnSelect: =Set(varMenu, 1)
+                              Width: =27
+                              X: =86
+                              Y: =3
+                  - ButtonCanvas6_6:
+                      Control: Button@0.0.45
+                      Properties:
+                        Appearance: ='ButtonCanvas.Appearance'.Transparent
+                        BasePaletteColor: =RGBA(255, 0, 38, 1)
+                        Icon: ="ArrowLeft"
+                        Layout: ='ButtonCanvas.Layout'.IconOnly
+                        OnSelect: |-
+                          =Set(varCPInk, false);
+                          Set(varMoInkIE, true)
+                        Text: ="Verwijderen"
+                        Width: =32
+                        X: =10
+                        Y: =5

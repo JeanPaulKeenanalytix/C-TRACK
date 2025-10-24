@@ -1,0 +1,21 @@
+{
+  "Themes": [
+    {
+      "EntityName": "PowerAppsTheme",
+      "ThemeName": "PowerAppsTheme"
+    },
+    {
+      "EntityName": "PlatinumTheme",
+      "ThemeName": "PlatinumTheme"
+    },
+    {
+      "BasePaletteColor": "#0084b5",
+      "EntityName": "W.E.B",
+      "Font": "Segoe UI",
+      "HueTorsion": 0,
+      "ThemeName": "W.E.B",
+      "ThemePrimaryColorLocked": false,
+      "Vibrancy": 50
+    }
+  ]
+}

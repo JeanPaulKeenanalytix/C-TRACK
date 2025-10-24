@@ -1,0 +1,877 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Screen1_5:
+    Children:
+      - Container4_32:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(249, 250, 251, 1)
+            Height: =Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            Width: =Parent.Width
+          Children:
+            - comHeader_8:
+                Control: CanvasComponent
+                ComponentName: comHeader
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =90
+                  Width: =1366
+            - Container5_5:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  LayoutDirection: =LayoutDirection.Vertical
+                Children:
+                  - Container6_3:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =150
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutGap: =25
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        PaddingLeft: =50
+                        PaddingRight: =50
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                      Children:
+                        - Container7_9:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              Fill: =RGBA(255, 255, 255, 1)
+                              Height: =Parent.Height-50
+                            Children:
+                              - TextCanvas7_30:
+                                  Control: Text@0.0.51
+                                  Properties:
+                                    FontColor: =RGBA(0, 0, 0, 0.6)
+                                    Size: =15
+                                    Text: ="Total"
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Bold
+                                    X: =15
+                                    Y: =10
+                              - Image3_46:
+                                  Control: Image@2.2.3
+                                  Properties:
+                                    Height: =53
+                                    Image: =Picture1
+                                    Width: =75
+                                    X: =330
+                                    Y: =14
+                              - TextCanvas7_31:
+                                  Control: Text@0.0.51
+                                  Properties:
+                                    FontColor: =RGBA(0, 0, 0, 0)
+                                    Height: =40
+                                    Size: =26
+                                    Text: =CountRows(GalCorrespondentieVO_8.AllItems)
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Bold
+                                    X: =15
+                                    Y: =32
+                        - Container7_10:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              Fill: =RGBA(255, 255, 255, 1)
+                              Height: =Parent.Height-50
+                            Children:
+                              - TextCanvas7_32:
+                                  Control: Text@0.0.51
+                                  Properties:
+                                    FontColor: =RGBA(0, 0, 0, 0.6)
+                                    Size: =15
+                                    Text: ="Uitgaande Intern"
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Bold
+                                    Width: =200
+                                    X: =15
+                                    Y: =10
+                              - Image3_47:
+                                  Control: Image@2.2.3
+                                  Properties:
+                                    Height: =48
+                                    Image: =Picture2
+                                    Width: =68
+                                    X: =337
+                                    Y: =15
+                              - TextCanvas7_33:
+                                  Control: Text@0.0.51
+                                  Properties:
+                                    FontColor: =RGBA(0, 0, 0, 0)
+                                    Height: =40
+                                    Size: =26
+                                    Text: |-
+                                      =CountIf(
+                                          GalCorrespondentieVO_8.AllItems,
+                                         Origin = OriginCorrChoices.Intern && Type = "Uitgaande"
+                                      )
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Bold
+                                    X: =15
+                                    Y: =32
+                        - Container7_11:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              Fill: =RGBA(255, 255, 255, 1)
+                              Height: =Parent.Height-50
+                            Children:
+                              - TextCanvas7_34:
+                                  Control: Text@0.0.51
+                                  Properties:
+                                    FontColor: =RGBA(0, 0, 0, 0.6)
+                                    Size: =15
+                                    Text: ="Uitgaande Extern"
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Bold
+                                    Width: =200
+                                    X: =15
+                                    Y: =10
+                              - Image3_48:
+                                  Control: Image@2.2.3
+                                  Properties:
+                                    Height: =48
+                                    Image: =Picture3
+                                    Width: =68
+                                    X: =337
+                                    Y: =15
+                              - TextCanvas7_35:
+                                  Control: Text@0.0.51
+                                  Properties:
+                                    FontColor: =RGBA(0, 0, 0, 0)
+                                    Height: =40
+                                    Size: =26
+                                    Text: |-
+                                      =CountIf(
+                                          GalCorrespondentieVO_8.AllItems,
+                                         Origin = OriginCorrChoices.Extern && Type = "Uitgaande"
+                                      )
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Bold
+                                    X: =15
+                                    Y: =32
+                  - Container12_4:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =40
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        PaddingLeft: =50
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                      Children:
+                        - CoMonthFiltersH_3:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              Height: =40
+                              LayoutMinHeight: =40
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =1066
+                              X: =300
+                              Y: =149
+                            Children:
+                              - BtnJanHome_3:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    Appearance: =If(SelectedMonth= 1, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                                    BasePaletteColor: =If(SelectedMonth= 1, RGBA(2,115, 203, 1))
+                                    BorderRadius: =15
+                                    DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 1, DisplayMode.Edit, DisplayMode.Disabled))
+                                    Height: =30
+                                    OnSelect: =Set(SelectedMonth,1)
+                                    Text: ="JAN"
+                                    Width: =55
+                                    X: =150
+                              - BtnFebHome_3:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    Appearance: =If(SelectedMonth= 2, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                                    BasePaletteColor: =If(SelectedMonth= 2, RGBA(2,115, 203, 1))
+                                    BorderRadius: =15
+                                    DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 2, DisplayMode.Edit, DisplayMode.Disabled))
+                                    Height: =30
+                                    OnSelect: =Set(SelectedMonth,2)
+                                    Text: ="FEB"
+                                    Width: =55
+                                    X: =210
+                              - BtnMarHome_3:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    Appearance: =If(SelectedMonth= 3, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                                    BasePaletteColor: =If(SelectedMonth= 3, RGBA(2,115, 203, 1))
+                                    BorderRadius: =15
+                                    DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 3, DisplayMode.Edit, DisplayMode.Disabled))
+                                    Height: =30
+                                    OnSelect: =Set(SelectedMonth,3)
+                                    Text: ="MAA"
+                                    Width: =55
+                                    X: =270
+                              - BtnAprHome_3:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    Appearance: =If(SelectedMonth= 4, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                                    BasePaletteColor: =If(SelectedMonth= 4, RGBA(2,115, 203, 1))
+                                    BorderRadius: =15
+                                    DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 4, DisplayMode.Edit, DisplayMode.Disabled))
+                                    Height: =30
+                                    OnSelect: =Set(SelectedMonth,4)
+                                    Text: ="APR"
+                                    Width: =55
+                                    X: =330
+                              - BtnMayHome_3:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    Appearance: =If(SelectedMonth= 5, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                                    BasePaletteColor: =If(SelectedMonth= 5, RGBA(2,115, 203, 1))
+                                    BorderRadius: =15
+                                    DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 5, DisplayMode.Edit, DisplayMode.Disabled))
+                                    Height: =30
+                                    OnSelect: =Set(SelectedMonth,5)
+                                    Text: ="MEI"
+                                    Width: =55
+                                    X: =390
+                              - BtnJunHome_3:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    Appearance: =If(SelectedMonth= 6, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                                    BasePaletteColor: =If(SelectedMonth= 6, RGBA(2,115, 203, 1))
+                                    BorderRadius: =15
+                                    DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 6, DisplayMode.Edit, DisplayMode.Disabled))
+                                    Height: =30
+                                    OnSelect: |
+                                      =Set(SelectedMonth,6);
+                                    Text: ="JUN"
+                                    Width: =55
+                                    X: =450
+                              - BtnJulHome_3:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    Appearance: =If(SelectedMonth= 7, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                                    BasePaletteColor: =If(SelectedMonth= 7, RGBA(2,115, 203, 1))
+                                    BorderRadius: =15
+                                    DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 7, DisplayMode.Edit, DisplayMode.Disabled))
+                                    Height: =30
+                                    OnSelect: =Set(SelectedMonth,7)
+                                    Text: ="JUL"
+                                    Width: =55
+                                    X: =510
+                              - BtnAugHome_3:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    Appearance: =If(SelectedMonth= 8, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                                    BasePaletteColor: =If(SelectedMonth= 8, RGBA(2,115, 203, 1))
+                                    BorderRadius: =15
+                                    DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 8, DisplayMode.Edit, DisplayMode.Disabled))
+                                    Height: =30
+                                    OnSelect: =Set(SelectedMonth,8)
+                                    Text: ="AUG"
+                                    Width: =55
+                                    X: =570
+                              - BtnSepHome_3:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    Appearance: ='ButtonCanvas.Appearance'.Outline
+                                    BasePaletteColor: =If(SelectedMonth= 9, RGBA(8, 222, 8, 1))
+                                    BorderRadius: =15
+                                    DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 9, DisplayMode.Edit, DisplayMode.Disabled))
+                                    Height: =30
+                                    OnSelect: =Set(SelectedMonth,9)
+                                    Text: ="SEP"
+                                    Width: =55
+                                    X: =630
+                              - BtnOctHome_3:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    Appearance: =If(SelectedMonthInk= 10, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                                    BasePaletteColor: =RGBA(5, 102, 178, 1)
+                                    BorderRadius: =15
+                                    DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 10, DisplayMode.Edit, DisplayMode.Disabled))
+                                    Height: =30
+                                    OnSelect: =Set(SelectedMonthInk,10)
+                                    Text: ="OKT"
+                                    Width: =55
+                                    X: =690
+                              - BtnNovHome_3:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    Appearance: ='ButtonCanvas.Appearance'.Outline
+                                    BasePaletteColor: =If(SelectedMonth= 11, RGBA(8, 222, 8, 1))
+                                    BorderRadius: =15
+                                    DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 11, DisplayMode.Edit, DisplayMode.Disabled))
+                                    Height: =30
+                                    OnSelect: =Set(SelectedMonth,11)
+                                    Text: ="NOV"
+                                    Width: =55
+                                    X: =750
+                              - BtnDecHome_3:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    Appearance: ='ButtonCanvas.Appearance'.Outline
+                                    BorderRadius: =15
+                                    DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 12, DisplayMode.Edit, DisplayMode.Disabled))
+                                    Height: =30
+                                    OnSelect: =Set(SelectedMonth,12)
+                                    Text: ="DEC"
+                                    Width: =55
+                                    X: =810
+                              - IconReset_3:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    Color: =RGBA(2, 115, 203, 1)
+                                    Height: =25
+                                    Icon: =Icon.Reset
+                                    OnSelect: |-
+                                      =Set(SelectedMonth,Month(Today()));
+                                      Reset(DpwYears_3);
+                                      Set(SelectedYear,DpwYears_3.Selected.Value);
+                                    Width: =45
+                                    Y: =2.5
+                              - DpwYears_3:
+                                  Control: DropDown@0.0.45
+                                  Properties:
+                                    Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                                    BasePaletteColor: =RGBA(8, 222, 8, 1)
+                                    BorderColor: =RGBA(214, 221, 224, 1)
+                                    BorderStyle: =BorderStyle.Solid
+                                    BorderThickness: =1
+                                    DefaultSelectedItems: =LookUp(YearCollection,Value=varYear)
+                                    Height: =25
+                                    Items: =YearCollection
+                                    OnChange: =Set(SelectedYear,DpwYears_3.Selected.Value);
+                                    Width: =80
+                                    X: =58
+                                    Y: =2.5
+                                  Children:
+                                    - YearValue1_4:
+                                        Control: DropDownDataField@1.5.0
+                                        Variant: textualColumn
+                                        IsLocked: true
+                                        Properties:
+                                          FieldDisplayName: ="Value"
+                                          FieldName: ="Value"
+                                          FieldType: ="n"
+                                          Order: =1
+                        - ButtonCanvas7_3:
+                            Control: Button@0.0.45
+                            Properties:
+                              BasePaletteColor: =RGBA(2, 115, 203, 1)
+                              BorderRadius: =5
+                              FontSize: =12
+                              Icon: ="Add"
+                              OnSelect: |+
+                                =Set(varMenu, 3);
+                                Set(varMoInkIE, true);
+                                Navigate(scrInkomende_1);
+                                UpdateContext({ showContainer: !showContainer });
+
+                              Text: ="Nieuwe Correspondentie"
+                              Width: =200
+                  - Container9_4:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        LayoutDirection: =LayoutDirection.Vertical
+                        PaddingBottom: =25
+                        PaddingLeft: =50
+                        PaddingRight: =50
+                        PaddingTop: =10
+                      Children:
+                        - Rectangle6_5:
+                            Control: Rectangle@2.3.0
+                            Properties:
+                              BorderStyle: =BorderStyle.None
+                              Fill: =RGBA(214, 221, 224, 1)
+                              Height: =1
+                              Visible: =false
+                              Width: =Container10_4.Width
+                              Y: =51
+                        - Container10_4:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              FillPortions: =0
+                              Height: =35
+                              LayoutAlignItems: =LayoutAlignItems.Center
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutGap: =20
+                              PaddingLeft: =20
+                            Children:
+                              - TxtStatusIDAllC_22:
+                                  Control: Text@0.0.51
+                                  Properties:
+                                    Align: ='TextCanvas.Align'.Start
+                                    FontColor: =RGBA(0, 0, 0, 0.6)
+                                    Height: =35
+                                    Text: ="Stuk ID"
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Bold
+                                    Width: =60
+                                    X: =322
+                                    Y: =190
+                              - TxtVerzenderOntvangerAllC_16:
+                                  Control: Text@0.0.51
+                                  Properties:
+                                    Align: ='TextCanvas.Align'.Start
+                                    FontColor: =RGBA(0, 0, 0, 0.6)
+                                    Height: =35
+                                    Text: ="Type"
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Bold
+                                    Width: =120
+                                    X: =149
+                                    Y: =190
+                              - TxtDatumAllC_30:
+                                  Control: Text@0.0.51
+                                  Properties:
+                                    Align: ='TextCanvas.Align'.Start
+                                    FontColor: =RGBA(0, 0, 0, 0.6)
+                                    Height: =35
+                                    Text: ="Verzender"
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Bold
+                                    Width: =150
+                                    X: =282
+                                    Y: =190
+                              - TxtDatumAllC_31:
+                                  Control: Text@0.0.51
+                                  Properties:
+                                    Align: ='TextCanvas.Align'.Start
+                                    FontColor: =RGBA(0, 0, 0, 0.6)
+                                    Height: =35
+                                    Text: ="Ontvanger"
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Bold
+                                    Width: =150
+                                    X: =434
+                                    Y: =190
+                              - TxtDatumAllC_32:
+                                  Control: Text@0.0.51
+                                  Properties:
+                                    Align: ='TextCanvas.Align'.Start
+                                    FontColor: =RGBA(0, 0, 0, 0.6)
+                                    Height: =35
+                                    Text: ="Datum"
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Bold
+                                    Width: =80
+                                    X: =587
+                                    Y: =190
+                              - TxtOnderwerpAllC_8:
+                                  Control: Text@0.0.51
+                                  Properties:
+                                    Align: ='TextCanvas.Align'.Start
+                                    FontColor: =RGBA(0, 0, 0, 0.6)
+                                    Height: =35
+                                    Text: ="Referentie"
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Bold
+                                    Width: =220
+                                    X: =679
+                                    Y: =190
+                              - Icon2_17:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    Color: =RGBA(0, 0, 0, 0.5)
+                                    DisabledColor: =RGBA(0, 0, 0, 1)
+                                    DisplayMode: =DisplayMode.Disabled
+                                    Height: =30
+                                    HoverColor: =RGBA(0, 0, 0, 1)
+                                    Icon: =Icon.PaperClip
+                                    Width: =25
+                                    X: =90
+                                    Y: =190
+                              - Rectangle7_8:
+                                  Control: Rectangle@2.3.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    BorderThickness: =1
+                                    Fill: |+
+                                      =Switch(
+                                          true,
+                                          CountRows(colAllCorr) = 0, RGBA(0, 0, 0, 0), // Ninguno seleccionado
+                                          CountRows(colAllCorr) = CountRows(GalCorrespondentieVO_8.AllItems), RGBA(40, 134, 222, 1), // Todos seleccionados
+                                          RGBA(0, 0, 0, 0) // Algunos seleccionados
+                                      )
+                                    Height: =15
+                                    OnSelect: |+
+                                      =If(
+                                          CountRows(colAllCorr) = CountRows(GalCorrespondentieVO_8.AllItems),
+                                          Clear(colAllCorr),
+                                          ClearCollect(colAllCorr, ForAll(GalCorrespondentieVO_8.AllItems, { Value: ID }))
+                                      )
+                                    Width: =15
+                        - Container11_4:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              Fill: =RGBA(255, 255, 255, 1)
+                              LayoutDirection: =LayoutDirection.Vertical
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                            Children:
+                              - GalCorrespondentieVO_8:
+                                  Control: Gallery@2.15.0
+                                  Variant: Vertical
+                                  Properties:
+                                    Height: =518
+                                    Items: |-
+                                      =If(
+                                          RolUsuario = 'Rol Choices'.Beheerder,
+                                          Sort(
+                                          Filter(
+                                              Filter(
+                                              Correspondences,
+                                              TextInput1_9.Text in ID || TextInput1_9.Text in Sleutelwoorden || TextInput1_9.Text in Afdeling || TextInput1_9.Text in Beschrijving || TextInput1_9.Text in Type || TextInput1_9.Text in 'Verzonden op' || TextInput1_9.Text in Ontvanger || TextInput1_9.Text in Contact || TextInput1_9.Text in ContactOntvanger || TextInput1_9.Text in Verzender || IsBlank(TextInput1_9.Text) 
+                                          ),
+                                              Type = "Uitgaande" && maand = SelectedMonthUit && jaar = DpwYearsU.Selected.Value
+                                          ),
+                                          'Created On',
+                                          SortOrder.Descending
+                                      ),
+                                          If(
+                                              RolUsuario = 'Rol Choices'.Bewerker,
+                                              Sort(
+                                                  Filter(
+                                                      Correspondences,
+                                                      'Created By'.'Primary Email' = User().Email && (TextInput1_9.Text in ID || TextInput1_9.Text in Sleutelwoorden || TextInput1_9.Text in Afdeling || TextInput1_9.Text in Beschrijving || TextInput1_9.Text in Type || TextInput1_9.Text in 'Verzonden op' || TextInput1_9.Text in Ontvanger || TextInput1_9.Text in Contact || TextInput1_9.Text in ContactOntvanger || TextInput1_9.Text in Verzender || IsBlank(TextInput1_9.Text) ),
+                                                      Type = "Uitgaande"&& maand = SelectedMonthUit && jaar = DpwYearsU.Selected.Value
+
+                                                  ),
+                                                  'Created On',
+                                                  SortOrder.Descending
+                                              ),
+                                              If(
+                                                  RolUsuario = 'Rol Choices'.Lezer,
+                                                  Sort(
+                                                      Filter(
+                                                          Correspondences,
+                                                          Contact = User().FullName || ContactOntvanger = User().FullName && (TextInput1_9.Text in ID || TextInput1_9.Text in Sleutelwoorden || TextInput1_9.Text in Afdeling || TextInput1_9.Text in Beschrijving || TextInput1_9.Text in Type || TextInput1_9.Text in 'Verzonden op' || TextInput1_9.Text in Ontvanger || TextInput1_9.Text in Contact || TextInput1_9.Text in ContactOntvanger || TextInput1_9.Text in Verzender || IsBlank(TextInput1_9.Text) ),
+                                                          Type = "Uitgaande"&& maand = SelectedMonthUit && jaar = DpwYearsU.Selected.Value
+
+                                                      ),
+                                                      'Created On',
+                                                      SortOrder.Descending
+                                                  ),
+                                                  Blank()
+                                              )
+                                          )
+                                      )
+                                    TemplateSize: =32
+                                    Width: =1020
+                                    X: =312
+                                    Y: =234
+                                  Children:
+                                    - Container13_4:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          Fill: |+
+                                            =RGBA(0,0,0,0)
+                                          Height: =32
+                                          LayoutAlignItems: =LayoutAlignItems.Center
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutGap: =20
+                                          PaddingLeft: =15
+                                          Width: =Parent.Width-10
+                                        Children:
+                                          - TextCanvas8_23:
+                                              Control: Text@0.0.51
+                                              Properties:
+                                                Align: ='TextCanvas.Align'.Start
+                                                Size: =12
+                                                Text: =If(ThisItem.Type = "Inkomende", "INK-"&ThisItem.ID, "UIT-"&ThisItem.ID)
+                                                VerticalAlign: =VerticalAlign.Middle
+                                                Width: =60
+                                          - TextCanvas8_24:
+                                              Control: Text@0.0.51
+                                              Properties:
+                                                Align: ='TextCanvas.Align'.Start
+                                                Size: =12
+                                                Text: =ThisItem.'Bijlage(n)'
+                                                VerticalAlign: =VerticalAlign.Middle
+                                                Width: =25
+                                          - TextCanvas8_25:
+                                              Control: Text@0.0.51
+                                              Properties:
+                                                Align: ='TextCanvas.Align'.Start
+                                                Size: =12
+                                                Text: =ThisItem.Type & " - " & ThisItem.Origin
+                                                VerticalAlign: =VerticalAlign.Middle
+                                                Width: =120
+                                          - TextCanvas8_26:
+                                              Control: Text@0.0.51
+                                              Properties:
+                                                Align: ='TextCanvas.Align'.Start
+                                                Size: =12
+                                                Text: =ThisItem.Contact
+                                                VerticalAlign: =VerticalAlign.Middle
+                                                Width: =150
+                                          - TextCanvas8_27:
+                                              Control: Text@0.0.51
+                                              Properties:
+                                                Align: ='TextCanvas.Align'.Start
+                                                Size: =12
+                                                Text: =ThisItem.ContactOntvanger
+                                                VerticalAlign: =VerticalAlign.Middle
+                                                Width: =150
+                                          - TextCanvas8_28:
+                                              Control: Text@0.0.51
+                                              Properties:
+                                                Align: ='TextCanvas.Align'.Start
+                                                Size: =12
+                                                Text: =Text(DateValue(ThisItem.'Geregistreerd op'), "dd/mm/yyyy")
+                                                VerticalAlign: =VerticalAlign.Middle
+                                                Width: =80
+                                          - TextCanvas8_29:
+                                              Control: Text@0.0.51
+                                              Properties:
+                                                Align: ='TextCanvas.Align'.Start
+                                                Size: =12
+                                                Text: =ThisItem.Kenmerk
+                                                VerticalAlign: =VerticalAlign.Middle
+                                                Width: =220
+                                          - Rectangle7_9:
+                                              Control: Rectangle@2.3.0
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 1)
+                                                BorderThickness: =1
+                                                Fill: |+
+                                                  =If(
+                                                      CountRows(Filter(colAllCorr, Value = ThisItem.ID)) > 0,
+                                                      RGBA(40, 134, 222, 1),
+                                                      RGBA(0, 0, 0, 0)
+                                                  )
+                                                Height: =15
+                                                OnSelect: |+
+                                                  =If(
+                                                      CountRows(Filter(colAllCorr, Value = ThisItem.ID)) > 0,
+                                                      RemoveIf(colAllCorr, Value = ThisItem.ID),
+                                                      Collect(colAllCorr, { Value: ThisItem.ID })
+                                                  )
+                                                Width: =15
+                                    - Rectangle1_26:
+                                        Control: Rectangle@2.3.0
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          Fill: =RGBA(0, 0, 0, 0)
+                                          Height: =30
+                                          HoverFill: =RGBA(90,90,90,0.3)
+                                          OnSelect: |+
+                                            =If(GalCorrespondentieVO_8.Selected.Type ="Inkomende",
+                                            Navigate(scrInkomende_2,ScreenTransition.Fade);
+                                            Set(varActive2, If(GalCorrespondentieVO_8.Selected.Addressee = 'Choice Addressee '.Company,true,false)),
+                                            Navigate(scrInkomende_2,ScreenTransition.Fade);
+                                            Set(varActive3, If(GalCorrespondentieVO_8.Selected.Addressee = 'Choice Addressee '.Company,true,false)););
+                                            Set(varEditCorr, true);
+
+                                          Width: =Parent.Width
+                                          Y: =1
+      - TextInput1_11:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =RGBA(106, 122, 127, 1)
+            Default: =""
+            Height: =33
+            HintText: |-
+              ="🔍 Search"
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: =30
+            RadiusTopRight: =30
+            Visible: =false
+            Width: =200
+            X: =552
+            Y: =5
+      - Container15_9:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(44, 44, 44, 1)
+            Height: =85
+            LayoutDirection: =LayoutDirection.Vertical
+            Visible: =false
+            Width: =380
+            X: =55
+            Y: =600
+          Children:
+            - Container16_14:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Height: =60
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutGap: =15
+                  PaddingLeft: =15
+                  PaddingTop: =15
+                  Width: =380
+                Children:
+                  - Image4_7:
+                      Control: Image@2.2.3
+                      Properties:
+                        Height: =25
+                        Image: =correct
+                        Width: =25
+                  - HtmlText1_7:
+                      Control: HtmlViewer@2.1.0
+                      Properties:
+                        Color: =RGBA(255, 255, 255, 1)
+                        Height: =50
+                        HtmlText: ="<b>"&GalCorrespondentieVO_8.Selected.Type& " - " &GalCorrespondentieVO_8.Selected.Origin&"</b> correspondentie succesvol verwijderd."
+                        PaddingTop: =0
+                        Size: =10
+                        Width: =280
+                  - ButtonCanvas3_26:
+                      Control: Button@0.0.45
+                      Properties:
+                        Appearance: ='ButtonCanvas.Appearance'.Subtle
+                        FontColor: =RGBA(255, 255, 255, 1)
+                        FontSize: =16
+                        Height: =25
+                        Icon: ="Dismiss"
+                        IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                        Layout: ='ButtonCanvas.Layout'.IconOnly
+                        PaddingBottom: =15
+                        PaddingRight: =30
+                        Text: =
+                        Width: =25
+            - Container16_15:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =40
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutGap: =35
+                  PaddingLeft: =40
+                  Width: =380
+                Children:
+                  - ButtonCanvas3_27:
+                      Control: Button@0.0.45
+                      Properties:
+                        Appearance: ='ButtonCanvas.Appearance'.Subtle
+                        FontColor: =RGBA(40, 134, 222, 1)
+                        FontSize: =14
+                        Height: =25
+                        Icon: ="Dismiss"
+                        IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                        Layout: ='ButtonCanvas.Layout'.TextOnly
+                        Text: ="Sluit"
+                        VerticalAlign: =
+                        Width: =70
+      - Container14_5:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(44, 44, 44, 1)
+            Height: =40
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Horizontal
+            LayoutGap: =10
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Visible: =CountRows(colAllCorr) > 0
+            Width: =600
+            X: =398
+            Y: =700
+          Children:
+            - ButtonCanvas1_46:
+                Control: Button@0.0.45
+                Properties:
+                  Align: =Align.Center
+                  Appearance: ='ButtonCanvas.Appearance'.Outline
+                  DisplayMode: |-
+                    =If(
+                        CountRows(colAllCorr) = 0 || CountRows(colAllCorr) > 1, DisplayMode.View, DisplayMode.Edit)
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  FontSize: =12
+                  Height: =28
+                  Icon: ="Eye"
+                  IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                  Text: ="Weergeven"
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =100
+            - ButtonCanvas1_47:
+                Control: Button@0.0.45
+                Properties:
+                  Align: =Align.Center
+                  Appearance: ='ButtonCanvas.Appearance'.Outline
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  FontSize: =12
+                  Height: =28
+                  Icon: ="Delete"
+                  IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                  Text: |-
+                    =If(
+                        CountRows(colAllCorr) = 0,  "Verwijder", "Verwijder "&CountRows(colAllCorr)&" Item(s)")
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: |-
+                    =If(
+                        CountRows(colAllCorr) = 0, 95, 150)
+            - ButtonCanvas1_48:
+                Control: Button@0.0.45
+                Properties:
+                  Align: =Align.Center
+                  Appearance: ='ButtonCanvas.Appearance'.Outline
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  FontSize: =12
+                  Height: =28
+                  Icon: ="ArrowSync"
+                  IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                  Text: ="Selectie wissen"
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =130
+            - ButtonCanvas1_49:
+                Control: Button@0.0.45
+                Properties:
+                  Align: =Align.Center
+                  Appearance: ='ButtonCanvas.Appearance'.Outline
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  FontSize: =12
+                  Height: =28
+                  Icon: ="DocumentBulletList"
+                  IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                  Text: ="Bibliotheek"
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =130

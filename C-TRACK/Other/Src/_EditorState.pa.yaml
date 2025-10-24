@@ -1,0 +1,41 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+EditorState:
+  ScreensOrder:
+    - scrBegin
+    - scrInkomende
+    - scrInkomendeEdit
+    - scrInkomendeOverzicht
+    - scrUitgaande
+    - scrUitgaandeEdit
+    - scrUitgaandeOverzicht
+    - scrContacts
+    - scrPersoon
+    - scrContactsName
+    - scrGebruikersBeheer
+    - scrDashboard
+    - Screen1
+    - Screen1_3
+    - Screen1_5
+    - Screen1_1
+    - scrSettings
+    - Screen1_4
+    - scrInkomende_1
+    - scrInkomende_2
+  ComponentDefinitionsOrder:
+    - ComFooter
+    - comHeader
+    - NavBarHome
+    - NavBarInkomende
+    - NavBarUitgaande
+    - NavHeader
+    - NavBarInkomende_2
+    - NavBarUitgaande_2
+    - NavBarBedrijf
+    - NavBarPersoon

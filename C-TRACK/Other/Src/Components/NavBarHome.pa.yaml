@@ -1,0 +1,245 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+ComponentDefinitions:
+  NavBarHome:
+    DefinitionType: CanvasComponent
+    AccessAppScope: true
+    CustomProperties:
+      Begin:
+        PropertyKind: Input
+        DisplayName: Begin
+        Description: A custom property
+        DataType: Screen
+        Default: =App.ActiveScreen
+      Contacts:
+        PropertyKind: Input
+        DisplayName: Contacts
+        Description: A custom property
+        DataType: Screen
+        Default: =App.ActiveScreen
+      Dashboard:
+        PropertyKind: Input
+        DisplayName: Dashboard
+        Description: A custom property
+        DataType: Screen
+        Default: =App.ActiveScreen
+      Gebruikersbeheer:
+        PropertyKind: Input
+        DisplayName: Gebruikersbeheer
+        Description: A custom property
+        DataType: Screen
+        Default: =App.ActiveScreen
+      Inkomende:
+        PropertyKind: Input
+        DisplayName: Inkomende
+        Description: A custom property
+        DataType: Screen
+        Default: =App.ActiveScreen
+      Uitgaande:
+        PropertyKind: Input
+        DisplayName: Uitgaande
+        Description: A custom property
+        DataType: Screen
+        Default: =App.ActiveScreen
+    Properties:
+      Height: =683
+      Width: =300
+    Children:
+      - RtgNavBarHome:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(0, 132, 181, 1)
+            Height: =683
+            Width: =300
+      - btnGebruikersbeheer_3:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(3, 186, 255, 1), -10%)
+            OnSelect: =Navigate(NavBarHome.Contacts)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Text: ="Contacten"
+            Visible: =If(RolUsuario='Rol Choices'.Lezer,false,true)
+            Width: =270
+            X: =17
+            Y: =155
+      - btnDashboard_1:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(3, 186, 255, 1), -10%)
+            OnSelect: =Navigate(NavBarHome.Begin)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Text: ="Begin"
+            Width: =270
+            X: =17
+            Y: =5
+      - btnInkomende:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(3, 186, 255, 1), -10%)
+            OnSelect: =Navigate(NavBarHome.Inkomende)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Text: ="Inkomende"
+            Width: =270
+            X: =17
+            Y: =55
+      - btnUitgaande:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(3, 186, 255, 1), -10%)
+            OnSelect: =Navigate(NavBarHome.Uitgaande)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Text: ="Uitgaande"
+            Width: =270
+            X: =17
+            Y: =105
+      - btnGebruikersbeheer:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(3, 186, 255, 1), -10%)
+            OnSelect: =Navigate(NavBarHome.Gebruikersbeheer)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Text: ="Gebruikersbeheer"
+            Visible: =If(RolUsuario='Rol Choices'.Beheerder,true,false)
+            Width: =270
+            X: =17
+            Y: =205
+      - btnDashboard:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Align: =Align.Left
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(3, 186, 255, 1), -10%)
+            OnSelect: =Navigate(NavBarHome.Dashboard)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Text: ="Dashboard"
+            Visible: =If(RolUsuario='Rol Choices'.Lezer,false,true)
+            Width: =270
+            X: =17
+            Y: =If(RolUsuario='Rol Choices'.Bewerker,205,255)
+      - ImgHome:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =30
+            Image: ='hogar (1)'
+            Width: =30
+            X: =250
+            Y: =10
+      - ImgInkomende:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =30
+            Image: =mensajes
+            OnSelect: =Navigate(NavBarHome.Inkomende)
+            Width: =30
+            X: =250
+            Y: =60
+      - ImgUitgaande:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =30
+            Image: ='avion-de-papel'
+            OnSelect: =Navigate(NavBarHome.Uitgaande)
+            Width: =30
+            X: =248
+            Y: =110
+      - ImgRoles:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =30
+            Image: =grupo
+            OnSelect: =Navigate(NavBarHome.Gebruikersbeheer)
+            Visible: =If(RolUsuario='Rol Choices'.Beheerder,true,false)
+            Width: =30
+            X: =250
+            Y: =210
+      - ImgDashboard:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =30
+            Image: =speedometer
+            OnSelect: =Navigate(NavBarHome.Dashboard)
+            Visible: =If(RolUsuario='Rol Choices'.Lezer,false,true)
+            Width: =30
+            X: =250
+            Y: =If(RolUsuario='Rol Choices'.Bewerker,210,260)
+      - ImgRoles_12:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =30
+            Image: ='libro-de-contactos'
+            OnSelect: =Navigate(NavBarHome.Contacts)
+            Visible: =If(RolUsuario='Rol Choices'.Lezer,false,true)
+            Width: =30
+            X: =250
+            Y: =160

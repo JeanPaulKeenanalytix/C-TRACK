@@ -1,0 +1,99 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "webcorr_divisionses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "webcorr_divisions",
+    "MaxGetRowsCount": 2000,
+    "Name": "Divisions",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number",
+      "webcorr_division": "Division",
+      "webcorr_divisions_AsyncOperations": "System Jobs",
+      "webcorr_divisions_BulkDeleteFailures": "Bulk Delete Failures",
+      "webcorr_divisions_DuplicateBaseRecord": "Duplicate Records (webcorr_divisions_DuplicateBaseRecord)",
+      "webcorr_divisions_DuplicateMatchingRecord": "Duplicate Records (webcorr_divisions_DuplicateMatchingRecord)",
+      "webcorr_divisions_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "webcorr_divisions_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "webcorr_divisions_ProcessSession": "Process Sessions",
+      "webcorr_divisions_SyncErrors": "Sync Errors",
+      "webcorr_divisionsid": "Divisions",
+      "webcorr_name": "ID",
+      "webcorr_webcorr_departments_DivisionId_webcorr_di": "Departments"
+    },
+    "PreferredName": "Divisions",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Divisions (Views)",
+    "Name": "_webcorr_divisions_views",
+    "RelatedEntityName": "Divisions",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "11bfbb6c-b3db-4ae9-8729-59a64e15106b": "Divisions Advanced Find View",
+      "a943ef56-23a5-4843-9557-6fc98a9683df": "Divisions Lookup View",
+      "c94964df-756d-42f1-addb-e86a8916fa54": "Inactive Divisions",
+      "e33b152d-deac-4a06-8a8a-3e0eff1dc92c": "Active Divisions",
+      "fa7729e2-4803-4eb0-bfb6-5c076270e30d": "Divisions Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Divisions)",
+    "Name": "webcorr_divisions_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Divisions"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Divisions",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Divisions)",
+    "Name": "webcorr_divisions_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Divisions"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Divisions",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,153 @@
+{
+  "04ebd832-8a52-4637-801b-81a214431d7a": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1769/1.0.1769.4352/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://keenanalytixus.sharepoint.com/teams/W.E.BAruba": {
+        "dataSources": {
+          "Incoming Correspondance": {
+            "tableName": "f9d5c1e9-fc05-4a85-bdf5-665649ae7b2d"
+          },
+          "Outgoing Correspondance": {
+            "tableName": "c1a83601-9b13-4e9e-8733-bda9c63cb6c0"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Incoming Correspondance",
+      "Outgoing Correspondance"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "ae712d16-ed2f-45aa-b437-b4b20bae8aa1"
+    ],
+    "id": "04ebd832-8a52-4637-801b-81a214431d7a"
+  },
+  "632d7c0f-c100-42b6-ba75-e20254d06da5": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Microsoft Teams",
+      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1777/1.0.1777.4429/teams/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_teams",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "ae712d16-ed2f-45aa-b437-b4b20bae8aa1"
+    ],
+    "id": "632d7c0f-c100-42b6-ba75-e20254d06da5"
+  },
+  "8f33e4f0-650d-41c6-b817-5fa2bbf65804": {
+    "appActions": [
+      "HttpRequest"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Groups",
+      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/releases/v1.0.1777/1.0.1777.4410/office365groups/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365groups",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Groups"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "8f33e4f0-650d-41c6-b817-5fa2bbf65804"
+  },
+  "ae712d16-ed2f-45aa-b437-b4b20bae8aa1": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1774/1.0.1774.4397/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "04ebd832-8a52-4637-801b-81a214431d7a": {
+          "value": "shared_sharepointonline_1"
+        },
+        "632d7c0f-c100-42b6-ba75-e20254d06da5": {
+          "value": "shared_teams_1"
+        },
+        "90cb5265-cb44-45c9-9d89-8c131dcd404e": {
+          "value": "shared_sharepointonline_1"
+        },
+        "workflowDisplayName": {
+          "value": "Add new document in TracMail"
+        },
+        "workflowEntityId": {
+          "value": "36ddc3c9-1232-ee11-bdf3-000d3a317ead"
+        },
+        "workflowName": {
+          "value": "e4b770eb-10dc-4142-b91b-ac4a05ca52b3"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sharepointonline_1": {
+          "value": "04ebd832-8a52-4637-801b-81a214431d7a"
+        },
+        "shared_teams_1": {
+          "value": "632d7c0f-c100-42b6-ba75-e20254d06da5"
+        },
+        "workflowDisplayName": {
+          "value": "Add new document in TracMail"
+        },
+        "workflowEntityId": {
+          "value": "36ddc3c9-1232-ee11-bdf3-000d3a317ead"
+        },
+        "workflowName": {
+          "value": "e4b770eb-10dc-4142-b91b-ac4a05ca52b3"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "AddnewdocumentinTracMail"
+    ],
+    "dependencies": {
+      "shared_sharepointonline_1": "04ebd832-8a52-4637-801b-81a214431d7a",
+      "shared_teams_1": "632d7c0f-c100-42b6-ba75-e20254d06da5"
+    },
+    "dependents": [],
+    "id": "ae712d16-ed2f-45aa-b437-b4b20bae8aa1"
+  },
+  "cbaaeefa-ae3a-435b-89e4-cda7961ed964": {
+    "appActions": [
+      "SearchUser"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Users",
+      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/releases/v1.0.1777/1.0.1777.4410/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "cbaaeefa-ae3a-435b-89e4-cda7961ed964"
+  }
+}

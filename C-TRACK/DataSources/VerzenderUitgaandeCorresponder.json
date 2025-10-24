@@ -1,0 +1,125 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "webcorr_verzenderuitgaandecorresponders",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "webcorr_verzenderuitgaandecorresponder",
+    "MaxGetRowsCount": 2000,
+    "Name": "VerzenderUitgaandeCorresponder",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number",
+      "webcorr_adress": "Adress",
+      "webcorr_companyname": "CompanyName",
+      "webcorr_contact": "City",
+      "webcorr_contact_Company_webcorr_verzenderuitgaand": "Contacts",
+      "webcorr_correspondentietype": "CorrespondentieType",
+      "webcorr_email": "Country",
+      "webcorr_name": "IdCorresponder",
+      "webcorr_phone": "Phone",
+      "webcorr_verzenderuitgaandecorresponder_AsyncOperations": "System Jobs",
+      "webcorr_verzenderuitgaandecorresponder_BulkDeleteFailures": "Bulk Delete Failures",
+      "webcorr_verzenderuitgaandecorresponder_DuplicateBaseRecord": "Duplicate Records (webcorr_verzenderuitgaandecorresponder_DuplicateBaseRecord)",
+      "webcorr_verzenderuitgaandecorresponder_DuplicateMatchingRecord": "Duplicate Records (webcorr_verzenderuitgaandecorresponder_DuplicateMatchingRecord)",
+      "webcorr_verzenderuitgaandecorresponder_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "webcorr_verzenderuitgaandecorresponder_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "webcorr_verzenderuitgaandecorresponder_ProcessSession": "Process Sessions",
+      "webcorr_verzenderuitgaandecorresponder_SyncErrors": "Sync Errors",
+      "webcorr_verzenderuitgaandecorresponderid": "VerzenderUitgaandeCorresponder",
+      "webcorr_zip": "ZIP"
+    },
+    "PreferredName": "VerzenderUitgaandeCorresponder",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "VerzenderUitgaandeCorresponder (Views)",
+    "Name": "_webcorr_verzenderuitgaandecorresponder_views",
+    "RelatedEntityName": "VerzenderUitgaandeCorresponder",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1c99d670-4918-49d0-bc87-3937c70e04db": "VerzenderUitgaandeCorresponder Lookup View",
+      "225b3b87-2634-4504-9831-f4b5044590a2": "Active VerzenderUitgaandeCorresponder",
+      "3951d73c-f2e6-47f4-b920-8d580af0238a": "Inactive VerzenderUitgaandeCorresponder",
+      "79180675-fce8-4d10-9c1e-dfc1e1f790f7": "VerzenderUitgaandeCorresponder Advanced Find View",
+      "e4f2a263-2153-46cd-b681-ccfbc1a72d86": "VerzenderUitgaandeCorresponder Associated View"
+    }
+  },
+  {
+    "DisplayName": "CorrespondentieType Choices",
+    "Name": "webcorr_correspondentietypechoices",
+    "OptionSetInfoNameMapping": {
+      "172640000": "Inkomende",
+      "172640001": "Uitgaande"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "webcorr_correspondentietype",
+        "OptionSetReferenceEntityName": "VerzenderUitgaandeCorresponder"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "webcorr_correspondentietype",
+    "RelatedEntityName": "VerzenderUitgaandeCorresponder",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (VerzenderUitgaandeCorresponder)",
+    "Name": "webcorr_verzenderuitgaandecorresponder_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "VerzenderUitgaandeCorresponder"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "VerzenderUitgaandeCorresponder",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (VerzenderUitgaandeCorresponder)",
+    "Name": "webcorr_verzenderuitgaandecorresponder_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "VerzenderUitgaandeCorresponder"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "VerzenderUitgaandeCorresponder",
+    "Type": "OptionSetInfo"
+  }
+]

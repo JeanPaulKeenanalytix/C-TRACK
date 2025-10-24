@@ -1,0 +1,966 @@
+scrUitgaandeOverzicht As screen:
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+    OnHidden: |-
+        =Set(SelectedMonthUit,GalCorrespondentieVO_4.Selected.maand);
+        Reset(DpwYearsU);
+        Set(SelectedYearUit,DpwYearsU.Selected.Value);
+        Set(varOrigen, true);
+        Set(varAddCompany, false);
+        Set(varAddCompany1, false);
+        Set(varAddCompany3, false);
+        Set(varAddCompany4, false);
+        Set(varAddcontact, false);
+        Set(varAddcontact1, false);
+        Set(varAddcontact2, false);
+        Set(varAddContact3, false);
+        Set(varAddContact4, false);
+        // Inkomende
+        
+        
+        //Uitgaande
+        Reset(txtType_1);
+        Reset(txtGeregistreerd_1);
+        Reset(cbbOntvanger_1);
+        Reset(dateVerzondenOp_1);
+        Reset(txtReferentie_1);
+        Reset(txtReferentie_9);
+        Reset(txtReferentie_8);
+        Reset(txtSleutelwoorden_1);
+        Reset(txtBeschrijving_1);
+        Reset(Attachments_Bijlage1_1)
+    OnVisible: |-
+        =Set(SelectedMonthUit,Month(Today()));
+        Reset(DpwYearsU);
+        Set(SelectedYearUit,DpwYearsU.Selected.Value);
+
+    NavHeader_9 As NavHeader:
+
+    NavBarUitgaande_5 As NavBarUitgaande_2:
+        Aanmaken: =scrUitgaande
+        Begin: =scrBegin
+        Contacts: =scrContacts
+        Dashboard: =scrDashboard
+        Gebruikersbeheer: =scrGebruikersBeheer
+        Inkomende: =If(RolUsuario = 'Rol Choices'.Lezer, scrInkomendeOverzicht, scrInkomende)
+        Ontvangerslijst: =
+        Y: =85
+        ZIndex: =2
+        Zoeken: =
+
+    GalCorrespondentieVO_4 As gallery.galleryVertical:
+        '#CopilotOverlayLabel': ="Filtered"
+        BorderColor: =App.Theme.Colors.Darker40
+        DelayItemLoading: =true
+        Height: =518
+        Items: |-
+            =If(
+                RolUsuario = 'Rol Choices'.Beheerder,
+                Sort(
+                Filter(
+                    Filter(
+                    Correspondences,
+                    TextInput1_9.Text in ID || TextInput1_9.Text in Sleutelwoorden || TextInput1_9.Text in Afdeling || TextInput1_9.Text in Beschrijving || TextInput1_9.Text in Type || TextInput1_9.Text in 'Verzonden op' || TextInput1_9.Text in Ontvanger || TextInput1_9.Text in Contact || TextInput1_9.Text in ContactOntvanger || TextInput1_9.Text in Verzender || IsBlank(TextInput1_9.Text) 
+                ),
+                    Type = "Uitgaande" && maand = SelectedMonthUit && jaar = DpwYearsU.Selected.Value
+                ),
+                'Created On',
+                SortOrder.Descending
+            ),
+                If(
+                    RolUsuario = 'Rol Choices'.Bewerker,
+                    Sort(
+                        Filter(
+                            Correspondences,
+                            'Created By'.'Primary Email' = User().Email && (TextInput1_9.Text in ID || TextInput1_9.Text in Sleutelwoorden || TextInput1_9.Text in Afdeling || TextInput1_9.Text in Beschrijving || TextInput1_9.Text in Type || TextInput1_9.Text in 'Verzonden op' || TextInput1_9.Text in Ontvanger || TextInput1_9.Text in Contact || TextInput1_9.Text in ContactOntvanger || TextInput1_9.Text in Verzender || IsBlank(TextInput1_9.Text) ),
+                            Type = "Uitgaande"&& maand = SelectedMonthUit && jaar = DpwYearsU.Selected.Value
+            
+                        ),
+                        'Created On',
+                        SortOrder.Descending
+                    ),
+                    If(
+                        RolUsuario = 'Rol Choices'.Lezer,
+                        Sort(
+                            Filter(
+                                Correspondences,
+                                Contact = User().FullName || ContactOntvanger = User().FullName && (TextInput1_9.Text in ID || TextInput1_9.Text in Sleutelwoorden || TextInput1_9.Text in Afdeling || TextInput1_9.Text in Beschrijving || TextInput1_9.Text in Type || TextInput1_9.Text in 'Verzonden op' || TextInput1_9.Text in Ontvanger || TextInput1_9.Text in Contact || TextInput1_9.Text in ContactOntvanger || TextInput1_9.Text in Verzender || IsBlank(TextInput1_9.Text) ),
+                                Type = "Uitgaande"&& maand = SelectedMonthUit && jaar = DpwYearsU.Selected.Value
+            
+                            ),
+                            'Created On',
+                            SortOrder.Descending
+                        ),
+                        Blank()
+                    )
+                )
+            )
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =32
+        Width: =1020
+        X: =312
+        Y: =234
+        ZIndex: =3
+
+        Container1_4 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Semilight
+            Height: =32
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Width: =1010
+            ZIndex: =1
+
+        LblStatusIDAllC_4 As label:
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            Height: =32
+            OnSelect: =Select(Parent)
+            Size: =8
+            Text: =If(ThisItem.Type = "Inkomende", "INK-"&ThisItem.ID, "UIT-"&ThisItem.ID)
+            Width: =60
+            X: =2
+            ZIndex: =2
+
+        LblVerzenderAllC_4 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            Height: =32
+            OnSelect: =Select(Parent)
+            PaddingLeft: =0
+            Size: =8
+            Text: =ThisItem.ContactOntvanger
+            Width: =140
+            X: =441
+            ZIndex: =4
+
+        LblDatumAllC_4 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            Height: =32
+            OnSelect: =Select(Parent)
+            Size: =8
+            Text: |
+                =Text(DateValue(ThisItem.'Verzonden op'), "dd/mm/yyyy")
+            Width: =70
+            X: =589
+            ZIndex: =5
+
+        Icon3_3 As icon.Edit:
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =App.Theme.Colors.Darker30
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =15
+            Icon: |-
+                =If(
+                    RolUsuario = 'Rol Choices'.Lezer,Icon.View, Icon.Edit)
+            OnSelect: |+
+                =Navigate(scrUitgaandeEdit,ScreenTransition.Fade);
+                Set(varEditCorr, false);
+                Set(varActive3, If(GalCorrespondentieVO_4.Selected.Addressee = 'Choice Addressee '.Company,true,false));
+                
+            Width: =28
+            X: =939
+            Y: =8
+            ZIndex: =6
+
+        IconDeleteAllC_3 As icon.Trash:
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =App.Theme.Colors.Darker30
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =15
+            Icon: =Icon.Trash
+            OnSelect: =Set(varDeleteU, true);
+            Visible: =If(RolUsuario='Rol Choices'.Lezer,false,true)
+            Width: =28
+            X: =964
+            Y: =8
+            ZIndex: =7
+
+        LblDatumAllC_6 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            Height: =32
+            OnSelect: =Select(Parent)
+            Size: =8
+            Text: =ThisItem.Kenmerk
+            Width: =230
+            X: =686
+            ZIndex: =8
+
+        LblVerzenderAllC_9 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            Height: =32
+            OnSelect: =Select(Parent)
+            PaddingLeft: =0
+            Size: =8
+            Text: =ThisItem.Type & " - " & ThisItem.Origin
+            Width: =110
+            X: =155
+            ZIndex: =10
+
+        LblVerzenderAllC_10 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            Height: =32
+            OnSelect: =Select(Parent)
+            PaddingLeft: =0
+            Size: =8
+            Text: =ThisItem.Contact
+            X: =287
+            ZIndex: =11
+
+        LblStatusIDAllC_7 As label:
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            Height: =32
+            OnSelect: =Select(Parent)
+            Size: =8
+            Text: =ThisItem.'Bijlage(n)'
+            Width: =40
+            X: =84
+            ZIndex: =12
+
+    Button1_5 As button:
+        Align: =Align.Left
+        BorderColor: =App.Theme.Colors.Primary
+        BorderThickness: =0
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(3, 186, 255, 1), -10%)
+        OnSelect: =Launch(varBibliOut)
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =Self.Color
+        PressedFill: =App.Theme.Colors.Darker40
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="Bibliotheek"
+        Visible: =If(RolUsuario='Rol Choices'.Lezer,false,true)
+        Width: =259
+        X: =41
+        Y: =340
+        ZIndex: =4
+
+    TxtStatusIDAllC_15 As Text:
+        Align: ='TextCanvas.Align'.Start
+        BorderColor: =
+        BorderStyle: =""
+        DisplayMode: =DisplayMode.Edit
+        Fill: =
+        Font: =""
+        FontColor: =
+        FontItalic: =false
+        FontStrikethrough: =false
+        FontUnderline: =false
+        Height: =40
+        Size: =16
+        Text: ="Stuk ID"
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =94
+        X: =322
+        Y: =190
+        ZIndex: =5
+
+    TxtVerzenderOntvangerAllC_11 As Text:
+        Align: ='TextCanvas.Align'.Start
+        BorderColor: =
+        BorderStyle: =""
+        DisplayMode: =DisplayMode.Edit
+        Fill: =
+        Font: =""
+        FontColor: =
+        FontItalic: =false
+        FontStrikethrough: =false
+        FontUnderline: =false
+        Height: =40
+        Size: =16
+        Text: ="Verzender"
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =148
+        X: =604
+        Y: =190
+        ZIndex: =6
+
+    TxtActionAllC_15 As Text:
+        Align: ='TextCanvas.Align'.Start
+        BorderColor: =
+        BorderStyle: =""
+        DisplayMode: =DisplayMode.Edit
+        Fill: =
+        Font: =""
+        FontColor: =
+        FontItalic: =false
+        FontStrikethrough: =false
+        FontUnderline: =false
+        Height: =40
+        Size: =16
+        Text: ="Acties"
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =92
+        X: =1261
+        Y: =190
+        ZIndex: =7
+
+    TxtDatumAllC_16 As Text:
+        Align: ='TextCanvas.Align'.Start
+        BorderColor: =
+        BorderStyle: =""
+        DisplayMode: =DisplayMode.Edit
+        Fill: =
+        Font: =""
+        FontColor: =
+        FontItalic: =false
+        FontStrikethrough: =false
+        FontUnderline: =false
+        Height: =40
+        Size: =16
+        Text: ="Datum"
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =70
+        X: =909
+        Y: =190
+        ZIndex: =8
+
+    RtgItemsAllC_33 As rectangle:
+        BorderColor: =App.Theme.Colors.Darker40
+        Fill: =RGBA(16, 188, 224, 1)
+        Height: =45
+        Width: =1066
+        X: =300
+        Y: =88
+        ZIndex: =9
+
+    Container2_8 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Bold
+        Fill: =RGBA(16, 188, 224, 1)
+        Height: =60
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =1066
+        X: =300
+        Y: =87
+        ZIndex: =10
+
+    TextInput1_9 As text:
+        BorderColor: =RGBA(106, 122, 127, 1)
+        BorderThickness: =2
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Font: =App.Theme.Font
+        Height: =33
+        HintText: ="🔍 Search"
+        HoverBorderColor: =App.Theme.Colors.Darker40
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =App.Theme.Colors.Lighter70
+        RadiusBottomLeft: =30
+        RadiusBottomRight: =30
+        RadiusTopLeft: =30
+        RadiusTopRight: =30
+        Size: =13
+        Width: =312
+        X: =1021
+        Y: =100
+        ZIndex: =11
+
+    RtgItemsAllC_40 As rectangle:
+        BorderColor: =RGBA(106, 122, 127, 1)
+        BorderThickness: =2
+        Fill: =RGBA(16, 188, 224, 1)
+        Height: =1
+        Width: =1066
+        X: =300
+        Y: =230
+        ZIndex: =12
+
+    TxtOnderwerpAllC_15 As Text:
+        Align: ='TextCanvas.Align'.Start
+        BorderColor: =
+        BorderStyle: =""
+        DisplayMode: =DisplayMode.Edit
+        Fill: =
+        Font: =""
+        FontColor: =
+        FontItalic: =false
+        FontStrikethrough: =false
+        FontUnderline: =false
+        Height: =40
+        Size: =16
+        Text: ="Referentie"
+        VerticalAlign: =VerticalAlign.Middle
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =89
+        X: =1001
+        Y: =190
+        ZIndex: =13
+
+    TxtDatumAllC_17 As Text:
+        Align: ='TextCanvas.Align'.Start
+        BorderColor: =
+        BorderStyle: =""
+        DisplayMode: =DisplayMode.Edit
+        Fill: =
+        Font: =""
+        FontColor: =
+        FontItalic: =false
+        FontStrikethrough: =false
+        FontUnderline: =false
+        Height: =40
+        Size: =16
+        Text: ="Ontvanger"
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =140
+        X: =756
+        Y: =190
+        ZIndex: =14
+
+    TxtStatusIDAllC_17 As Text:
+        Align: ='TextCanvas.Align'.Start
+        BorderColor: =
+        BorderStyle: =""
+        DisplayMode: =DisplayMode.Edit
+        Fill: =
+        Font: =""
+        FontColor: =
+        FontItalic: =false
+        FontStrikethrough: =false
+        FontUnderline: =false
+        Height: =40
+        Size: =16
+        Text: ="Type"
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =94
+        X: =471
+        Y: =190
+        ZIndex: =15
+
+    Icon2_4 As icon.DocumentPDF:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Height: =40
+        HoverColor: =RGBA(0, 0, 0, 1)
+        Icon: =Icon.PaperClip
+        Width: =25
+        X: =404
+        Y: =190
+        ZIndex: =16
+
+    Container1_7 As groupContainer.manualLayoutContainer:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderThickness: =0.5
+        Height: =60
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =170
+        X: =570
+        Y: =87
+        ZIndex: =17
+
+        TextCanvas1_8 As Text:
+            Align: ='TextCanvas.Align'.Center
+            AutoHeight: =true
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            Fill: =
+            FontColor: =RGBA(255, 255, 255, 1)
+            Height: =32
+            Size: =15
+            Text: ="Uitgaande-Intern"
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =Container1_7.Width
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+        TextCanvas1_9 As Text:
+            Align: ='TextCanvas.Align'.Center
+            AutoHeight: =false
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            Fill: =
+            FontColor: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Size: =36
+            Text: |-
+                =CountIf(
+                    GalCorrespondentieVO_4.AllItems,
+                    Origin = OriginCorrChoices.Intern && Type = "Uitgaande"
+                )
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =Container1_7.Width
+            Wrap: =true
+            X: =0
+            Y: =8
+            ZIndex: =2
+
+    Container1_8 As groupContainer.manualLayoutContainer:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderThickness: =0.5
+        Height: =60
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =170
+        X: =824
+        Y: =87
+        ZIndex: =18
+
+        TextCanvas1_10 As Text:
+            Align: ='TextCanvas.Align'.Center
+            AutoHeight: =true
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            Fill: =
+            FontColor: =RGBA(255, 255, 255, 1)
+            Height: =32
+            Size: =15
+            Text: ="Uitgaande-Extern"
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =Container1_8.Width
+            Wrap: =true
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+        TextCanvas1_11 As Text:
+            Align: ='TextCanvas.Align'.Center
+            AutoHeight: =false
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            Fill: =
+            FontColor: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Size: =36
+            Text: |-
+                =CountIf(
+                    GalCorrespondentieVO_4.AllItems,
+                    Origin = OriginCorrChoices.Extern && Type = "Uitgaande"
+                )
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =Container1_8.Width
+            Wrap: =true
+            X: =0
+            Y: =8
+            ZIndex: =2
+
+    Container1_14 As groupContainer.manualLayoutContainer:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderThickness: =0.5
+        Height: =60
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =170
+        X: =316
+        Y: =87
+        ZIndex: =19
+
+        TextCanvas1_22 As Text:
+            Align: ='TextCanvas.Align'.Center
+            AutoHeight: =true
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            Fill: =
+            FontColor: =RGBA(255, 255, 255, 1)
+            Height: =32
+            Size: =15
+            Text: ="Totaal"
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =Container1_14.Width
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+        TextCanvas1_23 As Text:
+            Align: ='TextCanvas.Align'.Center
+            AutoHeight: =false
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            Fill: =
+            FontColor: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Size: =36
+            Text: |-
+                =CountIf(
+                    GalCorrespondentieVO_4.AllItems,
+                    Type = "Uitgaande"
+                )
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =Container1_14.Width
+            Wrap: =true
+            X: =0
+            Y: =8
+            ZIndex: =2
+
+    CoMonthFiltersU As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Height: =40
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =1066
+        X: =300
+        Y: =149
+        ZIndex: =20
+
+        BtnJanUit As Button:
+            Appearance: ='ButtonCanvas.Appearance'.Primary
+            BasePaletteColor: =If(SelectedMonthUit= 1, RGBA(8, 222, 8, 1))
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =If(SelectedYearUit < Year(Today()), DisplayMode.Edit, If(SelectedYearUit = Year(Today()) && Month(Today()) >= 1, DisplayMode.Edit, DisplayMode.Disabled))
+            FontColor: =
+            Height: =25
+            OnSelect: =Set(SelectedMonthUit,1)
+            Text: ="JAN"
+            Visible: =true
+            Width: =45
+            X: =150
+            Y: =8
+            ZIndex: =1
+
+        BtnFebUit As Button:
+            BasePaletteColor: =If(SelectedMonthUit= 2, RGBA(8, 222, 8, 1))
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =If(SelectedYearUit < Year(Today()), DisplayMode.Edit, If(SelectedYearUit = Year(Today()) && Month(Today()) >= 2, DisplayMode.Edit, DisplayMode.Disabled))
+            FontColor: =
+            Height: =25
+            OnSelect: =Set(SelectedMonthUit,2)
+            Text: ="FEB"
+            Width: =45
+            X: =210
+            Y: =8
+            ZIndex: =2
+
+        BtnMarUit As Button:
+            BasePaletteColor: =If(SelectedMonthUit= 3, RGBA(8, 222, 8, 1))
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =If(SelectedYearUit < Year(Today()), DisplayMode.Edit, If(SelectedYearUit = Year(Today()) && Month(Today()) >= 3, DisplayMode.Edit, DisplayMode.Disabled))
+            FontColor: =
+            Height: =25
+            OnSelect: =Set(SelectedMonthUit,3)
+            Text: ="MAA"
+            Width: =45
+            X: =270
+            Y: =8
+            ZIndex: =3
+
+        BtnAprUit As Button:
+            BasePaletteColor: =If(SelectedMonthUit= 4, RGBA(8, 222, 8, 1))
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =If(SelectedYearUit < Year(Today()), DisplayMode.Edit, If(SelectedYearUit = Year(Today()) && Month(Today()) >= 4, DisplayMode.Edit, DisplayMode.Disabled))
+            FontColor: =
+            Height: =25
+            OnSelect: =Set(SelectedMonthUit,4)
+            Text: ="APR"
+            Width: =45
+            X: =330
+            Y: =8
+            ZIndex: =4
+
+        BtnMayUit As Button:
+            BasePaletteColor: =
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =If(SelectedYearUit < Year(Today()), DisplayMode.Edit, If(SelectedYearUit = Year(Today()) && Month(Today()) >= 5, DisplayMode.Edit, DisplayMode.Disabled))
+            FontColor: =
+            Height: =25
+            OnSelect: =Set(SelectedMonthUit,5)
+            Text: ="MEI"
+            Width: =45
+            X: =390
+            Y: =8
+            ZIndex: =5
+
+        BtnJunUit As Button:
+            Appearance: ='ButtonCanvas.Appearance'.Primary
+            BasePaletteColor: =If(SelectedMonthUit= 6, RGBA(8, 222, 8, 1))
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 6, DisplayMode.Edit, DisplayMode.Disabled))
+            FontColor: =
+            Height: =25
+            OnSelect: =Set(SelectedMonthUit,6)
+            Text: ="JUN"
+            Width: =45
+            X: =450
+            Y: =8
+            ZIndex: =6
+
+        BtnJulUit As Button:
+            BasePaletteColor: =If(SelectedMonthUit= 7, RGBA(8, 222, 8, 1))
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =If(SelectedYearUit < Year(Today()), DisplayMode.Edit, If(SelectedYearUit = Year(Today()) && Month(Today()) >= 7, DisplayMode.Edit, DisplayMode.Disabled))
+            FontColor: =
+            Height: =25
+            OnSelect: =Set(SelectedMonthUit,7)
+            Text: ="JUL"
+            Width: =45
+            X: =510
+            Y: =8
+            ZIndex: =7
+
+        BtnAugUit As Button:
+            BasePaletteColor: =If(SelectedMonthUit= 8, RGBA(8, 222, 8, 1))
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =If(SelectedYearUit < Year(Today()), DisplayMode.Edit, If(SelectedYearUit = Year(Today()) && Month(Today()) >= 8, DisplayMode.Edit, DisplayMode.Disabled))
+            FontColor: =
+            Height: =25
+            OnSelect: =Set(SelectedMonthUit,8)
+            Text: ="AUG"
+            Width: =45
+            X: =570
+            Y: =8
+            ZIndex: =8
+
+        BtnSepUit As Button:
+            BasePaletteColor: =If(SelectedMonthUit= 9, RGBA(8, 222, 8, 1))
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =If(SelectedYearUit < Year(Today()), DisplayMode.Edit, If(SelectedYearUit = Year(Today()) && Month(Today()) >= 9, DisplayMode.Edit, DisplayMode.Disabled))
+            FontColor: =
+            Height: =25
+            OnSelect: =Set(SelectedMonthUit,9)
+            Text: ="SEP"
+            Width: =45
+            X: =630
+            Y: =8
+            ZIndex: =9
+
+        BtnOctUit As Button:
+            BasePaletteColor: =If(SelectedMonthUit= 10, RGBA(8, 222, 8, 1))
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =If(SelectedYearUit < Year(Today()), DisplayMode.Edit, If(SelectedYearUit = Year(Today()) && Month(Today()) >= 10, DisplayMode.Edit, DisplayMode.Disabled))
+            FontColor: =
+            Height: =25
+            OnSelect: =Set(SelectedMonthUit,10)
+            Text: ="OKT"
+            Width: =45
+            X: =690
+            Y: =8
+            ZIndex: =10
+
+        BtnNovUit As Button:
+            BasePaletteColor: =If(SelectedMonthUit= 11, RGBA(8, 222, 8, 1))
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =If(SelectedYearUit < Year(Today()), DisplayMode.Edit, If(SelectedYearUit = Year(Today()) && Month(Today()) >= 11, DisplayMode.Edit, DisplayMode.Disabled))
+            FontColor: =
+            Height: =25
+            OnSelect: =Set(SelectedMonthUit,11)
+            Text: ="NOV"
+            Width: =45
+            X: =750
+            Y: =8
+            ZIndex: =11
+
+        BtnDecUit As Button:
+            BasePaletteColor: =If(SelectedMonthUit= 12, RGBA(8, 222, 8, 1))
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =If(SelectedYearUit < Year(Today()), DisplayMode.Edit, If(SelectedYearUit = Year(Today()) && Month(Today()) >= 12, DisplayMode.Edit, DisplayMode.Disabled))
+            FontColor: =
+            Height: =25
+            OnSelect: =Set(SelectedMonthUit,12)
+            Text: ="DEC"
+            Width: =45
+            X: =810
+            Y: =8
+            ZIndex: =12
+
+        IconResetU As icon.Reset:
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =App.Theme.Colors.Darker30
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =25
+            Icon: =Icon.Reset
+            OnSelect: |-
+                =Set(SelectedMonthUit,Month(Today()));
+                Reset(DpwYearsU);
+                Set(SelectedYearUit,DpwYearsU.Selected.Value);
+            Width: =45
+            X: =11
+            Y: =8
+            ZIndex: =13
+
+        DpwYearsU As Dropdown.pcfdataset:
+            Appearance: ='DropdownCanvas.Appearance'.FilledDarker
+            BasePaletteColor: =RGBA(8, 222, 8, 1)
+            BorderStyle: =""
+            DefaultSelectedItems: =LookUp(YearCollection,Value=varYear)
+            DisplayMode: =DisplayMode.Edit
+            Height: =25
+            Items: =YearCollection
+            OnChange: =Set(SelectedYearUit,DpwYearsU.Selected.Value);
+            Width: =80
+            X: =58
+            Y: =8
+            ZIndex: =14
+
+            Value1_2 As PowerApps_CoreControls_DropdownCanvasTemplate_dataField.textualColumn:
+                FieldDisplayName: ="Value"
+                FieldName: ="Value"
+                FieldType: ="n"
+                FieldVariantName: ="textualColumn"
+                Order: =1
+                ZIndex: =13
+
+    GrpConfirmUitgaande_5 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =63
+
+        Rectangle1_12 As rectangle:
+            BorderColor: =App.Theme.Colors.Darker40
+            Fill: =RGBA(0, 0, 0, 0.3)
+            Height: =681
+            OnSelect: =Set(varDeleteU, false);
+            Visible: =varDeleteU
+            Width: =1066
+            X: =300
+            Y: =87
+            ZIndex: =21
+
+        Button2_18 As button:
+            BorderColor: =App.Theme.Colors.Primary
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(244, 244, 244, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(0, 132, 182, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Semibold
+            Height: =219
+            HoverBorderColor: =Self.BorderColor
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 132, 182, 1)
+            OnSelect: =
+            PressedBorderColor: =App.Theme.Colors.Darker40
+            PressedColor: =Self.Color
+            PressedFill: =Self.Fill
+            Size: =15
+            Text: =""
+            Visible: =varDeleteU
+            Width: =400
+            X: =635
+            Y: =282
+            ZIndex: =22
+
+        Label1_41 As label:
+            Align: =Align.Center
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Bold
+            Height: =160
+            OnSelect: =Set(ModalInkomende, false)
+            Size: =15
+            Text: ="Wilt u deze correspondentie verwijderen?"
+            Visible: =varDeleteU
+            Width: =372
+            X: =649
+            Y: =289
+            ZIndex: =23
+
+        Button4_18 As button:
+            BorderColor: =App.Theme.Colors.Primary
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(244, 244, 244, 1)
+            DisabledColor: =RGBA(180, 214, 250, 1)
+            DisabledFill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =App.Theme.Colors.Darker10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(Self.Fill, -60%)
+            OnSelect: =Set(varDeleteU, false);
+            PressedBorderColor: =App.Theme.Colors.Darker40
+            PressedColor: =Self.Color
+            PressedFill: =App.Theme.Colors.Darker40
+            Size: =12
+            Text: ="Annuleren"
+            Visible: =varDeleteU
+            Width: =120
+            X: =649
+            Y: =433
+            ZIndex: =24
+
+        Button4_19 As button:
+            BorderColor: =App.Theme.Colors.Primary
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(244, 244, 244, 1)
+            DisabledColor: =RGBA(180, 214, 250, 1)
+            DisabledFill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =App.Theme.Colors.Darker10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(Self.Fill, -60%)
+            OnSelect: |-
+                =Remove(Correspondences, GalCorrespondentieVO_4.Selected); Notify("Item Verwijderd",NotificationType.Success);
+                Set(varDeleteU, false);
+            PressedBorderColor: =App.Theme.Colors.Darker40
+            PressedColor: =Self.Color
+            PressedFill: =App.Theme.Colors.Darker40
+            Size: =12
+            Text: ="Bevestig"
+            Visible: =varDeleteU
+            Width: =120
+            X: =901
+            Y: =433
+            ZIndex: =25
+

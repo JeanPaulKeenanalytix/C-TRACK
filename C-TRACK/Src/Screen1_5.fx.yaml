@@ -1,0 +1,1646 @@
+Screen1_5 As screen:
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    Container4_32 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(249, 250, 251, 1)
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        ZIndex: =1
+
+        comHeader_8 As comHeader:
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+
+        Container5_5 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =2
+
+            Container6_3 As groupContainer.horizontalAutoLayoutContainer:
+                FillPortions: =0
+                Height: =150
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutGap: =25
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingLeft: =50
+                PaddingRight: =50
+                ZIndex: =3
+
+                Container7_9 As groupContainer.manualLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.Light
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =Parent.Height-50
+                    LayoutMaxHeight: =
+                    LayoutMaxWidth: =
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    ZIndex: =4
+
+                    TextCanvas7_30 As Text:
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =RGBA(0, 0, 0, 0.6)
+                        Height: =32
+                        Size: =15
+                        Text: ="Total"
+                        VerticalAlign: =VerticalAlign.Middle
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =96
+                        X: =15
+                        Y: =10
+                        ZIndex: =5
+
+                    Image3_46 As image:
+                        BorderColor: =App.Theme.Colors.Darker40
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        Height: =53
+                        Image: =Picture1
+                        Width: =75
+                        X: =330
+                        Y: =14
+                        ZIndex: =6
+
+                    TextCanvas7_31 As Text:
+                        Align: ="Start"
+                        AutoHeight: =false
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =RGBA(0, 0, 0, 0)
+                        FontItalic: =false
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        Height: =40
+                        Size: =26
+                        TabIndex: =0
+                        Text: =CountRows(GalCorrespondentieVO_8.AllItems)
+                        Tooltip: =""
+                        VerticalAlign: =VerticalAlign.Middle
+                        Visible: =true
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =96
+                        Wrap: =true
+                        X: =15
+                        Y: =32
+                        ZIndex: =7
+
+                Container7_10 As groupContainer.manualLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.Light
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =Parent.Height-50
+                    LayoutMaxHeight: =
+                    LayoutMaxWidth: =
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    ZIndex: =8
+
+                    TextCanvas7_32 As Text:
+                        Align: ="Start"
+                        AutoHeight: =false
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =RGBA(0, 0, 0, 0.6)
+                        FontItalic: =false
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        Height: =32
+                        Size: =15
+                        TabIndex: =0
+                        Text: ="Uitgaande Intern"
+                        Tooltip: =""
+                        VerticalAlign: =VerticalAlign.Middle
+                        Visible: =true
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =200
+                        Wrap: =true
+                        X: =15
+                        Y: =10
+                        ZIndex: =9
+
+                    Image3_47 As image:
+                        BorderColor: =App.Theme.Colors.Darker40
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        Height: =48
+                        Image: =Picture2
+                        Width: =68
+                        X: =337
+                        Y: =15
+                        ZIndex: =10
+
+                    TextCanvas7_33 As Text:
+                        Align: ="Start"
+                        AutoHeight: =false
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =RGBA(0, 0, 0, 0)
+                        FontItalic: =false
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        Height: =40
+                        Size: =26
+                        TabIndex: =0
+                        Text: |-
+                            =CountIf(
+                                GalCorrespondentieVO_8.AllItems,
+                               Origin = OriginCorrChoices.Intern && Type = "Uitgaande"
+                            )
+                        Tooltip: =""
+                        VerticalAlign: =VerticalAlign.Middle
+                        Visible: =true
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =96
+                        Wrap: =true
+                        X: =15
+                        Y: =32
+                        ZIndex: =11
+
+                Container7_11 As groupContainer.manualLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.Light
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =Parent.Height-50
+                    LayoutMaxHeight: =
+                    LayoutMaxWidth: =
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    ZIndex: =12
+
+                    TextCanvas7_34 As Text:
+                        Align: ="Start"
+                        AutoHeight: =false
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =RGBA(0, 0, 0, 0.6)
+                        FontItalic: =false
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        Height: =32
+                        Size: =15
+                        TabIndex: =0
+                        Text: ="Uitgaande Extern"
+                        Tooltip: =""
+                        VerticalAlign: =VerticalAlign.Middle
+                        Visible: =true
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =200
+                        Wrap: =true
+                        X: =15
+                        Y: =10
+                        ZIndex: =13
+
+                    Image3_48 As image:
+                        BorderColor: =App.Theme.Colors.Darker40
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        Height: =48
+                        Image: =Picture3
+                        Width: =68
+                        X: =337
+                        Y: =15
+                        ZIndex: =14
+
+                    TextCanvas7_35 As Text:
+                        Align: ="Start"
+                        AutoHeight: =false
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =RGBA(0, 0, 0, 0)
+                        FontItalic: =false
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        Height: =40
+                        Size: =26
+                        TabIndex: =0
+                        Text: |-
+                            =CountIf(
+                                GalCorrespondentieVO_8.AllItems,
+                               Origin = OriginCorrChoices.Extern && Type = "Uitgaande"
+                            )
+                        Tooltip: =""
+                        VerticalAlign: =VerticalAlign.Middle
+                        Visible: =true
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =96
+                        Wrap: =true
+                        X: =15
+                        Y: =32
+                        ZIndex: =15
+
+            Container12_4 As groupContainer.horizontalAutoLayoutContainer:
+                FillPortions: =0
+                Height: =40
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingLeft: =50
+                ZIndex: =16
+
+                CoMonthFiltersH_3 As groupContainer.manualLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =40
+                    LayoutMaxHeight: =
+                    LayoutMaxWidth: =
+                    LayoutMinHeight: =40
+                    LayoutMinWidth: =250
+                    Width: =1066
+                    X: =300
+                    Y: =149
+                    ZIndex: =17
+
+                    BtnJanHome_3 As Button:
+                        AcceptsFocus: =true
+                        AccessibleLabel: =""
+                        Align: =""
+                        Appearance: =If(SelectedMonth= 1, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                        BasePaletteColor: =If(SelectedMonth= 1, RGBA(2,115, 203, 1))
+                        BorderRadius: =15
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 1, DisplayMode.Edit, DisplayMode.Disabled))
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =30
+                        Icon: =""
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        OnSelect: =Set(SelectedMonth,1)
+                        TabIndex: =0
+                        Text: ="JAN"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =55
+                        X: =150
+                        Y: =0
+                        ZIndex: =18
+
+                    BtnFebHome_3 As Button:
+                        AcceptsFocus: =true
+                        AccessibleLabel: =""
+                        Align: =""
+                        Appearance: =If(SelectedMonth= 2, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                        BasePaletteColor: =If(SelectedMonth= 2, RGBA(2,115, 203, 1))
+                        BorderRadius: =15
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 2, DisplayMode.Edit, DisplayMode.Disabled))
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =30
+                        Icon: =""
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        OnSelect: =Set(SelectedMonth,2)
+                        TabIndex: =0
+                        Text: ="FEB"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =55
+                        X: =210
+                        Y: =0
+                        ZIndex: =19
+
+                    BtnMarHome_3 As Button:
+                        AcceptsFocus: =true
+                        AccessibleLabel: =""
+                        Align: =""
+                        Appearance: =If(SelectedMonth= 3, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                        BasePaletteColor: =If(SelectedMonth= 3, RGBA(2,115, 203, 1))
+                        BorderRadius: =15
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 3, DisplayMode.Edit, DisplayMode.Disabled))
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =30
+                        Icon: =""
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        OnSelect: =Set(SelectedMonth,3)
+                        TabIndex: =0
+                        Text: ="MAA"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =55
+                        X: =270
+                        Y: =0
+                        ZIndex: =20
+
+                    BtnAprHome_3 As Button:
+                        AcceptsFocus: =true
+                        AccessibleLabel: =""
+                        Align: =""
+                        Appearance: =If(SelectedMonth= 4, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                        BasePaletteColor: =If(SelectedMonth= 4, RGBA(2,115, 203, 1))
+                        BorderRadius: =15
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 4, DisplayMode.Edit, DisplayMode.Disabled))
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =30
+                        Icon: =""
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        OnSelect: =Set(SelectedMonth,4)
+                        TabIndex: =0
+                        Text: ="APR"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =55
+                        X: =330
+                        Y: =0
+                        ZIndex: =21
+
+                    BtnMayHome_3 As Button:
+                        AcceptsFocus: =true
+                        AccessibleLabel: =""
+                        Align: =""
+                        Appearance: =If(SelectedMonth= 5, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                        BasePaletteColor: =If(SelectedMonth= 5, RGBA(2,115, 203, 1))
+                        BorderRadius: =15
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 5, DisplayMode.Edit, DisplayMode.Disabled))
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =30
+                        Icon: =""
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        OnSelect: =Set(SelectedMonth,5)
+                        TabIndex: =0
+                        Text: ="MEI"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =55
+                        X: =390
+                        Y: =0
+                        ZIndex: =22
+
+                    BtnJunHome_3 As Button:
+                        AcceptsFocus: =true
+                        AccessibleLabel: =""
+                        Align: =""
+                        Appearance: =If(SelectedMonth= 6, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                        BasePaletteColor: =If(SelectedMonth= 6, RGBA(2,115, 203, 1))
+                        BorderRadius: =15
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 6, DisplayMode.Edit, DisplayMode.Disabled))
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =30
+                        Icon: =""
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        OnSelect: |
+                            =Set(SelectedMonth,6);
+                        TabIndex: =0
+                        Text: ="JUN"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =55
+                        X: =450
+                        Y: =0
+                        ZIndex: =23
+
+                    BtnJulHome_3 As Button:
+                        AcceptsFocus: =true
+                        AccessibleLabel: =""
+                        Align: =""
+                        Appearance: =If(SelectedMonth= 7, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                        BasePaletteColor: =If(SelectedMonth= 7, RGBA(2,115, 203, 1))
+                        BorderRadius: =15
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 7, DisplayMode.Edit, DisplayMode.Disabled))
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =30
+                        Icon: =""
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        OnSelect: =Set(SelectedMonth,7)
+                        TabIndex: =0
+                        Text: ="JUL"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =55
+                        X: =510
+                        Y: =0
+                        ZIndex: =24
+
+                    BtnAugHome_3 As Button:
+                        AcceptsFocus: =true
+                        AccessibleLabel: =""
+                        Align: =""
+                        Appearance: =If(SelectedMonth= 8, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                        BasePaletteColor: =If(SelectedMonth= 8, RGBA(2,115, 203, 1))
+                        BorderRadius: =15
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 8, DisplayMode.Edit, DisplayMode.Disabled))
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =30
+                        Icon: =""
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        OnSelect: =Set(SelectedMonth,8)
+                        TabIndex: =0
+                        Text: ="AUG"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =55
+                        X: =570
+                        Y: =0
+                        ZIndex: =25
+
+                    BtnSepHome_3 As Button:
+                        AcceptsFocus: =true
+                        AccessibleLabel: =""
+                        Align: =""
+                        Appearance: ='ButtonCanvas.Appearance'.Outline
+                        BasePaletteColor: =If(SelectedMonth= 9, RGBA(8, 222, 8, 1))
+                        BorderRadius: =15
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 9, DisplayMode.Edit, DisplayMode.Disabled))
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =30
+                        Icon: =""
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        OnSelect: =Set(SelectedMonth,9)
+                        TabIndex: =0
+                        Text: ="SEP"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =55
+                        X: =630
+                        Y: =0
+                        ZIndex: =26
+
+                    BtnOctHome_3 As Button:
+                        AcceptsFocus: =true
+                        AccessibleLabel: =""
+                        Align: =""
+                        Appearance: =If(SelectedMonthInk= 10, 'ButtonCanvas.Appearance'.Primary, 'ButtonCanvas.Appearance'.Secondary)
+                        BasePaletteColor: =RGBA(5, 102, 178, 1)
+                        BorderRadius: =15
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 10, DisplayMode.Edit, DisplayMode.Disabled))
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =30
+                        Icon: =""
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        OnSelect: =Set(SelectedMonthInk,10)
+                        TabIndex: =0
+                        Text: ="OKT"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =55
+                        X: =690
+                        Y: =0
+                        ZIndex: =27
+
+                    BtnNovHome_3 As Button:
+                        AcceptsFocus: =true
+                        AccessibleLabel: =""
+                        Align: =""
+                        Appearance: ='ButtonCanvas.Appearance'.Outline
+                        BasePaletteColor: =If(SelectedMonth= 11, RGBA(8, 222, 8, 1))
+                        BorderRadius: =15
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 11, DisplayMode.Edit, DisplayMode.Disabled))
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =30
+                        Icon: =""
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        OnSelect: =Set(SelectedMonth,11)
+                        TabIndex: =0
+                        Text: ="NOV"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =55
+                        X: =750
+                        Y: =0
+                        ZIndex: =28
+
+                    BtnDecHome_3 As Button:
+                        AcceptsFocus: =true
+                        AccessibleLabel: =""
+                        Align: =""
+                        Appearance: ='ButtonCanvas.Appearance'.Outline
+                        BorderRadius: =15
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =If(SelectedYear < Year(Today()), DisplayMode.Edit, If(SelectedYear = Year(Today()) && Month(Today()) >= 12, DisplayMode.Edit, DisplayMode.Disabled))
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =30
+                        Icon: =""
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        OnSelect: =Set(SelectedMonth,12)
+                        TabIndex: =0
+                        Text: ="DEC"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =55
+                        X: =810
+                        Y: =0
+                        ZIndex: =29
+
+                    IconReset_3 As icon:
+                        BorderColor: =App.Theme.Colors.Darker40
+                        Color: =RGBA(2, 115, 203, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Height: =25
+                        Icon: =Icon.Reset
+                        OnSelect: |-
+                            =Set(SelectedMonth,Month(Today()));
+                            Reset(DpwYears_3);
+                            Set(SelectedYear,DpwYears_3.Selected.Value);
+                        Width: =45
+                        Y: =2.5
+                        ZIndex: =30
+
+                    DpwYears_3 As Dropdown.pcfdataset:
+                        AccessibleLabel: =""
+                        Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                        BasePaletteColor: =RGBA(8, 222, 8, 1)
+                        BorderColor: =RGBA(214, 221, 224, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        BorderThickness: =1
+                        ContentLanguage: =""
+                        DefaultSelectedItems: =LookUp(YearCollection,Value=varYear)
+                        DisplayMode: =DisplayMode.Edit
+                        FontSize: =0
+                        Height: =25
+                        Items: =YearCollection
+                        OnChange: =Set(SelectedYear,DpwYears_3.Selected.Value);
+                        Required: =false
+                        TabIndex: =0
+                        Tooltip: =""
+                        ValidationState: ="None"
+                        Visible: =true
+                        Width: =80
+                        X: =58
+                        Y: =2.5
+                        ZIndex: =31
+
+                        YearValue1_4 As PowerApps_CoreControls_DropdownCanvasTemplate_dataField.textualColumn:
+                            FieldDisplayName: ="Value"
+                            FieldName: ="Value"
+                            FieldType: ="n"
+                            Order: =1
+                            Type: ="s"
+                            ZIndex: =32
+
+                ButtonCanvas7_3 As Button:
+                    BasePaletteColor: =RGBA(2, 115, 203, 1)
+                    BorderRadius: =5
+                    DisplayMode: =DisplayMode.Edit
+                    FontSize: =12
+                    Height: =32
+                    Icon: ="Add"
+                    LayoutMaxHeight: =
+                    LayoutMaxWidth: =
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    OnSelect: |+
+                        =Set(varMenu, 3);
+                        Set(varMoInkIE, true);
+                        Navigate(scrInkomende_1);
+                        UpdateContext({ showContainer: !showContainer });
+                        
+                    Text: ="Nieuwe Correspondentie"
+                    Width: =200
+                    X: =0
+                    Y: =0
+                    ZIndex: =33
+
+            Container9_4 As groupContainer.verticalAutoLayoutContainer:
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =25
+                PaddingLeft: =50
+                PaddingRight: =50
+                PaddingTop: =10
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                ZIndex: =34
+
+                Rectangle6_5 As rectangle:
+                    BorderColor: =App.Theme.Colors.Darker40
+                    BorderStyle: =BorderStyle.None
+                    Fill: =RGBA(214, 221, 224, 1)
+                    Height: =1
+                    LayoutMaxHeight: =
+                    LayoutMaxWidth: =
+                    Visible: =false
+                    Width: =Container10_4.Width
+                    Y: =51
+                    ZIndex: =35
+
+                Container10_4 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    FillPortions: =0
+                    Height: =35
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutGap: =20
+                    LayoutMaxHeight: =
+                    LayoutMaxWidth: =
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =20
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    ZIndex: =36
+
+                    TxtStatusIDAllC_22 As Text:
+                        Align: ='TextCanvas.Align'.Start
+                        AutoHeight: =false
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =RGBA(0, 0, 0, 0.6)
+                        FontItalic: =false
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        Height: =35
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Size: =14
+                        TabIndex: =0
+                        Text: ="Stuk ID"
+                        Tooltip: =""
+                        VerticalAlign: =VerticalAlign.Middle
+                        Visible: =true
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =60
+                        Wrap: =true
+                        X: =322
+                        Y: =190
+                        ZIndex: =37
+
+                    TxtVerzenderOntvangerAllC_16 As Text:
+                        Align: ='TextCanvas.Align'.Start
+                        AutoHeight: =false
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =RGBA(0, 0, 0, 0.6)
+                        FontItalic: =false
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        Height: =35
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Size: =14
+                        TabIndex: =0
+                        Text: ="Type"
+                        Tooltip: =""
+                        VerticalAlign: =VerticalAlign.Middle
+                        Visible: =true
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =120
+                        Wrap: =true
+                        X: =149
+                        Y: =190
+                        ZIndex: =38
+
+                    TxtDatumAllC_30 As Text:
+                        Align: ='TextCanvas.Align'.Start
+                        AutoHeight: =false
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =RGBA(0, 0, 0, 0.6)
+                        FontItalic: =false
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        Height: =35
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Size: =14
+                        TabIndex: =0
+                        Text: ="Verzender"
+                        Tooltip: =""
+                        VerticalAlign: =VerticalAlign.Middle
+                        Visible: =true
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =150
+                        Wrap: =true
+                        X: =282
+                        Y: =190
+                        ZIndex: =39
+
+                    TxtDatumAllC_31 As Text:
+                        Align: ='TextCanvas.Align'.Start
+                        AutoHeight: =false
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =RGBA(0, 0, 0, 0.6)
+                        FontItalic: =false
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        Height: =35
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Size: =14
+                        TabIndex: =0
+                        Text: ="Ontvanger"
+                        Tooltip: =""
+                        VerticalAlign: =VerticalAlign.Middle
+                        Visible: =true
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =150
+                        Wrap: =true
+                        X: =434
+                        Y: =190
+                        ZIndex: =40
+
+                    TxtDatumAllC_32 As Text:
+                        Align: ='TextCanvas.Align'.Start
+                        AutoHeight: =false
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =RGBA(0, 0, 0, 0.6)
+                        FontItalic: =false
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        Height: =35
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Size: =14
+                        TabIndex: =0
+                        Text: ="Datum"
+                        Tooltip: =""
+                        VerticalAlign: =VerticalAlign.Middle
+                        Visible: =true
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =80
+                        Wrap: =true
+                        X: =587
+                        Y: =190
+                        ZIndex: =41
+
+                    TxtOnderwerpAllC_8 As Text:
+                        Align: ='TextCanvas.Align'.Start
+                        AutoHeight: =false
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =RGBA(0, 0, 0, 0.6)
+                        FontItalic: =false
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        Height: =35
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Size: =14
+                        TabIndex: =0
+                        Text: ="Referentie"
+                        Tooltip: =""
+                        VerticalAlign: =VerticalAlign.Middle
+                        Visible: =true
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =220
+                        Wrap: =true
+                        X: =679
+                        Y: =190
+                        ZIndex: =42
+
+                    Icon2_17 As icon:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        Color: =RGBA(0, 0, 0, 0.5)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(0, 0, 0, 1)
+                        DisplayMode: =DisplayMode.Disabled
+                        Height: =30
+                        HoverColor: =RGBA(0, 0, 0, 1)
+                        Icon: =Icon.PaperClip
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        Width: =25
+                        X: =90
+                        Y: =190
+                        ZIndex: =43
+
+                    Rectangle7_8 As rectangle:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        BorderThickness: =1
+                        Fill: |
+                            =Switch(
+                                true,
+                                CountRows(colAllCorr) = 0, RGBA(0, 0, 0, 0), // Ninguno seleccionado
+                                CountRows(colAllCorr) = CountRows(GalCorrespondentieVO_8.AllItems), RGBA(40, 134, 222, 1), // Todos seleccionados
+                                RGBA(0, 0, 0, 0) // Algunos seleccionados
+                            )
+                        Height: =15
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        OnSelect: |
+                            =If(
+                                CountRows(colAllCorr) = CountRows(GalCorrespondentieVO_8.AllItems),
+                                Clear(colAllCorr),
+                                ClearCollect(colAllCorr, ForAll(GalCorrespondentieVO_8.AllItems, { Value: ID }))
+                            )
+                        Width: =15
+                        ZIndex: =44
+
+                Container11_4 As groupContainer.verticalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    Fill: =RGBA(255, 255, 255, 1)
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMaxHeight: =
+                    LayoutMaxWidth: =
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =45
+
+                    GalCorrespondentieVO_8 As gallery.galleryVertical:
+                        '#CopilotOverlayLabel': ="Filtered"
+                        BorderColor: =App.Theme.Colors.Darker40
+                        DelayItemLoading: =true
+                        Height: =518
+                        Items: |-
+                            =If(
+                                RolUsuario = 'Rol Choices'.Beheerder,
+                                Sort(
+                                Filter(
+                                    Filter(
+                                    Correspondences,
+                                    TextInput1_9.Text in ID || TextInput1_9.Text in Sleutelwoorden || TextInput1_9.Text in Afdeling || TextInput1_9.Text in Beschrijving || TextInput1_9.Text in Type || TextInput1_9.Text in 'Verzonden op' || TextInput1_9.Text in Ontvanger || TextInput1_9.Text in Contact || TextInput1_9.Text in ContactOntvanger || TextInput1_9.Text in Verzender || IsBlank(TextInput1_9.Text) 
+                                ),
+                                    Type = "Uitgaande" && maand = SelectedMonthUit && jaar = DpwYearsU.Selected.Value
+                                ),
+                                'Created On',
+                                SortOrder.Descending
+                            ),
+                                If(
+                                    RolUsuario = 'Rol Choices'.Bewerker,
+                                    Sort(
+                                        Filter(
+                                            Correspondences,
+                                            'Created By'.'Primary Email' = User().Email && (TextInput1_9.Text in ID || TextInput1_9.Text in Sleutelwoorden || TextInput1_9.Text in Afdeling || TextInput1_9.Text in Beschrijving || TextInput1_9.Text in Type || TextInput1_9.Text in 'Verzonden op' || TextInput1_9.Text in Ontvanger || TextInput1_9.Text in Contact || TextInput1_9.Text in ContactOntvanger || TextInput1_9.Text in Verzender || IsBlank(TextInput1_9.Text) ),
+                                            Type = "Uitgaande"&& maand = SelectedMonthUit && jaar = DpwYearsU.Selected.Value
+                            
+                                        ),
+                                        'Created On',
+                                        SortOrder.Descending
+                                    ),
+                                    If(
+                                        RolUsuario = 'Rol Choices'.Lezer,
+                                        Sort(
+                                            Filter(
+                                                Correspondences,
+                                                Contact = User().FullName || ContactOntvanger = User().FullName && (TextInput1_9.Text in ID || TextInput1_9.Text in Sleutelwoorden || TextInput1_9.Text in Afdeling || TextInput1_9.Text in Beschrijving || TextInput1_9.Text in Type || TextInput1_9.Text in 'Verzonden op' || TextInput1_9.Text in Ontvanger || TextInput1_9.Text in Contact || TextInput1_9.Text in ContactOntvanger || TextInput1_9.Text in Verzender || IsBlank(TextInput1_9.Text) ),
+                                                Type = "Uitgaande"&& maand = SelectedMonthUit && jaar = DpwYearsU.Selected.Value
+                            
+                                            ),
+                                            'Created On',
+                                            SortOrder.Descending
+                                        ),
+                                        Blank()
+                                    )
+                                )
+                            )
+                        Layout: =Layout.Vertical
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        LayoutMinHeight: =287
+                        LayoutMinWidth: =320
+                        LoadingSpinner: =LoadingSpinner.Data
+                        TemplateSize: =32
+                        Width: =1020
+                        X: =312
+                        Y: =234
+                        ZIndex: =46
+
+                        Container13_4 As groupContainer.horizontalAutoLayoutContainer:
+                            DropShadow: =DropShadow.Light
+                            Fill: |
+                                =RGBA(0,0,0,0)
+                            Height: =32
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutGap: =20
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =15
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            Width: =Parent.Width-10
+                            ZIndex: =47
+
+                            TextCanvas8_23 As Text:
+                                Align: ='TextCanvas.Align'.Start
+                                DisplayMode: =DisplayMode.Edit
+                                Height: =32
+                                LayoutMaxHeight: =
+                                LayoutMaxWidth: =
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =96
+                                Size: =12
+                                Text: =If(ThisItem.Type = "Inkomende", "INK-"&ThisItem.ID, "UIT-"&ThisItem.ID)
+                                VerticalAlign: =VerticalAlign.Middle
+                                Width: =60
+                                X: =0
+                                Y: =0
+                                ZIndex: =48
+
+                            TextCanvas8_24 As Text:
+                                Align: ='TextCanvas.Align'.Start
+                                AutoHeight: =false
+                                BorderStyle: =""
+                                ContentLanguage: =""
+                                DisplayMode: =DisplayMode.Edit
+                                Font: =""
+                                FontItalic: =false
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                Height: =32
+                                LayoutMaxHeight: =
+                                LayoutMaxWidth: =
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =96
+                                Size: =12
+                                TabIndex: =0
+                                Text: =ThisItem.'Bijlage(n)'
+                                Tooltip: =""
+                                VerticalAlign: =VerticalAlign.Middle
+                                Visible: =true
+                                Weight: ="Regular"
+                                Width: =25
+                                Wrap: =true
+                                X: =0
+                                Y: =0
+                                ZIndex: =49
+
+                            TextCanvas8_25 As Text:
+                                Align: ='TextCanvas.Align'.Start
+                                AutoHeight: =false
+                                BorderStyle: =""
+                                ContentLanguage: =""
+                                DisplayMode: =DisplayMode.Edit
+                                Font: =""
+                                FontItalic: =false
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                Height: =32
+                                LayoutMaxHeight: =
+                                LayoutMaxWidth: =
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =96
+                                Size: =12
+                                TabIndex: =0
+                                Text: =ThisItem.Type & " - " & ThisItem.Origin
+                                Tooltip: =""
+                                VerticalAlign: =VerticalAlign.Middle
+                                Visible: =true
+                                Weight: ="Regular"
+                                Width: =120
+                                Wrap: =true
+                                X: =0
+                                Y: =0
+                                ZIndex: =50
+
+                            TextCanvas8_26 As Text:
+                                Align: ='TextCanvas.Align'.Start
+                                AutoHeight: =false
+                                BorderStyle: =""
+                                ContentLanguage: =""
+                                DisplayMode: =DisplayMode.Edit
+                                Font: =""
+                                FontItalic: =false
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                Height: =32
+                                LayoutMaxHeight: =
+                                LayoutMaxWidth: =
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =96
+                                Size: =12
+                                TabIndex: =0
+                                Text: =ThisItem.Contact
+                                Tooltip: =""
+                                VerticalAlign: =VerticalAlign.Middle
+                                Visible: =true
+                                Weight: ="Regular"
+                                Width: =150
+                                Wrap: =true
+                                X: =0
+                                Y: =0
+                                ZIndex: =51
+
+                            TextCanvas8_27 As Text:
+                                Align: ='TextCanvas.Align'.Start
+                                AutoHeight: =false
+                                BorderStyle: =""
+                                ContentLanguage: =""
+                                DisplayMode: =DisplayMode.Edit
+                                Font: =""
+                                FontItalic: =false
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                Height: =32
+                                LayoutMaxHeight: =
+                                LayoutMaxWidth: =
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =96
+                                Size: =12
+                                TabIndex: =0
+                                Text: =ThisItem.ContactOntvanger
+                                Tooltip: =""
+                                VerticalAlign: =VerticalAlign.Middle
+                                Visible: =true
+                                Weight: ="Regular"
+                                Width: =150
+                                Wrap: =true
+                                X: =0
+                                Y: =0
+                                ZIndex: =52
+
+                            TextCanvas8_28 As Text:
+                                Align: ='TextCanvas.Align'.Start
+                                AutoHeight: =false
+                                BorderStyle: =""
+                                ContentLanguage: =""
+                                DisplayMode: =DisplayMode.Edit
+                                Font: =""
+                                FontItalic: =false
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                Height: =32
+                                LayoutMaxHeight: =
+                                LayoutMaxWidth: =
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =96
+                                Size: =12
+                                TabIndex: =0
+                                Text: =Text(DateValue(ThisItem.'Geregistreerd op'), "dd/mm/yyyy")
+                                Tooltip: =""
+                                VerticalAlign: =VerticalAlign.Middle
+                                Visible: =true
+                                Weight: ="Regular"
+                                Width: =80
+                                Wrap: =true
+                                X: =0
+                                Y: =0
+                                ZIndex: =53
+
+                            TextCanvas8_29 As Text:
+                                Align: ='TextCanvas.Align'.Start
+                                AutoHeight: =false
+                                BorderStyle: =""
+                                ContentLanguage: =""
+                                DisplayMode: =DisplayMode.Edit
+                                Font: =""
+                                FontItalic: =false
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                Height: =32
+                                LayoutMaxHeight: =
+                                LayoutMaxWidth: =
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =96
+                                Size: =12
+                                TabIndex: =0
+                                Text: =ThisItem.Kenmerk
+                                Tooltip: =""
+                                VerticalAlign: =VerticalAlign.Middle
+                                Visible: =true
+                                Weight: ="Regular"
+                                Width: =220
+                                Wrap: =true
+                                X: =0
+                                Y: =0
+                                ZIndex: =54
+
+                            Rectangle7_9 As rectangle:
+                                BorderColor: =RGBA(0, 0, 0, 1)
+                                BorderThickness: =1
+                                Fill: |
+                                    =If(
+                                        CountRows(Filter(colAllCorr, Value = ThisItem.ID)) > 0,
+                                        RGBA(40, 134, 222, 1),
+                                        RGBA(0, 0, 0, 0)
+                                    )
+                                Height: =15
+                                LayoutMaxHeight: =
+                                LayoutMaxWidth: =
+                                OnSelect: |
+                                    =If(
+                                        CountRows(Filter(colAllCorr, Value = ThisItem.ID)) > 0,
+                                        RemoveIf(colAllCorr, Value = ThisItem.ID),
+                                        Collect(colAllCorr, { Value: ThisItem.ID })
+                                    )
+                                Width: =15
+                                ZIndex: =55
+
+                        Rectangle1_26 As rectangle:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =30
+                            HoverFill: =RGBA(90,90,90,0.3)
+                            OnSelect: |+
+                                =If(GalCorrespondentieVO_8.Selected.Type ="Inkomende",
+                                Navigate(scrInkomende_2,ScreenTransition.Fade);
+                                Set(varActive2, If(GalCorrespondentieVO_8.Selected.Addressee = 'Choice Addressee '.Company,true,false)),
+                                Navigate(scrInkomende_2,ScreenTransition.Fade);
+                                Set(varActive3, If(GalCorrespondentieVO_8.Selected.Addressee = 'Choice Addressee '.Company,true,false)););
+                                Set(varEditCorr, true);
+                                
+                            Width: =Parent.Width
+                            Y: =1
+                            ZIndex: =56
+
+    TextInput1_11 As text:
+        BorderColor: =RGBA(106, 122, 127, 1)
+        BorderThickness: =2
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Font: =App.Theme.Font
+        Height: =33
+        HintText: ="🔍 Search"
+        HoverBorderColor: =App.Theme.Colors.Darker40
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =App.Theme.Colors.Lighter70
+        RadiusBottomLeft: =30
+        RadiusBottomRight: =30
+        RadiusTopLeft: =30
+        RadiusTopRight: =30
+        Size: =13
+        Visible: =false
+        Width: =200
+        X: =552
+        Y: =5
+        ZIndex: =2
+
+    Container15_9 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(44, 44, 44, 1)
+        Height: =85
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Visible: =false
+        Width: =380
+        X: =55
+        Y: =600
+        ZIndex: =3
+
+        Container16_14 As groupContainer.horizontalAutoLayoutContainer:
+            Height: =60
+            LayoutGap: =15
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingLeft: =15
+            PaddingTop: =15
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =380
+            ZIndex: =57
+
+            Image4_7 As image:
+                BorderColor: =App.Theme.Colors.Darker40
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =25
+                Image: =correct
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                Width: =25
+                ZIndex: =58
+
+            HtmlText1_7 As htmlViewer:
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                Height: =50
+                HtmlText: ="<b>"&GalCorrespondentieVO_8.Selected.Type& " - " &GalCorrespondentieVO_8.Selected.Origin&"</b> correspondentie succesvol verwijderd."
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                PaddingTop: =0
+                Size: =10
+                Width: =280
+                ZIndex: =59
+
+            ButtonCanvas3_26 As Button:
+                Appearance: ='ButtonCanvas.Appearance'.Subtle
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =RGBA(255, 255, 255, 1)
+                FontSize: =16
+                Height: =25
+                Icon: ="Dismiss"
+                IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                Layout: ='ButtonCanvas.Layout'.IconOnly
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                PaddingBottom: =15
+                PaddingRight: =30
+                Text: =
+                Visible: =true
+                Width: =25
+                X: =0
+                Y: =0
+                ZIndex: =60
+
+        Container16_15 As groupContainer.horizontalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =40
+            LayoutGap: =35
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingLeft: =40
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =380
+            ZIndex: =61
+
+            ButtonCanvas3_27 As Button:
+                AcceptsFocus: =true
+                AccessibleLabel: =""
+                Align: =""
+                Appearance: ='ButtonCanvas.Appearance'.Subtle
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =RGBA(40, 134, 222, 1)
+                FontItalic: =false
+                FontSize: =14
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =25
+                Icon: ="Dismiss"
+                IconRotation: =0
+                IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                Layout: ='ButtonCanvas.Layout'.TextOnly
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                OnSelect: =false
+                PaddingBottom: =
+                PaddingRight: =
+                TabIndex: =0
+                Text: ="Sluit"
+                Tooltip: =""
+                VerticalAlign: =
+                Visible: =true
+                Width: =70
+                X: =0
+                Y: =0
+                ZIndex: =62
+
+    Container14_5 As groupContainer.horizontalAutoLayoutContainer:
+        BorderStyle: =BorderStyle.None
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(44, 44, 44, 1)
+        Height: =40
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =10
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Visible: =CountRows(colAllCorr) > 0
+        Width: =600
+        X: =398
+        Y: =700
+        ZIndex: =4
+
+        ButtonCanvas1_46 As Button:
+            AcceptsFocus: =true
+            AccessibleLabel: =""
+            Align: =Align.Center
+            Appearance: ='ButtonCanvas.Appearance'.Outline
+            BorderStyle: =""
+            ContentLanguage: =""
+            DisplayMode: |-
+                =If(
+                    CountRows(colAllCorr) = 0 || CountRows(colAllCorr) > 1, DisplayMode.View, DisplayMode.Edit)
+            Font: =""
+            FontColor: =RGBA(255, 255, 255, 1)
+            FontItalic: =false
+            FontSize: =12
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =""
+            Height: =28
+            Icon: ="Eye"
+            IconRotation: =0
+            IconStyle: ='ButtonCanvas.IconStyle'.Filled
+            Layout: ="Icon before"
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =32
+            LayoutMinWidth: =96
+            OnSelect: =false
+            TabIndex: =0
+            Text: ="Weergeven"
+            Tooltip: =""
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =true
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =63
+
+        ButtonCanvas1_47 As Button:
+            AcceptsFocus: =true
+            AccessibleLabel: =""
+            Align: =Align.Center
+            Appearance: ='ButtonCanvas.Appearance'.Outline
+            BorderStyle: =""
+            ContentLanguage: =""
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =RGBA(255, 255, 255, 1)
+            FontItalic: =false
+            FontSize: =12
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =""
+            Height: =28
+            Icon: ="Delete"
+            IconRotation: =0
+            IconStyle: ='ButtonCanvas.IconStyle'.Filled
+            Layout: ="Icon before"
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =32
+            LayoutMinWidth: =96
+            OnSelect: =false
+            TabIndex: =0
+            Text: |-
+                =If(
+                    CountRows(colAllCorr) = 0,  "Verwijder", "Verwijder "&CountRows(colAllCorr)&" Item(s)")
+            Tooltip: =""
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =true
+            Width: |-
+                =If(
+                    CountRows(colAllCorr) = 0, 95, 150)
+            X: =0
+            Y: =0
+            ZIndex: =64
+
+        ButtonCanvas1_48 As Button:
+            AcceptsFocus: =true
+            AccessibleLabel: =""
+            Align: =Align.Center
+            Appearance: ='ButtonCanvas.Appearance'.Outline
+            BorderStyle: =""
+            ContentLanguage: =""
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =RGBA(255, 255, 255, 1)
+            FontItalic: =false
+            FontSize: =12
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =""
+            Height: =28
+            Icon: ="ArrowSync"
+            IconRotation: =0
+            IconStyle: ='ButtonCanvas.IconStyle'.Filled
+            Layout: ="Icon before"
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =32
+            LayoutMinWidth: =96
+            OnSelect: =false
+            TabIndex: =0
+            Text: ="Selectie wissen"
+            Tooltip: =""
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =true
+            Width: =130
+            X: =0
+            Y: =0
+            ZIndex: =65
+
+        ButtonCanvas1_49 As Button:
+            AcceptsFocus: =true
+            AccessibleLabel: =""
+            Align: =Align.Center
+            Appearance: ='ButtonCanvas.Appearance'.Outline
+            BorderStyle: =""
+            ContentLanguage: =""
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =RGBA(255, 255, 255, 1)
+            FontItalic: =false
+            FontSize: =12
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =""
+            Height: =28
+            Icon: ="DocumentBulletList"
+            IconRotation: =0
+            IconStyle: ='ButtonCanvas.IconStyle'.Filled
+            Layout: ="Icon before"
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =32
+            LayoutMinWidth: =96
+            OnSelect: =false
+            TabIndex: =0
+            Text: ="Bibliotheek"
+            Tooltip: =""
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =true
+            Width: =130
+            X: =0
+            Y: =0
+            ZIndex: =66
+

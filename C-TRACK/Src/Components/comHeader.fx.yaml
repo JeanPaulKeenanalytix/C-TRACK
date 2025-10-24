@@ -1,0 +1,622 @@
+comHeader As CanvasComponent:
+    Fill: =RGBA(255, 255, 255, 1)
+    Height: =90
+    Width: =1366
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Header1 As Header:
+        BasePaletteColor: =RGBA(5, 102, 178, 1)
+        BorderRadiusBottomLeft: =10
+        BorderRadiusBottomRight: =10
+        BorderRadiusTopLeft: =10
+        BorderRadiusTopRight: =10
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =50
+        IsLogoVisible: =false
+        IsProfilePictureVisible: =true
+        IsTitleVisible: =false
+        OnSelectLogo: =false
+        Title: =App.ActiveScreen.Name
+        TitleFontSize: =8
+        UserEmail: =User().Email
+        UserImage: =User().Image
+        UserImageAltText: =User().FullName &" profile picture"
+        UserName: =User().FullName
+        Visible: =true
+        Width: =82
+        X: =1274
+        Y: =0
+        ZIndex: =1
+
+    Rectangle6 As rectangle:
+        BorderColor: =App.Theme.Colors.Darker40
+        BorderStyle: =BorderStyle.None
+        Fill: =RGBA(214, 221, 224, 1)
+        Height: =1
+        Width: =Parent.Width
+        Y: =51
+        ZIndex: =2
+
+    TextCanvas6 As Text:
+        Align: ='TextCanvas.Align'.Start
+        DisplayMode: =DisplayMode.Edit
+        Font: =""
+        FontColor: =RGBA(0, 0, 0, 1)
+        Height: =50
+        Size: =20
+        Text: ="C-Track"
+        VerticalAlign: =VerticalAlign.Middle
+        Weight: ='TextCanvas.Weight'.Semibold
+        Width: =96
+        X: =80
+        Y: =0
+        ZIndex: =3
+
+    ButtonCanvas2 As Button:
+        Appearance: ='ButtonCanvas.Appearance'.Subtle
+        DisplayMode: =DisplayMode.Edit
+        FontSize: =24
+        Height: =40
+        Icon: ="Settings"
+        IconStyle: ='ButtonCanvas.IconStyle'.Filled
+        Layout: ='ButtonCanvas.Layout'.IconOnly
+        VerticalAlign: =VerticalAlign.Middle
+        Width: =40
+        X: =1256
+        Y: =6
+        ZIndex: =4
+
+    ButtonCanvas2_5 As Button:
+        AcceptsFocus: =true
+        AccessibleLabel: =""
+        Align: =""
+        Appearance: ='ButtonCanvas.Appearance'.Subtle
+        BorderStyle: =""
+        ContentLanguage: =""
+        DisplayMode: =DisplayMode.Edit
+        Font: =""
+        FontItalic: =false
+        FontSize: =24
+        FontStrikethrough: =false
+        FontUnderline: =false
+        FontWeight: =""
+        Height: =40
+        Icon: ="Question"
+        IconRotation: =0
+        IconStyle: ='ButtonCanvas.IconStyle'.Filled
+        Layout: ='ButtonCanvas.Layout'.IconOnly
+        OnSelect: =false
+        TabIndex: =0
+        Text: ="Button"
+        Tooltip: =""
+        VerticalAlign: =VerticalAlign.Middle
+        Visible: =true
+        Width: =40
+        X: =1216
+        Y: =6
+        ZIndex: =5
+
+    Container3 As groupContainer.horizontalAutoLayoutContainer:
+        Height: =35
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =10
+        LayoutMode: =LayoutMode.Auto
+        PaddingLeft: =10
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        X: =5
+        Y: =54
+        ZIndex: =6
+
+        Container4_1 As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: |
+                =Parent.Height
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =28
+            LayoutMinWidth: =250
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =80
+            ZIndex: =1
+
+            ButtonCanvas1_5 As Button:
+                AcceptsFocus: =true
+                AccessibleLabel: =""
+                Align: =Align.Right
+                Appearance: ='ButtonCanvas.Appearance'.Subtle
+                BasePaletteColor: =
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =If(varMenu = 1, RGBA(2,115, 203, 1),RGBA(0, 0, 0, 1))
+                FontItalic: =false
+                FontSize: =0
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =FontWeight.Bold
+                Height: =32
+                Icon: =
+                IconRotation: =0
+                IconStyle: ="Outline"
+                Layout: ="Icon before"
+                OnSelect: |-
+                    =Set(varMenu, 1);
+                    Navigate(Screen1)
+                TabIndex: =0
+                Text: ="Begin"
+                Tooltip: =""
+                VerticalAlign: =VerticalAlign.Middle
+                Visible: =true
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            Image3_1 As image:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =Parent.Height-13
+                Image: =If(varMenu = 1,'house-black-silhouette-without-door (1)', 'house-black-silhouette-without-door')
+                OnSelect: =Set(varMenu, 1)
+                Width: =15
+                X: =5
+                Y: =4
+                ZIndex: =2
+
+            Rectangle1_7 As rectangle:
+                BorderColor: =RGBA(166, 215, 153, 1)
+                Fill: =RGBA(2,115, 203, 1)
+                Height: =1.5
+                Visible: =varMenu = 1
+                Width: =Parent.Width
+                Y: =30
+                ZIndex: =3
+
+        Container4_2 As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: |
+                =Parent.Height-2
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =28
+            LayoutMinWidth: =250
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =120
+            ZIndex: =2
+
+            ButtonCanvas1_6 As Button:
+                AcceptsFocus: =true
+                AccessibleLabel: =""
+                Align: =Align.Right
+                Appearance: ='ButtonCanvas.Appearance'.Subtle
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =If(varMenu = 2, RGBA(2,115, 203, 1),RGBA(0, 0, 0, 1))
+                FontItalic: =false
+                FontSize: =0
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =FontWeight.Bold
+                Height: =32
+                Icon: =
+                IconRotation: =0
+                IconStyle: ="Outline"
+                Layout: ="Icon before"
+                OnSelect: |-
+                    =Set(varMenu, 2);
+                    Navigate(Screen1_3)
+                TabIndex: =0
+                Text: ="Inkomende"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            Image3_10 As image:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =Parent.Height-11
+                Image: =If(varMenu = 2, 'inbox (1)', inbox)
+                OnSelect: |
+                    =Set(varMenu, 2);
+                Width: =17
+                X: =5
+                Y: =6
+                ZIndex: =2
+
+            Rectangle1_9 As rectangle:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                Fill: =RGBA(2,115, 203, 1)
+                Height: =1.5
+                Visible: =varMenu = 2
+                Width: =Parent.Width
+                Y: =30
+                ZIndex: =3
+
+        Container4_3 As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: |
+                =Parent.Height-2
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =28
+            LayoutMinWidth: =250
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =110
+            ZIndex: =3
+
+            ButtonCanvas1_7 As Button:
+                AcceptsFocus: =true
+                AccessibleLabel: =""
+                Align: =Align.Right
+                Appearance: ='ButtonCanvas.Appearance'.Subtle
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =If(varMenu = 3, RGBA(2,115, 203, 1),RGBA(0, 0, 0, 1))
+                FontItalic: =false
+                FontSize: =0
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =FontWeight.Bold
+                Height: =32
+                Icon: =
+                IconRotation: =0
+                IconStyle: ="Outline"
+                Layout: ="Icon before"
+                OnSelect: |-
+                    =Set(varMenu, 3);
+                    Navigate(Screen1_5)
+                TabIndex: =0
+                Text: ="Uitgaande"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            Image3_11 As image:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =Parent.Height-13
+                Image: =If(varMenu = 3, 'paper-plane (1)','paper-plane')
+                OnSelect: =Set(varMenu, 3);
+                Width: =15
+                X: =5
+                Y: =7
+                ZIndex: =2
+
+            Rectangle1_10 As rectangle:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                Fill: =RGBA(2,115, 203, 1)
+                Height: =1.5
+                Visible: =varMenu = 3
+                Width: =Parent.Width
+                X: =2.5
+                Y: =30
+                ZIndex: =3
+
+        Container4_4 As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: |
+                =Parent.Height-2
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =28
+            LayoutMinWidth: =250
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =110
+            ZIndex: =4
+
+            ButtonCanvas1_8 As Button:
+                AcceptsFocus: =true
+                AccessibleLabel: =""
+                Align: =Align.Right
+                Appearance: ='ButtonCanvas.Appearance'.Subtle
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =If(varMenu = 4, RGBA(2,115, 203, 1),RGBA(0, 0, 0, 1))
+                FontItalic: =false
+                FontSize: =0
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =FontWeight.Bold
+                Height: =32
+                Icon: =
+                IconRotation: =0
+                IconStyle: ="Outline"
+                Layout: ="Icon before"
+                OnSelect: |-
+                    =Set(varMenu, 4);
+                    Navigate(Screen1_1)
+                TabIndex: =0
+                Text: ="Contacten"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            Image3_12 As image:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =Parent.Height-13
+                Image: =If(varMenu = 4, 'phone-book (1)', 'phone-book')
+                OnSelect: =Set(varMenu, 4);
+                Width: =15
+                X: =5
+                Y: =6
+                ZIndex: =2
+
+            Rectangle1_17 As rectangle:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                Fill: =RGBA(2,115, 203, 1)
+                Height: =1.5
+                Visible: =varMenu = 4
+                Width: =Parent.Width
+                X: =2.5
+                Y: =30
+                ZIndex: =3
+
+        Container4_5 As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: |
+                =Parent.Height-2
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =28
+            LayoutMinWidth: =250
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =160
+            ZIndex: =5
+
+            ButtonCanvas1_9 As Button:
+                AcceptsFocus: =true
+                AccessibleLabel: =""
+                Align: =Align.Right
+                Appearance: ='ButtonCanvas.Appearance'.Subtle
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =If(varMenu = 5, RGBA(2,115, 203, 1),RGBA(0, 0, 0, 1))
+                FontItalic: =false
+                FontSize: =0
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =FontWeight.Bold
+                Height: =32
+                Icon: =
+                IconRotation: =0
+                IconStyle: ="Outline"
+                Layout: ="Icon before"
+                OnSelect: |-
+                    =Set(varMenu, 5);
+                    Navigate(scrSettings)
+                TabIndex: =0
+                Text: ="Gebruikersbeheer"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            Image3_13 As image:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =Parent.Height-13
+                Image: =If(varMenu = 5, 'multiple-users-silhouette (1)','multiple-users-silhouette')
+                OnSelect: =Set(varMenu, 5);
+                Width: =15
+                X: =5
+                Y: =7
+                ZIndex: =2
+
+            Rectangle1_18 As rectangle:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                Fill: =RGBA(2,115, 203, 1)
+                Height: =1.5
+                Visible: =varMenu = 5
+                Width: =Parent.Width
+                X: =2.5
+                Y: =30
+                ZIndex: =3
+
+        Container4_6 As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: |
+                =Parent.Height-2
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =28
+            LayoutMinWidth: =250
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =115
+            ZIndex: =6
+
+            ButtonCanvas1_10 As Button:
+                AcceptsFocus: =true
+                AccessibleLabel: =""
+                Align: =Align.Right
+                Appearance: ='ButtonCanvas.Appearance'.Subtle
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =If(varMenu = 6, RGBA(2,115, 203, 1),RGBA(0, 0, 0, 1))
+                FontItalic: =false
+                FontSize: =0
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =FontWeight.Bold
+                Height: =32
+                Icon: =
+                IconRotation: =0
+                IconStyle: ="Outline"
+                Layout: ="Icon before"
+                OnSelect: |-
+                    =Set(varMenu, 6);
+                    Navigate(Screen1_4)
+                TabIndex: =0
+                Text: ="Dashboard"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            Image3_14 As image:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =Parent.Height-13
+                Image: =If(varMenu = 6, 'dashboard (1)', dashboard)
+                OnSelect: =Set(varMenu, 6);
+                Width: =15
+                X: =5
+                Y: =6
+                ZIndex: =2
+
+            Rectangle1_19 As rectangle:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                Fill: =RGBA(2,115, 203, 1)
+                Height: =1.5
+                Visible: =varMenu = 6
+                Width: =Parent.Width
+                X: =2.5
+                Y: =30
+                ZIndex: =3
+
+        Container4_18 As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: |
+                =Parent.Height-2
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =28
+            LayoutMinWidth: =250
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Visible: =If(varMenu = 1 || varMenu = 2 ||varMenu = 3, true, false)
+            Width: =115
+            ZIndex: =7
+
+            ButtonCanvas1_26 As Button:
+                AcceptsFocus: =true
+                AccessibleLabel: =""
+                Align: =Align.Right
+                Appearance: ='ButtonCanvas.Appearance'.Subtle
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =If(varMenu = 6, RGBA(2,115, 203, 1),RGBA(0, 0, 0, 1))
+                FontItalic: =false
+                FontSize: =0
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =FontWeight.Bold
+                Height: =32
+                Icon: =
+                IconRotation: =0
+                IconStyle: ="Outline"
+                Layout: ="Icon before"
+                OnSelect: =Set(varMenu, 6);
+                TabIndex: =0
+                Text: ="Bibliotheek"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            Image3_32 As image:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =Parent.Height-13
+                Image: =book
+                OnSelect: =Set(varMenu, 6);
+                Width: =15
+                X: =5
+                Y: =5
+                ZIndex: =2
+
+            Rectangle1_24 As rectangle:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                Fill: =RGBA(2,115, 203, 1)
+                Height: =1.5
+                Visible: =varMenu = 6
+                Width: =Parent.Width
+                X: =2.5
+                Y: =30
+                ZIndex: =3
+
+    Image2 As image:
+        BorderColor: =App.Theme.Colors.Darker40
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =54
+        Image: =logo
+        Width: =65
+        X: =5
+        ZIndex: =7
+

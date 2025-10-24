@@ -1,0 +1,381 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  scrBegin:
+    Properties:
+      OnHidden: |-
+        =//Set(SelectedMonth,GalCorrespondentieVO_2.Selected.maand);
+        Reset(DpwYears);
+        Set(SelectedYear,DpwYears.Selected.Value);
+        Set(varAddCompany, false);
+        Set(varAddCompany1, false);
+        Set(varAddCompany3, false);
+        Set(varAddCompany4, false);
+        Set(varAddcontact, false);
+        Set(varAddcontact1, false);
+        Set(varAddcontact2, false);
+        Set(varAddContact3, false);
+        Set(varAddContact4, false);
+        // Inkomende
+
+
+        //Uitgaande
+        Reset(txtType_1);
+        Reset(txtGeregistreerd_1);
+        Reset(cbbOntvanger_1);
+        Reset(dateVerzondenOp_1);
+        Reset(txtReferentie_1);
+        Reset(txtReferentie_9);
+        Reset(txtReferentie_8);
+        Reset(txtSleutelwoorden_1);
+        Reset(txtBeschrijving_1);
+        Reset(Attachments_Bijlage1_1)
+      OnVisible: |+
+        =Set(SelectedMonth,Month(Today()));
+        Reset(DpwYears);
+        Set(SelectedYear,DpwYears.Selected.Value);
+    Children:
+      - NavBarHome_1:
+          Control: CanvasComponent
+          ComponentName: NavBarHome
+          Properties:
+            Begin: =scrBegin
+            Contacts: =scrContacts
+            Dashboard: =scrDashboard
+            Gebruikersbeheer: =scrGebruikersBeheer
+            Height: =683
+            Inkomende: =If(RolUsuario = 'Rol Choices'.Lezer, scrInkomendeOverzicht, scrInkomende)
+            Uitgaande: =If(RolUsuario = 'Rol Choices'.Lezer, scrUitgaandeOverzicht, scrUitgaande)
+            Width: =300
+            Y: =85
+      - NavHeader_1:
+          Control: CanvasComponent
+          ComponentName: NavHeader
+          Properties:
+            Height: =87
+            MainTitle: ="WEB Corresponder"
+            Width: =1366
+      - TxtStatusIDAllC_13:
+          Control: Text@0.0.51
+          Properties:
+            Align: ='TextCanvas.Align'.Start
+            Height: =40
+            Size: =16
+            Text: ="Stuk ID"
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =60
+            X: =322
+            Y: =190
+      - TxtVerzenderOntvangerAllC_9:
+          Control: Text@0.0.51
+          Properties:
+            Align: ='TextCanvas.Align'.Start
+            Height: =40
+            Size: =16
+            Text: ="Type"
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =60
+            X: =471
+            Y: =190
+      - TxtDatumAllC_11:
+          Control: Text@0.0.51
+          Properties:
+            Align: ='TextCanvas.Align'.Start
+            Height: =40
+            Size: =16
+            Text: ="Datum"
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =60
+            X: =909
+            Y: =190
+      - TxtOnderwerpAllC_5:
+          Control: Text@0.0.51
+          Properties:
+            Align: ='TextCanvas.Align'.Start
+            Height: =40
+            Size: =16
+            Text: ="Referentie"
+            VerticalAlign: =VerticalAlign.Middle
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =100
+            X: =1001
+            Y: =190
+      - TxtActionAllC_13:
+          Control: Text@0.0.51
+          Properties:
+            Align: ='TextCanvas.Align'.Start
+            Height: =40
+            Size: =16
+            Text: ="Acties"
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =92
+            X: =1261
+            Y: =190
+      - TxtDatumAllC_12:
+          Control: Text@0.0.51
+          Properties:
+            Align: ='TextCanvas.Align'.Start
+            Height: =40
+            Size: =16
+            Text: ="Ontvanger"
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =100
+            X: =756
+            Y: =190
+      - Container2_6:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            DropShadow: =DropShadow.Bold
+            Fill: =RGBA(16, 188, 224, 1)
+            Height: =60
+            Width: =1066
+            X: =300
+            Y: =87
+      - TextInput1_7:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =RGBA(106, 122, 127, 1)
+            Default: =""
+            Height: =33
+            HintText: |-
+              ="🔍 Zoek"
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: =30
+            RadiusTopRight: =30
+            Width: =312
+            X: =1021
+            Y: =100
+      - RtgItemsAllC_38:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(106, 122, 127, 1)
+            BorderThickness: =2
+            Fill: =RGBA(16, 188, 224, 1)
+            Height: =1
+            Width: =1066
+            X: =300
+            Y: =230
+      - Icon2:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(0, 0, 0, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =40
+            HoverColor: =RGBA(0, 0, 0, 1)
+            Icon: =Icon.PaperClip
+            Width: =25
+            X: =412
+            Y: =190
+      - CoRowsTotalH:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0.5
+            DropShadow: =DropShadow.None
+            Height: =60
+            Width: =170
+            X: =316
+            Y: =87
+          Children:
+            - TxtTitleTotH:
+                Control: Text@0.0.51
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  AutoHeight: =true
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  Size: =15
+                  Text: ="Totaal"
+                  Weight: ='TextCanvas.Weight'.Bold
+                  Width: =CoRowsTotalH.Width
+                  Y: =3
+            - TxtNumberTotH:
+                Control: Text@0.0.51
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  Height: =55
+                  Size: =36
+                  Text: =CountRows(GalCorrespondentieVO_2.AllItems)
+                  VerticalAlign: =VerticalAlign.Middle
+                  Weight: ='TextCanvas.Weight'.Bold
+                  Width: =CoRowsTotalH.Width
+                  Y: =8
+      - CoRowsInkomendeH:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0.5
+            DropShadow: =DropShadow.None
+            Height: =60
+            Width: =170
+            X: =570
+            Y: =87
+          Children:
+            - TxtTitleInkH:
+                Control: Text@0.0.51
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  AutoHeight: =true
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  Size: =15
+                  Text: ="Inkomende"
+                  Weight: ='TextCanvas.Weight'.Bold
+                  Width: =CoRowsInkomendeH.Width
+                  Y: =3
+            - TxtNumberInkH:
+                Control: Text@0.0.51
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  Height: =55
+                  Size: =36
+                  Text: |-
+                    =CountIf(
+                        GalCorrespondentieVO_2.AllItems,
+                       Type = "Inkomende"
+                    )
+                  Weight: ='TextCanvas.Weight'.Bold
+                  Width: =CoRowsInkomendeH.Width
+                  Y: =8
+      - CoRowsUitgaandeH:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0.5
+            DropShadow: =DropShadow.None
+            Height: =60
+            Width: =170
+            X: =824
+            Y: =87
+          Children:
+            - TxtTitleUitH:
+                Control: Text@0.0.51
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  AutoHeight: =true
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  Size: =15
+                  Text: ="Uitgaande"
+                  Weight: ='TextCanvas.Weight'.Bold
+                  Width: =CoRowsUitgaandeH.Width
+                  Y: =3
+            - TxtNumberUitH:
+                Control: Text@0.0.51
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  Height: =55
+                  Size: =36
+                  Text: |-
+                    =CountIf(
+                        GalCorrespondentieVO_2.AllItems,
+                       Type = "Uitgaande"
+                    )
+                  Weight: ='TextCanvas.Weight'.Bold
+                  Width: =CoRowsUitgaandeH.Width
+                  Y: =8
+      - TxtDatumAllC_15:
+          Control: Text@0.0.51
+          Properties:
+            Align: ='TextCanvas.Align'.Start
+            Height: =40
+            Size: =16
+            Text: ="Verzender"
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =100
+            X: =604
+            Y: =190
+      - Rectangle1_11:
+          Control: Rectangle@2.3.0
+          Group: GrpConfirmUitgaande_4
+          Properties:
+            Fill: =RGBA(0, 0, 0, 0.3)
+            Height: =681
+            OnSelect: =Set(varDeleteB, false);
+            Visible: =varDeleteB
+            Width: =1066
+            X: =300
+            Y: =87
+      - Button2_17:
+          Control: Classic/Button@2.2.0
+          Group: GrpConfirmUitgaande_4
+          Properties:
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 132, 182, 1)
+            Height: =219
+            HoverBorderColor: =Self.BorderColor
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 132, 182, 1)
+            OnSelect: =
+            PressedFill: =Self.Fill
+            Text: =""
+            Visible: =varDeleteB
+            Width: =400
+            X: =635
+            Y: =282
+      - Label1_40:
+          Control: Label@2.5.1
+          Group: GrpConfirmUitgaande_4
+          Properties:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =160
+            OnSelect: =Set(ModalInkomende, false)
+            Size: =15
+            Text: ="Wilt u deze correspondentie verwijderen?"
+            Visible: =varDeleteB
+            Width: =372
+            X: =649
+            Y: =289
+      - Button4_16:
+          Control: Classic/Button@2.2.0
+          Group: GrpConfirmUitgaande_4
+          Properties:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(180, 214, 250, 1)
+            DisabledFill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(Self.Fill, -60%)
+            OnSelect: =Set(varDeleteB, false);
+            Size: =12
+            Text: ="Annuleren"
+            Visible: =varDeleteB
+            Width: =120
+            X: =649
+            Y: =433
+      - Button4_17:
+          Control: Classic/Button@2.2.0
+          Group: GrpConfirmUitgaande_4
+          Properties:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(180, 214, 250, 1)
+            DisabledFill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(Self.Fill, -60%)
+            OnSelect: |-
+              =Remove(Correspondences, GalCorrespondentieVO_2.Selected); Notify("Item Verwijderd",NotificationType.Success);
+              Set(varDeleteB, false);
+            Size: =12
+            Text: ="Bevestig"
+            Visible: =varDeleteB
+            Width: =120
+            X: =901
+            Y: =433

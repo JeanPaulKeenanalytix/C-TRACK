@@ -1,0 +1,968 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Screen1_4:
+    Children:
+      - Container4_19:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(249, 250, 251, 1)
+            Height: =Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            Width: =Parent.Width
+          Children:
+            - comHeader_6:
+                Control: CanvasComponent
+                ComponentName: comHeader
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =90
+                  Width: =1366
+            - Container5_4:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  LayoutDirection: =LayoutDirection.Vertical
+      - Container15_6:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =60
+            LayoutDirection: =LayoutDirection.Vertical
+            Visible: =//showContainer
+            Width: =198
+            X: =1118
+            Y: =276
+          Children:
+            - Container4_20:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  Height: |
+                    =Parent.Height-2
+                  LayoutMinHeight: =28
+                  Width: =Parent.Width
+                Children:
+                  - ButtonCanvas1_27:
+                      Control: Button@0.0.45
+                      Properties:
+                        Align: =Align.Left
+                        Appearance: ='ButtonCanvas.Appearance'.Subtle
+                        FontColor: =If(varMenu = 2, RGBA(2,115, 203, 1),RGBA(0, 0, 0, 1))
+                        FontSize: =12
+                        FontWeight: =FontWeight.Semibold
+                        Icon: =
+                        OnSelect: |
+                          =Set(varMenu, 2);
+                        PaddingLeft: =30
+                        Text: ="Inkomende"
+                        Width: =Parent.Width
+                  - Image3_33:
+                      Control: Image@2.2.3
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Height: =Parent.Height-11
+                        Image: ='inbox (1)'
+                        OnSelect: |
+                          =Set(varMenu, 2);
+                        Width: =17
+                        X: =5
+                        Y: =6
+            - Container4_21:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  Height: |
+                    =Parent.Height-2
+                  LayoutMinHeight: =28
+                  Width: =Parent.Width
+                Children:
+                  - ButtonCanvas1_32:
+                      Control: Button@0.0.45
+                      Properties:
+                        Align: =Align.Left
+                        Appearance: ='ButtonCanvas.Appearance'.Subtle
+                        FontColor: =If(varMenu = 3, RGBA(2,115, 203, 1),RGBA(0, 0, 0, 1))
+                        FontSize: =12
+                        FontWeight: =FontWeight.Semibold
+                        Icon: =
+                        OnSelect: =Set(varMenu, 3);
+                        PaddingLeft: =30
+                        Text: ="Uitgaande"
+                        Width: =Parent.Width
+                  - Image3_34:
+                      Control: Image@2.2.3
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Height: =Parent.Height-13
+                        Image: = 'paper-plane (1)'
+                        OnSelect: =Set(varMenu, 3);
+                        Width: =15
+                        X: =5
+                        Y: =7
+      - Container15_8:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(44, 44, 44, 1)
+            Height: =85
+            LayoutDirection: =LayoutDirection.Vertical
+            Visible: =false
+            Width: =380
+            X: =55
+            Y: =600
+          Children:
+            - Container16_8:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Height: =60
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutGap: =15
+                  PaddingLeft: =15
+                  PaddingTop: =15
+                  Width: =380
+                Children:
+                  - Image4_4:
+                      Control: Image@2.2.3
+                      Properties:
+                        Height: =25
+                        Image: =correct
+                        Width: =25
+                  - HtmlText1_4:
+                      Control: HtmlViewer@2.1.0
+                      Properties:
+                        Color: =RGBA(255, 255, 255, 1)
+                        Height: =50
+                        HtmlText: =//"<b>"&GalCorrespondentieVO_5.Selected.Type& " - " &GalCorrespondentieVO_5.Selected.Origin&"</b> correspondentie succesvol verwijderd."
+                        PaddingTop: =0
+                        Size: =10
+                        Width: =280
+                  - ButtonCanvas3_17:
+                      Control: Button@0.0.45
+                      Properties:
+                        Appearance: ='ButtonCanvas.Appearance'.Subtle
+                        FontColor: =RGBA(255, 255, 255, 1)
+                        FontSize: =16
+                        Height: =25
+                        Icon: ="Dismiss"
+                        IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                        Layout: ='ButtonCanvas.Layout'.IconOnly
+                        PaddingBottom: =15
+                        PaddingRight: =30
+                        Text: =
+                        Width: =25
+            - Container16_9:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =40
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutGap: =35
+                  PaddingLeft: =40
+                  Width: =380
+                Children:
+                  - ButtonCanvas3_18:
+                      Control: Button@0.0.45
+                      Properties:
+                        Appearance: ='ButtonCanvas.Appearance'.Subtle
+                        FontColor: =RGBA(40, 134, 222, 1)
+                        FontSize: =14
+                        Height: =25
+                        Icon: ="Dismiss"
+                        IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                        Layout: ='ButtonCanvas.Layout'.TextOnly
+                        Text: ="Sluit"
+                        VerticalAlign: =
+                        Width: =70
+      - Container14_4:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(44, 44, 44, 1)
+            Height: =40
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Horizontal
+            LayoutGap: =10
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Visible: =CountRows(colAllCorr) > 0
+            Width: =600
+            X: =398
+            Y: =700
+          Children:
+            - ButtonCanvas1_33:
+                Control: Button@0.0.45
+                Properties:
+                  Align: =Align.Center
+                  Appearance: ='ButtonCanvas.Appearance'.Outline
+                  DisplayMode: |-
+                    =If(
+                        CountRows(colAllCorr) = 0 || CountRows(colAllCorr) > 1, DisplayMode.View, DisplayMode.Edit)
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  FontSize: =12
+                  Height: =28
+                  Icon: ="Eye"
+                  IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                  Text: ="Weergeven"
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =100
+            - ButtonCanvas1_34:
+                Control: Button@0.0.45
+                Properties:
+                  Align: =Align.Center
+                  Appearance: ='ButtonCanvas.Appearance'.Outline
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  FontSize: =12
+                  Height: =28
+                  Icon: ="Delete"
+                  IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                  Text: |-
+                    =If(
+                        CountRows(colAllCorr) = 0,  "Verwijder", "Verwijder "&CountRows(colAllCorr)&" Item(s)")
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: |-
+                    =If(
+                        CountRows(colAllCorr) = 0, 95, 150)
+            - ButtonCanvas1_35:
+                Control: Button@0.0.45
+                Properties:
+                  Align: =Align.Center
+                  Appearance: ='ButtonCanvas.Appearance'.Outline
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  FontSize: =12
+                  Height: =28
+                  Icon: ="ArrowSync"
+                  IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                  Text: ="Selectie wissen"
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =130
+            - ButtonCanvas1_36:
+                Control: Button@0.0.45
+                Properties:
+                  Align: =Align.Center
+                  Appearance: ='ButtonCanvas.Appearance'.Outline
+                  FontColor: =RGBA(255, 255, 255, 1)
+                  FontSize: =12
+                  Height: =28
+                  Icon: ="DocumentBulletList"
+                  IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                  Text: ="Bibliotheek"
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =130
+      - Container2_10:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =2
+            DropShadow: =DropShadow.Regular
+            Height: =229
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Width: =637
+            X: =125
+            Y: =228
+          Children:
+            - Title2_1:
+                Control: Label@2.5.1
+                Group: CompositeLineChart2_1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  FontWeight: =FontWeight.Bold
+                  Height: =27
+                  Size: =14
+                  Text: ="Correspondentie per maand - "&Year(Today())
+                  Width: =637
+            - LineChart2_1:
+                Control: LineChart@2.3.0
+                Group: CompositeLineChart2_1
+                Properties:
+                  Height: =229
+                  ItemColorSet: =[RGBA(49, 130, 93, 1),RGBA(212,96,104,1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
+                  Items: =CountMonth
+                  Items.Labels: =Month
+                  Items.Series1: =Inkomende
+                  Items.Series2: =Uitgaande
+                  Items.Series3: =Inkomende
+                  Items.Series4: =Inkomende
+                  Items.Series5: =Inkomende
+                  Items.Series6: =Inkomende
+                  Items.Series7: =Inkomende
+                  Items.Series8: =Inkomende
+                  Items.Series9: =Inkomende
+                  NumberOfSeries: =2
+                  Width: =637
+            - Legend2_1:
+                Control: Legend@2.1.0
+                Group: CompositeLineChart2_1
+                Properties:
+                  Height: =27
+                  ItemColorSet: =LineChart2_1.ItemColorSet
+                  Items: =LineChart2_1.SeriesLabels
+                  Items.Value: =Value
+                  Width: =510
+                  X: =5
+                  Y: =202
+      - Container2_20:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =2
+            DropShadow: =DropShadow.Regular
+            Height: =229
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Width: =355
+            X: =787
+            Y: =228
+          Children:
+            - Title3_1:
+                Control: Label@2.5.1
+                Group: CompositePieChart1_1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  FontWeight: =FontWeight.Bold
+                  Height: =25
+                  Size: =14
+                  Text: ="Totaal"
+                  Width: =355
+                  Y: =9
+            - PieChart1_1:
+                Control: PieChart@2.2.0
+                Group: CompositePieChart1_1
+                Properties:
+                  Explode: =2
+                  Height: =229
+                  ItemBorderThickness: =1
+                  ItemColorSet: =[RGBA(96, 197, 234, 1),RGBA(48,166,103,1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
+                  Items: =TotalCorr
+                  Items.Labels: =Correspondentie
+                  Items.Series: =Correspondentie
+                  Width: =345
+                  X: =8
+            - Legend3_1:
+                Control: Legend@2.1.0
+                Group: CompositePieChart1_1
+                Properties:
+                  Height: =30
+                  ItemColorSet: =PieChart1_1.ItemColorSet
+                  Items: =["Intern", "Extern"]
+                  Items.Value: =Value
+                  Width: =180
+                  X: =109
+                  Y: =199
+      - Container2_27:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =2
+            DropShadow: =DropShadow.Regular
+            Height: =229
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Width: =315
+            X: =125
+            Y: =492
+          Children:
+            - Title4_6:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  FontWeight: =FontWeight.Bold
+                  Height: =38
+                  Size: =14
+                  Text: ="Top 5 Afdelingen"
+                  Width: =315
+            - Gallery1_3:
+                Control: Gallery@2.15.0
+                Variant: Vertical
+                Properties:
+                  Height: =179
+                  Items: =Sort(FirstN(ColDepUni,5),Cantidad, SortOrder.Descending)
+                  TemplateSize: =31
+                  Width: =315
+                  Y: =40
+                Children:
+                  - TextCanvas3_3:
+                      Control: Text@0.0.51
+                      Properties:
+                        Height: =20
+                        Size: =11
+                        Text: =ThisItem.Value
+                        Width: =150
+                        X: =5
+                  - Rectangle5_3:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        Fill: =RGBA(49, 130,2, 1)
+                        Height: =10
+                        OnSelect: =Select(Parent)
+                        Width: =50*(ThisItem.Cantidad/Max(CountValoresRepetidosVer,Cantidad))
+                        X: =TextCanvas3_3.X+TextCanvas3_3.Width+2
+                        Y: =5
+                  - Label1_3:
+                      Control: Label@2.5.1
+                      Properties:
+                        Height: =20
+                        OnSelect: =Select(Parent)
+                        Size: =10
+                        Text: =ThisItem.Cantidad
+                        Width: =50
+                        X: =Rectangle5_3.X+Rectangle5_3.Width+2
+      - Container2_28:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =2
+            DropShadow: =DropShadow.Regular
+            Height: =112
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Width: =270
+            X: =400
+            Y: =101
+          Children:
+            - Container1_2:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  DropShadow: =DropShadow.None
+                  Height: =80
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Container2_28.Width/2
+                  X: =Container1_11.X+Container1_11.Width
+                  Y: =32
+                Children:
+                  - TextCanvas1_16:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        AutoHeight: =true
+                        Text: ="Extern"
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =Container1_11.Width
+                        Y: =9
+                  - TextCanvas1_17:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        Height: =60
+                        Size: =40
+                        Text: |-
+                          =CountIf(
+                              Correspondences,
+                              Origin = OriginCorrChoices.Extern && Type = "Inkomende"
+                          )
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =Container1_11.Width
+                        Y: =20
+            - Container1_11:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  DropShadow: =DropShadow.None
+                  Height: =80
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Container2_28.Width/2
+                  Y: =32
+                Children:
+                  - TextCanvas1_18:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        AutoHeight: =true
+                        Text: ="Intern"
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =Container1_11.Width
+                        Y: =9
+                  - TextCanvas1_19:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        Height: =60
+                        Size: =40
+                        Text: |+
+                          =CountIf(
+                                  Correspondences,
+                                  Origin = OriginCorrChoices.Intern&&Type="Inkomende"   )
+
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =Container1_11.Width
+                        Y: =20
+            - TextCanvas2_2:
+                Control: Text@0.0.51
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  Size: =20
+                  Text: ="Inkomende"
+                  Weight: ='TextCanvas.Weight'.Bold
+                  Width: =Container2_28.Width
+      - Container2_29:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =2
+            DropShadow: =DropShadow.Regular
+            Height: =112
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Width: =270
+            X: =715
+            Y: =101
+          Children:
+            - Container1_12:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  DropShadow: =DropShadow.None
+                  Height: =80
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Container2_29.Width/2
+                  Y: =32
+                Children:
+                  - TextCanvas1_20:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        AutoHeight: =true
+                        Text: ="Intern"
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =130
+                  - TextCanvas1_21:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        Height: =60
+                        Size: =40
+                        Text: |-
+                          =CountIf(
+                              Correspondences,
+                              Origin = OriginCorrChoices.Intern && Type = "Uitgaande"
+                          )
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =130
+                        Y: =20
+            - Container1_13:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  DropShadow: =DropShadow.None
+                  Height: =80
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Container2_29.Width/2
+                  X: =Container1_12.X+Container1_12.Width
+                  Y: =32
+                Children:
+                  - TextCanvas1_26:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        AutoHeight: =true
+                        Text: ="Extern"
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =130
+                  - TextCanvas1_27:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        Height: =60
+                        Size: =40
+                        Text: |-
+                          =CountIf(
+                              Correspondences,
+                              Origin = OriginCorrChoices.Extern && Type = "Uitgaande"
+                          )
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =130
+                        Y: =20
+            - TextCanvas2_3:
+                Control: Text@0.0.51
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  Size: =20
+                  Text: ="Uitgaande"
+                  Weight: ='TextCanvas.Weight'.Bold
+                  Width: =Container2_29.Width
+      - Container2_30:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =2
+            DropShadow: =DropShadow.Regular
+            Height: =229
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Width: =315
+            X: =460
+            Y: =492
+          Children:
+            - Title4_7:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  FontWeight: =FontWeight.Bold
+                  Height: =36
+                  Size: =14
+                  Text: ="Top 5 Ontvangers"
+                  Width: =315
+            - Gallery1_6:
+                Control: Gallery@2.15.0
+                Variant: Vertical
+                Properties:
+                  Height: =189
+                  Items: |
+                    =FirstN(
+                        Sort(
+                            Filter(CountValoresRepetidos, !IsBlank(Value) ),
+                            Cantidad,
+                            SortOrder.Descending
+                        ),
+                        5
+                    )
+                  TemplateSize: =31
+                  Width: =315
+                  Y: =40
+                Children:
+                  - TextCanvas3_4:
+                      Control: Text@0.0.51
+                      Properties:
+                        Height: =31
+                        Size: =11
+                        Text: =ThisItem.Value
+                        Width: =150
+                        X: =5
+                  - Rectangle5_4:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        Fill: =RGBA(49, 130,2, 1)
+                        Height: =10
+                        OnSelect: =Select(Parent)
+                        Width: =50*(ThisItem.Cantidad/Max(CountValoresRepetidosVer,Cantidad))
+                        X: =TextCanvas3_4.X+TextCanvas3_4.Width+2
+                        Y: =5
+                  - Label1_4:
+                      Control: Label@2.5.1
+                      Properties:
+                        Height: =20
+                        OnSelect: =Select(Parent)
+                        Size: =10
+                        Text: =ThisItem.Cantidad
+                        Width: =50
+                        X: =Rectangle5_4.X+Rectangle5_4.Width
+      - Container2_31:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =2
+            DropShadow: =DropShadow.Regular
+            Height: =229
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Width: =357
+            X: =795
+            Y: =492
+          Children:
+            - Gallery1_7:
+                Control: Gallery@2.15.0
+                Variant: Vertical
+                Properties:
+                  Height: =189
+                  Items: |
+                    =
+                    FirstN(
+                        Sort(
+                            Filter(CountValoresRepetidosVer, !IsBlank(Value) ),
+                            Cantidad,
+                            SortOrder.Descending
+                        ),
+                        5
+                    )
+                  TemplateSize: =31
+                  Width: =357
+                  Y: =40
+                Children:
+                  - TextCanvas3_5:
+                      Control: Text@0.0.51
+                      Properties:
+                        Height: =31
+                        Size: =11
+                        Text: =ThisItem.Value
+                        Width: =180
+                        X: =5
+                  - Rectangle5_5:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        Fill: =RGBA(49, 130,2, 1)
+                        Height: =10
+                        OnSelect: =Select(Parent)
+                        Width: =50*(ThisItem.Cantidad/Max(CountValoresRepetidosVer,Cantidad))
+                        X: =TextCanvas3_5.X+TextCanvas3_5.Width+2
+                        Y: =5
+                  - Label1_5:
+                      Control: Label@2.5.1
+                      Properties:
+                        Height: =20
+                        OnSelect: =Select(Parent)
+                        Size: =10
+                        Text: =ThisItem.Cantidad
+                        Width: =50
+                        X: =Rectangle5_5.X+Rectangle5_5.Width
+            - Title4_8:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  FontWeight: =FontWeight.Bold
+                  Height: =36
+                  Size: =14
+                  Text: ="Top 5 Verzenders"
+                  Width: =315
+      - Container2_32:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =2
+            DropShadow: =DropShadow.Regular
+            Height: =112
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Visible: =false
+            Width: =270
+            X: =70
+            Y: =101
+          Children:
+            - Container1_16:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  DropShadow: =DropShadow.None
+                  Height: =80
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Container2_32.Width/2
+                  X: =Container1_17.X+Container1_17.Width
+                  Y: =32
+                Children:
+                  - TextCanvas1_28:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        AutoHeight: =true
+                        Text: ="Extern"
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =Container1_17.Width
+                        Y: =9
+                  - TextCanvas1_29:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        Height: =60
+                        Size: =40
+                        Text: |-
+                          =CountIf(
+                              Correspondences,
+                              Origin = OriginCorrChoices.Extern && Type = "Inkomende"
+                          )
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =Container1_17.Width
+                        Y: =20
+            - Container1_17:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  DropShadow: =DropShadow.None
+                  Height: =80
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Container2_32.Width/2
+                  Y: =32
+                Children:
+                  - TextCanvas1_30:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        AutoHeight: =true
+                        Text: ="Intern"
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =Container1_17.Width
+                        Y: =9
+                  - TextCanvas1_31:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        Height: =60
+                        Size: =40
+                        Text: |+
+                          =CountIf(
+                                  Correspondences,
+                                  Origin = OriginCorrChoices.Intern&&Type="Inkomende"   )
+
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =Container1_17.Width
+                        Y: =20
+            - TextCanvas2_4:
+                Control: Text@0.0.51
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  Size: =20
+                  Text: ="Inkomende"
+                  Weight: ='TextCanvas.Weight'.Bold
+                  Width: =Container2_32.Width
+      - Container2_33:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            BorderThickness: =2
+            DropShadow: =DropShadow.Regular
+            Height: =112
+            RadiusBottomLeft: =6
+            RadiusBottomRight: =6
+            RadiusTopLeft: =6
+            RadiusTopRight: =6
+            Visible: =false
+            Width: =270
+            X: =1000
+            Y: =101
+          Children:
+            - Container1_18:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  DropShadow: =DropShadow.None
+                  Height: =80
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Container2_33.Width/2
+                  Y: =32
+                Children:
+                  - TextCanvas1_32:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        AutoHeight: =true
+                        Text: ="Intern"
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =130
+                  - TextCanvas1_33:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        Height: =60
+                        Size: =40
+                        Text: |-
+                          =CountIf(
+                              Correspondences,
+                              Origin = OriginCorrChoices.Intern && Type = "Uitgaande"
+                          )
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =130
+                        Y: =20
+            - Container1_19:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  DropShadow: =DropShadow.None
+                  Height: =80
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Container2_33.Width/2
+                  X: =Container1_18.X+Container1_18.Width
+                  Y: =32
+                Children:
+                  - TextCanvas1_34:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        AutoHeight: =true
+                        Text: ="Extern"
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =130
+                  - TextCanvas1_35:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        Height: =60
+                        Size: =40
+                        Text: |-
+                          =CountIf(
+                              Correspondences,
+                              Origin = OriginCorrChoices.Extern && Type = "Uitgaande"
+                          )
+                        Weight: ='TextCanvas.Weight'.Bold
+                        Width: =130
+                        Y: =20
+            - TextCanvas2_5:
+                Control: Text@0.0.51
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  Size: =20
+                  Text: ="Uitgaande"
+                  Weight: ='TextCanvas.Weight'.Bold
+                  Width: =Container2_33.Width

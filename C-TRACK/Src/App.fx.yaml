@@ -1,0 +1,390 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =ClearCollect(
+            colUser,
+            SortByColumns(
+                Filter(
+                    Office365Users.SearchUser(
+                        {
+                            searchTerm: "",
+                            top: 999
+                        }
+                    ),
+                    If(
+                        "keenanalytix.com" in Last(
+                            Split(
+                                User().Email,
+                                "@"
+                            )
+                        ).Value,
+                       !("admin" in UserPrincipalName) || AccountEnabled = true && !("Meeting Room" in DisplayName) && !(IsBlank(First(BusinessPhones).Value)),
+                        DisplayName = "Microsoft O365 SA" || AccountEnabled = true && !("Admin" in DisplayName) && !(IsBlank(Mail)) && !("Cantina" in DisplayName) && ("@webaruba.com" in Mail) && !("Meeting Room" in DisplayName) && !(IsBlank(First(BusinessPhones).Value)) || ("Contractant" in JobTitle) && !("Admin" in DisplayName)
+                    )
+                ),
+                "DisplayName",
+                SortOrder.Ascending
+            )
+        );
+        ClearCollect(
+            YearCollection,
+            Sort(
+                Distinct(
+                    Filter(
+                    Correspondences,
+                     Not(IsBlank(jaar))),
+                    jaar
+                ),
+            Value,
+                SortOrder.Descending
+            )
+        );
+        Set(varYear,Year(Today()));
+        Set(SelectedMonth,Month(Today()));
+        Reset(DpwYears);
+        Set(SelectedYear,DpwYears.Selected.Value);
+        Set(varMenu, 1);
+        Set(
+            varOrigen,
+            true
+        );
+        Set(
+            varOrigen1,
+            true
+        );
+        Set(
+            RolUsuario,
+            LookUp(
+                Gebruikersrollen,
+                User().Email = Email,
+                Rol
+            )
+        );
+        Set(UserGroups,LookUp( Gebruikersrollen, User().Email = Email,
+                Groups  ));
+        
+        Set(
+            varDepUser,
+            Office365Groups.HttpRequest(
+                "https://graph.microsoft.com/beta/users/" & User().Email & "?$select=" & LookUp(
+                    'Environment Variable Definitions',
+                    'Schema Name' = "webcorr_DepDiv"
+                ).'Default Value',
+                "GET",
+                ""
+            )
+        );
+        Set(
+            MyProfileEx,
+            Office365Groups.HttpRequest(
+                "https://graph.microsoft.com/v1.0/groups?$filter=mailEnabled eq true and securityEnabled eq false and NOT(groupTypes/any(c:c eq 'Unified'))&$count=true&$select=id,displayName",
+                "GET",
+                "",
+                {
+                    ContentType: "application/json",
+                    CustomHeader1: "ConsistencyLevel:eventual"
+                }
+            )
+        );
+        ClearCollect(
+            response,
+            Blank()
+        );
+        ForAll(
+            MyProfileEx.value As result,
+            Collect(
+                response,
+                {name: result.displayName}
+            )
+        );
+        ClearCollect(
+            ColAllInOne,
+            Blank()
+        );
+        ForAll(
+            colUser As User,
+            Collect(
+                ColAllInOne,
+                {value: User.DisplayName}
+            )
+        );
+        ForAll(
+            response As res,
+            Collect(
+                ColAllInOne,
+                {value: Text(res.name)}
+            )
+        );
+        Set(
+            varMes,
+            Concatenate(
+                ForAll(
+                    Filter(
+                        Correspondences,
+                        Year('Created On') = Year(Today()) && Type = "Inkomende"
+                    ),
+                    Text(Month('Created On'))
+                )
+            )
+        );
+        Set(
+            varMesUit,
+            Concatenate(
+                ForAll(
+                    Filter(
+                        Correspondences,
+                        Year('Created On') = Year(Today()) && Type = "Uitgaande"
+                    ),
+                    Text(Month('Created On'))
+                )
+            )
+        );
+        ClearCollect(
+            ColCompanyVer,
+            Distinct(
+                Correspondences,
+                Verzender
+            )
+        );
+        ClearCollect(
+            CountValoresRepetidosVer,
+            AddColumns(
+                ColCompanyVer,
+                Cantidad,
+                CountIf(
+                    Correspondences,
+                    Verzender = Value
+                )
+            )
+        );
+        Set(
+            ColCompany,
+            Distinct(
+                Correspondences,
+                Ontvanger
+            )
+        );
+        ClearCollect(
+            CountValoresRepetidos,
+            AddColumns(
+                ColCompany,
+                Cantidad,
+                CountIf(
+                    Correspondences,
+                    Ontvanger = Value
+                )
+            )
+        );
+        ClearCollect(
+            ColDep,
+            Distinct(
+                Correspondences,
+                Afdeling
+            )
+        );
+        ClearCollect(
+            ColDepUni,
+            AddColumns(
+                ColDep,
+                Cantidad,
+                CountIf(
+                    Correspondences,
+                    Afdeling = Value
+                )
+            )
+        );
+        ClearCollect(
+            TotalDep,
+            {
+                Department: "ICT",
+                Correspondentie: CountIf(
+                    Correspondences,
+                    Afdeling = "ICT"
+                )
+            }
+        );
+        ClearCollect(
+            TotalCorr,
+            {
+                Origin: "Intern Totaal",
+                Correspondentie: CountIf(
+                    Correspondences,
+                    Origin = OriginCorrChoices.Intern && Type = "Inkomende"
+                ) + CountIf(
+                    Correspondences,
+                    Origin = OriginCorrChoices.Intern && Type = "Uitgaande"
+                )
+            },
+            {
+                Origin: "Extern Totaal",
+                Correspondentie: CountIf(
+                    Correspondences,
+                    Origin = OriginCorrChoices.Extern && Type = "Inkomende"
+                ) + CountIf(
+                    Correspondences,
+                    Origin = OriginCorrChoices.Extern && Type = "Uitgaande"
+                )
+            }
+        );
+        ClearCollect(
+            CountMonth,
+            {
+                Month: "Jan",
+                Inkomende: CountIf(
+                    varMes,
+                    Value = "1"
+                ),
+                Uitgaande: CountIf(
+                    varMesUit,
+                    Value = "1"
+                )
+            },
+            {
+                Month: "Feb",
+                Inkomende: CountIf(
+                    varMes,
+                    Value = "2"
+                ),
+                Uitgaande: CountIf(
+                    varMesUit,
+                    Value = "2"
+                )
+            },
+            {
+                Month: "Mrt",
+                Inkomende: CountIf(
+                    varMes,
+                    Value = "3"
+                ),
+                Uitgaande: CountIf(
+                    varMesUit,
+                    Value = "3"
+                )
+            },
+            {
+                Month: "Apr",
+                Inkomende: CountIf(
+                    varMes,
+                    Value = "4"
+                ),
+                Uitgaande: CountIf(
+                    varMesUit,
+                    Value = "4"
+                )
+            },
+            {
+                Month: "Mei",
+                Inkomende: CountIf(
+                    varMes,
+                    Value = "5"
+                ),
+                Uitgaande: CountIf(
+                    varMesUit,
+                    Value = "5"
+                )
+            },
+            {
+                Month: "Jun",
+                Inkomende: CountIf(
+                    varMes,
+                    Value = "6"
+                ),
+                Uitgaande: CountIf(
+                    varMesUit,
+                    Value = "6"
+                )
+            },
+            {
+                Month: "Jul",
+                Inkomende: CountIf(
+                    varMes,
+                    Value = "7"
+                ),
+                Uitgaande: CountIf(
+                    varMesUit,
+                    Value = "7"
+                )
+            },
+            {
+                Month: "Aug",
+                Inkomende: CountIf(
+                    varMes,
+                    Value = "8"
+                ),
+                Uitgaande: CountIf(
+                    varMesUit,
+                    Value = "8"
+                )
+            },
+            {
+                Month: "Sept",
+                Inkomende: CountIf(
+                    varMes,
+                    Value = "9"
+                ),
+                Uitgaande: CountIf(
+                    varMesUit,
+                    Value = "9"
+                )
+            },
+            {
+                Month: "Okt",
+                Inkomende: CountIf(
+                    varMes,
+                    Value = "10"
+                ),
+                Uitgaande: CountIf(
+                    varMesUit,
+                    Value = "10"
+                )
+            },
+            {
+                Month: "Nov",
+                Inkomende: CountIf(
+                    varMes,
+                    Value = "11"
+                ),
+                Uitgaande: CountIf(
+                    varMesUit,
+                    Value = "11"
+                )
+            },
+            {
+                Month: "Dec",
+                Inkomende: CountIf(
+                    varMes,
+                    Value = "12"
+                ),
+                Uitgaande: CountIf(
+                    varMesUit,
+                    Value = "12"
+                )
+            }
+        );
+        Set(
+            varBibliInk,
+            "
+        https://webaruba.sharepoint.com/sites/W.E.B.ICTTestEnvironment-WEB-Corresponder/incoming"
+        );
+        Set(
+            varBibliOut,
+            "
+        https://webaruba.sharepoint.com/sites/W.E.B.ICTTestEnvironment-WEB-Corresponder/outgoing"
+        )
+    StartScreen: =Screen1
+    Theme: ='W.E.B'
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+
+    Teams As hostControl.DynamicHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

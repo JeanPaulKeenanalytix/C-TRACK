@@ -1,0 +1,3622 @@
+scrContacts As screen:
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+    OnHidden: |-
+        =Set(varOrigen, true);
+        Set(
+            varAddCompany,
+            false
+        );
+        Set(
+            varErrorAddressCom,
+            false
+        );
+        Set(
+            varErrorNameCom,
+            false
+        );
+        Set(
+            varErrorNameCon,
+            false
+        );
+        Set(
+            varErrorEmailCom,
+            false
+        );
+        Set(
+            varInvalidEmail,
+            false
+        );
+        Set(
+            varErrorCityCom,
+            false
+        );
+        Set(
+            varBlank,
+            false
+        );
+        Set(
+            varBlank1,
+            false
+        );
+        Set(
+            varBlank2,
+            false
+        );
+        Set(
+            varBlank4,
+            false
+        );
+        Set(
+            varEmail,
+            false
+        );
+        
+        
+        Set(varAddCompany, false);
+        Set(varAddCompany1, false);
+        Set(varAddCompany3, false);
+        Set(varAddCompany4, false);
+        Set(varAddcontact, false);
+        Set(varAddcontact1, false);
+        Set(varAddcontact2, false);
+        Set(varAddContact3, false);
+        Set(varAddContact4, false);
+        // Inkomende
+        
+        
+        //Uitgaande
+        Reset(txtType_1);
+        Reset(txtGeregistreerd_1);
+        Reset(cbbOntvanger_1);
+        Reset(dateVerzondenOp_1);
+        Reset(txtReferentie_1);
+        Reset(txtReferentie_9);
+        Reset(txtReferentie_8);
+        Reset(txtSleutelwoorden_1);
+        Reset(txtBeschrijving_1);
+        Reset(Attachments_Bijlage1_1)
+
+    Container2_14 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Bold
+        Fill: =RGBA(16, 188, 224, 1)
+        Height: =60
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =1066
+        X: =300
+        Y: =85
+        ZIndex: =1
+
+    "Gallery2_3 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+        '#CopilotOverlayLabel': ="Filtered"
+        BorderColor: =App.Theme.Colors.Darker40
+        DelayItemLoading: =true
+        Height: =561
+        Items: =Sort(Filter(VerzenderUitgaandeCorresponder, CompanyName <> "WEB Aruba NV"),CompanyName,SortOrder.Ascending)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: =Set(selectType, 'CorrespondentieType Choices'.Inkomende)
+        TemplatePadding: =0
+        TemplateSize: =33
+        Visible: |
+            =true
+        Width: =988
+        X: =344
+        Y: =195
+        ZIndex: =2
+
+        Container2_3 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Height: =31
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =976
+            ZIndex: =1
+
+        Title6_9 As label:
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: =ThisItem.CompanyName
+            VerticalAlign: =VerticalAlign.Top
+            Width: =223
+            X: =10
+            Y: =6
+            ZIndex: =2
+
+        Subtitle6_3 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: =ThisItem.Phone
+            VerticalAlign: =VerticalAlign.Top
+            Width: =88
+            X: =644
+            Y: =6
+            ZIndex: =3
+
+        Title6_10 As label:
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: =ThisItem.Adress
+            VerticalAlign: =VerticalAlign.Top
+            Width: =210
+            X: =245
+            Y: =6
+            ZIndex: =4
+
+        Title6_11 As label:
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: =ThisItem.City
+            VerticalAlign: =VerticalAlign.Top
+            Width: =146
+            X: =460
+            Y: =6
+            ZIndex: =5
+
+        Rectangle4 As rectangle:
+            BorderColor: =App.Theme.Colors.Darker40
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =Container2_3.Height
+            HoverFill: =RGBA(90,90,90,0.3)
+            OnSelect: =Select(Parent)
+            Width: =Container2_3.Width
+            ZIndex: =6
+
+        Icon2_3 As icon.Edit:
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =App.Theme.Colors.Darker30
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =20
+            Icon: =Icon.Edit
+            OnSelect: =Set(varEditCompany, true)
+            Width: =26
+            X: =890
+            Y: =6
+            ZIndex: =7
+
+        Icon5_3 As icon.Trash:
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =App.Theme.Colors.Darker30
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =20
+            Icon: =Icon.Trash
+            OnSelect: =Set(varDeleteCompany, true)
+            Width: =18
+            X: =928
+            Y: =5
+            ZIndex: =8
+
+        Icon3 As icon.People:
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =App.Theme.Colors.Darker30
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =25
+            Icon: =Icon.People
+            OnSelect: =Navigate(scrContactsName,ScreenTransition.Fade)
+            Width: =26
+            X: =790
+            Y: =1
+            ZIndex: =9
+
+    NavHeader_7 As NavHeader:
+        ZIndex: =3
+
+    Label3_15 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        Height: =35
+        Size: =12
+        Text: ="Bedrijfsnaam"
+        Visible: |
+            =true
+        Width: =191
+        X: =344
+        Y: =150
+        ZIndex: =4
+
+    Label3_16 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        Height: =38
+        Size: =12
+        Text: ="Adres"
+        Visible: |
+            =true
+        Width: =165
+        X: =584
+        Y: =150
+        ZIndex: =5
+
+    Label3_17 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        Height: =38
+        Size: =12
+        Text: ="City"
+        Visible: |
+            =true
+        Width: =144
+        X: =801
+        Y: =150
+        ZIndex: =6
+
+    Label3_18 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        Height: =38
+        Size: =12
+        Text: ="Telefoon"
+        Visible: |
+            =true
+        Width: =85
+        X: =979
+        Y: =150
+        ZIndex: =7
+
+    Label3_19 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        Height: =38
+        Size: =12
+        Text: ="Acties"
+        Visible: |
+            =true
+        Width: =59
+        X: =1228
+        Y: =150
+        ZIndex: =8
+
+    Button1_2 As button:
+        Align: =Align.Left
+        BorderColor: =App.Theme.Colors.Primary
+        BorderThickness: =0
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        HoverBorderColor: =App.Theme.Colors.Darker10
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(3, 186, 255, 1), -10%)
+        OnSelect: =Launch(varBibliInk)
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =Self.Color
+        PressedFill: =App.Theme.Colors.Darker40
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="Bibliotheek"
+        Width: =259
+        X: =40
+        Y: =340
+        ZIndex: =9
+
+    Label3_20 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        Height: =38
+        Size: =12
+        Text: ="Contacten"
+        Visible: |
+            =true
+        Width: =90
+        X: =1111
+        Y: =150
+        ZIndex: =11
+
+    Rectangle1 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =1
+        Width: =1066
+        X: =300
+        Y: =190
+        ZIndex: =38
+
+    BtnCancel_1 As button:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(180, 214, 250, 1)
+        DisabledFill: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Bold
+        Height: =35
+        HoverBorderColor: =RGBA(60, 60, 70, 1)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(0, 0, 0, 1)
+        OnSelect: =Set(varAddCompany, true)
+        PressedBorderColor: =App.Theme.Colors.Darker40
+        PressedColor: =Self.Color
+        PressedFill: =App.Theme.Colors.Darker40
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Size: =9.5
+        TabIndex: =true
+        Text: ="Toevoegen"
+        Width: =100
+        X: =344
+        Y: =98
+        ZIndex: =39
+
+    NavBarInkomende_6 As NavBarBedrijf:
+        Begin: =scrBegin
+        Dashboard: =scrDashboard
+        Gebruikersbeheer: =scrGebruikersBeheer
+        Inkomende: =scrInkomende
+        Overzicht: =scrPersoon
+        Uitgaande: =scrUitgaande
+        Verzenderslijst: =scrPersoon
+        Y: =85
+        ZIndex: =48
+
+    CtnAddCompany As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(106, 122, 127, 0.2)
+        Height: =681
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Visible: =//varAddCompany
+        Width: =1067
+        X: =299
+        Y: =87
+        ZIndex: =49
+
+        CtnAddCompanyContact_35 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Bold
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =467
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =805
+            X: =141
+            Y: =54
+            ZIndex: =1
+
+            BtnCancel_35 As button:
+                BorderColor: =RGBA(16, 188, 224, 1)
+                Color: =RGBA(214, 221, 224, 1)
+                DisabledBorderColor: =RGBA(244, 244, 244, 1)
+                DisabledColor: =RGBA(180, 214, 250, 1)
+                DisabledFill: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(60, 60, 70, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =35
+                HoverBorderColor: =RGBA(60, 60, 70, 1)
+                HoverColor: =RGBA(60, 60, 70, 1)
+                HoverFill: =RGBA(16, 188, 224, 1)
+                OnSelect: |
+                    =Set(
+                        varAddCompany,
+                        false
+                    );
+                    Set(
+                        varErrorAddressCom,
+                        false
+                    );
+                    Set(
+                        varErrorNameCom,
+                        false
+                    );
+                    Set(
+                        varErrorNameCon,
+                        false
+                    );
+                    Set(
+                        varErrorEmailCom,
+                        false
+                    );
+                    Set(
+                        varInvalidEmail,
+                        false
+                    );
+                    Set(
+                        varErrorCityCom,
+                        false
+                    );
+                    Set(
+                        varBlank,
+                        false
+                    );
+                    Set(
+                        varBlank1,
+                        false
+                    );
+                    Set(
+                        varBlank2,
+                        false
+                    );
+                    Set(
+                        varBlank4,
+                        false
+                    );
+                    Set(
+                        varEmail,
+                        false
+                    );
+                    Reset(txtNameCompany_24);
+                    Reset(txtAddressCompany_24);
+                    Reset(txtCityCompany_24);
+                    Reset(txtCountryCompany_24);
+                    Reset(txtZIPCodeCompany_24);
+                    Reset(txtPhoneCompany_24);
+                    Reset(txtNameContact_23);
+                    Reset(txtPhoneContact_30);
+                    Reset(txtEmailContact_23);
+                PressedBorderColor: =App.Theme.Colors.Darker40
+                PressedColor: =Self.Color
+                PressedFill: =App.Theme.Colors.Darker40
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                TabIndex: =true
+                Text: ="Annuleren"
+                Width: =100
+                X: =32
+                Y: =410
+                ZIndex: =1
+
+            BtnConfirm_33 As button:
+                BorderColor: =RGBA(60, 60, 70, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledBorderColor: =RGBA(244, 244, 244, 1)
+                DisabledColor: =RGBA(180, 214, 250, 1)
+                DisabledFill: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(16, 188, 224, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =35
+                HoverBorderColor: =RGBA(16, 188, 224, 1)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(60, 60, 70, 1)
+                OnSelect: |
+                    =If(
+                        !IsBlank(txtNameCompany_24.Value) && !IsBlank(txtAddressCompany_24.Value) && !IsBlank(txtCityCompany_24.Value) && !IsBlank(txtNameContact_23.Value) && If(
+                            IsBlank(txtEmailContact_23.Value),
+                            true,
+                            varInvalidEmail
+                        ) && If(
+                            IsBlank(txtPhoneCompany_24.Value),
+                            true,
+                            ValidInput
+                        ) && If(
+                            IsBlank(txtPhoneContact_30.Value),
+                            true,
+                            ValidInput1
+                        ),If(CountRows(Filter( VerzenderUitgaandeCorresponder,CompanyName = txtNameCompany_24.Value))=0,
+                        Set(
+                            varCompanyID,
+                            Patch(
+                                VerzenderUitgaandeCorresponder,
+                                Defaults(VerzenderUitgaandeCorresponder),
+                                {
+                                    CompanyName: txtNameCompany_24.Value,
+                                    Adress: txtAddressCompany_24.Value,
+                                    City: txtCityCompany_24.Value,
+                                    Country: txtCountryCompany_24.Value,
+                                    ZIP: txtZIPCodeCompany_24.Value,
+                                    Phone: txtPhoneCompany_24.Value
+                                }
+                            ).IdCorresponder
+                        );
+                        Notify(
+                            "Bedrijf succesvol gemaakt",
+                            NotificationType.Success
+                        );
+                        Patch(
+                            Contacts,
+                            Defaults(Contacts),
+                            {
+                                Name: txtNameContact_23.Value,
+                                Phone: txtPhoneContact_30.Value,
+                                Address: txtAddressCompany_24.Value,
+                                Email: txtEmailContact_23.Value,
+                                City: txtCityCompany_24.Value,
+                                Country: txtCountryCompany_24.Value,
+                                Postcode: txtZIPCodeCompany_24.Value,
+                                Company: LookUp(
+                                    VerzenderUitgaandeCorresponder,
+                                    IdCorresponder = varCompanyID
+                                ),
+                                ContactPerson: 'Choices ContactPerson'.Contact
+                            }
+                        );
+                        Notify(
+                            "Contact succesvol gemaakt",
+                            NotificationType.Success
+                        );
+                        Set(
+                            varAddCompany,
+                            false
+                        );
+                        Set(
+                            varAddPerson,
+                            false
+                        );
+                        Set(
+                            varBlank,
+                            false
+                        );
+                        Set(
+                            varBlank1,
+                            false
+                        );
+                        Set(
+                            varBlank2,
+                            false
+                        );
+                        Set(
+                            varBlank4,
+                            false
+                        );
+                        Reset(txtNameCompany_24);
+                        Reset(txtAddressCompany_24);
+                        Reset(txtCityCompany_24);
+                        Reset(txtCountryCompany_24);
+                        Reset(txtZIPCodeCompany_24);
+                        Reset(txtPhoneCompany_24);
+                        Reset(txtNameContact_23);
+                        Reset(txtPhoneContact_30);
+                        Reset(txtEmailContact_23);
+                        
+                        ,Notify(
+                            "Ya existe",
+                            NotificationType.Error
+                        );),
+                        Notify(
+                            "Er zijn verplichte of onjuiste velden",
+                            NotificationType.Error
+                        );
+                        Set(
+                            varAddCompany,
+                            true
+                        );
+                        If(
+                            IsBlank(txtNameCompany_24.Value),
+                            Set(
+                                varErrorNameCom,
+                                true
+                            ),
+                            Set(
+                                varErrorNamecom,
+                                false
+                            )
+                        );
+                        If(
+                            IsBlank(txtAddressCompany_24.Value),
+                            Set(
+                                varErrorAddressCom,
+                                true
+                            ),
+                            Set(
+                                varErrorAddressCom,
+                                false
+                            )
+                        );
+                        If(
+                            IsBlank(txtCityCompany_24.Value),
+                            Set(
+                                varErrorCityCom,
+                                true
+                            ),
+                            Set(
+                                varErrorCityCom,
+                                false
+                            )
+                        );
+                        If(
+                            IsBlank(txtNameContact_23.Value),
+                            Set(
+                                varErrorNameCon,
+                                true
+                            ),
+                            Set(
+                                varErrorNameCon,
+                                false
+                            )
+                        );
+                        
+                    );
+                PressedBorderColor: =App.Theme.Colors.Darker40
+                PressedColor: =Self.Color
+                PressedFill: =App.Theme.Colors.Darker40
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                TabIndex: =true
+                Text: ="Bevestig"
+                Width: =100
+                X: =660
+                Y: =410
+                ZIndex: =2
+
+            LblNameCompany_24 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Bedrijfsnaam"
+                Width: =126
+                X: =32
+                Y: =70
+                ZIndex: =3
+
+            LblCityCompany_24 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Stad"
+                Width: =126
+                X: =32
+                Y: =130
+                ZIndex: =4
+
+            LblAddressCompany_24 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Adres"
+                Width: =100
+                X: =420
+                Y: =70
+                ZIndex: =5
+
+            LblCountryCompany_24 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Land"
+                Width: =100
+                X: =420
+                Y: =130
+                ZIndex: =6
+
+            LblZIPCodeCompany_32 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Postcode"
+                Width: =110
+                X: =420
+                Y: =190
+                ZIndex: =7
+
+            LblPhoneCompany_24 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Telefoon"
+                Width: =126
+                X: =32
+                Y: =190
+                ZIndex: =8
+
+            CtnNameCompany_24 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorNameCom, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorNameCom, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =150
+                Y: =70
+                ZIndex: =9
+
+                "txtNameCompany_24 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =RGBA(0, 0, 0, 1)
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |-
+                        =Set(varBlank, true);
+                        Set(varErrorNameCom, false)
+                    Placeholder: =""
+                    Required: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =""
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnAddressCompany_24 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorAddressCom, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorAddressCom, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =525
+                Y: =70
+                ZIndex: =10
+
+                "txtAddressCompany_24 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |
+                        =Set(varBlank4, true);
+                        Set(varErrorAddressCom, false)
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnCityCompany_24 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorCityCom, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorCityCom, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =150
+                Y: =130
+                ZIndex: =11
+
+                "txtCityCompany_24 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |-
+                        =Set(varBlank1, true);
+                        Set(varErrorCityCom, false)
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnCountryCompany_24 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =525
+                Y: =130
+                ZIndex: =12
+
+                "txtCountryCompany_24 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: =Set(varBlank2, true)
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnPhoneCompany_24 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(!IsBlank(txtPhoneCompany_24.Value),If(!ValidInput,RGBA(255,0,0,1),RGBA(0,0,0,0)),RGBA(0,0,0,0))
+                BorderThickness: |-
+                    = If(!IsBlank(txtPhoneCompany_24.Value),If(
+                            ValidInput,0,2),0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =150
+                Y: =190
+                ZIndex: =13
+
+                "txtPhoneCompany_24 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |-
+                        =Set(varBlank2, true);
+                        If(
+                            IsNumeric(txtPhoneCompany_24.Value) ,
+                            UpdateContext({ ValidInput: true }),
+                            UpdateContext({ ValidInput: false })
+                        );
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnZIPCodeCompany_24 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =525
+                Y: =190
+                ZIndex: =14
+
+                "txtZIPCodeCompany_24 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: =
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            RtgContact_16 As rectangle:
+                BorderColor: =RGBA(106, 122, 127, 1)
+                Fill: =RGBA(139, 154, 159, 1)
+                Height: =1
+                TabIndex: =true
+                Width: =802
+                Y: =248
+                ZIndex: =15
+
+            LblTitleContact_25 As label:
+                Align: =Align.Center
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                OnSelect: =Set(ModalInkomende, false)
+                Size: =13
+                TabIndex: =true
+                Text: ="Contactgegevens"
+                Width: =500
+                X: =132
+                Y: =250
+                ZIndex: =16
+
+            LblNameContact_26 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Naam"
+                Width: =126
+                X: =32
+                Y: =294
+                ZIndex: =17
+
+            LblPhoneContact_36 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Telefoon"
+                Width: =126
+                X: =32
+                Y: =354
+                ZIndex: =18
+
+            LblEmailContact_25 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Email"
+                Width: =100
+                X: =420
+                Y: =294
+                ZIndex: =19
+
+            CtnNameContact_25 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorNameCon, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorNameCon, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =150
+                Y: =294
+                ZIndex: =20
+
+                "txtNameContact_23 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =RGBA(0, 0, 0, 1)
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |-
+                        =Set(varBlank, true);
+                        Set(varErrorNameCon, false)
+                    Placeholder: =""
+                    Required: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnEmailContact_25 As groupContainer.manualLayoutContainer:
+                BorderColor: |-
+                    =
+                    If(!IsBlank(txtEmailContact_23.Value),If(!varInvalidEmail,RGBA(255,0,0,1),RGBA(0,0,0,0)),RGBA(0,0,0,0))
+                BorderThickness: |-
+                    = If(!IsBlank(txtEmailContact_23.Value),If(
+                            varInvalidEmail,0,2),0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =525
+                Y: =294
+                ZIndex: =21
+
+                "txtEmailContact_23 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |
+                        =If(IsMatch(Self.Value,Match.Email),UpdateContext({varInvalidEmail:true}),UpdateContext({varInvalidEmail:false }));Set(varBlank4, true );
+                        //Set(varInvalidEmail, false);
+                        //Set(varErrorEmailCom, false)
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnPhoneContact_43 As groupContainer.manualLayoutContainer:
+                BorderColor: |-
+                    = If(
+                        !IsBlank(txtPhoneContact_30.Value),
+                        If(
+                            !ValidInput1,RGBA(255, 0, 0, 1), RGBA(0,0, 0, 0)),RGBA(0, 0, 0, 0))
+                BorderThickness: |-
+                    =  If(
+                        !IsBlank(txtPhoneContact_30.Value),If(
+                            ValidInput1,0,2),0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =150
+                Y: =354
+                ZIndex: =22
+
+                "txtPhoneContact_30 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |-
+                        =Set(varBlank1, true);
+                        If(
+                            IsNumeric(txtPhoneContact_30.Value) ,
+                            UpdateContext({ ValidInput1: true }),
+                            UpdateContext({ ValidInput1: false })
+                        );
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            ImgWeb_33 As image:
+                BorderColor: =App.Theme.Colors.Darker40
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =56
+                Image: =web
+                TabIndex: =true
+                Width: =93
+                ZIndex: =23
+
+            RtgCompany_33 As rectangle:
+                BorderColor: =RGBA(106, 122, 127, 1)
+                BorderThickness: =1
+                Fill: =RGBA(16, 188, 224, 1)
+                Height: =1
+                TabIndex: =true
+                Width: =802
+                Y: =56
+                ZIndex: =24
+
+            LblTitleApp_33 As label:
+                Align: =Align.Right
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Italic: =true
+                OnSelect: =Set(ModalInkomende, false)
+                Size: =9
+                TabIndex: =true
+                Text: ="C-Track"
+                Width: =62
+                X: =738
+                ZIndex: =25
+
+            LblTitleCompany_24 As label:
+                Align: =Align.Center
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                OnSelect: =Set(ModalInkomende, false)
+                TabIndex: =true
+                Text: ="Bedrijfgegevens"
+                Width: =500
+                X: =132
+                Y: =12
+                ZIndex: =26
+
+            lblVerzender_110 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Text: ="*"
+                Width: =30
+                X: =21
+                Y: =70
+                ZIndex: =27
+
+            lblVerzender_112 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Text: ="*"
+                Width: =30
+                X: =21
+                Y: =130
+                ZIndex: =28
+
+            lblVerzender_111 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Text: ="*"
+                Width: =30
+                X: =410
+                Y: =70
+                ZIndex: =29
+
+            lblVerzender_136 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Text: ="*"
+                Width: =30
+                X: =21
+                Y: =294
+                ZIndex: =30
+
+            TxtErrorContactInk_210 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorNameCom
+                Width: =96
+                X: =300
+                Y: =100
+                ZIndex: =32
+
+            TxtErrorContactInk_211 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorAddressCom
+                Width: =96
+                X: =680
+                Y: =100
+                ZIndex: =33
+
+            TxtErrorContactInk_212 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorCityCom
+                Width: =96
+                X: =300
+                Y: =160
+                ZIndex: =34
+
+            TxtErrorContactInk_213 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorNameCon
+                Width: =96
+                X: =300
+                Y: =325
+                ZIndex: =35
+
+            TxtErrorContactInk_214 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: |-
+                    =
+                    If(
+                        !IsBlank(txtEmailContact_23.Value),
+                        If(
+                            !varInvalidEmail,
+                            "Ongeldig E-mail",
+                            " "
+                        ),
+                        ""
+                    )
+                Visible: =true
+                Width: =96
+                X: =680
+                Y: =325
+                ZIndex: =37
+
+            TxtErrorContactInk_215 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =false
+                Width: =96
+                X: =660
+                Y: =325
+                ZIndex: =38
+
+            TextCanvas4_35 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                Height: =20
+                Size: =10
+                Text: |-
+                    =If(
+                        !IsBlank(txtPhoneCompany_24.Value),
+                        If(
+                            !ValidInput,
+                            "Vul een nummer in. Géén tekst",
+                            " "
+                        ),
+                        ""
+                    )
+                Weight: ='TextCanvas.Weight'.Regular
+                Width: =150
+                X: =250
+                Y: =220
+                ZIndex: =39
+
+            TextCanvas4_36 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                Height: =20
+                Size: =10
+                Text: |-
+                    =If(
+                        !IsBlank(txtPhoneContact_30.Value),
+                        If(
+                            !ValidInput1,
+                            "Vul een nummer in. Géén tekst",
+                            " "
+                        ),
+                        ""
+                    )
+                Weight: ='TextCanvas.Weight'.Regular
+                Width: =150
+                X: =250
+                Y: =385
+                ZIndex: =40
+
+    CtnEditCompany As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(106, 122, 127, 0.2)
+        Height: =681
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Visible: =varEditCompany
+        Width: =1067
+        X: =299
+        Y: =87
+        ZIndex: =50
+
+        CtnAddCompanyContact_36 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Bold
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =308
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =805
+            X: =141
+            Y: =54
+            ZIndex: =1
+
+            BtnCancel_36 As button:
+                BorderColor: =RGBA(16, 188, 224, 1)
+                Color: =RGBA(214, 221, 224, 1)
+                DisabledBorderColor: =RGBA(244, 244, 244, 1)
+                DisabledColor: =RGBA(180, 214, 250, 1)
+                DisabledFill: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(60, 60, 70, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =35
+                HoverBorderColor: =RGBA(60, 60, 70, 1)
+                HoverColor: =RGBA(60, 60, 70, 1)
+                HoverFill: =RGBA(16, 188, 224, 1)
+                OnSelect: |
+                    =Set(
+                        varEditCompany,
+                        false
+                    );
+                    Set(
+                        varErrorAddressCom,
+                        false
+                    );
+                    Set(
+                        varErrorNameCom,
+                        false
+                    );
+                    Set(
+                        varErrorNameCon,
+                        false
+                    );
+                    Set(
+                        varErrorEmailCom,
+                        false
+                    );
+                    Set(
+                        varInvalidEmail,
+                        false
+                    );
+                    Set(
+                        varErrorCityCom,
+                        false
+                    );
+                    Set(
+                        varBlank,
+                        false
+                    );
+                    Set(
+                        varBlank1,
+                        false
+                    );
+                    Set(
+                        varBlank2,
+                        false
+                    );
+                    Set(
+                        varBlank4,
+                        false
+                    );
+                    Set(
+                        varEmail,
+                        false
+                    );
+                    Reset(txtNameCompany_25);
+                    Reset(txtAddressCompany_25);
+                    Reset(txtCityCompany_25);
+                    Reset(txtCountryCompany_25);
+                    Reset(txtZIPCodeCompany_25);
+                    Reset(txtPhoneCompany_25);
+                PressedBorderColor: =App.Theme.Colors.Darker40
+                PressedColor: =Self.Color
+                PressedFill: =App.Theme.Colors.Darker40
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                TabIndex: =true
+                Text: ="Annuleren"
+                Width: =100
+                X: =32
+                Y: =248
+                ZIndex: =1
+
+            BtnConfirm_34 As button:
+                BorderColor: =RGBA(60, 60, 70, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledBorderColor: =RGBA(244, 244, 244, 1)
+                DisabledColor: =RGBA(180, 214, 250, 1)
+                DisabledFill: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(16, 188, 224, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =35
+                HoverBorderColor: =RGBA(16, 188, 224, 1)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(60, 60, 70, 1)
+                OnSelect: |
+                    =If(
+                        !IsBlank(txtNameCompany_25.Value) && !IsBlank(txtAddressCompany_25.Value) && !IsBlank(txtCityCompany_25.Value) && If(
+                            IsBlank(txtPhoneCompany_25.Value),
+                            true,
+                            ValidInput
+                        ),
+                        Set(
+                            varCompanyID,
+                            Patch(
+                                VerzenderUitgaandeCorresponder,
+                                LookUp(
+                                    VerzenderUitgaandeCorresponder,
+                                    IdCorresponder = Gallery2_3.Selected.IdCorresponder
+                                ),
+                                {
+                                    CompanyName: txtNameCompany_25.Value,
+                                    Adress: txtAddressCompany_25.Value,
+                                    City: txtCityCompany_25.Value,
+                                    Country: txtCountryCompany_25.Value,
+                                    ZIP: txtZIPCodeCompany_25.Value,
+                                    Phone: txtPhoneCompany_25.Value
+                                }
+                            ).IdCorresponder
+                        );
+                        Notify(
+                            "Bedrijf succesvol gemaakt",
+                            NotificationType.Success
+                        );
+                        Notify(
+                            "Contact succesvol gemaakt",
+                            NotificationType.Success
+                        );
+                        Set(
+                            varEditCompany,
+                            false
+                        );
+                        Set(
+                            varAddPerson,
+                            false
+                        );
+                        Set(
+                            varBlank,
+                            false
+                        );
+                        Set(
+                            varBlank1,
+                            false
+                        );
+                        Set(
+                            varBlank2,
+                            false
+                        );
+                        Set(
+                            varBlank4,
+                            false
+                        );
+                        Reset(txtNameCompany_25);
+                        Reset(txtAddressCompany_25);
+                        Reset(txtCityCompany_25);
+                        Reset(txtCountryCompany_25);
+                        Reset(txtZIPCodeCompany_25);
+                        Reset(txtPhoneCompany_25);
+                        ,
+                        Notify(
+                            "Er zijn verplichte of onjuiste velden",
+                            NotificationType.Error
+                        );
+                        Set(
+                            varAddCompany,
+                            true
+                        );
+                        If(
+                            IsBlank(txtNameCompany_25.Value),
+                            Set(
+                                varErrorNameCom,
+                                true
+                            ),
+                            Set(
+                                varErrorNamecom,
+                                false
+                            )
+                        );
+                        If(
+                            IsBlank(txtAddressCompany_25.Value),
+                            Set(
+                                varErrorAddressCom,
+                                true
+                            ),
+                            Set(
+                                varErrorAddressCom,
+                                false
+                            )
+                        );
+                        If(
+                            IsBlank(txtCityCompany_25.Value),
+                            Set(
+                                varErrorCityCom,
+                                true
+                            ),
+                            Set(
+                                varErrorCityCom,
+                                false
+                            )
+                        );
+                        
+                    );
+                PressedBorderColor: =App.Theme.Colors.Darker40
+                PressedColor: =Self.Color
+                PressedFill: =App.Theme.Colors.Darker40
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                TabIndex: =true
+                Text: ="Bevestig"
+                Width: =100
+                X: =660
+                Y: =248
+                ZIndex: =2
+
+            LblNameCompany_25 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Bedrijfsnaam"
+                Width: =126
+                X: =32
+                Y: =70
+                ZIndex: =3
+
+            LblCityCompany_25 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Stad"
+                Width: =126
+                X: =32
+                Y: =130
+                ZIndex: =4
+
+            LblAddressCompany_25 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Adres"
+                Width: =100
+                X: =420
+                Y: =70
+                ZIndex: =5
+
+            LblCountryCompany_25 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Land"
+                Width: =100
+                X: =420
+                Y: =130
+                ZIndex: =6
+
+            LblZIPCodeCompany_33 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Postcode"
+                Width: =110
+                X: =420
+                Y: =190
+                ZIndex: =7
+
+            LblPhoneCompany_25 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Telefoon"
+                Width: =126
+                X: =32
+                Y: =190
+                ZIndex: =8
+
+            CtnNameCompany_25 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorNameCom, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorNameCom, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =150
+                Y: =70
+                ZIndex: =9
+
+                "txtNameCompany_25 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =RGBA(0, 0, 0, 1)
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |-
+                        =Set(varBlank, true);
+                        Set(varErrorNameCom, false)
+                    Placeholder: =""
+                    Required: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =Gallery2_3.Selected.CompanyName
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnAddressCompany_25 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorAddressCom, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorAddressCom, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =525
+                Y: =70
+                ZIndex: =10
+
+                "txtAddressCompany_25 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |
+                        =Set(varBlank4, true);
+                        Set(varErrorAddressCom, false)
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =Gallery2_3.Selected.Adress
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnCityCompany_25 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorCityCom, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorCityCom, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =150
+                Y: =130
+                ZIndex: =11
+
+                "txtCityCompany_25 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |-
+                        =Set(varBlank1, true);
+                        Set(varErrorCityCom, false)
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =Gallery2_3.Selected.City
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnCountryCompany_25 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =525
+                Y: =130
+                ZIndex: =12
+
+                "txtCountryCompany_25 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: =Set(varBlank2, true)
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =Gallery2_3.Selected.Country
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnPhoneCompany_25 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(!IsBlank(txtPhoneCompany_25.Value),If(!ValidInput,RGBA(255,0,0,1),RGBA(0,0,0,0)),RGBA(0,0,0,0))
+                BorderThickness: |-
+                    = If(!IsBlank(txtPhoneCompany_25.Value),If(
+                            ValidInput,0,2),0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =150
+                Y: =190
+                ZIndex: =13
+
+                "txtPhoneCompany_25 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |-
+                        =Set(varBlank2, true);
+                        If(
+                            IsNumeric(txtPhoneCompany_25.Value) ,
+                            UpdateContext({ ValidInput: true }),
+                            UpdateContext({ ValidInput: false })
+                        );
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =Gallery2_3.Selected.Phone
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnZIPCodeCompany_25 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =525
+                Y: =190
+                ZIndex: =14
+
+                "txtZIPCodeCompany_25 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: =
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =Gallery2_3.Selected.ZIP
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            ImgWeb_34 As image:
+                BorderColor: =App.Theme.Colors.Darker40
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =56
+                Image: =web
+                TabIndex: =true
+                Width: =93
+                ZIndex: =23
+
+            RtgCompany_34 As rectangle:
+                BorderColor: =RGBA(106, 122, 127, 1)
+                BorderThickness: =1
+                Fill: =RGBA(16, 188, 224, 1)
+                Height: =1
+                TabIndex: =true
+                Width: =802
+                Y: =56
+                ZIndex: =24
+
+            LblTitleApp_34 As label:
+                Align: =Align.Right
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Italic: =true
+                OnSelect: =Set(ModalInkomende, false)
+                Size: =9
+                TabIndex: =true
+                Text: ="C-Track"
+                Width: =62
+                X: =738
+                ZIndex: =25
+
+            LblTitleCompany_25 As label:
+                Align: =Align.Center
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                OnSelect: =Set(ModalInkomende, false)
+                TabIndex: =true
+                Text: ="Bedrijfgegevens"
+                Width: =500
+                X: =132
+                Y: =12
+                ZIndex: =26
+
+            lblVerzender_137 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Text: ="*"
+                Width: =30
+                X: =21
+                Y: =70
+                ZIndex: =27
+
+            lblVerzender_139 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Text: ="*"
+                Width: =30
+                X: =21
+                Y: =130
+                ZIndex: =28
+
+            lblVerzender_138 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Text: ="*"
+                Width: =30
+                X: =410
+                Y: =70
+                ZIndex: =29
+
+            TxtErrorContactInk_216 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorNameCom
+                Width: =96
+                X: =300
+                Y: =100
+                ZIndex: =32
+
+            TxtErrorContactInk_217 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorAddressCom
+                Width: =96
+                X: =680
+                Y: =100
+                ZIndex: =33
+
+            TxtErrorContactInk_218 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorCityCom
+                Width: =96
+                X: =300
+                Y: =160
+                ZIndex: =34
+
+            TxtErrorContactInk_219 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorNameCon
+                Width: =96
+                X: =300
+                Y: =325
+                ZIndex: =35
+
+            TxtErrorContactInk_220 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =false
+                Width: =96
+                X: =660
+                Y: =325
+                ZIndex: =38
+
+            TextCanvas4_37 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                Height: =20
+                Size: =10
+                Text: |-
+                    =If(
+                        !IsBlank(txtPhoneCompany_25.Value),
+                        If(
+                            !ValidInput,
+                            "Vul een nummer in. Géén tekst",
+                            " "
+                        ),
+                        ""
+                    )
+                Weight: ='TextCanvas.Weight'.Regular
+                Width: =150
+                X: =250
+                Y: =220
+                ZIndex: =39
+
+    CtnAddCompanyInk_3 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(106, 122, 127, 0.2)
+        Height: =681
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Visible: =varAddCompany
+        Width: =1067
+        X: =299
+        Y: =87
+        ZIndex: =51
+
+        CtnAddCompanyContact_19 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Bold
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =497
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =805
+            X: =141
+            Y: =54
+            ZIndex: =1
+
+            BtnCancel_21 As button:
+                BorderColor: =RGBA(16, 188, 224, 1)
+                Color: =RGBA(214, 221, 224, 1)
+                DisabledBorderColor: =RGBA(244, 244, 244, 1)
+                DisabledColor: =RGBA(180, 214, 250, 1)
+                DisabledFill: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(60, 60, 70, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =35
+                HoverBorderColor: =RGBA(60, 60, 70, 1)
+                HoverColor: =RGBA(60, 60, 70, 1)
+                HoverFill: =RGBA(16, 188, 224, 1)
+                OnSelect: |
+                    =Set(
+                       varAddCompany,
+                        false
+                    );
+                    If(varAddPerson, Set(varCom,false);Set(varActive, false), Set(varActive, true);
+                    Set(varCom, true));
+                    Set(varEx, true);
+                    Set(
+                        varErrorAddressCom,
+                        false
+                    );
+                    Set(
+                        varErrorNameCom,
+                        false
+                    );
+                    Set(
+                        varErrorNameCon,
+                        false
+                    );
+                    Set(
+                        varErrorEmailCom,
+                        false
+                    );
+                    Set(
+                        varInvalidEmail,
+                        false
+                    );
+                    Set(
+                        varErrorCityCom,
+                        false
+                    );
+                    Set(
+                        varBlank,
+                        false
+                    );
+                    Set(
+                        varBlank1,
+                        false
+                    );
+                    Set(
+                        varBlank2,
+                        false
+                    );
+                    Set(
+                        varBlank4,
+                        false
+                    );
+                    Set(
+                        varEmail,
+                        false
+                    );
+                    Reset(txtNameCompany_11);
+                    Reset(txtAddressCompany_11);
+                    Reset(txtCityCompany_11);
+                    Reset(txtCountryCompany_11);
+                    Reset(txtZIPCodeCompany_11);
+                    Reset(txtPhoneCompany_11);
+                    Reset(txtNameContact_27);
+                    Reset(txtPhoneContact_36);
+                    Reset(txtEmailContact_27);
+                PressedBorderColor: =App.Theme.Colors.Darker40
+                PressedColor: =Self.Color
+                PressedFill: =App.Theme.Colors.Darker40
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                TabIndex: =true
+                Text: ="Annuleren"
+                Width: =100
+                X: =32
+                Y: =428
+                ZIndex: =1
+
+            BtnConfirm_19 As button:
+                BorderColor: =RGBA(60, 60, 70, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledBorderColor: =RGBA(244, 244, 244, 1)
+                DisabledColor: =RGBA(180, 214, 250, 1)
+                DisabledFill: =RGBA(0, 0, 0, 1)
+                DisplayMode: =If(varEx, DisplayMode.Edit, DisplayMode.View)
+                Fill: =RGBA(16, 188, 224, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =35
+                HoverBorderColor: =RGBA(16, 188, 224, 1)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(60, 60, 70, 1)
+                OnSelect: |
+                    =If(
+                        !IsBlank(txtNameCompany_11.Value) && !IsBlank(txtAddressCompany_11.Value) && !IsBlank(txtCityCompany_11.Value) && !IsBlank(txtNameContact_27.Value) && If(
+                            IsBlank(txtEmailContact_27.Value),
+                            true,
+                            varInvalidEmail
+                        ) && If(
+                            IsBlank(txtPhoneCompany_11.Value),
+                            true,
+                            ValidInput
+                        ) && If(
+                            IsBlank(txtPhoneContact_36.Value),
+                            true,
+                            ValidInput1
+                        ),
+                        Set(
+                            varCompanyID,
+                            Patch(
+                                VerzenderUitgaandeCorresponder,
+                                Defaults(VerzenderUitgaandeCorresponder),
+                                {
+                                    CompanyName: txtNameCompany_11.Value,
+                                    Adress: txtAddressCompany_11.Value,
+                                    City: txtCityCompany_11.Value,
+                                    Country: txtCountryCompany_11.Value,
+                                    ZIP: txtZIPCodeCompany_11.Value,
+                                    Phone: txtPhoneCompany_11.Value
+                                }
+                            ).IdCorresponder
+                        );
+                        Notify(
+                            "Bedrijf succesvol gemaakt",
+                            NotificationType.Success
+                        );
+                        Patch(
+                            Contacts,
+                            Defaults(Contacts),
+                            {
+                                Name: txtNameContact_27.Value,
+                                Phone: txtPhoneContact_36.Value,
+                                Address: txtAddressCompany_11.Value,
+                                Email: txtEmailContact_27.Value,
+                                City: txtCityCompany_11.Value,
+                                Country: txtCountryCompany_11.Value,
+                                Postcode: txtZIPCodeCompany_11.Value,
+                                Company: LookUp(
+                                    VerzenderUitgaandeCorresponder,
+                                    IdCorresponder = varCompanyID
+                                ),
+                                ContactPerson: 'Choices ContactPerson'.Contact
+                            }
+                        );
+                        Notify(
+                            "Contact succesvol gemaakt",
+                            NotificationType.Success
+                        );
+                        Set(
+                            varAddCompany,
+                            false
+                        );
+                        Set(
+                            varAddPerson,
+                            false
+                        );
+                        Set(
+                            varBlank,
+                            false
+                        );
+                        Set(
+                            varBlank1,
+                            false
+                        );
+                        Set(
+                            varBlank2,
+                            false
+                        );
+                        Set(
+                            varBlank4,
+                            false
+                        );
+                        Reset(txtNameCompany_11);
+                        Reset(txtAddressCompany_11);
+                        Reset(txtCityCompany_11);
+                        Reset(txtCountryCompany_11);
+                        Reset(txtZIPCodeCompany_11);
+                        Reset(txtPhoneCompany_11);
+                        Reset(txtNameContact_27);
+                        Reset(txtPhoneContact_36);
+                        Reset(txtEmailContact_27);
+                        ,
+                        Notify(
+                            "Er zijn verplichte of onjuiste velden",
+                            NotificationType.Error
+                        );
+                        Set(
+                            varAddCompany,
+                            true
+                        );
+                        If(
+                            IsBlank(txtNameCompany_11.Value),
+                            Set(
+                                varErrorNameCom,
+                                true
+                            ),
+                            Set(
+                                varErrorNamecom,
+                                false
+                            )
+                        );
+                        If(
+                            IsBlank(txtAddressCompany_11.Value),
+                            Set(
+                                varErrorAddressCom,
+                                true
+                            ),
+                            Set(
+                                varErrorAddressCom,
+                                false
+                            )
+                        );
+                        If(
+                            IsBlank(txtCityCompany_11.Value),
+                            Set(
+                                varErrorCityCom,
+                                true
+                            ),
+                            Set(
+                                varErrorCityCom,
+                                false
+                            )
+                        );
+                        If(
+                            IsBlank(txtNameContact_27.Value),
+                            Set(
+                                varErrorNameCon,
+                                true
+                            ),
+                            Set(
+                                varErrorNameCon,
+                                false
+                            )
+                        );
+                        
+                    );
+                PressedBorderColor: =App.Theme.Colors.Darker40
+                PressedColor: =Self.Color
+                PressedFill: =App.Theme.Colors.Darker40
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                TabIndex: =true
+                Text: ="Bevestig"
+                Width: =100
+                X: =660
+                Y: =428
+                ZIndex: =2
+
+            LblNameCompany_11 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Bedrijfsnaam"
+                Width: =126
+                X: =32
+                Y: =70
+                ZIndex: =3
+
+            LblCityCompany_11 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Stad"
+                Width: =126
+                X: =32
+                Y: =130
+                ZIndex: =4
+
+            LblAddressCompany_11 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Adres"
+                Width: =100
+                X: =420
+                Y: =70
+                ZIndex: =5
+
+            LblCountryCompany_11 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Land"
+                Width: =100
+                X: =420
+                Y: =130
+                ZIndex: =6
+
+            LblZIPCodeCompany_12 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Postcode"
+                Width: =110
+                X: =420
+                Y: =190
+                ZIndex: =7
+
+            LblPhoneCompany_11 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Telefoon"
+                Width: =126
+                X: =32
+                Y: =190
+                ZIndex: =8
+
+            CtnNameCompany_11 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorNameCom, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorNameCom, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =150
+                Y: =70
+                ZIndex: =9
+
+                "txtNameCompany_11 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =RGBA(0, 0, 0, 1)
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |-
+                        =Set(varBlank, true);
+                        Set(varErrorNameCom, false);
+                        Set(varEx, If(CountRows(Filter( VerzenderUitgaandeCorresponder,CompanyName = txtNameCompany_11.Value))=0,true,false))
+                    Placeholder: =""
+                    Required: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: = ""
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnAddressCompany_11 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorAddressCom, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorAddressCom, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =525
+                Y: =70
+                ZIndex: =10
+
+                "txtAddressCompany_11 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |
+                        =Set(varBlank4, true);
+                        Set(varErrorAddressCom, false)
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =If(varAddPerson, txtCityCompany_18.Value, "")
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnCityCompany_11 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorCityCom, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorCityCom, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =150
+                Y: =130
+                ZIndex: =11
+
+                "txtCityCompany_11 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |-
+                        =Set(varBlank1, true);
+                        Set(varErrorCityCom, false)
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =If(varAddPerson, txtPhoneCompany_18.Value, "")
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnCountryCompany_11 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =525
+                Y: =130
+                ZIndex: =12
+
+                "txtCountryCompany_11 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: =Set(varBlank2, true)
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =If(varAddPerson, txtZIPCodeCompany_18.Value, "")
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnPhoneCompany_11 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(!IsBlank(txtPhoneCompany_11.Value),If(!ValidInput,RGBA(255,0,0,1),RGBA(0,0,0,0)),RGBA(0,0,0,0))
+                BorderThickness: |-
+                    = If(!IsBlank(txtPhoneCompany_11.Value),If(
+                            ValidInput,0,2),0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =150
+                Y: =190
+                ZIndex: =13
+
+                "txtPhoneCompany_11 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |-
+                        =Set(varBlank2, true);
+                        If(
+                            IsNumeric(txtPhoneCompany_11.Value) ,
+                            UpdateContext({ ValidInput: true }),
+                            UpdateContext({ ValidInput: false })
+                        );
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnZIPCodeCompany_11 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =525
+                Y: =190
+                ZIndex: =14
+
+                "txtZIPCodeCompany_11 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: =
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =If(varAddPerson,txtCountryCompany_18.Value, "")
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            RtgContact_20 As rectangle:
+                BorderColor: =RGBA(106, 122, 127, 1)
+                Fill: =RGBA(139, 154, 159, 1)
+                Height: =1
+                TabIndex: =true
+                Width: =802
+                Y: =248
+                ZIndex: =15
+
+            LblTitleContact_29 As label:
+                Align: =Align.Center
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                OnSelect: =Set(ModalInkomende, false)
+                Size: =13
+                TabIndex: =true
+                Text: ="Contactgegevens"
+                Width: =500
+                X: =132
+                Y: =250
+                ZIndex: =16
+
+            LblNameContact_30 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Naam"
+                Width: =126
+                X: =32
+                Y: =294
+                ZIndex: =17
+
+            LblPhoneContact_42 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Telefoon"
+                Width: =126
+                X: =32
+                Y: =354
+                ZIndex: =18
+
+            LblEmailContact_29 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Email"
+                Width: =100
+                X: =420
+                Y: =294
+                ZIndex: =19
+
+            CtnNameContact_29 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorNameCon, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorNameCon, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =150
+                Y: =294
+                ZIndex: =20
+
+                "txtNameContact_27 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =RGBA(0, 0, 0, 1)
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |-
+                        =Set(varBlank, true);
+                        Set(varErrorNameCon, false)
+                    Placeholder: =""
+                    Required: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =If(varAddPerson, txtNameCompany_18.Value, "")
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnEmailContact_29 As groupContainer.manualLayoutContainer:
+                BorderColor: |-
+                    =
+                    If(!IsBlank(txtEmailContact_27.Value),If(!varInvalidEmail,RGBA(255,0,0,1),RGBA(0,0,0,0)),RGBA(0,0,0,0))
+                BorderThickness: |-
+                    = If(!IsBlank(txtEmailContact_27.Value),If(
+                            varInvalidEmail,0,2),0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =525
+                Y: =294
+                ZIndex: =21
+
+                "txtEmailContact_27 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |
+                        =If(IsMatch(Self.Value,Match.Email),UpdateContext({varInvalidEmail:true}),UpdateContext({varInvalidEmail:false }));Set(varBlank4, true );
+                        //Set(varInvalidEmail, false);
+                        //Set(varErrorEmailCom, false)
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =If(varAddPerson, txtAddressCompany_18.Value, "")
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnPhoneContact_51 As groupContainer.manualLayoutContainer:
+                BorderColor: |-
+                    = If(
+                        !IsBlank(txtPhoneContact_36.Value),
+                        If(
+                            !ValidInput1,RGBA(255, 0, 0, 1), RGBA(0,0, 0, 0)),RGBA(0, 0, 0, 0))
+                BorderThickness: |-
+                    =  If(
+                        !IsBlank(txtPhoneContact_36.Value),If(
+                            ValidInput1,0,2),0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =150
+                Y: =354
+                ZIndex: =22
+
+                "txtPhoneContact_36 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |-
+                        =Set(varBlank1, true);
+                        If(
+                            IsNumeric(txtPhoneContact_36.Value) ,
+                            UpdateContext({ ValidInput1: true }),
+                            UpdateContext({ ValidInput1: false })
+                        );
+                    Placeholder: =""
+                    Required: =true
+                    TabIndex: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =If(varAddPerson, txtPhoneContact_24.Value, "")
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            ImgWeb_19 As image:
+                BorderColor: =App.Theme.Colors.Darker40
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =56
+                Image: =web
+                TabIndex: =true
+                Width: =93
+                ZIndex: =23
+
+            RtgCompany_19 As rectangle:
+                BorderColor: =RGBA(106, 122, 127, 1)
+                BorderThickness: =1
+                Fill: =RGBA(16, 188, 224, 1)
+                Height: =1
+                TabIndex: =true
+                Width: =802
+                Y: =56
+                ZIndex: =24
+
+            LblTitleApp_19 As label:
+                Align: =Align.Right
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Italic: =true
+                OnSelect: =Set(ModalInkomende, false)
+                Size: =9
+                TabIndex: =true
+                Text: ="C-Track"
+                Width: =62
+                X: =738
+                ZIndex: =25
+
+            LblTitleCompany_11 As label:
+                Align: =Align.Center
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                OnSelect: =Set(ModalInkomende, false)
+                TabIndex: =true
+                Text: ="Bedrijfgegevens"
+                Width: =500
+                X: =132
+                Y: =12
+                ZIndex: =26
+
+            lblVerzender_84 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Text: ="*"
+                Width: =30
+                X: =21
+                Y: =70
+                ZIndex: =27
+
+            lblVerzender_91 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Text: ="*"
+                Width: =30
+                X: =21
+                Y: =130
+                ZIndex: =28
+
+            lblVerzender_90 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Text: ="*"
+                Width: =30
+                X: =410
+                Y: =70
+                ZIndex: =29
+
+            lblVerzender_150 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Text: ="*"
+                Width: =30
+                X: =21
+                Y: =294
+                ZIndex: =30
+
+            TxtErrorContactInk_129 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorNameCom
+                Width: =96
+                X: =300
+                Y: =100
+                ZIndex: =32
+
+            TxtErrorContactInk_130 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorAddressCom
+                Width: =96
+                X: =680
+                Y: =100
+                ZIndex: =33
+
+            TxtErrorContactInk_131 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorCityCom
+                Width: =96
+                X: =300
+                Y: =160
+                ZIndex: =34
+
+            TxtErrorContactInk_174 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorNameCon
+                Width: =96
+                X: =300
+                Y: =325
+                ZIndex: =35
+
+            TxtErrorContactInk_176 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: |-
+                    =
+                    If(
+                        !IsBlank(txtEmailContact_27.Value),
+                        If(
+                            !varInvalidEmail,
+                            "Ongeldig E-mail",
+                            " "
+                        ),
+                        ""
+                    )
+                Visible: =true
+                Width: =96
+                X: =680
+                Y: =325
+                ZIndex: =37
+
+            TxtErrorContactInk_175 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =false
+                Width: =96
+                X: =660
+                Y: =325
+                ZIndex: =38
+
+            TextCanvas4_48 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                Height: =20
+                Size: =10
+                Text: |-
+                    =If(
+                        !IsBlank(txtPhoneCompany_11.Value),
+                        If(
+                            !ValidInput,
+                            "Vul een nummer in. Géén tekst",
+                            " "
+                        ),
+                        ""
+                    )
+                Weight: ='TextCanvas.Weight'.Regular
+                Width: =150
+                X: =250
+                Y: =220
+                ZIndex: =39
+
+            TextCanvas4_49 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                Height: =20
+                Size: =10
+                Text: |-
+                    =If(
+                        !IsBlank(txtPhoneContact_36.Value),
+                        If(
+                            !ValidInput1,
+                            "Vul een nummer in. Géén tekst",
+                            " "
+                        ),
+                        ""
+                    )
+                Weight: ='TextCanvas.Weight'.Regular
+                Width: =150
+                X: =250
+                Y: =385
+                ZIndex: =40
+
+            TextCanvas4_7 As Text:
+                Align: ='TextCanvas.Align'.Justify
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                Height: =32
+                Size: =13
+                Text: =If(IsBlank(txtNameCompany_11.Value),"", If(varEx, "","Een bedrijf een een soortgelijk naam bestaat al"))
+                VerticalAlign: =VerticalAlign.Middle
+                Width: =275
+                X: =38
+                Y: =98
+                ZIndex: =41
+
+            ButtonCanvas3_5 As Button:
+                Align: =""
+                Appearance: ='ButtonCanvas.Appearance'.Subtle
+                BasePaletteColor: =
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                FontSize: =13
+                FontWeight: =FontWeight.Normal
+                Height: =23
+                Icon: =""
+                IconRotation: =0
+                IconStyle: ="Outline"
+                Layout: ="Icon before"
+                OnSelect: |-
+                    =Set(varSelectCom, true);
+                    Set(varAdd, true)
+                Text: ="Zie bedrijf"
+                VerticalAlign: =""
+                Visible: =false
+                Width: =90
+                X: =TextCanvas4_7.X+TextCanvas4_7.Width
+                Y: =103
+                ZIndex: =42
+
+    GrpConfirmUitgaande_7 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =59
+
+        Rectangle1_14 As rectangle:
+            BorderColor: =App.Theme.Colors.Darker40
+            Fill: =RGBA(0, 0, 0, 0.3)
+            Height: =681
+            OnSelect: =Set(varDeleteU, false);
+            Visible: =varDeleteCompany
+            Width: =1066
+            X: =300
+            Y: =87
+            ZIndex: =42
+
+        Button2_20 As button:
+            BorderColor: =App.Theme.Colors.Primary
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(244, 244, 244, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(0, 132, 182, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Semibold
+            Height: =219
+            HoverBorderColor: =Self.BorderColor
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 132, 182, 1)
+            OnSelect: =
+            PressedBorderColor: =App.Theme.Colors.Darker40
+            PressedColor: =Self.Color
+            PressedFill: =Self.Fill
+            Size: =15
+            Text: =""
+            Visible: =varDeleteCompany
+            Width: =400
+            X: =635
+            Y: =282
+            ZIndex: =43
+
+        Label1_43 As label:
+            Align: =Align.Center
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Bold
+            Height: =160
+            OnSelect: =Set(ModalInkomende, false)
+            Size: =15
+            Text: ="Wilt u "&Gallery2_3.Selected.CompanyName&" verwijderen?"
+            Visible: =varDeleteCompany
+            Width: =372
+            X: =649
+            Y: =289
+            ZIndex: =44
+
+        Button4_22 As button:
+            BorderColor: =App.Theme.Colors.Primary
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(244, 244, 244, 1)
+            DisabledColor: =RGBA(180, 214, 250, 1)
+            DisabledFill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =App.Theme.Colors.Darker10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(Self.Fill, -60%)
+            OnSelect: =Set(varDeleteCompany, false);
+            PressedBorderColor: =App.Theme.Colors.Darker40
+            PressedColor: =Self.Color
+            PressedFill: =App.Theme.Colors.Darker40
+            Size: =12
+            Text: ="Annuleren"
+            Visible: =varDeleteCompany
+            Width: =120
+            X: =649
+            Y: =433
+            ZIndex: =45
+
+        Button4_23 As button:
+            BorderColor: =App.Theme.Colors.Primary
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(244, 244, 244, 1)
+            DisabledColor: =RGBA(180, 214, 250, 1)
+            DisabledFill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =App.Theme.Colors.Darker10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(Self.Fill, -60%)
+            OnSelect: |-
+                =Remove(VerzenderUitgaandeCorresponder, Gallery2_3.Selected); Notify("Het Bedrif is succesvol verwijderd",NotificationType.Success);
+                Set(varDeleteCompany, false);
+            PressedBorderColor: =App.Theme.Colors.Darker40
+            PressedColor: =Self.Color
+            PressedFill: =App.Theme.Colors.Darker40
+            Size: =12
+            Text: ="Bevestig"
+            Visible: =varDeleteCompany
+            Width: =120
+            X: =901
+            Y: =433
+            ZIndex: =46
+

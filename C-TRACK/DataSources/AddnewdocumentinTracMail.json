@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "232f6912-f173-4837-ab1f-5c2ba455784e",
+    "Name": "AddnewdocumentinTracMail",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "36ddc3c9-1232-ee11-bdf3-000d3a317ead"
+  }
+]

@@ -1,0 +1,515 @@
+scrBegin As screen:
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+    OnHidden: |-
+        =//Set(SelectedMonth,GalCorrespondentieVO_2.Selected.maand);
+        Reset(DpwYears);
+        Set(SelectedYear,DpwYears.Selected.Value);
+        Set(varAddCompany, false);
+        Set(varAddCompany1, false);
+        Set(varAddCompany3, false);
+        Set(varAddCompany4, false);
+        Set(varAddcontact, false);
+        Set(varAddcontact1, false);
+        Set(varAddcontact2, false);
+        Set(varAddContact3, false);
+        Set(varAddContact4, false);
+        // Inkomende
+        
+        
+        //Uitgaande
+        Reset(txtType_1);
+        Reset(txtGeregistreerd_1);
+        Reset(cbbOntvanger_1);
+        Reset(dateVerzondenOp_1);
+        Reset(txtReferentie_1);
+        Reset(txtReferentie_9);
+        Reset(txtReferentie_8);
+        Reset(txtSleutelwoorden_1);
+        Reset(txtBeschrijving_1);
+        Reset(Attachments_Bijlage1_1)
+    OnVisible: |
+        =Set(SelectedMonth,Month(Today()));
+        Reset(DpwYears);
+        Set(SelectedYear,DpwYears.Selected.Value);
+
+    NavBarHome_1 As NavBarHome:
+        Begin: =scrBegin
+        Contacts: =scrContacts
+        Dashboard: =scrDashboard
+        Gebruikersbeheer: =scrGebruikersBeheer
+        Inkomende: =If(RolUsuario = 'Rol Choices'.Lezer, scrInkomendeOverzicht, scrInkomende)
+        Uitgaande: =If(RolUsuario = 'Rol Choices'.Lezer, scrUitgaandeOverzicht, scrUitgaande)
+        Y: =85
+
+    NavHeader_1 As NavHeader:
+        MainTitle: ="WEB Corresponder"
+        ZIndex: =2
+
+    TxtStatusIDAllC_13 As Text:
+        Align: ='TextCanvas.Align'.Start
+        BorderColor: =
+        BorderStyle: =""
+        DisplayMode: =DisplayMode.Edit
+        Fill: =
+        Font: =""
+        FontColor: =
+        FontItalic: =false
+        FontStrikethrough: =false
+        FontUnderline: =false
+        Height: =40
+        Size: =16
+        Text: ="Stuk ID"
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =60
+        X: =322
+        Y: =190
+        ZIndex: =4
+
+    TxtVerzenderOntvangerAllC_9 As Text:
+        Align: ='TextCanvas.Align'.Start
+        BorderColor: =
+        BorderStyle: =""
+        DisplayMode: =DisplayMode.Edit
+        Fill: =
+        Font: =""
+        FontColor: =
+        FontItalic: =false
+        FontStrikethrough: =false
+        FontUnderline: =false
+        Height: =40
+        Size: =16
+        Text: ="Type"
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =60
+        X: =471
+        Y: =190
+        ZIndex: =5
+
+    TxtDatumAllC_11 As Text:
+        Align: ='TextCanvas.Align'.Start
+        BorderColor: =
+        BorderStyle: =""
+        DisplayMode: =DisplayMode.Edit
+        Fill: =
+        Font: =""
+        FontColor: =
+        FontItalic: =false
+        FontStrikethrough: =false
+        FontUnderline: =false
+        Height: =40
+        Size: =16
+        Text: ="Datum"
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =60
+        X: =909
+        Y: =190
+        ZIndex: =6
+
+    TxtOnderwerpAllC_5 As Text:
+        Align: ='TextCanvas.Align'.Start
+        BorderColor: =
+        BorderStyle: =""
+        DisplayMode: =DisplayMode.Edit
+        Fill: =
+        Font: =""
+        FontColor: =
+        FontItalic: =false
+        FontStrikethrough: =false
+        FontUnderline: =false
+        Height: =40
+        Size: =16
+        Text: ="Referentie"
+        VerticalAlign: =VerticalAlign.Middle
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =100
+        X: =1001
+        Y: =190
+        ZIndex: =7
+
+    TxtActionAllC_13 As Text:
+        Align: ='TextCanvas.Align'.Start
+        BorderColor: =
+        BorderStyle: =""
+        DisplayMode: =DisplayMode.Edit
+        Fill: =
+        Font: =""
+        FontColor: =
+        FontItalic: =false
+        FontStrikethrough: =false
+        FontUnderline: =false
+        Height: =40
+        Size: =16
+        Text: ="Acties"
+        Visible: =true
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =92
+        X: =1261
+        Y: =190
+        ZIndex: =8
+
+    TxtDatumAllC_12 As Text:
+        Align: ='TextCanvas.Align'.Start
+        BorderColor: =
+        BorderStyle: =""
+        DisplayMode: =DisplayMode.Edit
+        Fill: =
+        Font: =""
+        FontColor: =
+        FontItalic: =false
+        FontStrikethrough: =false
+        FontUnderline: =false
+        Height: =40
+        Size: =16
+        Text: ="Ontvanger"
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =100
+        X: =756
+        Y: =190
+        ZIndex: =9
+
+    Container2_6 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Bold
+        Fill: =RGBA(16, 188, 224, 1)
+        Height: =60
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =1066
+        X: =300
+        Y: =87
+        ZIndex: =10
+
+    TextInput1_7 As text:
+        BorderColor: =RGBA(106, 122, 127, 1)
+        BorderThickness: =2
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Font: =App.Theme.Font
+        Height: =33
+        HintText: ="🔍 Zoek"
+        HoverBorderColor: =App.Theme.Colors.Darker40
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =App.Theme.Colors.Lighter70
+        RadiusBottomLeft: =30
+        RadiusBottomRight: =30
+        RadiusTopLeft: =30
+        RadiusTopRight: =30
+        Size: =13
+        Width: =312
+        X: =1021
+        Y: =100
+        ZIndex: =11
+
+    RtgItemsAllC_38 As rectangle:
+        BorderColor: =RGBA(106, 122, 127, 1)
+        BorderThickness: =2
+        Fill: =RGBA(16, 188, 224, 1)
+        Height: =1
+        Width: =1066
+        X: =300
+        Y: =230
+        ZIndex: =12
+
+    Icon2 As icon.DocumentPDF:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Height: =40
+        HoverColor: =RGBA(0, 0, 0, 1)
+        Icon: =Icon.PaperClip
+        Width: =25
+        X: =412
+        Y: =190
+        ZIndex: =13
+
+    CoRowsTotalH As groupContainer.manualLayoutContainer:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderThickness: =0.5
+        Height: =60
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =170
+        X: =316
+        Y: =87
+        ZIndex: =14
+
+        TxtTitleTotH As Text:
+            Align: ='TextCanvas.Align'.Center
+            AutoHeight: =true
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            Fill: =
+            FontColor: =RGBA(255, 255, 255, 1)
+            Height: =32
+            Size: =15
+            Text: ="Totaal"
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =CoRowsTotalH.Width
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+        TxtNumberTotH As Text:
+            Align: ='TextCanvas.Align'.Center
+            AutoHeight: =false
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            Fill: =
+            FontColor: =RGBA(255, 255, 255, 1)
+            FontItalic: =false
+            Height: =55
+            Size: =36
+            Text: =CountRows(GalCorrespondentieVO_2.AllItems)
+            VerticalAlign: =VerticalAlign.Middle
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =CoRowsTotalH.Width
+            Wrap: =true
+            X: =0
+            Y: =8
+            ZIndex: =2
+
+    CoRowsInkomendeH As groupContainer.manualLayoutContainer:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderThickness: =0.5
+        Height: =60
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =170
+        X: =570
+        Y: =87
+        ZIndex: =15
+
+        TxtTitleInkH As Text:
+            Align: ='TextCanvas.Align'.Center
+            AutoHeight: =true
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            Fill: =
+            FontColor: =RGBA(255, 255, 255, 1)
+            Height: =32
+            Size: =15
+            Text: ="Inkomende"
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =CoRowsInkomendeH.Width
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+        TxtNumberInkH As Text:
+            Align: ='TextCanvas.Align'.Center
+            AutoHeight: =false
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            Fill: =
+            FontColor: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Size: =36
+            Text: |-
+                =CountIf(
+                    GalCorrespondentieVO_2.AllItems,
+                   Type = "Inkomende"
+                )
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =CoRowsInkomendeH.Width
+            Wrap: =true
+            X: =0
+            Y: =8
+            ZIndex: =2
+
+    CoRowsUitgaandeH As groupContainer.manualLayoutContainer:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderThickness: =0.5
+        Height: =60
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =170
+        X: =824
+        Y: =87
+        ZIndex: =16
+
+        TxtTitleUitH As Text:
+            Align: ='TextCanvas.Align'.Center
+            AutoHeight: =true
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            Fill: =
+            FontColor: =RGBA(255, 255, 255, 1)
+            Height: =32
+            Size: =15
+            Text: ="Uitgaande"
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =CoRowsUitgaandeH.Width
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+        TxtNumberUitH As Text:
+            Align: ='TextCanvas.Align'.Center
+            AutoHeight: =false
+            BorderColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            Fill: =
+            FontColor: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Size: =36
+            Text: |-
+                =CountIf(
+                    GalCorrespondentieVO_2.AllItems,
+                   Type = "Uitgaande"
+                )
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =CoRowsUitgaandeH.Width
+            Wrap: =true
+            X: =0
+            Y: =8
+            ZIndex: =2
+
+    GrpConfirmUitgaande_4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =16
+
+        Rectangle1_11 As rectangle:
+            BorderColor: =App.Theme.Colors.Darker40
+            Fill: =RGBA(0, 0, 0, 0.3)
+            Height: =681
+            OnSelect: =Set(varDeleteB, false);
+            Visible: =varDeleteB
+            Width: =1066
+            X: =300
+            Y: =87
+            ZIndex: =19
+
+        Button2_17 As button:
+            BorderColor: =App.Theme.Colors.Primary
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(244, 244, 244, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(0, 132, 182, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Semibold
+            Height: =219
+            HoverBorderColor: =Self.BorderColor
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 132, 182, 1)
+            OnSelect: =
+            PressedBorderColor: =App.Theme.Colors.Darker40
+            PressedColor: =Self.Color
+            PressedFill: =Self.Fill
+            Size: =15
+            Text: =""
+            Visible: =varDeleteB
+            Width: =400
+            X: =635
+            Y: =282
+            ZIndex: =20
+
+        Label1_40 As label:
+            Align: =Align.Center
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Bold
+            Height: =160
+            OnSelect: =Set(ModalInkomende, false)
+            Size: =15
+            Text: ="Wilt u deze correspondentie verwijderen?"
+            Visible: =varDeleteB
+            Width: =372
+            X: =649
+            Y: =289
+            ZIndex: =21
+
+        Button4_16 As button:
+            BorderColor: =App.Theme.Colors.Primary
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(244, 244, 244, 1)
+            DisabledColor: =RGBA(180, 214, 250, 1)
+            DisabledFill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =App.Theme.Colors.Darker10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(Self.Fill, -60%)
+            OnSelect: =Set(varDeleteB, false);
+            PressedBorderColor: =App.Theme.Colors.Darker40
+            PressedColor: =Self.Color
+            PressedFill: =App.Theme.Colors.Darker40
+            Size: =12
+            Text: ="Annuleren"
+            Visible: =varDeleteB
+            Width: =120
+            X: =649
+            Y: =433
+            ZIndex: =22
+
+        Button4_17 As button:
+            BorderColor: =App.Theme.Colors.Primary
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(244, 244, 244, 1)
+            DisabledColor: =RGBA(180, 214, 250, 1)
+            DisabledFill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =App.Theme.Colors.Darker10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(Self.Fill, -60%)
+            OnSelect: |-
+                =Remove(Correspondences, GalCorrespondentieVO_2.Selected); Notify("Item Verwijderd",NotificationType.Success);
+                Set(varDeleteB, false);
+            PressedBorderColor: =App.Theme.Colors.Darker40
+            PressedColor: =Self.Color
+            PressedFill: =App.Theme.Colors.Darker40
+            Size: =12
+            Text: ="Bevestig"
+            Visible: =varDeleteB
+            Width: =120
+            X: =901
+            Y: =433
+            ZIndex: =23
+
+    TxtDatumAllC_15 As Text:
+        Align: ='TextCanvas.Align'.Start
+        BorderColor: =
+        BorderStyle: =""
+        DisplayMode: =DisplayMode.Edit
+        Fill: =
+        Font: =""
+        FontColor: =
+        FontItalic: =false
+        FontStrikethrough: =false
+        FontUnderline: =false
+        Height: =40
+        Size: =16
+        Text: ="Verzender"
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =100
+        X: =604
+        Y: =190
+        ZIndex: =18
+

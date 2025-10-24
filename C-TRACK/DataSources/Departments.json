@@ -1,0 +1,99 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "webcorr_departmentses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "webcorr_departments",
+    "MaxGetRowsCount": 2000,
+    "Name": "Departments",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number",
+      "webcorr_department": "Department",
+      "webcorr_departments_AsyncOperations": "System Jobs",
+      "webcorr_departments_BulkDeleteFailures": "Bulk Delete Failures",
+      "webcorr_departments_DuplicateBaseRecord": "Duplicate Records (webcorr_departments_DuplicateBaseRecord)",
+      "webcorr_departments_DuplicateMatchingRecord": "Duplicate Records (webcorr_departments_DuplicateMatchingRecord)",
+      "webcorr_departments_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "webcorr_departments_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "webcorr_departments_ProcessSession": "Process Sessions",
+      "webcorr_departments_SyncErrors": "Sync Errors",
+      "webcorr_departmentsid": "Departments",
+      "webcorr_DivisionId": "Division Id",
+      "webcorr_name": "ID"
+    },
+    "PreferredName": "Departments",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Departments (Views)",
+    "Name": "_webcorr_departments_views",
+    "RelatedEntityName": "Departments",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "300413b2-e6a3-467e-8812-f7984a2d4ef0": "Inactive Departments",
+      "59307758-0933-449e-8f45-61e84fa67501": "Departments Advanced Find View",
+      "643618c2-2002-4d98-aeab-27ef3fa8796a": "Departments Lookup View",
+      "783af9c6-3e0c-4227-bdbb-36def0599130": "Active Departments",
+      "a430bc44-10cd-4d7a-9082-737dd3e43e93": "Departments Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Departments)",
+    "Name": "webcorr_departments_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Departments"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Departments",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Departments)",
+    "Name": "webcorr_departments_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Departments"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Departments",
+    "Type": "OptionSetInfo"
+  }
+]

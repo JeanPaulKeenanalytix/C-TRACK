@@ -1,0 +1,2135 @@
+scrGebruikersBeheer As screen:
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+    OnHidden: |-
+        =Set(varOrigen, true);
+        Set(
+            varAddUser,
+            false
+        );
+        Reset(cbbCCIntern_4);
+        Reset(txtSleutelwoorden_22);
+        Reset(txtSleutelwoorden_24);
+        Reset(txtSleutelwoorden_23);
+        Reset(cbbCCIntern_3);
+        Set(
+            varErrorRol,
+            false
+        );
+        Set(
+            varErrorDepart,
+            false
+        );
+        Set(
+            varErrorSector,
+            false
+        );
+        Set(
+            varErrorUserName,
+            false
+        );
+        Set(
+            varErrorEmailUser,
+            false
+        );
+        Set(
+            varInvalidEmailUser,
+            false
+        );
+        Set(varAddCompany, false);
+        Set(varAddCompany1, false);
+        Set(varAddCompany3, false);
+        Set(varAddCompany4, false);
+        Set(varAddcontact, false);
+        Set(varAddcontact1, false);
+        Set(varAddcontact2, false);
+        Set(varAddContact3, false);
+        Set(varAddContact4, false);
+        // Inkomende
+        
+        
+        //Uitgaande
+        Reset(txtType_1);
+        Reset(txtGeregistreerd_1);
+        Reset(cbbOntvanger_1);
+        Reset(dateVerzondenOp_1);
+        Reset(txtReferentie_1);
+        Reset(txtReferentie_9);
+        Reset(txtReferentie_8);
+        Reset(txtSleutelwoorden_1);
+        Reset(txtBeschrijving_1);
+        Reset(Attachments_Bijlage1_1)
+
+    NavHeader_4 As NavHeader:
+
+    "Gallery2_2 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+        '#CopilotOverlayLabel': ="Filtered"
+        BorderColor: =App.Theme.Colors.Darker40
+        DelayItemLoading: =true
+        Height: =556
+        Items: |-
+            =Sort(
+                Filter(
+                    Gebruikersrollen,
+                    TextInput1_10.Text in IdUSer || TextInput1_10.Text in UserName || TextInput1_10.Text in Sector  || TextInput1_10.Text in Department || IsBlank(TextInput1_10.Text)
+                ),
+                UserName,
+                SortOrder.Ascending
+            )
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: =Set(selectType, 'CorrespondentieType Choices'.Inkomende)
+        TemplatePadding: =0
+        TemplateSize: =43
+        Width: =955
+        X: =350
+        Y: =178
+        ZIndex: =2
+
+        Title6_6 As label:
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =28
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            Size: =10
+            Text: =ThisItem.UserName
+            VerticalAlign: =VerticalAlign.Top
+            Width: =200
+            X: =10
+            Y: =4
+            ZIndex: =1
+
+        Subtitle6_2 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =28
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            Size: =10
+            Text: =ThisItem.Email
+            VerticalAlign: =VerticalAlign.Top
+            Width: =235
+            X: =647
+            Y: =4
+            ZIndex: =2
+
+        Title6_7 As label:
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =28
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            Size: =10
+            Text: =ThisItem.Department
+            VerticalAlign: =VerticalAlign.Top
+            Width: =100
+            X: =222
+            Y: =4
+            ZIndex: =6
+
+        Title6_8 As label:
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =28
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            Size: =10
+            Text: =ThisItem.Rol
+            VerticalAlign: =VerticalAlign.Top
+            Width: =100
+            X: =339
+            Y: =4
+            ZIndex: =7
+
+        Container2_2 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Height: =33
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =954
+            ZIndex: =8
+
+        Icon2_2 As icon.Edit:
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =App.Theme.Colors.Darker30
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =20
+            Icon: =Icon.Edit
+            OnSelect: |-
+                =Set(
+                    varEditUser,
+                    true
+                );
+                Set(
+                    varSectorUser,
+                    Office365Groups.HttpRequest(
+                        "https://graph.microsoft.com/beta/users/" & Gallery2_2.Selected.Email & "?$select=" & LookUp(
+                            'Environment Variable Definitions',
+                            'Schema Name' = "webcorr_DepDiv"
+                        ).'Default Value',
+                        "GET",
+                        ""
+                    )
+                );
+            Width: =26
+            X: =883
+            Y: =4
+            ZIndex: =9
+
+        Icon5_2 As icon.Trash:
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =App.Theme.Colors.Darker30
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =20
+            Icon: =Icon.Trash
+            OnSelect: =Set(varDeleteUser, true);
+            Width: =18
+            X: =913
+            Y: =4
+            ZIndex: =10
+
+        Title6_15 As label:
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =28
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            Size: =10
+            Text: =//ThisItem.webcorr_group
+            VerticalAlign: =VerticalAlign.Top
+            X: =438
+            Y: =4
+            ZIndex: =11
+
+    NavBarHome_4 As NavBarHome:
+        Begin: =scrBegin
+        Contacts: =scrContacts
+        Dashboard: =scrDashboard
+        Gebruikersbeheer: =scrGebruikersBeheer
+        Inkomende: =scrInkomende
+        Uitgaande: =scrUitgaande
+        Y: =85
+        ZIndex: =8
+
+    Container2_23 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Bold
+        Fill: =RGBA(16, 188, 224, 1)
+        Height: =50
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =1066
+        X: =300
+        Y: =87
+        ZIndex: =9
+
+    ButtonCanvas4 As Button:
+        Align: =""
+        BasePaletteColor: =RGBA(60, 60, 70, 1)
+        BorderColor: =
+        BorderStyle: =""
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        Height: =32
+        Icon: =""
+        IconRotation: =0
+        IconStyle: ="Outline"
+        Layout: ="Icon before"
+        OnSelect: =Set(varAddUser, true)
+        Text: ="Toevoegen"
+        VerticalAlign: =""
+        Width: =96
+        X: =350
+        Y: =96
+        ZIndex: =10
+
+    GrpGal5_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =10
+
+        Label3_10 As label:
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Semibold
+            Height: =38
+            Size: =12
+            Text: ="Naam"
+            Width: =345
+            X: =350
+            Y: =140
+            ZIndex: =3
+
+        Label3_11 As label:
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Semibold
+            Height: =38
+            Size: =12
+            Text: ="Sector"
+            Width: =100
+            X: =563
+            Y: =140
+            ZIndex: =4
+
+        Label3_12 As label:
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Semibold
+            Height: =38
+            Size: =12
+            Text: ="Role"
+            Width: =50
+            X: =684
+            Y: =140
+            ZIndex: =5
+
+        Label3_13 As label:
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Semibold
+            Height: =38
+            Size: =12
+            Text: ="E-Mail"
+            Width: =233
+            X: =993
+            Y: =140
+            ZIndex: =6
+
+        Label3_14 As label:
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Semibold
+            Height: =38
+            Size: =12
+            Text: ="Acties"
+            Width: =59
+            X: =1234
+            Y: =140
+            ZIndex: =7
+
+    RtgItemsAllC_41 As rectangle:
+        BorderColor: =RGBA(106, 122, 127, 1)
+        BorderThickness: =2
+        Fill: =RGBA(16, 188, 224, 1)
+        Height: =1
+        Width: =1066
+        X: =300
+        Y: =174
+        ZIndex: =12
+
+    Label3_28 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        Height: =38
+        Size: =12
+        Text: ="Groep"
+        Width: =60
+        X: =784
+        Y: =140
+        ZIndex: =13
+
+    CtnAddContact_5 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(106, 122, 127, 0.2)
+        Height: =681
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Visible: =varAddUser
+        Width: =1067
+        X: =299
+        Y: =87
+        ZIndex: =19
+
+        CtnAddCompanyContact_12 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Bold
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =304
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =805
+            X: =126
+            Y: =42
+            ZIndex: =1
+
+            BtnCancel_13 As button:
+                BorderColor: =RGBA(16, 188, 224, 1)
+                Color: =RGBA(214, 221, 224, 1)
+                DisabledBorderColor: =RGBA(244, 244, 244, 1)
+                DisabledColor: =RGBA(180, 214, 250, 1)
+                DisabledFill: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(60, 60, 70, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =35
+                HoverBorderColor: =RGBA(60, 60, 70, 1)
+                HoverColor: =RGBA(60, 60, 70, 1)
+                HoverFill: =RGBA(16, 188, 224, 1)
+                OnSelect: |-
+                    =Set(
+                        varAddUser,
+                        false
+                    );
+                    Reset(cbbCCIntern_4);
+                    Reset(txtSleutelwoorden_22);
+                    Reset(txtSleutelwoorden_23);
+                    Reset(txtSleutelwoorden_24);
+                    Reset(cbbCCIntern_3);
+                    Reset(cbbCCIntern_28);
+                    Set(
+                        varErrorRol,
+                        false
+                    );
+                    Set(
+                        varErrorGroup,
+                        false
+                    );
+                    Set(
+                        varErrorDepart,
+                        false
+                    );
+                    Set(
+                        varErrorSector,
+                        false
+                    );
+                    Set(
+                        varErrorUserName,
+                        false
+                    );
+                    Set(
+                        varErrorEmailUser,
+                        false
+                    );
+                    Set(
+                        varInvalidEmailUser,
+                        false
+                    )
+                PressedBorderColor: =App.Theme.Colors.Darker40
+                PressedColor: =Self.Color
+                PressedFill: =App.Theme.Colors.Darker40
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                TabIndex: =true
+                Text: ="Annuleren"
+                Width: =100
+                X: =37
+                Y: =253
+                ZIndex: =1
+
+            BtnConfirm_12 As button:
+                BorderColor: =RGBA(60, 60, 70, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledBorderColor: =RGBA(244, 244, 244, 1)
+                DisabledColor: =RGBA(180, 214, 250, 1)
+                DisabledFill: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(16, 188, 224, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =35
+                HoverBorderColor: =RGBA(16, 188, 224, 1)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(60, 60, 70, 1)
+                OnSelect: |
+                    =If(
+                        !IsBlank(cbbCCIntern_3.Selected.DisplayName) && !IsBlank(cbbCCIntern_4.Selected.Value) && !IsBlank(txtSleutelwoorden_23.Value) && !IsBlank(txtSleutelwoorden_24.Value),
+                        If(
+                            CountRows(
+                                Filter(
+                                    Gebruikersrollen,
+                                    UserName = cbbCCIntern_3.Selected.DisplayName
+                                )
+                            ) = 0,
+                            Patch(
+                                Gebruikersrollen,
+                                Defaults(Gebruikersrollen),
+                                {
+                                    UserName: cbbCCIntern_3.Selected.DisplayName,
+                                    Department: txtSleutelwoorden_23.Value,
+                                    Sector: txtSleutelwoorden_24.Value,
+                                    Email: txtSleutelwoorden_22.Value,
+                                    Rol: cbbCCIntern_4.Selected.Value
+                                   
+                                    
+                                }
+                            );
+                            Notify(
+                                "Contact succesvol gemaakt",
+                                NotificationType.Success
+                            );
+                            Set(
+                                varAddUser,
+                                false
+                            );
+                            Reset(cbbCCIntern_4);
+                            Reset(txtSleutelwoorden_22);
+                            Reset(txtSleutelwoorden_24);
+                            Reset(txtSleutelwoorden_23);
+                            Reset(cbbCCIntern_3);
+                            Reset(cbbCCIntern_28);
+                            ,
+                            Notify(
+                                "Deze gebruiker heeft al een rol toegewezen gekregen",
+                                NotificationType.Error
+                            );
+                        ),
+                        Notify(
+                            "Er zijn verplichte velden",
+                            NotificationType.Error
+                        );
+                        If(
+                            IsBlank(cbbCCIntern_3.Selected.DisplayName),
+                            Set(
+                                varErrorUserName,
+                                true
+                            ),
+                            Set(
+                                varErrorUserName,
+                                false
+                            )
+                        );
+                        If(
+                            IsBlank(cbbCCIntern_4.Selected.Value),
+                            Set(
+                                varErrorRol,
+                                true
+                            ),
+                            Set(
+                                varErrorRol,
+                                false
+                            )
+                        );
+                       /* If(
+                            IsBlank(cbbCCIntern_28.Selected.Value),
+                            Set(
+                                varErrorGroup,
+                                true
+                            ),
+                            Set(
+                                varErrorGroup,
+                                false
+                            )
+                        );*/
+                        
+                    );
+                PressedBorderColor: =App.Theme.Colors.Darker40
+                PressedColor: =Self.Color
+                PressedFill: =App.Theme.Colors.Darker40
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                TabIndex: =true
+                Text: ="Bevestig"
+                Width: =100
+                X: =665
+                Y: =253
+                ZIndex: =2
+
+            LblTitleContact_11 As label:
+                Align: =Align.Center
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                OnSelect: =Set(ModalInkomende, false)
+                Size: =13
+                TabIndex: =true
+                Text: ="Contactgegevens"
+                Width: =500
+                X: =137
+                Y: =13
+                ZIndex: =16
+
+            LblNameContact_11 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Naam"
+                Width: =126
+                X: =37
+                Y: =74
+                ZIndex: =17
+
+            LblPhoneContact_11 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Sector"
+                Width: =126
+                X: =37
+                Y: =134
+                ZIndex: =18
+
+            LblEmailContact_11 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Email"
+                Width: =100
+                X: =440
+                Y: =74
+                ZIndex: =19
+
+            CtnNameContact_11 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorUserName, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorUserName, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =171
+                Y: =74
+                ZIndex: =20
+
+                cbbCCIntern_3 As Combobox.pcfdataset:
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderStyle: =""
+                    DefaultSelectedItems: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    InputTextPlaceholder: ="Select..."
+                    Items: =colUser
+                    MultiValueDelimiter: ="; "
+                    OnChange: |-
+                        =Set(
+                                    varErrorUserName,
+                                    false
+                                );
+                                Set(
+                            varSectorUser,
+                            Office365Groups.HttpRequest(
+                                "https://graph.microsoft.com/beta/users/" & Self.Selected.Mail & "?$select=" & LookUp(
+                                    'Environment Variable Definitions',
+                                    'Schema Name' = "webcorr_DepDiv"
+                                ).'Default Value',
+                                "GET",
+                                ""
+                            )
+                        );
+                    Required: =false
+                    SelectMultiple: =false
+                    TriggerOutput: ="Keypress"
+                    ValidationState: ="None"
+                    Visible: =varAddUser
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                    DisplayName1_6 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="DisplayName"
+                        FieldName: ="DisplayName"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =1
+
+            CtnEmailContact_11 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varInvalidEmailUser|| varErrorEmailUser, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varInvalidEmailUser || varErrorEmailUser, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =515
+                Y: =74
+                ZIndex: =21
+
+                "txtSleutelwoorden_22 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.View
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |
+                        =Set(
+                            varEmailUser,
+                            IsMatch(
+                                Self.Value,
+                                Match.Email
+                            )
+                        );
+                        Set(
+                            varInvalidEmailUser,
+                            false
+                        );
+                        Set(
+                            varErrorEmailUser,
+                            false
+                        );
+                    Placeholder: =""
+                    Required: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =cbbCCIntern_3.Selected.Mail
+                    Visible: =varAddUser
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnPhoneContact_11 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorSector, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorSector, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =171
+                Y: =134
+                ZIndex: =22
+
+                "txtSleutelwoorden_24 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.View
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |
+                        =Set(
+                            varEmailUser,
+                            IsMatch(
+                                Self.Value,
+                                Match.Email
+                            )
+                        );
+                        Set(
+                            varInvalidEmailUser,
+                            false
+                        );
+                        Set(
+                            varErrorEmailUser,
+                            false
+                        );
+                    Placeholder: =""
+                    Required: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: |-
+                        =If(!IsBlank(cbbCCIntern_3.Selected.DisplayName),If(
+                            LookUp(
+                                'Environment Variable Definitions',
+                                'Schema Name' = "webcorr_DepDiv"
+                            ).'Default Value' = "department",
+                            varSectorUser.department,
+                            varSectorUser.extension_9248c21cebcd4d3f8000280dbb93800b_division
+                        ))
+                    Visible: =varAddUser
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            ImgWeb_12 As image:
+                BorderColor: =App.Theme.Colors.Darker40
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =56
+                Image: =web
+                TabIndex: =true
+                Width: =93
+                ZIndex: =23
+
+            RtgCompany_12 As rectangle:
+                BorderColor: =RGBA(106, 122, 127, 1)
+                BorderThickness: =1
+                Fill: =RGBA(16, 188, 224, 1)
+                Height: =1
+                TabIndex: =true
+                Width: =802
+                Y: =56
+                ZIndex: =24
+
+            LblTitleApp_12 As label:
+                Align: =Align.Right
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Italic: =true
+                OnSelect: =Set(ModalInkomende, false)
+                Size: =9
+                TabIndex: =true
+                Text: ="C-Track"
+                Width: =62
+                X: =738
+                ZIndex: =25
+
+            lblVerzender_61 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Text: ="*"
+                Width: =30
+                X: =25
+                Y: =69
+                ZIndex: =30
+
+            TxtErrorContactInk_87 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorRol
+                Width: =96
+                X: =324
+                Y: =224
+                ZIndex: =32
+
+            TxtErrorContactInk_89 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorDepart
+                Width: =96
+                X: =669
+                Y: =166
+                ZIndex: =33
+
+            TxtErrorContactInk_92 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorSector
+                Width: =96
+                X: =320
+                Y: =160
+                ZIndex: =34
+
+            TxtErrorContactInk_88 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorUserName
+                Width: =96
+                X: =324
+                Y: =100
+                ZIndex: =35
+
+            TxtErrorContactInk_91 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Ongeldig E-mail"
+                Visible: =varInvalidEmailUser
+                Width: =96
+                X: =669
+                Y: =100
+                ZIndex: =37
+
+            LblPhoneContact_12 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Afdeling"
+                Width: =75
+                X: =440
+                Y: =134
+                ZIndex: =39
+
+            CtnPhoneContact_12 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorDepart, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorDepart, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =515
+                Y: =134
+                ZIndex: =40
+
+                "txtSleutelwoorden_23 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.View
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |
+                        =Set(
+                            varEmailUser,
+                            IsMatch(
+                                Self.Value,
+                                Match.Email
+                            )
+                        );
+                        Set(
+                            varInvalidEmailUser,
+                            false
+                        );
+                        Set(
+                            varErrorEmailUser,
+                            false
+                        );
+                    Placeholder: =""
+                    Required: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =cbbCCIntern_3.Selected.Department
+                    Visible: =varAddUser
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnPhoneContact_13 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorRol, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorRol, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =171
+                Y: =194
+                ZIndex: =42
+
+                cbbCCIntern_4 As Combobox.pcfdataset:
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderStyle: =""
+                    DefaultSelectedItems: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    InputTextPlaceholder: ="Select..."
+                    Items: =Choices(Gebruikersrollen.Rol)
+                    MultiValueDelimiter: ="; "
+                    OnChange: |-
+                        =Set(
+                            varErrorRol,
+                            false
+                        )
+                    Required: =false
+                    SelectMultiple: =false
+                    TriggerOutput: ="Keypress"
+                    ValidationState: ="None"
+                    Visible: =varAddUser
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                    Value1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Value"
+                        FieldName: ="Value"
+                        FieldType: ="l"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =48
+
+            LblPhoneContact_13 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Role"
+                Width: =126
+                X: =37
+                Y: =194
+                ZIndex: =43
+
+            lblVerzender_65 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Text: ="*"
+                Width: =30
+                X: =25
+                Y: =194
+                ZIndex: =46
+
+            TxtErrorContactInk_93 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorNameCom
+                Width: =96
+                X: =324
+                Y: =224
+                ZIndex: =47
+
+            LblPhoneContact_19 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Groep"
+                Width: =75
+                X: =440
+                Y: =194
+                ZIndex: =48
+
+            CtnPhoneContact_19 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorGroup, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorGroup, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =515
+                Y: =194
+                ZIndex: =49
+
+                cbbCCIntern_28 As Combobox.pcfdataset:
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderStyle: =""
+                    DefaultSelectedItems: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    InputTextPlaceholder: ="Select..."
+                    Items: =//Choices(Gebruikersrollen.webcorr_group)
+                    MultiValueDelimiter: ="; "
+                    OnChange: |-
+                        =Set(
+                            varErrorRol,
+                            false
+                        )
+                    Required: =false
+                    SelectMultiple: =true
+                    TriggerOutput: ="Keypress"
+                    ValidationState: ="None"
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                    Value3 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Value"
+                        FieldName: ="Value"
+                        FieldType: ="l"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =51
+
+            TxtErrorContactInk_105 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorGroup
+                Width: =96
+                X: =669
+                Y: =224
+                ZIndex: =50
+
+    CtnEditUser As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(106, 122, 127, 0.2)
+        Height: =681
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Visible: =varEditUser
+        Width: =1067
+        X: =299
+        Y: =87
+        ZIndex: =20
+
+        CtnAddCompanyContact_13 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Bold
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =296
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =805
+            X: =126
+            Y: =42
+            ZIndex: =1
+
+            BtnCancel_14 As button:
+                BorderColor: =RGBA(16, 188, 224, 1)
+                Color: =RGBA(214, 221, 224, 1)
+                DisabledBorderColor: =RGBA(244, 244, 244, 1)
+                DisabledColor: =RGBA(180, 214, 250, 1)
+                DisabledFill: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(60, 60, 70, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =35
+                HoverBorderColor: =RGBA(60, 60, 70, 1)
+                HoverColor: =RGBA(60, 60, 70, 1)
+                HoverFill: =RGBA(16, 188, 224, 1)
+                OnSelect: |-
+                    =Set(
+                        varEditUser,
+                        false
+                    );
+                    Reset(cbbCCIntern_25);
+                    Reset(txtSleutelwoorden_25);
+                    Reset(txtSleutelwoorden_27);
+                    Reset(txtSleutelwoorden_26);
+                    Reset(cbbCCIntern_22);
+                    Reset(cbbCCIntern_27);
+                    Set(
+                        varErrorRol,
+                        false
+                    );
+                    Set(
+                        varErrorGroup,
+                        false
+                    );
+                    Set(
+                        varErrorDepart,
+                        false
+                    );
+                    Set(
+                        varErrorSector,
+                        false
+                    );
+                    Set(
+                        varErrorUserName,
+                        false
+                    );
+                    Set(
+                        varErrorEmailUser,
+                        false
+                    );
+                    Set(
+                        varInvalidEmailUser,
+                        false
+                    )
+                PressedBorderColor: =App.Theme.Colors.Darker40
+                PressedColor: =Self.Color
+                PressedFill: =App.Theme.Colors.Darker40
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                TabIndex: =true
+                Text: ="Annuleren"
+                Width: =100
+                X: =37
+                Y: =246
+                ZIndex: =1
+
+            BtnConfirm_13 As button:
+                BorderColor: =RGBA(60, 60, 70, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledBorderColor: =RGBA(244, 244, 244, 1)
+                DisabledColor: =RGBA(180, 214, 250, 1)
+                DisabledFill: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(16, 188, 224, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =35
+                HoverBorderColor: =RGBA(16, 188, 224, 1)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(60, 60, 70, 1)
+                OnSelect: |
+                    =If(
+                        !IsBlank(cbbCCIntern_22.Selected.DisplayName) && !IsBlank(cbbCCIntern_25.Selected.Value) &&  !IsBlank(txtSleutelwoorden_27.Value) && !IsBlank(txtSleutelwoorden_26.Value),
+                        Patch(
+                            Gebruikersrollen,
+                            LookUp(
+                                Gebruikersrollen,
+                                IdUSer = Gallery2_2.Selected.IdUSer
+                            ),
+                            {
+                                UserName: cbbCCIntern_22.Selected.DisplayName,
+                                Department: txtSleutelwoorden_27.Value,
+                                Sector: txtSleutelwoorden_26.Value,
+                                Email: txtSleutelwoorden_25.Value,
+                                Rol: cbbCCIntern_25.Selected.Value
+                                              
+                            }
+                        );
+                        Notify(
+                            "Contact succesvol gemaakt",
+                            NotificationType.Success
+                        );
+                        Set(
+                            varEditUser,
+                            false
+                        );
+                        Reset(cbbCCIntern_25);
+                        Reset(txtSleutelwoorden_25);
+                        Reset(txtSleutelwoorden_27);
+                        Reset(txtSleutelwoorden_26);
+                        Reset(cbbCCIntern_22);
+                        ,
+                        Notify(
+                            "Er zijn verplichte velden",
+                            NotificationType.Error
+                        );
+                        If(
+                            IsBlank(cbbCCIntern_22.Selected.DisplayName),
+                            Set(
+                                varErrorUserName,
+                                true
+                            ),
+                            Set(
+                                varErrorUserName,
+                                false
+                            )
+                        );
+                        If(
+                            IsBlank(cbbCCIntern_25.Selected.Value),
+                            Set(
+                                varErrorRol,
+                                true
+                            ),
+                            Set(
+                                varErrorRol,
+                                false
+                            )
+                        );
+                        /*If(
+                            IsBlank(cbbCCIntern_27.Selected.Value),
+                            Set(
+                                varErrorGroup,
+                                true
+                            ),
+                            Set(
+                                varErrorGroup,
+                                false
+                            )
+                        );*/
+                        
+                    );
+                PressedBorderColor: =App.Theme.Colors.Darker40
+                PressedColor: =Self.Color
+                PressedFill: =App.Theme.Colors.Darker40
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                TabIndex: =true
+                Text: ="Bevestig"
+                Width: =100
+                X: =665
+                Y: =246
+                ZIndex: =2
+
+            LblTitleContact_12 As label:
+                Align: =Align.Center
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                OnSelect: =Set(ModalInkomende, false)
+                Size: =13
+                TabIndex: =true
+                Text: ="Contactgegevens"
+                Width: =500
+                X: =137
+                Y: =13
+                ZIndex: =16
+
+            LblNameContact_12 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Naam"
+                Width: =126
+                X: =37
+                Y: =74
+                ZIndex: =17
+
+            LblPhoneContact_14 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Sector"
+                Width: =126
+                X: =37
+                Y: =134
+                ZIndex: =18
+
+            LblEmailContact_12 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Email"
+                Width: =100
+                X: =440
+                Y: =74
+                ZIndex: =19
+
+            CtnNameContact_12 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorUserName, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorUserName, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =171
+                Y: =74
+                ZIndex: =20
+
+                cbbCCIntern_22 As Combobox.pcfdataset:
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderStyle: =""
+                    DefaultSelectedItems: |-
+                        =Filter(
+                            colUser,
+                            Mail in Split(
+                                Gallery2_2.Selected.Email,
+                                ";"
+                            )
+                        )
+                    DisplayMode: =DisplayMode.View
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    InputTextPlaceholder: ="Select..."
+                    Items: =colUser
+                    MultiValueDelimiter: ="; "
+                    OnChange: |-
+                        =Set(
+                                    varErrorUserName,
+                                    false
+                                );
+                                Set(
+                            varSectorUser,
+                            Office365Groups.HttpRequest(
+                                "https://graph.microsoft.com/beta/users/" & Self.Selected.Mail & "?$select=" & LookUp(
+                                    'Environment Variable Definitions',
+                                    'Schema Name' = "webcorr_DepDiv"
+                                ).'Default Value',
+                                "GET",
+                                ""
+                            )
+                        );
+                    Required: =false
+                    SelectMultiple: =false
+                    TriggerOutput: ="Keypress"
+                    ValidationState: ="None"
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                    DisplayName1_8 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="DisplayName"
+                        FieldName: ="DisplayName"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =1
+
+            CtnEmailContact_12 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varInvalidEmailUser|| varErrorEmailUser, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varInvalidEmailUser || varErrorEmailUser, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =515
+                Y: =74
+                ZIndex: =21
+
+                "txtSleutelwoorden_25 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.View
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |
+                        =Set(
+                            varEmailUser,
+                            IsMatch(
+                                Self.Value,
+                                Match.Email
+                            )
+                        );
+                        Set(
+                            varInvalidEmailUser,
+                            false
+                        );
+                        Set(
+                            varErrorEmailUser,
+                            false
+                        );
+                    Placeholder: =""
+                    Required: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =cbbCCIntern_22.Selected.Mail
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnPhoneContact_14 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorSector, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorSector, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =171
+                Y: =134
+                ZIndex: =22
+
+                "txtSleutelwoorden_26 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.View
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |
+                        =Set(
+                            varEmailUser,
+                            IsMatch(
+                                Self.Value,
+                                Match.Email
+                            )
+                        );
+                        Set(
+                            varInvalidEmailUser,
+                            false
+                        );
+                        Set(
+                            varErrorEmailUser,
+                            false
+                        );
+                    Placeholder: =""
+                    Required: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: |-
+                        =If(!IsBlank(cbbCCIntern_22.Selected.DisplayName),
+                        If(
+                            LookUp(
+                                'Environment Variable Definitions',
+                                'Schema Name' = "webcorr_DepDiv"
+                            ).'Default Value' = "department",
+                            varSectorUser.department,
+                            varSectorUser.extension_9248c21cebcd4d3f8000280dbb93800b_division
+                        ))
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            ImgWeb_13 As image:
+                BorderColor: =App.Theme.Colors.Darker40
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =56
+                Image: =web
+                TabIndex: =true
+                Width: =93
+                ZIndex: =23
+
+            RtgCompany_13 As rectangle:
+                BorderColor: =RGBA(106, 122, 127, 1)
+                BorderThickness: =1
+                Fill: =RGBA(16, 188, 224, 1)
+                Height: =1
+                TabIndex: =true
+                Width: =802
+                Y: =56
+                ZIndex: =24
+
+            LblTitleApp_13 As label:
+                Align: =Align.Right
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Italic: =true
+                OnSelect: =Set(ModalInkomende, false)
+                Size: =9
+                TabIndex: =true
+                Text: ="C-Track"
+                Width: =62
+                X: =738
+                ZIndex: =25
+
+            lblVerzender_62 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Text: ="*"
+                Width: =30
+                X: =25
+                Y: =69
+                ZIndex: =30
+
+            TxtErrorContactInk_90 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorRol
+                Width: =96
+                X: =324
+                Y: =224
+                ZIndex: =32
+
+            TxtErrorContactInk_95 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorDepart
+                Width: =96
+                X: =669
+                Y: =166
+                ZIndex: =33
+
+            TxtErrorContactInk_97 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorSector
+                Width: =96
+                X: =320
+                Y: =160
+                ZIndex: =34
+
+            TxtErrorContactInk_94 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorUserName
+                Width: =96
+                X: =324
+                Y: =100
+                ZIndex: =35
+
+            TxtErrorContactInk_96 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Ongeldig E-mail"
+                Visible: =varInvalidEmailUser
+                Width: =96
+                X: =669
+                Y: =100
+                ZIndex: =37
+
+            LblPhoneContact_15 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Afdeling"
+                Width: =75
+                X: =440
+                Y: =134
+                ZIndex: =39
+
+            CtnPhoneContact_15 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorDepart, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorDepart, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =515
+                Y: =134
+                ZIndex: =40
+
+                "txtSleutelwoorden_27 As 'Text input'":
+                    Align: =Align.Left
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.View
+                    Fill: =
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    MaxLength: =-1
+                    Mode: ='TextInputCanvas.Mode'.SingleLine
+                    OnChange: |
+                        =Set(
+                            varEmailUser,
+                            IsMatch(
+                                Self.Value,
+                                Match.Email
+                            )
+                        );
+                        Set(
+                            varInvalidEmailUser,
+                            false
+                        );
+                        Set(
+                            varErrorEmailUser,
+                            false
+                        );
+                    Placeholder: =""
+                    Required: =true
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =cbbCCIntern_22.Selected.Department
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            CtnPhoneContact_16 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorRol, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorRol, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =171
+                Y: =194
+                ZIndex: =42
+
+                cbbCCIntern_25 As Combobox.pcfdataset:
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderStyle: =""
+                    DefaultSelectedItems: =Filter(Choices(Gebruikersrollen.Rol), Value = Gallery2_2.Selected.Rol)
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    InputTextPlaceholder: ="Select..."
+                    Items: =Choices(Gebruikersrollen.Rol)
+                    MultiValueDelimiter: ="; "
+                    OnChange: |-
+                        =Set(
+                            varErrorRol,
+                            false
+                        )
+                    Required: =false
+                    SelectMultiple: =false
+                    TriggerOutput: ="Keypress"
+                    ValidationState: ="None"
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                    Value1_1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Value"
+                        FieldName: ="Value"
+                        FieldType: ="l"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =48
+
+            LblPhoneContact_16 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Role"
+                Width: =126
+                X: =37
+                Y: =194
+                ZIndex: =43
+
+            lblVerzender_68 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(255, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                Text: ="*"
+                Width: =30
+                X: =25
+                Y: =194
+                ZIndex: =46
+
+            TxtErrorContactInk_98 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorNameCom
+                Width: =96
+                X: =324
+                Y: =224
+                ZIndex: =47
+
+            LblPhoneContact_18 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(60, 60, 70, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                TabIndex: =true
+                Text: ="Groep"
+                Width: =75
+                X: =440
+                Y: =194
+                ZIndex: =48
+
+            CtnPhoneContact_18 As groupContainer.manualLayoutContainer:
+                BorderColor: =If(varErrorGroup, RGBA(255, 0, 0, 1), RGBA(79, 90, 94, 1))
+                BorderThickness: =If(varErrorGroup, 2,0)
+                DropShadow: =DropShadow.Regular
+                Height: =30
+                Width: =250
+                X: =515
+                Y: =194
+                ZIndex: =49
+
+                cbbCCIntern_27 As Combobox.pcfdataset:
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderStyle: =""
+                    DefaultSelectedItems: =//LookUp(Choices(Gebruikersrollen.Group), Value = Gallery2_2.Selected.Group)
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    InputTextPlaceholder: ="Select..."
+                    Items: =//Choices(Gebruikersrollen.webcorr_group)
+                    MultiValueDelimiter: ="; "
+                    OnChange: |-
+                        =Set(
+                            varErrorRol,
+                            false
+                        )
+                    Required: =false
+                    SelectMultiple: =false
+                    TriggerOutput: ="Keypress"
+                    ValidationState: ="None"
+                    Visible: =true
+                    Width: =250
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                    Value2 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Value"
+                        FieldName: ="Value"
+                        FieldType: ="l"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =50
+
+            TxtErrorContactInk_106 As Text:
+                Align: ='TextCanvas.Align'.End
+                BorderColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =RGBA(255, 0, 0, 1)
+                FontItalic: =true
+                Height: =26
+                Size: =10
+                Text: ="Verplicht veld"
+                Visible: =varErrorGroup
+                Width: =96
+                X: =669
+                Y: =224
+                ZIndex: =50
+
+    GrpDeleteUserRole As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =61
+
+        Rectangle1_13 As rectangle:
+            BorderColor: =App.Theme.Colors.Darker40
+            Fill: =RGBA(0, 0, 0, 0.3)
+            Height: =681
+            OnSelect: =Set(varDeleteU, false);
+            Visible: =varDeleteUser
+            Width: =1066
+            X: =300
+            Y: =87
+            ZIndex: =14
+
+        Button2_19 As button:
+            BorderColor: =App.Theme.Colors.Primary
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(244, 244, 244, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(0, 132, 182, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Semibold
+            Height: =219
+            HoverBorderColor: =Self.BorderColor
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 132, 182, 1)
+            OnSelect: =
+            PressedBorderColor: =App.Theme.Colors.Darker40
+            PressedColor: =Self.Color
+            PressedFill: =Self.Fill
+            Size: =15
+            Text: =""
+            Visible: =varDeleteUser
+            Width: =400
+            X: =635
+            Y: =282
+            ZIndex: =15
+
+        Label1_42 As label:
+            Align: =Align.Center
+            BorderColor: =App.Theme.Colors.Darker40
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Bold
+            Height: =160
+            OnSelect: =Set(ModalInkomende, false)
+            Size: =15
+            Text: ="Wilt u "&Gallery2_2.Selected.UserName&" verwijderen?"
+            Visible: =varDeleteUser
+            Width: =372
+            X: =649
+            Y: =289
+            ZIndex: =16
+
+        Button4_20 As button:
+            BorderColor: =App.Theme.Colors.Primary
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(244, 244, 244, 1)
+            DisabledColor: =RGBA(180, 214, 250, 1)
+            DisabledFill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =App.Theme.Colors.Darker10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(Self.Fill, -60%)
+            OnSelect: =Set(varDeleteUser, false);
+            PressedBorderColor: =App.Theme.Colors.Darker40
+            PressedColor: =Self.Color
+            PressedFill: =App.Theme.Colors.Darker40
+            Size: =12
+            Text: ="Annuleren"
+            Visible: =varDeleteUser
+            Width: =120
+            X: =649
+            Y: =433
+            ZIndex: =17
+
+        Button4_21 As button:
+            BorderColor: =App.Theme.Colors.Primary
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(244, 244, 244, 1)
+            DisabledColor: =RGBA(180, 214, 250, 1)
+            DisabledFill: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =App.Theme.Colors.Darker10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(Self.Fill, -60%)
+            OnSelect: |-
+                =Remove(Gebruikersrollen, Gallery2_2.Selected); Notify("Item Verwijderd",NotificationType.Success);
+                Set(varDeleteUser, false);
+            PressedBorderColor: =App.Theme.Colors.Darker40
+            PressedColor: =Self.Color
+            PressedFill: =App.Theme.Colors.Darker40
+            Size: =12
+            Text: ="Bevestig"
+            Visible: =varDeleteUser
+            Width: =120
+            X: =901
+            Y: =433
+            ZIndex: =18
+

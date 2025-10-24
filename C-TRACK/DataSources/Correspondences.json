@@ -1,0 +1,155 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "webcorr_correspondences",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "webcorr_correspondence",
+    "MaxGetRowsCount": 2000,
+    "Name": "Correspondences",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number",
+      "webcorr_addressee": "Addressee",
+      "webcorr_afdeling": "Afdeling",
+      "webcorr_archiefnummer": "Archiefnummer",
+      "webcorr_beschrijving": "Beschrijving",
+      "webcorr_bijlagen": "Bijlage(n)",
+      "webcorr_contact": "Contact",
+      "webcorr_contactontvanger": "ContactOntvanger",
+      "webcorr_correspondence_AsyncOperations": "System Jobs",
+      "webcorr_correspondence_BulkDeleteFailures": "Bulk Delete Failures",
+      "webcorr_correspondence_DuplicateBaseRecord": "Duplicate Records (webcorr_correspondence_DuplicateBaseRecord)",
+      "webcorr_correspondence_DuplicateMatchingRecord": "Duplicate Records (webcorr_correspondence_DuplicateMatchingRecord)",
+      "webcorr_correspondence_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "webcorr_correspondence_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "webcorr_correspondence_ProcessSession": "Process Sessions",
+      "webcorr_correspondence_SyncErrors": "Sync Errors",
+      "webcorr_correspondenceid": "Correspondence",
+      "webcorr_geregistreerdop": "Geregistreerd op",
+      "webcorr_group": "Group",
+      "webcorr_jaar": "jaar",
+      "webcorr_kenmerk": "Kenmerk",
+      "webcorr_maand": "maand",
+      "webcorr_name": "ID",
+      "webcorr_ontvanger": "Ontvanger",
+      "webcorr_origin": "Origin",
+      "webcorr_sleutelwoorden": "Sleutelwoorden",
+      "webcorr_type": "Type",
+      "webcorr_verzender": "Verzender",
+      "webcorr_verzondenop": "Verzonden op"
+    },
+    "PreferredName": "Correspondences",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Correspondences (Views)",
+    "Name": "_webcorr_correspondence_views",
+    "RelatedEntityName": "Correspondences",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "11d88251-9895-466f-944b-cb7036540859": "Inactive Correspondences",
+      "324d8031-1dfb-4848-8920-b2e1447225d7": "Active Correspondences",
+      "952fbbfd-3e67-41a8-8fce-21a0c87698c8": "Correspondence Lookup View",
+      "bc5aa21d-1490-4b6c-8eb0-e67ecc0a5c66": "Correspondence Associated View",
+      "dc1afbe0-64d4-4ae7-880c-8cc401c240ce": "Correspondence Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Choice Addressee ",
+    "Name": "webcorr_choiceaddressee",
+    "OptionSetInfoNameMapping": {
+      "172640000": "Company",
+      "172640001": "Person"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "webcorr_addressee",
+        "OptionSetReferenceEntityName": "Correspondences"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "webcorr_addressee",
+    "RelatedEntityName": "Correspondences",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Correspondences)",
+    "Name": "webcorr_correspondence_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Correspondences"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Correspondences",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Correspondences)",
+    "Name": "webcorr_correspondence_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Correspondences"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Correspondences",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "OriginCorrChoices",
+    "Name": "webcorr_origincorrchoices",
+    "OptionSetInfoNameMapping": {
+      "172640000": "Intern",
+      "172640001": "Extern"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "webcorr_origin",
+        "OptionSetReferenceEntityName": "Correspondences"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "webcorr_origin",
+    "RelatedEntityName": "Correspondences",
+    "Type": "OptionSetInfo"
+  }
+]

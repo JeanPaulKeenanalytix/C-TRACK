@@ -1,0 +1,63 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+ComponentDefinitions:
+  NavHeader:
+    DefinitionType: CanvasComponent
+    CustomProperties:
+      MainTitle:
+        PropertyKind: Input
+        DisplayName: MainTitle
+        Description: A custom property
+        DataType: Text
+        Default: ="Text"
+    Properties:
+      Height: =87
+      Width: =1366
+    Children:
+      - imgHeader:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =87
+            Image: =WEB4UTV_Header_Background
+            ImagePosition: =ImagePosition.Stretch
+            Width: =1366
+      - iconHeaderMain:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =30
+            Image: ='menu (1)'
+            Visible: =false
+            Width: =30
+            X: =250
+            Y: =27
+      - iconHeaderUser:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =30
+            Image: =usuario
+            Width: =30
+            X: =1296
+            Y: =27
+      - Label6:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            Size: =18
+            Text: ="C-Track"
+            Width: =1016
+            X: =280
+            Y: =27

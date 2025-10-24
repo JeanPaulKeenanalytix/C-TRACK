@@ -1,0 +1,254 @@
+NavBarInkomende_2 As CanvasComponent:
+    Aanmaken: =App.ActiveScreen
+    Begin: =App.ActiveScreen
+    Contacts: =App.ActiveScreen
+    Dashboard: =App.ActiveScreen
+    Fill: =RGBA(0, 0, 0, 0)
+    Gebruikersbeheer: =App.ActiveScreen
+    Height: =683
+    Uitgaande: =App.ActiveScreen
+    Verzenderslijst: =App.ActiveScreen
+    Width: =300
+    X: =0
+    Y: =0
+    ZIndex: =1
+    Zoeken: =App.ActiveScreen
+
+    RtgNavBarHome_5 As rectangle:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(0, 132, 181, 1)
+        Height: =683
+        Width: =300
+        ZIndex: =1
+
+    LblInkomende_2 As label:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Size: =15
+        Text: ="Inkomende"
+        X: =17
+        Y: =55
+        ZIndex: =2
+
+    btnBegin_2 As button:
+        Align: =Align.Left
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Semibold
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(3, 186, 255, 1), -10%)
+        OnSelect: =Navigate(NavBarInkomende_2.Begin)
+        Size: =15
+        Text: ="Begin"
+        Width: =270
+        X: =17
+        Y: =5
+        ZIndex: =3
+
+    btnGebruikersbeheerI_2 As button:
+        Align: =Align.Left
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Semibold
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(3, 186, 255, 1), -10%)
+        OnSelect: =Navigate(NavBarInkomende_2.Gebruikersbeheer)
+        Size: =15
+        Text: ="Gebruikersbeheer"
+        Visible: |-
+            =If(
+                RolUsuario = 'Rol Choices'.Bewerker,
+                false,
+                RolUsuario = 'Rol Choices'.Lezer,
+                false,
+                true
+            )
+        Width: =270
+        X: =17
+        Y: =355
+        ZIndex: =4
+
+    btnUitgaandeI_1 As button:
+        Align: =Align.Left
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Semibold
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(3, 186, 255, 1), -10%)
+        OnSelect: =Navigate(NavBarInkomende_2.Uitgaande)
+        Size: =15
+        Text: ="Uitgaande"
+        Width: =270
+        X: =17
+        Y: |-
+            =If(
+                RolUsuario = 'Rol Choices'.Lezer,
+                155,
+                255
+            )
+        ZIndex: =5
+
+    btnDashboardI_2 As button:
+        Align: =Align.Left
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Semibold
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(3, 186, 255, 1), -10%)
+        OnSelect: =Navigate(NavBarInkomende_2.Dashboard)
+        Size: =15
+        Text: ="Dashboard"
+        Visible: =If(RolUsuario='Rol Choices'.Lezer,false,true)
+        Width: =270
+        X: =17
+        Y: =If(RolUsuario='Rol Choices'.Bewerker,355,405)
+        ZIndex: =6
+
+    btnInkomendeOverzicht_2 As button:
+        Align: =Align.Left
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Semibold
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(3, 186, 255, 1), -10%)
+        OnSelect: =Navigate(NavBarInkomende_2.Aanmaken)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="Nieuw"
+        Visible: |-
+            =If(
+                RolUsuario = 'Rol Choices'.Lezer, false,true)
+        Width: =259
+        X: =42
+        Y: =105
+        ZIndex: =7
+
+    LblInkomende_4 As label:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Color: =RGBA(0, 132, 182, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Semibold
+        Size: =13
+        Text: ="Overzicht"
+        Width: =259
+        X: =41
+        Y: |-
+            =If(
+                RolUsuario = 'Rol Choices'.Lezer, 105,155)
+        ZIndex: =10
+
+    ImgHome_5 As image:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =30
+        Image: ='hogar (1)'
+        OnSelect: =Navigate(NavBarInkomende_2.Begin)
+        Width: =30
+        X: =250
+        Y: =10
+        ZIndex: =11
+
+    ImgInkomende_5 As image:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =30
+        Image: =mensajes
+        Width: =30
+        X: =250
+        Y: =60
+        ZIndex: =12
+
+    ImgUitgaande_5 As image:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =30
+        Image: ='avion-de-papel'
+        Width: =30
+        X: =250
+        Y: |-
+            =If(
+                RolUsuario = 'Rol Choices'.Lezer,
+                160,
+                260
+            )
+        ZIndex: =13
+
+    ImgRoles_5 As image:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =30
+        Image: =grupo
+        Visible: =If(RolUsuario='Rol Choices'.Beheerder,true,false)
+        Width: =30
+        X: =250
+        Y: =360
+        ZIndex: =14
+
+    ImgDashboard_5 As image:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =30
+        Image: =speedometer
+        Visible: =If(RolUsuario='Rol Choices'.Lezer,false,true)
+        Width: =30
+        X: =251
+        Y: =If(RolUsuario='Rol Choices'.Bewerker,360,410)
+        ZIndex: =15
+
+    btnGebruikersbeheer_5 As button:
+        Align: =Align.Left
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Semibold
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(3, 186, 255, 1), -10%)
+        OnSelect: =Navigate(NavBarInkomende_2.Contacts)
+        Size: =15
+        Text: ="Contacten"
+        Visible: =If(RolUsuario='Rol Choices'.Lezer,false,true)
+        Width: =270
+        X: =17
+        Y: =305
+        ZIndex: =16
+
+    ImgRoles_14 As image:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =30
+        Image: ='libro-de-contactos'
+        OnSelect: =Navigate(NavBarInkomende_2.Gebruikersbeheer)
+        Visible: =If(RolUsuario='Rol Choices'.Lezer,false,true)
+        Width: =30
+        X: =250
+        Y: =If(RolUsuario='Rol Choices'.Lezer,260,310)
+        ZIndex: =17
+

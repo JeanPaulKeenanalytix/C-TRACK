@@ -1,0 +1,150 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "webcorr_gebruikersrollens",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "webcorr_gebruikersrollen",
+    "MaxGetRowsCount": 2000,
+    "Name": "Gebruikersrollen",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number",
+      "webcorr_department": "Department",
+      "webcorr_email": "Email",
+      "webcorr_gebruikersrollen_AsyncOperations": "System Jobs",
+      "webcorr_gebruikersrollen_BulkDeleteFailures": "Bulk Delete Failures",
+      "webcorr_gebruikersrollen_DuplicateBaseRecord": "Duplicate Records (webcorr_gebruikersrollen_DuplicateBaseRecord)",
+      "webcorr_gebruikersrollen_DuplicateMatchingRecord": "Duplicate Records (webcorr_gebruikersrollen_DuplicateMatchingRecord)",
+      "webcorr_gebruikersrollen_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "webcorr_gebruikersrollen_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "webcorr_gebruikersrollen_ProcessSession": "Process Sessions",
+      "webcorr_gebruikersrollen_SyncErrors": "Sync Errors",
+      "webcorr_gebruikersrollenid": "Gebruikersrollen",
+      "webcorr_groups": "Groups",
+      "webcorr_name": "IdUSer",
+      "webcorr_rol": "Rol",
+      "webcorr_sector": "Sector",
+      "webcorr_username": "UserName"
+    },
+    "PreferredName": "Gebruikersrollen",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Gebruikersrollen (Vistas)",
+    "Name": "_webcorr_gebruikersrollen_views",
+    "RelatedEntityName": "Gebruikersrollen",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0c92d0a3-3c9e-4626-8e66-48b1c305f022": "Active Gebruikersrollen",
+      "2b89a501-409d-44a5-b385-9c11c189dc6a": "Gebruikersrollen Lookup View",
+      "c16f61d4-9b4f-42ba-b2fc-d351b2d64ee6": "Gebruikersrollen Associated View",
+      "d571a170-8a96-4971-a768-1562f1ac6c07": "Gebruikersrollen Advanced Find View",
+      "f16a1460-93fd-4e50-a352-d1d2c6c412e3": "Inactive Gebruikersrollen"
+    }
+  },
+  {
+    "DisplayName": "Status (Gebruikersrollen)",
+    "Name": "webcorr_gebruikersrollen_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Gebruikersrollen"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Gebruikersrollen",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Gebruikersrollen)",
+    "Name": "webcorr_gebruikersrollen_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Gebruikersrollen"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Gebruikersrollen",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Group Choices",
+    "Name": "webcorr_groupchoices",
+    "OptionSetInfoNameMapping": {
+      "172640000": "Groep 1",
+      "172640001": "Groep 2",
+      "172640002": "Groep 3",
+      "172640003": "Groep 4"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "webcorr_groups",
+        "OptionSetReferenceEntityName": "Gebruikersrollen"
+      },
+      "OptionSetReferenceItem1": {
+        "OptionSetReferenceColumnName": "webcorr_group",
+        "OptionSetReferenceEntityName": "Correspondences"
+      }
+    },
+    "OptionSetTypeKey": "MultiSelectPicklistType",
+    "RelatedColumnInvariantName": "webcorr_groups",
+    "RelatedEntityName": "Gebruikersrollen",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Rol Choices",
+    "Name": "webcorr_rolchoices",
+    "OptionSetInfoNameMapping": {
+      "172640000": "Beheerder",
+      "172640001": "Bewerker",
+      "172640002": "Lezer"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "webcorr_rol",
+        "OptionSetReferenceEntityName": "Gebruikersrollen"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "webcorr_rol",
+    "RelatedEntityName": "Gebruikersrollen",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,1478 @@
+Screen1_4 As screen:
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    Container4_19 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(249, 250, 251, 1)
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        ZIndex: =1
+
+        comHeader_6 As comHeader:
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+
+        Container5_4 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =2
+
+    Container15_6 As groupContainer.horizontalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =60
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Visible: =//showContainer
+        Width: =198
+        X: =1118
+        Y: =276
+        ZIndex: =2
+
+        Container4_20 As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            Height: |
+                =Parent.Height-2
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =28
+            LayoutMinWidth: =250
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =Parent.Width
+            ZIndex: =28
+
+            ButtonCanvas1_27 As Button:
+                AcceptsFocus: =true
+                AccessibleLabel: =""
+                Align: =Align.Left
+                Appearance: ='ButtonCanvas.Appearance'.Subtle
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =If(varMenu = 2, RGBA(2,115, 203, 1),RGBA(0, 0, 0, 1))
+                FontItalic: =false
+                FontSize: =12
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                Icon: =
+                IconRotation: =0
+                IconStyle: ="Outline"
+                Layout: ="Icon before"
+                OnSelect: |
+                    =Set(varMenu, 2);
+                PaddingLeft: =30
+                TabIndex: =0
+                Text: ="Inkomende"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =29
+
+            Image3_33 As image:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =Parent.Height-11
+                Image: ='inbox (1)'
+                OnSelect: |
+                    =Set(varMenu, 2);
+                Width: =17
+                X: =5
+                Y: =6
+                ZIndex: =30
+
+        Container4_21 As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            Height: |
+                =Parent.Height-2
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =28
+            LayoutMinWidth: =250
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =Parent.Width
+            ZIndex: =31
+
+            ButtonCanvas1_32 As Button:
+                AcceptsFocus: =true
+                AccessibleLabel: =""
+                Align: =Align.Left
+                Appearance: ='ButtonCanvas.Appearance'.Subtle
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =If(varMenu = 3, RGBA(2,115, 203, 1),RGBA(0, 0, 0, 1))
+                FontItalic: =false
+                FontSize: =12
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                Icon: =
+                IconRotation: =0
+                IconStyle: ="Outline"
+                Layout: ="Icon before"
+                OnSelect: =Set(varMenu, 3);
+                PaddingLeft: =30
+                TabIndex: =0
+                Text: ="Uitgaande"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =32
+
+            Image3_34 As image:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =Parent.Height-13
+                Image: = 'paper-plane (1)'
+                OnSelect: =Set(varMenu, 3);
+                Width: =15
+                X: =5
+                Y: =7
+                ZIndex: =33
+
+    Container15_8 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(44, 44, 44, 1)
+        Height: =85
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Visible: =false
+        Width: =380
+        X: =55
+        Y: =600
+        ZIndex: =3
+
+        Container16_8 As groupContainer.horizontalAutoLayoutContainer:
+            Height: =60
+            LayoutGap: =15
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingLeft: =15
+            PaddingTop: =15
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =380
+            ZIndex: =34
+
+            Image4_4 As image:
+                BorderColor: =App.Theme.Colors.Darker40
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =25
+                Image: =correct
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                Width: =25
+                ZIndex: =35
+
+            HtmlText1_4 As htmlViewer:
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                Height: =50
+                HtmlText: =//"<b>"&GalCorrespondentieVO_5.Selected.Type& " - " &GalCorrespondentieVO_5.Selected.Origin&"</b> correspondentie succesvol verwijderd."
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                PaddingTop: =0
+                Size: =10
+                Width: =280
+                ZIndex: =36
+
+            ButtonCanvas3_17 As Button:
+                Appearance: ='ButtonCanvas.Appearance'.Subtle
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =RGBA(255, 255, 255, 1)
+                FontSize: =16
+                Height: =25
+                Icon: ="Dismiss"
+                IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                Layout: ='ButtonCanvas.Layout'.IconOnly
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                PaddingBottom: =15
+                PaddingRight: =30
+                Text: =
+                Visible: =true
+                Width: =25
+                X: =0
+                Y: =0
+                ZIndex: =37
+
+        Container16_9 As groupContainer.horizontalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =40
+            LayoutGap: =35
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingLeft: =40
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =380
+            ZIndex: =38
+
+            ButtonCanvas3_18 As Button:
+                AcceptsFocus: =true
+                AccessibleLabel: =""
+                Align: =""
+                Appearance: ='ButtonCanvas.Appearance'.Subtle
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =RGBA(40, 134, 222, 1)
+                FontItalic: =false
+                FontSize: =14
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =25
+                Icon: ="Dismiss"
+                IconRotation: =0
+                IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                Layout: ='ButtonCanvas.Layout'.TextOnly
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                OnSelect: =false
+                PaddingBottom: =
+                PaddingRight: =
+                TabIndex: =0
+                Text: ="Sluit"
+                Tooltip: =""
+                VerticalAlign: =
+                Visible: =true
+                Width: =70
+                X: =0
+                Y: =0
+                ZIndex: =39
+
+    Container14_4 As groupContainer.horizontalAutoLayoutContainer:
+        BorderStyle: =BorderStyle.None
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(44, 44, 44, 1)
+        Height: =40
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =10
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Visible: =CountRows(colAllCorr) > 0
+        Width: =600
+        X: =398
+        Y: =700
+        ZIndex: =4
+
+        ButtonCanvas1_33 As Button:
+            AcceptsFocus: =true
+            AccessibleLabel: =""
+            Align: =Align.Center
+            Appearance: ='ButtonCanvas.Appearance'.Outline
+            BorderStyle: =""
+            ContentLanguage: =""
+            DisplayMode: |-
+                =If(
+                    CountRows(colAllCorr) = 0 || CountRows(colAllCorr) > 1, DisplayMode.View, DisplayMode.Edit)
+            Font: =""
+            FontColor: =RGBA(255, 255, 255, 1)
+            FontItalic: =false
+            FontSize: =12
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =""
+            Height: =28
+            Icon: ="Eye"
+            IconRotation: =0
+            IconStyle: ='ButtonCanvas.IconStyle'.Filled
+            Layout: ="Icon before"
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =32
+            LayoutMinWidth: =96
+            OnSelect: =false
+            TabIndex: =0
+            Text: ="Weergeven"
+            Tooltip: =""
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =true
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =40
+
+        ButtonCanvas1_34 As Button:
+            AcceptsFocus: =true
+            AccessibleLabel: =""
+            Align: =Align.Center
+            Appearance: ='ButtonCanvas.Appearance'.Outline
+            BorderStyle: =""
+            ContentLanguage: =""
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =RGBA(255, 255, 255, 1)
+            FontItalic: =false
+            FontSize: =12
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =""
+            Height: =28
+            Icon: ="Delete"
+            IconRotation: =0
+            IconStyle: ='ButtonCanvas.IconStyle'.Filled
+            Layout: ="Icon before"
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =32
+            LayoutMinWidth: =96
+            OnSelect: =false
+            TabIndex: =0
+            Text: |-
+                =If(
+                    CountRows(colAllCorr) = 0,  "Verwijder", "Verwijder "&CountRows(colAllCorr)&" Item(s)")
+            Tooltip: =""
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =true
+            Width: |-
+                =If(
+                    CountRows(colAllCorr) = 0, 95, 150)
+            X: =0
+            Y: =0
+            ZIndex: =41
+
+        ButtonCanvas1_35 As Button:
+            AcceptsFocus: =true
+            AccessibleLabel: =""
+            Align: =Align.Center
+            Appearance: ='ButtonCanvas.Appearance'.Outline
+            BorderStyle: =""
+            ContentLanguage: =""
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =RGBA(255, 255, 255, 1)
+            FontItalic: =false
+            FontSize: =12
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =""
+            Height: =28
+            Icon: ="ArrowSync"
+            IconRotation: =0
+            IconStyle: ='ButtonCanvas.IconStyle'.Filled
+            Layout: ="Icon before"
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =32
+            LayoutMinWidth: =96
+            OnSelect: =false
+            TabIndex: =0
+            Text: ="Selectie wissen"
+            Tooltip: =""
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =true
+            Width: =130
+            X: =0
+            Y: =0
+            ZIndex: =42
+
+        ButtonCanvas1_36 As Button:
+            AcceptsFocus: =true
+            AccessibleLabel: =""
+            Align: =Align.Center
+            Appearance: ='ButtonCanvas.Appearance'.Outline
+            BorderStyle: =""
+            ContentLanguage: =""
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =RGBA(255, 255, 255, 1)
+            FontItalic: =false
+            FontSize: =12
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =""
+            Height: =28
+            Icon: ="DocumentBulletList"
+            IconRotation: =0
+            IconStyle: ='ButtonCanvas.IconStyle'.Filled
+            Layout: ="Icon before"
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =32
+            LayoutMinWidth: =96
+            OnSelect: =false
+            TabIndex: =0
+            Text: ="Bibliotheek"
+            Tooltip: =""
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =true
+            Width: =130
+            X: =0
+            Y: =0
+            ZIndex: =43
+
+    Container2_10 As groupContainer.manualLayoutContainer:
+        BorderThickness: =2
+        DropShadow: =DropShadow.Regular
+        Height: =229
+        RadiusBottomLeft: =6
+        RadiusBottomRight: =6
+        RadiusTopLeft: =6
+        RadiusTopRight: =6
+        Width: =637
+        X: =125
+        Y: =228
+        ZIndex: =5
+
+        CompositeLineChart2_1 As group:
+            Height: =5
+            minimumHeight: =5
+            minimumWidth: =5
+            Visible: =true
+            Width: =5
+            X: =0
+            Y: =0
+            ZIndex: =0
+
+            Title2_1 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                Text: ="Correspondentie per maand - "&Year(Today())
+                Width: =637
+                ZIndex: =1
+
+            LineChart2_1 As lineChart:
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                Height: =229
+                ItemColorSet: =[RGBA(49, 130, 93, 1),RGBA(212,96,104,1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
+                Items: =CountMonth
+                NumberOfSeries: =2
+                Size: =11
+                Width: =637
+                ZIndex: =2
+
+            Legend2_1 As legend:
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                Height: =27
+                ItemColorSet: =LineChart2_1.ItemColorSet
+                Items: =LineChart2_1.SeriesLabels
+                Width: =510
+                X: =5
+                Y: =202
+                ZIndex: =3
+
+    Container2_20 As groupContainer.manualLayoutContainer:
+        BorderThickness: =2
+        DropShadow: =DropShadow.Regular
+        Height: =229
+        RadiusBottomLeft: =6
+        RadiusBottomRight: =6
+        RadiusTopLeft: =6
+        RadiusTopRight: =6
+        Width: =355
+        X: =787
+        Y: =228
+        ZIndex: =6
+
+        CompositePieChart1_1 As group:
+            Height: =5
+            minimumHeight: =5
+            minimumWidth: =5
+            Visible: =true
+            Width: =5
+            X: =-977
+            Y: =-219
+            ZIndex: =4
+
+            Title3_1 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                Text: ="Totaal"
+                Width: =355
+                Y: =9
+                ZIndex: =1
+
+            PieChart1_1 As pieChart:
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                Explode: =2
+                Height: =229
+                ItemBorderThickness: =1
+                ItemColorSet: =[RGBA(96, 197, 234, 1),RGBA(48,166,103,1), RGBA(94,193,108,1), RGBA(246,199,144,1), RGBA(247,199,114,1), RGBA(247,180,91,1), RGBA(246,143,100,1), RGBA(212,96,104,1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
+                Items: =TotalCorr
+                Width: =345
+                X: =8
+                ZIndex: =2
+
+            Legend3_1 As legend:
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                Height: =30
+                ItemColorSet: =PieChart1_1.ItemColorSet
+                Items: =["Intern", "Extern"]
+                Width: =180
+                X: =109
+                Y: =199
+                ZIndex: =3
+
+    Container2_27 As groupContainer.manualLayoutContainer:
+        BorderThickness: =2
+        DropShadow: =DropShadow.Regular
+        Height: =229
+        RadiusBottomLeft: =6
+        RadiusBottomRight: =6
+        RadiusTopLeft: =6
+        RadiusTopRight: =6
+        Width: =315
+        X: =125
+        Y: =492
+        ZIndex: =7
+
+        Title4_6 As label:
+            Align: =Align.Center
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Bold
+            Height: =38
+            Text: ="Top 5 Afdelingen"
+            Width: =315
+            ZIndex: =1
+
+        Gallery1_3 As gallery.galleryVertical:
+            '#CopilotOverlayLabel': ="Filtered"
+            BorderColor: =App.Theme.Colors.Darker40
+            DelayItemLoading: =true
+            Height: =179
+            Items: =Sort(FirstN(ColDepUni,5),Cantidad, SortOrder.Descending)
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplateSize: =31
+            Width: =315
+            Y: =40
+            ZIndex: =2
+
+            TextCanvas3_3 As Text:
+                Align: ="Start"
+                AutoHeight: =false
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =20
+                Size: =11
+                TabIndex: =0
+                Text: =ThisItem.Value
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ="Regular"
+                Width: =150
+                Wrap: =true
+                X: =5
+                Y: =0
+                ZIndex: =1
+
+            Rectangle5_3 As rectangle:
+                BorderColor: =App.Theme.Colors.Darker40
+                Fill: =RGBA(49, 130,2, 1)
+                Height: =10
+                OnSelect: =Select(Parent)
+                Width: =50*(ThisItem.Cantidad/Max(CountValoresRepetidosVer,Cantidad))
+                X: =TextCanvas3_3.X+TextCanvas3_3.Width+2
+                Y: =5
+                ZIndex: =2
+
+            Label1_3 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                Height: =20
+                OnSelect: =Select(Parent)
+                Size: =10
+                Text: =ThisItem.Cantidad
+                Width: =50
+                X: =Rectangle5_3.X+Rectangle5_3.Width+2
+                ZIndex: =3
+
+    Container2_28 As groupContainer.manualLayoutContainer:
+        BorderThickness: =2
+        DropShadow: =DropShadow.Regular
+        Height: =112
+        RadiusBottomLeft: =6
+        RadiusBottomRight: =6
+        RadiusTopLeft: =6
+        RadiusTopRight: =6
+        Width: =270
+        X: =400
+        Y: =101
+        ZIndex: =8
+
+        Container1_2 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Width: =Container2_28.Width/2
+            X: =Container1_11.X+Container1_11.Width
+            Y: =32
+            ZIndex: =1
+
+            TextCanvas1_16 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AutoHeight: =true
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =32
+                Size: =14
+                TabIndex: =0
+                Text: ="Extern"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =Container1_11.Width
+                Wrap: =true
+                X: =0
+                Y: =9
+                ZIndex: =1
+
+            TextCanvas1_17 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AutoHeight: =false
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =60
+                Size: =40
+                TabIndex: =0
+                Text: |-
+                    =CountIf(
+                        Correspondences,
+                        Origin = OriginCorrChoices.Extern && Type = "Inkomende"
+                    )
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =Container1_11.Width
+                Wrap: =true
+                X: =0
+                Y: =20
+                ZIndex: =2
+
+        Container1_11 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Width: =Container2_28.Width/2
+            Y: =32
+            ZIndex: =2
+
+            TextCanvas1_18 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AutoHeight: =true
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =32
+                Size: =14
+                TabIndex: =0
+                Text: ="Intern"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =Container1_11.Width
+                Wrap: =true
+                X: =0
+                Y: =9
+                ZIndex: =1
+
+            TextCanvas1_19 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AutoHeight: =false
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =60
+                Size: =40
+                TabIndex: =0
+                Text: |+
+                    =CountIf(
+                            Correspondences,
+                            Origin = OriginCorrChoices.Intern&&Type="Inkomende"   )
+                    
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =Container1_11.Width
+                Wrap: =true
+                X: =0
+                Y: =20
+                ZIndex: =2
+
+        TextCanvas2_2 As Text:
+            Align: ='TextCanvas.Align'.Center
+            AutoHeight: =false
+            BorderStyle: =""
+            ContentLanguage: =""
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontItalic: =false
+            FontStrikethrough: =false
+            FontUnderline: =false
+            Height: =32
+            Size: =20
+            TabIndex: =0
+            Text: ="Inkomende"
+            Tooltip: =""
+            VerticalAlign: =""
+            Visible: =true
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =Container2_28.Width
+            Wrap: =true
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+    Container2_29 As groupContainer.manualLayoutContainer:
+        BorderThickness: =2
+        DropShadow: =DropShadow.Regular
+        Height: =112
+        RadiusBottomLeft: =6
+        RadiusBottomRight: =6
+        RadiusTopLeft: =6
+        RadiusTopRight: =6
+        Width: =270
+        X: =715
+        Y: =101
+        ZIndex: =9
+
+        Container1_12 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Width: =Container2_29.Width/2
+            Y: =32
+            ZIndex: =1
+
+            TextCanvas1_20 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AutoHeight: =true
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =32
+                Size: =14
+                TabIndex: =0
+                Text: ="Intern"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =130
+                Wrap: =true
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            TextCanvas1_21 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AutoHeight: =false
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =60
+                Size: =40
+                TabIndex: =0
+                Text: |-
+                    =CountIf(
+                        Correspondences,
+                        Origin = OriginCorrChoices.Intern && Type = "Uitgaande"
+                    )
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =130
+                Wrap: =true
+                X: =0
+                Y: =20
+                ZIndex: =2
+
+        Container1_13 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Width: =Container2_29.Width/2
+            X: =Container1_12.X+Container1_12.Width
+            Y: =32
+            ZIndex: =2
+
+            TextCanvas1_26 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AutoHeight: =true
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =32
+                Size: =14
+                TabIndex: =0
+                Text: ="Extern"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =130
+                Wrap: =true
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            TextCanvas1_27 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AutoHeight: =false
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =60
+                Size: =40
+                TabIndex: =0
+                Text: |-
+                    =CountIf(
+                        Correspondences,
+                        Origin = OriginCorrChoices.Extern && Type = "Uitgaande"
+                    )
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =130
+                Wrap: =true
+                X: =0
+                Y: =20
+                ZIndex: =2
+
+        TextCanvas2_3 As Text:
+            Align: ='TextCanvas.Align'.Center
+            AutoHeight: =false
+            BorderStyle: =""
+            ContentLanguage: =""
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontItalic: =false
+            FontStrikethrough: =false
+            FontUnderline: =false
+            Height: =32
+            Size: =20
+            TabIndex: =0
+            Text: ="Uitgaande"
+            Tooltip: =""
+            VerticalAlign: =""
+            Visible: =true
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =Container2_29.Width
+            Wrap: =true
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+    Container2_30 As groupContainer.manualLayoutContainer:
+        BorderThickness: =2
+        DropShadow: =DropShadow.Regular
+        Height: =229
+        RadiusBottomLeft: =6
+        RadiusBottomRight: =6
+        RadiusTopLeft: =6
+        RadiusTopRight: =6
+        Width: =315
+        X: =460
+        Y: =492
+        ZIndex: =10
+
+        Title4_7 As label:
+            Align: =Align.Center
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Bold
+            Height: =36
+            Text: ="Top 5 Ontvangers"
+            Width: =315
+            ZIndex: =1
+
+        Gallery1_6 As gallery.galleryVertical:
+            '#CopilotOverlayLabel': ="Filtered"
+            BorderColor: =App.Theme.Colors.Darker40
+            DelayItemLoading: =true
+            Height: =189
+            Items: |
+                =FirstN(
+                    Sort(
+                        Filter(CountValoresRepetidos, !IsBlank(Value) ),
+                        Cantidad,
+                        SortOrder.Descending
+                    ),
+                    5
+                )
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplateSize: =31
+            Width: =315
+            Y: =40
+            ZIndex: =2
+
+            TextCanvas3_4 As Text:
+                Align: ="Start"
+                AutoHeight: =false
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =31
+                Size: =11
+                TabIndex: =0
+                Text: =ThisItem.Value
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ="Regular"
+                Width: =150
+                Wrap: =true
+                X: =5
+                Y: =0
+                ZIndex: =1
+
+            Rectangle5_4 As rectangle:
+                BorderColor: =App.Theme.Colors.Darker40
+                Fill: =RGBA(49, 130,2, 1)
+                Height: =10
+                OnSelect: =Select(Parent)
+                Width: =50*(ThisItem.Cantidad/Max(CountValoresRepetidosVer,Cantidad))
+                X: =TextCanvas3_4.X+TextCanvas3_4.Width+2
+                Y: =5
+                ZIndex: =2
+
+            Label1_4 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                Height: =20
+                OnSelect: =Select(Parent)
+                Size: =10
+                Text: =ThisItem.Cantidad
+                Width: =50
+                X: =Rectangle5_4.X+Rectangle5_4.Width
+                ZIndex: =3
+
+    Container2_31 As groupContainer.manualLayoutContainer:
+        BorderThickness: =2
+        DropShadow: =DropShadow.Regular
+        Height: =229
+        RadiusBottomLeft: =6
+        RadiusBottomRight: =6
+        RadiusTopLeft: =6
+        RadiusTopRight: =6
+        Width: =357
+        X: =795
+        Y: =492
+        ZIndex: =11
+
+        Gallery1_7 As gallery.galleryVertical:
+            '#CopilotOverlayLabel': ="Filtered"
+            BorderColor: =App.Theme.Colors.Darker40
+            DelayItemLoading: =true
+            Height: =189
+            Items: |
+                =
+                FirstN(
+                    Sort(
+                        Filter(CountValoresRepetidosVer, !IsBlank(Value) ),
+                        Cantidad,
+                        SortOrder.Descending
+                    ),
+                    5
+                )
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplateSize: =31
+            Width: =357
+            Y: =40
+            ZIndex: =1
+
+            TextCanvas3_5 As Text:
+                Align: ="Start"
+                AutoHeight: =false
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =31
+                Size: =11
+                TabIndex: =0
+                Text: =ThisItem.Value
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ="Regular"
+                Width: =180
+                Wrap: =true
+                X: =5
+                Y: =0
+                ZIndex: =1
+
+            Rectangle5_5 As rectangle:
+                BorderColor: =App.Theme.Colors.Darker40
+                Fill: =RGBA(49, 130,2, 1)
+                Height: =10
+                OnSelect: =Select(Parent)
+                Width: =50*(ThisItem.Cantidad/Max(CountValoresRepetidosVer,Cantidad))
+                X: =TextCanvas3_5.X+TextCanvas3_5.Width+2
+                Y: =5
+                ZIndex: =2
+
+            Label1_5 As label:
+                BorderColor: =App.Theme.Colors.Darker40
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =App.Theme.Font
+                Height: =20
+                OnSelect: =Select(Parent)
+                Size: =10
+                Text: =ThisItem.Cantidad
+                Width: =50
+                X: =Rectangle5_5.X+Rectangle5_5.Width
+                ZIndex: =3
+
+        Title4_8 As label:
+            Align: =Align.Center
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =FontWeight.Bold
+            Height: =36
+            Text: ="Top 5 Verzenders"
+            Width: =315
+            ZIndex: =2
+
+    Container2_32 As groupContainer.manualLayoutContainer:
+        BorderThickness: =2
+        DropShadow: =DropShadow.Regular
+        Height: =112
+        RadiusBottomLeft: =6
+        RadiusBottomRight: =6
+        RadiusTopLeft: =6
+        RadiusTopRight: =6
+        Visible: =false
+        Width: =270
+        X: =70
+        Y: =101
+        ZIndex: =12
+
+        Container1_16 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Width: =Container2_32.Width/2
+            X: =Container1_17.X+Container1_17.Width
+            Y: =32
+            ZIndex: =1
+
+            TextCanvas1_28 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AutoHeight: =true
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =32
+                Size: =14
+                TabIndex: =0
+                Text: ="Extern"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =Container1_17.Width
+                Wrap: =true
+                X: =0
+                Y: =9
+                ZIndex: =1
+
+            TextCanvas1_29 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AutoHeight: =false
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =60
+                Size: =40
+                TabIndex: =0
+                Text: |-
+                    =CountIf(
+                        Correspondences,
+                        Origin = OriginCorrChoices.Extern && Type = "Inkomende"
+                    )
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =Container1_17.Width
+                Wrap: =true
+                X: =0
+                Y: =20
+                ZIndex: =2
+
+        Container1_17 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Width: =Container2_32.Width/2
+            Y: =32
+            ZIndex: =2
+
+            TextCanvas1_30 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AutoHeight: =true
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =32
+                Size: =14
+                TabIndex: =0
+                Text: ="Intern"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =Container1_17.Width
+                Wrap: =true
+                X: =0
+                Y: =9
+                ZIndex: =1
+
+            TextCanvas1_31 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AutoHeight: =false
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =60
+                Size: =40
+                TabIndex: =0
+                Text: |+
+                    =CountIf(
+                            Correspondences,
+                            Origin = OriginCorrChoices.Intern&&Type="Inkomende"   )
+                    
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =Container1_17.Width
+                Wrap: =true
+                X: =0
+                Y: =20
+                ZIndex: =2
+
+        TextCanvas2_4 As Text:
+            Align: ='TextCanvas.Align'.Center
+            AutoHeight: =false
+            BorderStyle: =""
+            ContentLanguage: =""
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontItalic: =false
+            FontStrikethrough: =false
+            FontUnderline: =false
+            Height: =32
+            Size: =20
+            TabIndex: =0
+            Text: ="Inkomende"
+            Tooltip: =""
+            VerticalAlign: =""
+            Visible: =true
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =Container2_32.Width
+            Wrap: =true
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+    Container2_33 As groupContainer.manualLayoutContainer:
+        BorderThickness: =2
+        DropShadow: =DropShadow.Regular
+        Height: =112
+        RadiusBottomLeft: =6
+        RadiusBottomRight: =6
+        RadiusTopLeft: =6
+        RadiusTopRight: =6
+        Visible: =false
+        Width: =270
+        X: =1000
+        Y: =101
+        ZIndex: =13
+
+        Container1_18 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Width: =Container2_33.Width/2
+            Y: =32
+            ZIndex: =1
+
+            TextCanvas1_32 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AutoHeight: =true
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =32
+                Size: =14
+                TabIndex: =0
+                Text: ="Intern"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =130
+                Wrap: =true
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            TextCanvas1_33 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AutoHeight: =false
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =60
+                Size: =40
+                TabIndex: =0
+                Text: |-
+                    =CountIf(
+                        Correspondences,
+                        Origin = OriginCorrChoices.Intern && Type = "Uitgaande"
+                    )
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =130
+                Wrap: =true
+                X: =0
+                Y: =20
+                ZIndex: =2
+
+        Container1_19 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Width: =Container2_33.Width/2
+            X: =Container1_18.X+Container1_18.Width
+            Y: =32
+            ZIndex: =2
+
+            TextCanvas1_34 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AutoHeight: =true
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =32
+                Size: =14
+                TabIndex: =0
+                Text: ="Extern"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =130
+                Wrap: =true
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            TextCanvas1_35 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AutoHeight: =false
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =60
+                Size: =40
+                TabIndex: =0
+                Text: |-
+                    =CountIf(
+                        Correspondences,
+                        Origin = OriginCorrChoices.Extern && Type = "Uitgaande"
+                    )
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =130
+                Wrap: =true
+                X: =0
+                Y: =20
+                ZIndex: =2
+
+        TextCanvas2_5 As Text:
+            Align: ='TextCanvas.Align'.Center
+            AutoHeight: =false
+            BorderStyle: =""
+            ContentLanguage: =""
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontItalic: =false
+            FontStrikethrough: =false
+            FontUnderline: =false
+            Height: =32
+            Size: =20
+            TabIndex: =0
+            Text: ="Uitgaande"
+            Tooltip: =""
+            VerticalAlign: =""
+            Visible: =true
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =Container2_33.Width
+            Wrap: =true
+            X: =0
+            Y: =0
+            ZIndex: =3
+
