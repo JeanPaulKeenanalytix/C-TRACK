@@ -379,3 +379,8 @@ Screens:
             Width: =120
             X: =901
             Y: =433
+      - ButtonCanvas7:
+          Control: Button@0.0.45
+          Properties:
+            X: =375
+            Y: =12

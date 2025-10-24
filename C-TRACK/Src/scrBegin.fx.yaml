@@ -513,3 +513,11 @@ scrBegin As screen:
         Y: =190
         ZIndex: =18
 
+    ButtonCanvas7 As Button:
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Width: =96
+        X: =375
+        Y: =12
+        ZIndex: =24
+
