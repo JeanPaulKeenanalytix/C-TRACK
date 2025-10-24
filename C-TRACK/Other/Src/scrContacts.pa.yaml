@@ -103,7 +103,7 @@ Screens:
             Items: =Sort(Filter(VerzenderUitgaandeCorresponder, CompanyName <> "WEB Aruba NV"),CompanyName,SortOrder.Ascending)
             OnSelect: =Set(selectType, 'CorrespondentieType Choices'.Inkomende)
             TemplateSize: =33
-            Visible: |+
+            Visible: |
               =true
             Width: =988
             X: =344
@@ -236,7 +236,7 @@ Screens:
             Height: =35
             Size: =12
             Text: ="Bedrijfsnaam"
-            Visible: |+
+            Visible: |
               =true
             Width: =191
             X: =344
@@ -248,7 +248,7 @@ Screens:
             Height: =38
             Size: =12
             Text: ="Adres"
-            Visible: |+
+            Visible: |
               =true
             Width: =165
             X: =584
@@ -260,7 +260,7 @@ Screens:
             Height: =38
             Size: =12
             Text: ="City"
-            Visible: |+
+            Visible: |
               =true
             Width: =144
             X: =801
@@ -272,7 +272,7 @@ Screens:
             Height: =38
             Size: =12
             Text: ="Telefoon"
-            Visible: |+
+            Visible: |
               =true
             Width: =85
             X: =979
@@ -284,7 +284,7 @@ Screens:
             Height: =38
             Size: =12
             Text: ="Acties"
-            Visible: |+
+            Visible: |
               =true
             Width: =59
             X: =1228
@@ -315,7 +315,7 @@ Screens:
             Height: =38
             Size: =12
             Text: ="Contacten"
-            Visible: |+
+            Visible: |
               =true
             Width: =90
             X: =1111
@@ -702,7 +702,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =Set(varBlank4, true);
                                 Set(varErrorAddressCom, false)
                               Required: =true
@@ -931,7 +931,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =If(IsMatch(Self.Value,Match.Email),UpdateContext({varInvalidEmail:true}),UpdateContext({varInvalidEmail:false }));Set(varBlank4, true );
                                 //Set(varInvalidEmail, false);
                                 //Set(varErrorEmailCom, false)
@@ -1440,7 +1440,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =Set(varBlank4, true);
                                 Set(varErrorAddressCom, false)
                               Required: =true
@@ -1974,7 +1974,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =Set(varBlank4, true);
                                 Set(varErrorAddressCom, false)
                               Required: =true
@@ -2203,7 +2203,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =If(IsMatch(Self.Value,Match.Email),UpdateContext({varInvalidEmail:true}),UpdateContext({varInvalidEmail:false }));Set(varBlank4, true );
                                 //Set(varInvalidEmail, false);
                                 //Set(varErrorEmailCom, false)

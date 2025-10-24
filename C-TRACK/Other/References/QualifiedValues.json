@@ -1,6 +1,54 @@
 {
   "QualifiedValues": [
     {
+      "Kind": "default.cds_bulkdeletefailure_forms",
+      "Namespace": "Bulk Delete Failures (Forms)",
+      "Values": {}
+    },
+    {
+      "Kind": "default.cds_businessunit_forms",
+      "Namespace": "Business Units (Forms)",
+      "Values": {
+        "Business Unit Hierarchy Form": "405b16b6-126a-4117-a4e0-33f0caf0c7a2",
+        "Information": "ca8dfced-338c-43b2-b212-83745e257c28"
+      }
+    },
+    {
+      "Kind": "default.cds_webcorr_contact_forms",
+      "Namespace": "Contacts (Forms)",
+      "Values": {
+        "Information": "b7442c45-2342-46b2-97e2-e182ce5188b7"
+      }
+    },
+    {
+      "Kind": "default.cds_webcorr_correspondence_forms",
+      "Namespace": "Correspondences (Forms)",
+      "Values": {
+        "Information": "5682a6c2-4cae-4e5a-891a-4b0cf812fbd4"
+      }
+    },
+    {
+      "Kind": "default.cds_webcorr_departments_forms",
+      "Namespace": "Departments (Forms)",
+      "Values": {
+        "Information": "195b3507-485e-42bc-a308-ab29576524d1"
+      }
+    },
+    {
+      "Kind": "default.cds_webcorr_divisions_forms",
+      "Namespace": "Divisions (Forms)",
+      "Values": {
+        "Information": "da056c14-b69f-4882-9cfb-e8c45b9aaa90"
+      }
+    },
+    {
+      "Kind": "default.cds_environmentvariabledefinition_forms",
+      "Namespace": "Environment Variable Definitions (Forms)",
+      "Values": {
+        "Information": "3853733b-a351-455d-b686-d2d05027ba4d"
+      }
+    },
+    {
       "Kind": "default.cds_webcorr_gebruikersrollen_forms",
       "Namespace": "Gebruikersrollen (Forms)",
       "Values": {
@@ -23,54 +71,6 @@
       "Namespace": "VerzenderUitgaandeCorresponder (Forms)",
       "Values": {
         "Information": "bb162508-f9d4-4040-8b1b-766255bb92d7"
-      }
-    },
-    {
-      "Kind": "default.cds_webcorr_divisions_forms",
-      "Namespace": "Divisions (Forms)",
-      "Values": {
-        "Information": "da056c14-b69f-4882-9cfb-e8c45b9aaa90"
-      }
-    },
-    {
-      "Kind": "default.cds_webcorr_departments_forms",
-      "Namespace": "Departments (Forms)",
-      "Values": {
-        "Information": "195b3507-485e-42bc-a308-ab29576524d1"
-      }
-    },
-    {
-      "Kind": "default.cds_bulkdeletefailure_forms",
-      "Namespace": "Bulk Delete Failures (Forms)",
-      "Values": {}
-    },
-    {
-      "Kind": "default.cds_webcorr_correspondence_forms",
-      "Namespace": "Correspondences (Forms)",
-      "Values": {
-        "Information": "5682a6c2-4cae-4e5a-891a-4b0cf812fbd4"
-      }
-    },
-    {
-      "Kind": "default.cds_webcorr_contact_forms",
-      "Namespace": "Contacts (Forms)",
-      "Values": {
-        "Information": "b7442c45-2342-46b2-97e2-e182ce5188b7"
-      }
-    },
-    {
-      "Kind": "default.cds_environmentvariabledefinition_forms",
-      "Namespace": "Environment Variable Definitions (Forms)",
-      "Values": {
-        "Information": "3853733b-a351-455d-b686-d2d05027ba4d"
-      }
-    },
-    {
-      "Kind": "default.cds_businessunit_forms",
-      "Namespace": "Business Units (Forms)",
-      "Values": {
-        "Business Unit Hierarchy Form": "405b16b6-126a-4117-a4e0-33f0caf0c7a2",
-        "Information": "ca8dfced-338c-43b2-b212-83745e257c28"
       }
     },
     {

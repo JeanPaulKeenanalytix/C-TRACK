@@ -81,7 +81,7 @@ Screens:
             Items: =Sort(Filter(Contacts, Company.CompanyName = Gallery2_3.Selected.CompanyName),Name,SortOrder.Ascending)
             OnSelect: =Set(selectType, 'CorrespondentieType Choices'.Inkomende)
             TemplateSize: =33
-            Visible: |+
+            Visible: |
               =true
             Width: =955
             X: =350
@@ -179,7 +179,7 @@ Screens:
             BorderColor: =RGBA(116, 116, 116, 1)
             Fill: =RGBA(184, 229, 250, 1)
             Height: =38
-            Visible: |+
+            Visible: |
               =true
             Width: =955
             X: =350
@@ -191,7 +191,7 @@ Screens:
             Height: =38
             Size: =12
             Text: ="Naam"
-            Visible: |+
+            Visible: |
               =true
             Width: =345
             X: =350
@@ -203,7 +203,7 @@ Screens:
             Height: =38
             Size: =12
             Text: ="Email"
-            Visible: |+
+            Visible: |
               =true
             Width: =165
             X: =695
@@ -215,7 +215,7 @@ Screens:
             Height: =38
             Size: =12
             Text: ="Telefoon"
-            Visible: |+
+            Visible: |
               =true
             Width: =144
             X: =963
@@ -227,7 +227,7 @@ Screens:
             Height: =38
             Size: =12
             Text: ="Acties"
-            Visible: |+
+            Visible: |
               =true
             Width: =59
             X: =1234
@@ -358,7 +358,7 @@ Screens:
             Height: =30
             Size: =12
             Text: ="Back"
-            Visible: |+
+            Visible: |
               =true
             Width: =75
             X: =384
@@ -369,7 +369,7 @@ Screens:
             BorderColor: =RGBA(116, 116, 116, 1)
             Fill: =RGBA(139, 154, 159, 1)
             Height: =35
-            Visible: |+
+            Visible: |
               =true
             Width: =1
             X: =441
@@ -593,7 +593,7 @@ Screens:
                       Control: GroupContainer@1.3.0
                       Variant: ManualLayout
                       Properties:
-                        BorderColor: |+
+                        BorderColor: |
                           =If(!IsBlank(txtEmailContact_8.Value),If(!varInvalidEmail,RGBA(255,0,0,1),RGBA(0,0,0,0)),RGBA(0,0,0,0))
                         BorderThickness: |-
                           = If(!IsBlank(txtEmailContact_8.Value),If(
@@ -614,7 +614,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =If(IsMatch(Self.Value,Match.Email),UpdateContext({varInvalidEmail:true}),UpdateContext({varInvalidEmail:false }));
                                 Set(varBlank4, true);
                               Required: =true
@@ -993,7 +993,7 @@ Screens:
                       Control: GroupContainer@1.3.0
                       Variant: ManualLayout
                       Properties:
-                        BorderColor: |+
+                        BorderColor: |
                           =If(!IsBlank(txtEmailContact_9.Value),If(!varInvalidEmail,RGBA(255,0,0,1),RGBA(0,0,0,0)),RGBA(0,0,0,0))
                         BorderThickness: |-
                           = If(!IsBlank(txtEmailContact_9.Value),If(
@@ -1014,7 +1014,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =If(IsMatch(Self.Value,Match.Email),UpdateContext({varInvalidEmail:true}),UpdateContext({varInvalidEmail:false }));
                                 Set(varBlank4, true);
                               Required: =true

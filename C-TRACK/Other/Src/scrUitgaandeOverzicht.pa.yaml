@@ -155,7 +155,7 @@ Screens:
                   Height: =32
                   OnSelect: =Select(Parent)
                   Size: =8
-                  Text: |+
+                  Text: |
                     =Text(DateValue(ThisItem.'Verzonden op'), "dd/mm/yyyy")
                   Width: =70
                   X: =589

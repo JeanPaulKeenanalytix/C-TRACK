@@ -29,13 +29,13 @@ EditorState:
     - scrInkomende_1
     - scrInkomende_2
   ComponentDefinitionsOrder:
+    - NavBarInkomende
+    - NavBarInkomende_2
+    - NavBarPersoon
+    - NavBarUitgaande
+    - NavBarUitgaande_2
+    - NavHeader
     - ComFooter
     - comHeader
-    - NavBarHome
-    - NavBarInkomende
-    - NavBarUitgaande
-    - NavHeader
-    - NavBarInkomende_2
-    - NavBarUitgaande_2
     - NavBarBedrijf
-    - NavBarPersoon
+    - NavBarHome

@@ -1492,7 +1492,7 @@ Screens:
                       Control: GroupContainer@1.3.0
                       Variant: ManualLayout
                       Properties:
-                        BorderColor: |+
+                        BorderColor: |
                           =If(!IsBlank(txtEmailContact_16.Value),If(!varInvalidEmail,RGBA(255,0,0,1),RGBA(0,0,0,0)),RGBA(0,0,0,0))
                         BorderThickness: |-
                           = If(!IsBlank(txtEmailContact_16.Value),If(
@@ -1513,7 +1513,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =If(IsMatch(Self.Value,Match.Email),UpdateContext({varInvalidEmail:true}),UpdateContext({varInvalidEmail:false }));
                                 Set(varBlank4, true);
                               Required: =true
@@ -1994,7 +1994,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =If(IsMatch(Self.Value,Match.Email),UpdateContext({varInvalidEmail:true}),UpdateContext({varInvalidEmail:false }));
                               Required: =true
                               Width: =250
@@ -2197,7 +2197,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =Set(varBlank2, true);
                               Required: =true
                               Width: =250
@@ -2641,7 +2641,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =Set(varBlank4, true);
                                 Set(varErrorAddressCom, false)
                               Required: =true
@@ -3011,7 +3011,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =If(IsMatch(Self.Value,Match.Email),UpdateContext({varInvalidEmail:true}),UpdateContext({varInvalidEmail:false }));Set(varBlank4, true );
                                 //Set(varInvalidEmail, false);
                                 //Set(varErrorEmailCom, false)
@@ -3278,7 +3278,7 @@ Screens:
                         Height: =30
                         Size: =12
                         Text: ="Bedrijfsnaam"
-                        Visible: |+
+                        Visible: |
                           =true
                         Width: =120
                         X: =15
@@ -3290,7 +3290,7 @@ Screens:
                         Height: =30
                         Size: =12
                         Text: ="Adres"
-                        Visible: |+
+                        Visible: |
                           =true
                         Width: =165
                         X: =278
@@ -3302,7 +3302,7 @@ Screens:
                         Height: =30
                         Size: =12
                         Text: ="City"
-                        Visible: |+
+                        Visible: |
                           =true
                         Width: =144
                         X: =506
@@ -3332,7 +3332,7 @@ Screens:
                         OnSelect: =
                         ShowScrollbar: =false
                         TemplateSize: =33
-                        Visible: |+
+                        Visible: |
                           =true
                         Width: =CtnAddCompanyContact_48.Width-30
                         X: =15

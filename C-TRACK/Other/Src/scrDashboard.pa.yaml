@@ -448,7 +448,7 @@ Screens:
                 Variant: Vertical
                 Properties:
                   Height: =189
-                  Items: |+
+                  Items: |
                     =FirstN(
                         Sort(
                             Filter(CountValoresRepetidos, !IsBlank(Value) ),
@@ -507,7 +507,7 @@ Screens:
                 Variant: Vertical
                 Properties:
                   Height: =189
-                  Items: |+
+                  Items: |
                     =
                     FirstN(
                         Sort(

@@ -104,7 +104,7 @@ Screens:
             Items: =Sort(Contacts,Name,SortOrder.Ascending)
             OnSelect: =Set(selectType, 'CorrespondentieType Choices'.Inkomende)
             TemplateSize: =33
-            Visible: |+
+            Visible: |
               =true
             Width: =988
             X: =344
@@ -201,7 +201,7 @@ Screens:
                 Properties:
                   Height: =20
                   Icon: =Icon.Edit
-                  OnSelect: |+
+                  OnSelect: |
                     =Set(varEditPersoon, true);
                   Width: =26
                   X: =890
@@ -229,7 +229,7 @@ Screens:
             Height: =35
             Size: =12
             Text: ="Naam"
-            Visible: |+
+            Visible: |
               =true
             Width: =191
             X: =344
@@ -241,7 +241,7 @@ Screens:
             Height: =38
             Size: =12
             Text: ="Email"
-            Visible: |+
+            Visible: |
               =true
             Width: =165
             X: =584
@@ -253,7 +253,7 @@ Screens:
             Height: =38
             Size: =12
             Text: ="Adres"
-            Visible: |+
+            Visible: |
               =true
             Width: =144
             X: =846
@@ -265,7 +265,7 @@ Screens:
             Height: =38
             Size: =12
             Text: ="Company"
-            Visible: |+
+            Visible: |
               =true
             Width: =85
             X: =1024
@@ -277,7 +277,7 @@ Screens:
             Height: =38
             Size: =12
             Text: ="Acties"
-            Visible: |+
+            Visible: |
               =true
             Width: =59
             X: =1228
@@ -678,7 +678,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =If(IsMatch(Self.Value,Match.Email),UpdateContext({varInvalidEmail:true}),UpdateContext({varInvalidEmail:false }));
                               Required: =true
                               Value: =Gallery2_4.Selected.Email
@@ -755,7 +755,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =Set(varBlank2, true);
                               Required: =true
                               Value: =Gallery2_4.Selected.City
@@ -1302,7 +1302,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =If(IsMatch(Self.Value,Match.Email),UpdateContext({varInvalidEmail:true}),UpdateContext({varInvalidEmail:false }));
                               Required: =true
                               Width: =250
@@ -1376,7 +1376,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =Set(varBlank2, true);
                               Required: =true
                               Width: =250
@@ -1936,7 +1936,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =Set(varBlank4, true);
                                 Set(varErrorAddressCom, false)
                               Required: =true
@@ -2165,7 +2165,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =If(IsMatch(Self.Value,Match.Email),UpdateContext({varInvalidEmail:true}),UpdateContext({varInvalidEmail:false }));Set(varBlank4, true );
                                 //Set(varInvalidEmail, false);
                                 //Set(varErrorEmailCom, false)
@@ -2684,7 +2684,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =If(IsMatch(Self.Value,Match.Email),UpdateContext({varInvalidEmail:true}),UpdateContext({varInvalidEmail:false }));
                               Required: =true
                               Width: =250
@@ -2758,7 +2758,7 @@ Screens:
                               Align: =Align.Left
                               Height: =30
                               Mode: ='TextInputCanvas.Mode'.SingleLine
-                              OnChange: |+
+                              OnChange: |
                                 =Set(varBlank2, true);
                               Required: =true
                               Width: =250
@@ -3026,7 +3026,7 @@ Screens:
                           DisplayMode.Edit
                         Height: =30
                         Icon: =Icon.Add
-                        OnSelect: |+
+                        OnSelect: |
                           =Set(varAddCompanyinPer, true);
                         Width: =25
                         X: =735

@@ -133,6 +133,32 @@
     "Type": "OptionSetInfo"
   },
   {
+    "DisplayName": "Group Choices",
+    "Name": "webcorr_groupchoices",
+    "OptionSetInfoNameMapping": {
+      "172640000": "Groep 1",
+      "172640001": "Groep 2",
+      "172640002": "Groep 3",
+      "172640003": "Groep 4"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "webcorr_group",
+        "OptionSetReferenceEntityName": "Correspondences"
+      },
+      "OptionSetReferenceItem1": {
+        "OptionSetReferenceColumnName": "webcorr_groups",
+        "OptionSetReferenceEntityName": "Gebruikersrollen"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "webcorr_group",
+    "RelatedEntityName": "Correspondences",
+    "Type": "OptionSetInfo"
+  },
+  {
     "DisplayName": "OriginCorrChoices",
     "Name": "webcorr_origincorrchoices",
     "OptionSetInfoNameMapping": {

@@ -174,7 +174,7 @@ Screens:
                                   Properties:
                                     BorderColor: =RGBA(0, 0, 0, 1)
                                     BorderThickness: =1
-                                    Fill: |+
+                                    Fill: |
                                       =Switch(
                                           true,
                                           CountRows(colUserS) = 0, RGBA(0, 0, 0, 0), // Ninguno seleccionado
@@ -182,7 +182,7 @@ Screens:
                                           RGBA(0, 0, 0, 0) // Algunos seleccionados
                                       )
                                     Height: =15
-                                    OnSelect: |+
+                                    OnSelect: |
                                       =If(
                                           CountRows(colUserS) = CountRows(GalCorrespondentieVO_5.AllItems),
                                           Clear(colUserS),
@@ -283,7 +283,7 @@ Screens:
                                         Control: GroupContainer@1.3.0
                                         Variant: AutoLayout
                                         Properties:
-                                          Fill: |+
+                                          Fill: |
                                             =RGBA(0,0,0,0)
                                           Height: =32
                                           LayoutAlignItems: =LayoutAlignItems.Center
@@ -297,14 +297,14 @@ Screens:
                                               Properties:
                                                 BorderColor: =RGBA(0, 0, 0, 1)
                                                 BorderThickness: =1
-                                                Fill: |+
+                                                Fill: |
                                                   =If(
                                                       CountRows(Filter(colUserS, Value = ThisItem.IdUSer)) > 0,
                                                       RGBA(40, 134, 222, 1),
                                                       RGBA(0, 0, 0, 0)
                                                   )
                                                 Height: =15
-                                                OnSelect: |+
+                                                OnSelect: |
                                                   =If(
                                                       CountRows(Filter(colUserS, Value = ThisItem.IdUSer)) > 0,
                                                       RemoveIf(colUserS, Value = ThisItem.IdUSer),
@@ -340,7 +340,7 @@ Screens:
                                               Properties:
                                                 Align: ='TextCanvas.Align'.Start
                                                 Size: =12
-                                                Text: |+
+                                                Text: |
                                                   =Concat(ThisItem.Groups, Value, ", ")
                                                 VerticalAlign: =VerticalAlign.Middle
                                                 Width: =200
@@ -972,7 +972,7 @@ Screens:
                         - cbbCCIntern_29:
                             Control: ComboBox@0.0.51
                             Properties:
-                              DefaultSelectedItems: |+
+                              DefaultSelectedItems: |
                                 =If(
                                     varNewU,
                                     Blank(),
